@@ -1,5 +1,7 @@
 # Generating Data for US Cities
 
+![](us-cities.png)
+
 [ChatGPT Dialog](https://chat.openai.com/share/a805f2cc-d10f-4f80-b47e-5d63ba3f005e)
 
 ## Example of Reading JSON File
