@@ -8,6 +8,9 @@ repo_url: 'https://github.com/dmccreary/graph-algorithms'
 nav:
   - Home: index.md
   - List of Graph Algorithms: list-of-algorithms.md
+  - Data:
+    - Introduction: data/index.md
+    - US Cities: data/us-cities/index.md
   - Sims:
     - Introduction: sims/index.md
     - Force Directed Graph: sims/force/index.md
