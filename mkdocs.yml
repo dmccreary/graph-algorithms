@@ -14,6 +14,10 @@ nav:
   - Sims:
     - Introduction: sims/index.md
     - Force Directed Graph: sims/force/index.md
+    - Breath First Search: sims/force/bfs/index.md
+    - Shortest Path: sims/shortest-path/index.md
+  - How We Built This Site: how-we-built-this-site.md
+  - License: license.md
   - Contact: contact.md
  
 # CoderDojo Microsite Standards from here down
