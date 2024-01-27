@@ -18,7 +18,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="bfs/">
+        <link rel="next" href="../shortest-path/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -75,6 +75,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#force-directed-graph-layout" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -319,8 +324,6 @@
         
       
         
-          
-        
       
         
           
@@ -380,6 +383,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Force Directed Graph
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -390,6 +406,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    Sample Prompt
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -402,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="bfs/" class="md-nav__link">
+      <a href="bfs/index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,6 +579,23 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    Sample Prompt
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -554,9 +613,23 @@
   
 
 
-  <h1>Force Directed Graph</h1>
-
-
+<h1 id="force-directed-graph-layout">Force Directed Graph Layout</h1>
+<p><img alt="" src="force.png" /></p>
+<p><a href="https://dmccreary.github.io/microsims/sims/force-directed-graph/">Force Directed Graph on the MicroSims Site</a></p>
+<h2 id="sample-prompt">Sample Prompt</h2>
+<div class="highlight"><pre><span></span><code>Create a simulation of a force-directed graph placement algorithm.
+Generate a single file p5.js sketch on a 500x400 canvas.
+Set global variables for the width and height of the canvas.
+The algorithm will move the position of vertices of a connected
+   based on a force-directed graph placement mode.
+For the initial state,  place 20 vertices on random locations on a 500x400 canvas. 
+Make the vertices be rendered by a circle with a radius of 10.
+Connect each vertex to 3 other vertices using bidirectional links.
+Add a controls to incrementally step through the algorithm.
+Add buttons for a single Step, 10 Steps, 100 Steps and 1,000 Steps at the bottom of canvas.
+Display the number of steps, and the total movement of the verticies in
+each step.
+</code></pre></div>
 
 
 
@@ -601,13 +674,13 @@
         
         
           
-          <a href="bfs/" class="md-footer__link md-footer__link--next" aria-label="Next: Breath First Search" rel="next">
+          <a href="../shortest-path/" class="md-footer__link md-footer__link--next" aria-label="Next: Shortest Path" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Breath First Search
+                Shortest Path
               </div>
             </div>
             <div class="md-footer__button md-icon">
