@@ -1,24 +1,19 @@
 // Animate Schema matching lines
-var canvasWidth = 520;
-var canvasHeight = 500;
 var dot;
 var dotArray = [];
 var dotCount = 10;
-var dew = 80; // data element width
-var deh = 30; // data element height
-var deg = 10; // data element gap
+var dew = 60; // data element width
+var deh = 25; // data element height
+var deg = 20; // data element gap
 var tempX;
 var tempY;
 var angle = 0; // percent done with animate
 var top_margin = 60;
 var src_col_x = 50;
-var tar_col_x = 380;
+var tar_col_x = 400;
 
 function setup() {
-  const canvas = createCanvas(canvasWidth, canvasHeight);
-  // canvas.parent('canvas-container');
-  var mainElement = document.querySelector('main');
-  canvas.parent(mainElement);
+  createCanvas(windowWidth, windowHeight);
   // we want this [2, 3, 1, 6, 8, 9, 5, 7, 0, 4]
   let shuffledArray = shuffleArray(dotCount);
   noFill(0);
@@ -39,8 +34,8 @@ function draw() {
   noStroke();
   textSize(24);
   text('Source', 20, 30);
-  text('Target', tar_col_x+dew/2, 30);
-  stroke(0,0,255,150);
+  text('Target', tar_col_x+30, 30);
+  stroke('blue');
 
   for (let i = 0; i < dotArray.length; i++) {
     dotArray[i].showDots();
@@ -74,7 +69,7 @@ class Dot {
     
     // right target
     fill('plum');
-    rect(this.end.x+dew/2+10, this.end.y-10, dew, deh, 5);
+    rect(this.end.x+30, this.end.y-10, dew, deh, 5);
     
     pop();
   }
@@ -82,7 +77,7 @@ class Dot {
   showLines() {
     beginShape();
     for (let i = 0; i < this.vertexArray.length; i++) {
-      vertex(this.vertexArray[i].x+dew/2+10, this.vertexArray[i].y+3);
+      vertex(this.vertexArray[i].x+dew/2, this.vertexArray[i].y+3);
     }
     endShape();
   }
@@ -97,7 +92,7 @@ class Dot {
 
 }
 
-// return a random shuffle of numbers
+// return a random shuffel of numbers
 function shuffleArray(numItems) {
     let array = [];
     // Fill the array with numbers from 0 to numItems
@@ -116,3 +111,4 @@ function shuffleArray(numItems) {
 
     return array;
 }
+
