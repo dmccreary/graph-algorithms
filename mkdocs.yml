@@ -13,11 +13,23 @@ nav:
     - US Cities: data/us-cities/index.md
   - Sims:
     - Introduction: sims/index.md
-    - Force Directed Graph: sims/force/index.md
-    - Breath First Search: sims/force/bfs/index.md
+    - Force Directed Graph Layout: sims/force/index.md
+    - Breath First Search: sims/bfs/index.md
     - Shortest Path: sims/shortest-path/index.md
     - PageRank: sims/page-rank/index.md
+    - Matching: sims/matching/index.md
+    - Data Element Matching: sims/data-element-match/index.md
+
   - How We Built This Site: how-we-built-this-site.md
+
+             - graph-query-langauges.md
+             - lpg.md
+             - relationship-traversal.md
+             - topic-lists.md
+             - lessons/index.md
+             - lessons/01-graph-terminology.md
+
+  - Glossary: glossary.md
   - License: license.md
   - Contact: contact.md
  
