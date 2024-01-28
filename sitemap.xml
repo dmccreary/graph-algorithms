@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/about/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/contact/</loc>
          <lastmod>2024-01-28</lastmod>
          <changefreq>daily</changefreq>
@@ -87,6 +92,11 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/force/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/sims/matching/</loc>
          <lastmod>2024-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
