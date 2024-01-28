@@ -5,5 +5,5 @@
    <figcaption>Figure caption.</figcaption>
 </figure>
 
-[Link to Demo](./template.html){ .md-button .md-button--primary }
+[Link to Demo](./degree.html){ .md-button .md-button--primary }
 [Edit MicroSim](https://editor.p5js.org/dmccreary/sketches/ZBjxPNa6f)
