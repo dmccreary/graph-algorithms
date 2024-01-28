@@ -56,7 +56,7 @@ In GPS and mapping services, algorithms like Dijkstra's and A\* are used to find
 
 ### Telecommunications**:
 
-Pathfinding algorithms help in designing efficient routing of data in communication networks. They optimize the paths that data packets take across the network to minimize latency and maximize throughput.
+Path-finding algorithms help in designing efficient routing of data in communication networks. They optimize the paths that data packets take across the network to minimize latency and maximize throughput.
 
 ### Robotics
 
