@@ -11,6 +11,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/glossary/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/graph-query-langauges/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/how-we-built-this-site/</loc>
          <lastmod>2024-01-28</lastmod>
          <changefreq>daily</changefreq>
@@ -26,12 +36,37 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/lpg/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/relationship-traversal/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/topic-lists/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/data/</loc>
          <lastmod>2024-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/data/us-cities/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/lessons/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/lessons/01-graph-terminology/</loc>
          <lastmod>2024-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
