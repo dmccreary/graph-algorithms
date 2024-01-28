@@ -12,13 +12,9 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/page-rank/">
+        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/weighted-graph/">
       
       
-        <link rel="prev" href="../shortest-path/">
-      
-      
-        <link rel="next" href="../matching/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>PageRank - Graph Algorithms</title>
+        <title>Weighted Graph - Graph Algorithms</title>
       
     
     
@@ -77,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#page-rank" class="md-skip">
+        <a href="#weighted-graph" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PageRank
+              Weighted Graph
             
           </span>
         </div>
@@ -396,8 +392,6 @@
       
   
   
-    
-  
   
     
     
@@ -438,251 +432,28 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+  
+  
+    <a href="../" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Sims
   </span>
   
 
-            </a>
-            
-              <label class="md-nav__link " for="__nav_7">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            Sims
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../degree/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Degree
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../weighted/index.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Weighted
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../force/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Force Directed Graph Layout
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bfs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Breath First Search
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../shortest-path/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Shortest Path
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    PageRank
-  </span>
+    </a>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    PageRank
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#directed-edges-example" class="md-nav__link">
-    Directed Edges Example
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../matching/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Matching
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../data-element-match/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Data Element Matching
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -784,21 +555,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#directed-edges-example" class="md-nav__link">
-    Directed Edges Example
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -815,46 +571,14 @@
   
 
 
-<h1 id="page-rank">Page Rank</h1>
+<h1 id="weighted-graph">Weighted Graph</h1>
 <figure markdown>
-   ![Image Name](./page-rank.png){ width="400" }
+   ![Image Name](./weighted-graph.png){ width="400" }
    <figcaption>Figure caption.</figcaption>
 </figure>
 
-<p><a class="md-button md-button--primary" href="page-rank.html">Run the Page Rank MicroSim</a>
-<a href="https://editor.p5js.org/dmccreary/sketches/YAwpC4f9I">Edit the PageRank MicroSim</a></p>
-<p>When the "Update PageRank" button is pressed multiple times in the p5.js sketch, the PageRank values for each node in the graph are recalculated and updated iteratively. Here's a breakdown of what happens during each update:</p>
-<ol>
-<li>
-<p><strong>Initial PageRank Distribution</strong>: Initially, every node is assigned the same PageRank value, typically <code>1.0</code>. This represents an equal distribution of 'importance' or 'rank' among all nodes.</p>
-</li>
-<li>
-<p><strong>PageRank Calculation</strong>: On each update, the PageRank for each node is recalculated based on the PageRank algorithm. The new PageRank of a node is determined by the sum of the PageRank values of its incoming links, divided by the number of outgoing links from each of those nodes. This is modified by the damping factor, which is a constant (typically set around 0.85) used to model the probability of randomly jumping to another node in the network.</p>
-</li>
-<li>
-<p><strong>Damping Factor</strong>: The damping factor (0.85 in your case) plays a critical role. It accounts for the likelihood that a person randomly clicking on links will eventually stop clicking. The damping factor is applied to the sum of PageRank values passed from neighboring nodes. The remaining part <code>(1 - damping factor) / number of nodes</code> is added to each node's score to ensure that the total PageRank in the system remains constant.</p>
-</li>
-<li>
-<p><strong>Iterative Updates</strong>: Each time "Update PageRank" is pressed, the PageRank values are recalculated using the values from the previous iteration. With each iteration, the PageRank values gradually converge to a stable state where they don't change much with further iterations. This stable state reflects the relative 'importance' of each node within the network.</p>
-</li>
-<li>
-<p><strong>Visual Representation</strong>: In the sketch, the diameter of each node is proportional to its PageRank value, so pressing the button repeatedly will adjust the sizes of the nodes to reflect their updated ranks.</p>
-</li>
-<li>
-<p><strong>Convergence</strong>: After a sufficient number of iterations, the PageRank values will converge, meaning that additional iterations won't significantly change the values. The number of iterations needed for convergence depends on the structure of the graph and the damping factor.</p>
-</li>
-</ol>
-<p>In summary, each press of the "Update PageRank" button refines the estimation of each node's importance within the graph, moving the system closer to a balanced state where the PageRank values accurately represent the significance of each node based on its connections.</p>
-<h2 id="directed-edges-example">Directed Edges Example</h2>
-<p>In this updated sketch:</p>
-<ul>
-<li>Each <code>Node</code> now has two arrays: <code>outgoing</code> and <code>incoming</code>, representing outgoing and incoming links respectively.</li>
-<li>The <code>addLink</code> method in the <code>Node</code> class creates a directed edge from one node to another.</li>
-<li>The <code>drawEdges</code> method in the <code>Node</code> class calls the <code>drawArrow</code> function to visually represent the directed edges.</li>
-<li>The <code>drawArrow</code> function is responsible for drawing an arrow from one node to another, indicating the direction of the link.</li>
-<li>The <code>connectRandomly</code> method in the <code>Graph</code> class creates directed edges between nodes, simulating hyperlinks between web pages.</li>
-</ul>
-<p>By pressing the "Update PageRank" button, the PageRank values are recalculated based on these directed edges, visually depicting the influence of each web page in the network.</p>
+<p><a class="md-button md-button--primary" href="weighted-graph.html">Link to Demo</a>
+<a href="">Edit</a></p>
 
 
 
@@ -877,44 +601,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../shortest-path/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Shortest Path" rel="prev">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Shortest Path
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../matching/" class="md-footer__link md-footer__link--next" aria-label="Next: Matching" rel="next">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Matching
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

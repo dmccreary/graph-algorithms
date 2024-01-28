@@ -91,6 +91,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/sims/degree/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/force/</loc>
          <lastmod>2024-01-28</lastmod>
          <changefreq>daily</changefreq>
@@ -112,6 +117,11 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/template/</loc>
+         <lastmod>2024-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/sims/weighted-graph/</loc>
          <lastmod>2024-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
