@@ -60,6 +60,8 @@ A prediction of the net profit attributed to the entire future relationship with
 
 #### Degree
 
+![](img/degree.png)
+
 The number of edges connected to a vertex. In directed graphs, this includes in-degree (number of incoming edges) and out-degree (number of outgoing edges). For instance, in a social network, a user's vertex degree might correspond to their number of friends or connections.
 
 #### Depth-First Search (DFS)
@@ -307,6 +309,8 @@ A fundamental unit of which graphs are formed, representing an entity. For insta
 A set of vertices that includes at least one endpoint of every edge of the graph. The problem of finding a minimum vertex cover is a classical optimization problem in computer science. Example: Used in network security to determine the minimum number of points to control to monitor network traffic.
 
 #### Weighted Graph
+
+![](img/weighted-graph.png)
 
 A graph where each edge has a numerical value (weight) associated with it, representing quantities like distance, cost, or capacity. A common example is a road network where edges are roads with weights representing distances.
 

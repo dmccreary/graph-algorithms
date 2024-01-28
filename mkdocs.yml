@@ -21,6 +21,8 @@ nav:
     - US Cities: data/us-cities/index.md
   - Sims:
     - Introduction: sims/index.md
+    - Degree: sims/degree/index.md
+    - Weighted: sims/weighted/index.md
     - Force Directed Graph Layout: sims/force/index.md
     - Breath First Search: sims/bfs/index.md
     - Shortest Path: sims/shortest-path/index.md
