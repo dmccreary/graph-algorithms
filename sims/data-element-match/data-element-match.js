@@ -13,7 +13,9 @@ var src_col_x = 50;
 var tar_col_x = 400;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  const canvas = createCanvas(windowWidth, windowHeight);
+  var mainElement = document.querySelector('main');
+  canvas.parent(mainElement);
   // we want this [2, 3, 1, 6, 8, 9, 5, 7, 0, 4]
   let shuffledArray = shuffleArray(dotCount);
   noFill(0);
