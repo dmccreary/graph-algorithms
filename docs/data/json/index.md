@@ -20,6 +20,12 @@ other cities with edges.
 
 ## Sample JSON Data
 
+You can click on the "Right Arrow" icon in the p5.js editor
+to show the list of files in the p5.js application.
+It will also allow you to edit the JSON file.
+
+![](p5-editor-json-viewer.png)
+
 ```json
 {
   "cities": [
