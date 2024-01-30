@@ -20,3 +20,7 @@ Add buttons for a single Step, 10 Steps, 100 Steps and 1,000 Steps at the bottom
 Display the number of steps, and the total movement of the verticies in
 each step.
 ```
+
+## References
+
+[Karsten Schmidt](http://haptic-data.com/toxiclibsjs/examples/force-directed-graph-p5)

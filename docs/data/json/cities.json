@@ -1,0 +1,16 @@
+{
+    "cities": [
+      { "name": "New York", "x": 350, "y": 100 },
+      { "name": "Los Angeles", "x": 100, "y": 350 },
+      { "name": "Chicago", "x": 200, "y": 150 },
+      { "name": "Houston", "x": 150, "y": 250 },
+      { "name": "Phoenix", "x": 80, "y": 120 }
+    ],
+    "edges": [
+      { "from": "New York", "to": "Los Angeles" },
+      { "from": "New York", "to": "Chicago" },
+      { "from": "Los Angeles", "to": "Houston" },
+      { "from": "Chicago", "to": "Phoenix" },
+    ]
+  }
+  
