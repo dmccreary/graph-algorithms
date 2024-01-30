@@ -2,7 +2,7 @@
 
 ![](./json.png)
 
-[Link to Graph From JSON file MicroSim](./json.html){ .md-button .md-button--primary }
+[Run the JSON file reader MicroSim](json.html){ .md-button .md-button--primary }
 [Edit MicroSim](https://editor.p5js.org/dmccreary/sketches/ODXILDo8c)
 
 ## Sample prompt
@@ -40,6 +40,13 @@ other cities with edges.
 }
 ```
 
+!!! Warning
+    Always check the exact syntax when generative AI systems
+    generate sample data.  They tend to add
+    a trailing common to a list of items.  This
+    is a syntax error and the JSON loader will not
+    give you a clue where the error is.  Use a JSON
+    syntax validator whenever possible.
 ## Sample p5.js Sketch
 
 ```js
