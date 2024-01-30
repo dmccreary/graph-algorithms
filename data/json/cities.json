@@ -10,7 +10,7 @@
       { "from": "New York", "to": "Los Angeles" },
       { "from": "New York", "to": "Chicago" },
       { "from": "Los Angeles", "to": "Houston" },
-      { "from": "Chicago", "to": "Phoenix" },
+      { "from": "Chicago", "to": "Phoenix" }
     ]
   }
   

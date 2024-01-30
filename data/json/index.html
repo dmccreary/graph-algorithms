@@ -735,7 +735,7 @@
 
 <h1 id="generating-a-json-data-file">Generating a JSON Data File</h1>
 <p><img alt="" src="json.png" /></p>
-<p><a class="md-button md-button--primary" href="json.html">Link to Graph From JSON file MicroSim</a>
+<p><a class="md-button md-button--primary" href="json.html">Run the JSON file reader MicroSim</a>
 <a href="https://editor.p5js.org/dmccreary/sketches/ODXILDo8c">Edit MicroSim</a></p>
 <h2 id="sample-prompt">Sample prompt</h2>
 <div class="highlight"><pre><span></span><code>Create a p5.js sketch that demonstrates loading a
@@ -782,6 +782,15 @@ other cities with edges.
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Always check the exact syntax when generative AI systems
+generate sample data.  They tend to add
+a trailing common to a list of items.  This
+is a syntax error and the JSON loader will not
+give you a clue where the error is.  Use a JSON
+syntax validator whenever possible.</p>
+</div>
 <h2 id="sample-p5js-sketch">Sample p5.js Sketch</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
