@@ -19,7 +19,7 @@ nav:
   - Generating Graph Data:
     - Introduction: data/index.md
     - US Cities: data/us-cities/index.md
-    - Loading JSON Data: data/jason/index.md
+    - Loading JSON Data: data/json/index.md
   - Sims:
     - Introduction: sims/index.md
     - Degree: sims/degree/index.md
