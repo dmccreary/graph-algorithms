@@ -4,11 +4,19 @@ In this course, we will be covering graph algorithms.  Before we dive into these
 
 ## What is a Graph?
 
+![](../img/graph-basic.png)
+
 A graph is a collection of nodes and edges.
 The nodes usually represent nouns in our world (People, Places and Things) and the edges represent relationships between these things.
 
 In our graph model, both nodes and edges can have properties associated with them.  This is called
 a labeled property graph model or LPG.
+
+The image above is a simple directional typed graph.
+Each node has a type (User, Order, Product, Location, ProductType)
+and each edge has a direction.  In the LPG
+model edges have types, but for simplicity, the
+edge types are not shown in this diagram.
 
 ## The LPG Model
 
