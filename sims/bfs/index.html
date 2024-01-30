@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#breath-first-graph-search" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -543,6 +548,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Breath First Search
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -553,6 +571,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    Sample Prompt
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -739,6 +783,23 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    Sample Prompt
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -756,9 +817,24 @@
   
 
 
-  <h1>Breath First Search</h1>
+<h1 id="breath-first-graph-search">Breath First Graph Search</h1>
+<figure markdown>
+   ![](./bfs.png)
+   <figcaption>Breath First Search</figcaption>
+</figure>
 
-
+<p><a class="md-button md-button--primary" href="bfs.html">Run Breath First Graph Search MicroSim</a>
+Note you must click on the Next Button twice to get to level 1 search.</p>
+<h2 id="sample-prompt">Sample Prompt</h2>
+<div class="highlight"><pre><span></span><code>Generate a simulation of breadth-first-search on a graph.  
+Place a green vertex at the center of a network of 20 
+vertices that are placed on the canvas.  
+Connect each vertex to the 2 or 3 closest vertices 
+using edges. For each step in the search, 
+color the next vertex red.  
+Repeat until all vertices have been visited.
+</code></pre></div>
+<p><a href="https://chat.openai.com/share/1b72c39f-32d6-478d-98a6-d9292374c844">Link to Transcript</a></p>
 
 
 
