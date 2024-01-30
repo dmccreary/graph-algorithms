@@ -12,7 +12,7 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/template/">
+        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/data/json/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>MicroSim Template - Graph Algorithms</title>
+        <title>Generating a JSON Data File - Graph Algorithms</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#microsim-template" class="md-skip">
+        <a href="#generating-a-json-data-file" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MicroSim Template
+              Generating a JSON Data File
             
           </span>
         </div>
@@ -371,7 +371,7 @@
         
   
   
-    <a href="../../data/" class="md-nav__link">
+    <a href="../" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -448,7 +448,7 @@
         
   
   
-    <a href="../" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -570,91 +570,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-this-microsim" class="md-nav__link">
-    About this MicroSim
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sample-prompt" class="md-nav__link">
-    Sample Prompt
+    Sample prompt
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-response" class="md-nav__link">
-    Sample Response
+  <a href="#sample-json-data" class="md-nav__link">
+    Sample JSON Data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lesson-plan" class="md-nav__link">
-    Lesson Plan
+  <a href="#sample-p5js-sketch" class="md-nav__link">
+    Sample p5.js Sketch
   </a>
-  
-    <nav class="md-nav" aria-label="Lesson Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#grade-level-subject-and-topic" class="md-nav__link">
-    Grade Level, Subject and Topic
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#activities" class="md-nav__link">
-    Activities
-  </a>
-  
-    <nav class="md-nav" aria-label="Activities">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fill-color" class="md-nav__link">
-    Fill Color
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#border-weight" class="md-nav__link">
-    Border Weight
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#border-color" class="md-nav__link">
-    Border Color
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change-the-radius" class="md-nav__link">
-    Change the Radius
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change-the-location" class="md-nav__link">
-    Change the Location
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -676,22 +608,21 @@
   
 
 
-<h1 id="microsim-template">MicroSim Template</h1>
-<figure markdown>
-   ![Image Name](./image.png){ width="400" }
-   <figcaption>Figure caption.</figcaption>
-</figure>
-
-<p><a class="md-button md-button--primary" href="template.html">Link to Demo</a>
-<a href="">Edit MicroSim</a></p>
-<h2 id="about-this-microsim">About this MicroSim</h2>
-<p>This MicroSim teaches us how to
-specify the drawing of a static filled circle.</p>
-<h2 id="sample-prompt">Sample Prompt</h2>
-<div class="highlight"><pre><span></span><code>Create a single file p5.js sketch.
-Draw a green circle on a 600x400 canvas with a radius of 200.
+<h1 id="generating-a-json-data-file">Generating a JSON Data File</h1>
+<p><img alt="" src="json.png" /></p>
+<p><a class="md-button md-button--primary" href="json.html">Link to Graph From JSON file MicroSim</a>
+<a href="https://editor.p5js.org/dmccreary/sketches/ODXILDo8c">Edit MicroSim</a></p>
+<h2 id="sample-prompt">Sample prompt</h2>
+<div class="highlight"><pre><span></span><code>Create a p5.js sketch that demonstrates loading a
+list of vertices and edges from a JSON file.
+The sketch uses a canvas of 400x400.
+Create a sample JSON file that has a list of
+the top largest metro areas in the US.
+Position each city at a reasonable location
+on the canvas and connect each city to three
+other cities with edges.
 </code></pre></div>
-<h2 id="sample-response">Sample Response</h2>
+<h2 id="sample-json-data">Sample JSON Data</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -703,36 +634,112 @@ Draw a green circle on a 600x400 canvas with a radius of 200.
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">aspectRatio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.91</span><span class="p">;</span><span class="w"> </span><span class="c1">// Open Graph standard</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">aspectRatio</span><span class="p">;</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="s1">&#39;canvas-container&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">245</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">);</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;cities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Chicago&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Houston&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Phoenix&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Add more cities as needed</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;edges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Los Angeles&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;New York&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Chicago&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Houston&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Chicago&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Phoenix&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Add more edges as needed</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="lesson-plan">Lesson Plan</h2>
-<h3 id="grade-level-subject-and-topic">Grade Level, Subject and Topic</h3>
-<p>9th grade geometry. Circle and radius.</p>
-<h3 id="activities">Activities</h3>
-<h4 id="fill-color">Fill Color</h4>
-<p>Change the color in the prompt.  You
-can specify any one of the <a href="https://www.w3schools.com/tags/ref_colornames.asp">140 named colors</a>.</p>
-<h4 id="border-weight">Border Weight</h4>
-<p>Change the prompt to include a black border of
-width 10.</p>
-<h4 id="border-color">Border Color</h4>
-<p>Change the prompt to make the border purple.</p>
-<h4 id="change-the-radius">Change the Radius</h4>
-<p>Change the prompt to make the circle smaller
-or larger by changing the radius from 10 to 200.</p>
-<h4 id="change-the-location">Change the Location</h4>
-<p>Change the prompt to move the circle to the left or right.</p>
+<h2 id="sample-p5js-sketch">Sample p5.js Sketch</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// demo of loading graph data from a JSON file</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">graphData</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">graphData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadJSON</span><span class="p">(</span><span class="s1">&#39;cities.json&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Make sure to replace with your actual JSON file name</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">noLoop</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">255</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Check if the data is loaded</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">graphData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Draw the cities</span>
+<span class="w">    </span><span class="nx">fill</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">graphData</span><span class="p">.</span><span class="nx">cities</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">city</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">circle</span><span class="p">(</span><span class="nx">city</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">text</span><span class="p">(</span><span class="nx">city</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// Draw the edges</span>
+<span class="w">    </span><span class="nx">stroke</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">strokeWeight</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">graphData</span><span class="p">.</span><span class="nx">edges</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">edge</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">fromCity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">graphData</span><span class="p">.</span><span class="nx">cities</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">city</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">city</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">edge</span><span class="p">.</span><span class="kr">from</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">toCity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">graphData</span><span class="p">.</span><span class="nx">cities</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">city</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">city</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">edge</span><span class="p">.</span><span class="nx">to</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">line</span><span class="p">(</span><span class="nx">fromCity</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">fromCity</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">toCity</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">toCity</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Loading data...&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// You can add additional functions or interactions here if needed</span>
+</code></pre></div></td></tr></table></div>
 
 
 
