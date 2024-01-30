@@ -26,6 +26,7 @@ nav:
     - Force Directed Graph Layout: sims/force/index.md
     - Breath First Search: sims/bfs/index.md
     - Shortest Path: sims/shortest-path/index.md
+    - Spanning Tree: sims/spanning-tree/index.md
     - PageRank: sims/page-rank/index.md
     - Matching: sims/matching/index.md
     - Data Element Matching: sims/data-element-match/index.md
