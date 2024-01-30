@@ -172,9 +172,12 @@ A standard in the finance industry that ensures investment advisors know detaile
 
 An algorithm that finds a minimum spanning tree for a connected weighted graph. This means it finds a subset of the edges that forms a tree that includes every vertex, where the total weight of all the edges in the tree is minimized. Example: Used in designing networks like water supply networks.
 
-#### Lazy Evaluation
+### Labeled Property Graph
 
-An evaluation strategy which delays the evaluation of an expression until its value is needed. It can improve performance by avoiding needless calculations, and it can help in handling infinite data structures. Example: Used in algorithms to handle large graphs where not all data needs to be processed immediately.
+The term "Labeled Property Graph Model" or (LPG) refers to a specific type of graph database model that is primarily used for storing and managing complex networks of data.  In the LPG model, both nodes and edges have properties.  Edges may also optionally have a direction.  Each node has a specific type that
+can determine what its valid relationship and properties are.
+
+This course uses the LPG model.
 
 #### Link Prediction
 

@@ -1,6 +1,6 @@
 # Graph Algorithms Course
 
-![](./img/cover.webp)
+![](./img/cover.webp){ width="500" }
 
 Welcome to our graph algorithms course.  In this
 course, we will learn about the various algorithms
