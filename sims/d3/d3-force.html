@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+        .node { fill: steelblue; }
+        .link { stroke: gray; stroke-width: 1.5px; }
+    </style>
+</head>
+<body>
+    <svg width="500" height="500"></svg>
+    <script>
+        // Create 20 random vertices
+        let vertices = Array.from({length: 20}, (_, i) => ({ 
+            id: i, 
+            x: Math.random() * 500, 
+            y: Math.random() * 500 
+        }));
+
+        // Function to calculate distance between two points
+        function distance(a, b) {
+            return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+        }
+
+        // Find three nearest neighbors for each vertex
+        let edges = [];
+        vertices.forEach((v, i) => {
+            let distances = vertices.map((w, j) => ({ index: j, dist: distance(v, w) }));
+            distances.sort((a, b) => a.dist - b.dist);
+            for (let k = 1; k <= 3; k++) {
+                edges.push({ source: i, target: distances[k].index });
+            }
+        });
+
+        // Set up SVG and D3 force simulation
+        let svg = d3.select("svg");
+        let simulation = d3.forceSimulation(vertices)
+            .force("link", d3.forceLink(edges).distance(50))
+            .force("charge", d3.forceManyBody())
+            .force("center", d3.forceCenter(500 / 2, 500 / 2))
+            .on("tick", ticked);
+
+        let link = svg.selectAll(".link")
+            .data(edges)
+            .enter().append("line")
+            .attr("class", "link");
+
+        let node = svg.selectAll(".node")
+            .data(vertices)
+            .enter().append("circle")
+            .attr("class", "node")
+            .attr("r", 5)
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+
+        function ticked() {
+            link
+                .attr("x1", function(d) { return d.source.x; })
+                .attr("y1", function(d) { return d.source.y; })
+                .attr("x2", function(d) { return d.target.x; })
+                .attr("y2", function(d) { return d.target.y; });
+
+            node
+                .attr("cx", function(d) { return d.x; })
+                .attr("cy", function(d) { return d.y; });
+        }
+
+        function dragstarted(d) {
+            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(d) {
+            d.fx = d3.event.x;
+            d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+            if (!d3.event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        .node { fill: steelblue; }
+        .link { stroke: gray; stroke-width: 1.5px; }
+        #controls { padding: 20px; }
+        label { margin-right: 10px; }
+        svg { background-color: aliceblue;}
+        input {width: 250px}
+    </style>
+</head>
+<body>
+    
+    <svg width="500" height="500"></svg>
+    <div id="controls">
+        <label for="linkForce">Link Force:</label>
+        <input type="range" id="linkForce" min="0" max="100" value="50" oninput="this.nextElementSibling.value = this.value">
+        <output>50</output>
+        <br/>
+        <label for="chargeForce">Charge Force:</label>
+        <input type="range" id="chargeForce" min="-500" max="0" value="-30" oninput="this.nextElementSibling.value = this.value">
+        <output>-30</output>
+        <br/>
+        <label for="centerForce">Center Force:</label>
+        <input type="range" id="centerForce" min="0" max="100" value="50" oninput="this.nextElementSibling.value = this.value">
+        <output>50</output>
+    </div>
+    <script>
+        // Create 20 random vertices
+        let vertices = Array.from({length: 20}, (_, i) => ({ 
+            id: i, 
+            x: Math.random() * 500, 
+            y: Math.random() * 500 
+        }));
+
+        // Function to calculate distance between two points
+        function distance(a, b) {
+            return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+        }
+
+        // Find three nearest neighbors for each vertex
+        let edges = [];
+        vertices.forEach((v, i) => {
+            let distances = vertices.map((w, j) => ({ index: j, dist: distance(v, w) }));
+            distances.sort((a, b) => a.dist - b.dist);
+            for (let k = 1; k <= 3; k++) {
+                edges.push({ source: i, target: distances[k].index });
+            }
+        });
+
+        // Set up SVG and D3 force simulation
+        let svg = d3.select("svg");
+        let linkForce = d3.forceLink(edges).distance(50);
+        let chargeForce = d3.forceManyBody().strength(-30);
+        let centerForce = d3.forceCenter(500 / 2, 500 / 2);
+        let simulation = d3.forceSimulation(vertices)
+            .force("link", linkForce)
+            .force("charge", chargeForce)
+            .force("center", centerForce)
+            .on("tick", ticked);
+
+        let link = svg.selectAll(".link")
+            .data(edges)
+            .enter().append("line")
+            .attr("class", "link");
+
+        let node = svg.selectAll(".node")
+            .data(vertices)
+            .enter().append("circle")
+            .attr("class", "node")
+            .attr("r", 5)
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+
+        function ticked() {
+            link
+                .attr("x1", function(d) { return d.source.x; })
+                .attr("y1", function(d) { return d.source.y; })
+                .attr("x2", function(d) { return d.target.x; })
+                .attr("y2", function(d) { return d.target.y; });
+
+            node
+                .attr("cx", function(d) { return d.x; })
+                .attr("cy", function(d) { return d.y; });
+        }
+
+        function dragstarted(d) {
+            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(d) {
+            d.fx = d3.event.x;
+            d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+            if (!d3.event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+
+        // Update simulation on slider change
+        d3.select("#linkForce").on("input", function() {
+            linkForce.distance(+this.value);
+            simulation.alpha(1).restart();
+        });
+
+        d3.select("#chargeForce").on("input", function() {
+            chargeForce.strength(+this.value);
+            simulation.alpha(1).restart();
+        });
+
+        d3.select("#centerForce").on("input", function() {
+            centerForce.x(500 / 2 * (+this.value / 100)).y(500 / 2 * (+this.value / 100));
+            simulation.alpha(1).restart();
+        });
+    </script>
+
+</body>
+</html>

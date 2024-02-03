@@ -12,28 +12,28 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/lpg/">
+        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/d3/">
       
       
-        <link rel="prev" href="../lessons/01-graph-terminology/">
+        <link rel="prev" href="../data-element-match/">
       
       
-        <link rel="next" href="../graph-query-languages/">
+        <link rel="next" href="../../how-we-built-this-site/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
-        <title>Labeled Property Graphs - Graph Algorithms</title>
+        <title>D3 - Graph Algorithms</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#native-labeled-property-graphs" class="md-skip">
+        <a href="#d3-graph-test" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Graph Algorithms" class="md-header__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
+    <a href="../.." title="Graph Algorithms" class="md-header__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Labeled Property Graphs
+              D3
             
           </span>
         </div>
@@ -199,7 +199,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Graph Algorithms" class="md-nav__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
+    <a href="../.." title="Graph Algorithms" class="md-nav__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -228,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -247,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -266,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../topic-lists/" class="md-nav__link">
+      <a href="../../topic-lists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -285,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../list-of-algorithms/" class="md-nav__link">
+      <a href="../../list-of-algorithms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -294,6 +294,104 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../lessons/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Lessons
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../data/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Generating Graph Data
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -313,11 +411,43 @@
         
       
         
-      
+          
         
       
         
+          
+        
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
         
       
     
@@ -328,31 +458,31 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../lessons/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Lessons
+    Sims
   </span>
   
 
             </a>
             
-              <label class="md-nav__link " for="__nav_5">
+              <label class="md-nav__link " for="__nav_7">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Lessons
+            Sims
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -364,11 +494,171 @@
   
   
     <li class="md-nav__item">
-      <a href="../lessons/01-graph-terminology/" class="md-nav__link">
+      <a href="../degree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Terminology
+    Degree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../weighted-graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weighted
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../force/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force Directed Graph Layout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bfs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Breath First Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shortest-path/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shortest Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spanning-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spanning Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page-rank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PageRank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-element-match/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Element Matching
   </span>
   
 
@@ -397,7 +687,7 @@
           
   
   <span class="md-ellipsis">
-    Labeled Property Graphs
+    D3
   </span>
   
 
@@ -408,7 +698,7 @@
         
   
   <span class="md-ellipsis">
-    Labeled Property Graphs
+    D3
   </span>
   
 
@@ -430,22 +720,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-are-native-labeled-property-graphs" class="md-nav__link">
-    What are Native Labeled Property Graphs?
+  <a href="#prompt-1" class="md-nav__link">
+    Prompt 1
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-with-pointer-traversal" class="md-nav__link">
-    Implementation with Pointer Traversal
+  <a href="#response-1" class="md-nav__link">
+    Response 1
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#comparison-to-rdbms-storage-of-graphs" class="md-nav__link">
-    Comparison to RDBMS Storage of Graphs
+  <a href="#prompt-force-directed-graph" class="md-nav__link">
+    Prompt Force Directed Graph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forces-with-sliders" class="md-nav__link">
+    Forces with Sliders
   </a>
   
 </li>
@@ -454,46 +751,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../graph-query-languages/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Graph Query Languages
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../relationship-traversal/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Relationship Traversal
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -511,138 +768,8 @@
   
   
   
-    
-    
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../data/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Generating Graph Data
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../sims/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Sims
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../how-we-built-this-site/" class="md-nav__link">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../glossary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -680,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../license/" class="md-nav__link">
+      <a href="../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -699,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -739,22 +866,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-are-native-labeled-property-graphs" class="md-nav__link">
-    What are Native Labeled Property Graphs?
+  <a href="#prompt-1" class="md-nav__link">
+    Prompt 1
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-with-pointer-traversal" class="md-nav__link">
-    Implementation with Pointer Traversal
+  <a href="#response-1" class="md-nav__link">
+    Response 1
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#comparison-to-rdbms-storage-of-graphs" class="md-nav__link">
-    Comparison to RDBMS Storage of Graphs
+  <a href="#prompt-force-directed-graph" class="md-nav__link">
+    Prompt Force Directed Graph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forces-with-sliders" class="md-nav__link">
+    Forces with Sliders
   </a>
   
 </li>
@@ -777,47 +911,43 @@
   
 
 
-<h1 id="native-labeled-property-graphs">Native Labeled Property Graphs</h1>
-<p>Native labeled property graphs are a specific type of data structure used primarily in graph databases. They are designed to efficiently store and query data that is inherently graph-like, such as social networks, recommendation systems, and other complex interconnected data.</p>
-<h2 id="what-are-native-labeled-property-graphs">What are Native Labeled Property Graphs?</h2>
-<ul>
+<h1 id="d3-graph-test">D3 Graph Test</h1>
+<h2 id="prompt-1">Prompt 1</h2>
+<div class="highlight"><pre><span></span><code>Create a d3.js program that displays a network graph of 20 vertices that are randomly placed on a 500x500 canvas.  Have each node be connected to the three nearest nodes.
+</code></pre></div>
+<h2 id="response-1">Response 1</h2>
+<p>Creating a D3.js program to display a network graph as described involves several steps. First, you'll need to generate 20 vertices with random positions on a 500x500 canvas. Then, for each vertex, you must find the three nearest vertices and draw lines (edges) to connect them. Here's a basic outline of the code you would write:</p>
+<ol>
+<li><strong>Set Up the Environment</strong>: Include D3.js in your HTML file.</li>
+<li><strong>Create Vertices</strong>: Generate 20 vertices with random x and y coordinates within the 500x500 canvas.</li>
+<li><strong>Calculate Nearest Neighbors</strong>: For each vertex, calculate the distance to every other vertex and identify the three nearest ones.</li>
+<li><strong>Draw the Graph</strong>: Use D3.js to draw the vertices and the edges connecting each vertex to its three nearest neighbors.</li>
+</ol>
+<p>Here's a simplified version of the code you might use:</p>
+<p><a class="md-button md-button--primary" href="d3.html">Run the 20 Vertex D3 Demo</a></p>
+<p>This code sets up a simple D3.js environment, generates random vertices, computes the nearest neighbors, and then uses D3.js to draw the nodes and edges on an SVG canvas. Note that this is a basic implementation and may need optimizations or enhancements based on your specific requirements.</p>
+<h2 id="prompt-force-directed-graph">Prompt Force Directed Graph</h2>
+<div class="highlight"><pre><span></span><code>OK, that is perfect.  Now can you do the same graph, but use a force-directed graph to adjust the 
+spacing of the nodes on the canvas with D3?
+</code></pre></div>
+<p>Certainly! To create a force-directed graph using D3.js, you'll modify the previous setup to include D3's force simulation. The force simulation will automatically adjust the positions of the nodes based on the forces you define, such as link forces, charge forces, and centering forces.</p>
+<p>Here's an updated version of the code to use a force-directed layout:</p>
+<p>This code introduces a few new concepts:</p>
+<ol>
 <li>
-<p><strong>Structure:</strong> These graphs are composed of nodes and edges (relationships). Each node and edge can have a label that defines its type or role. Additionally, both nodes and edges can possess a set of properties (key-value pairs) that hold relevant data.</p>
+<p><strong>Force Simulation</strong>: We create a D3 force simulation that affects the nodes and links. The forces applied are link force (to keep linked nodes at a certain distance), charge force (to repel nodes from each other), and a centering force (to keep the graph centered in the SVG element).</p>
 </li>
 <li>
-<p><strong>Native Storage:</strong> The term "native" implies that the data is stored in a way that naturally fits a graph structure. Unlike non-native graph storage, native graph databases are optimized for traversability.</p>
+<p><strong>Ticked Function</strong>: The simulation runs continuously and updates the positions of nodes and links. The <code>ticked</code> function is called at each tick of the simulation to update the positions of the nodes and links.</p>
 </li>
 <li>
-<p><strong>Traversal Using Pointers:</strong> In native labeled property graphs, nodes and edges are usually stored in such a way that they contain direct references (pointers) to adjacent nodes and edges. This makes traversing the graph (i.e., moving from one node to its connected nodes) highly efficient.</p>
+<p><strong>Drag Behavior</strong>: Nodes are made draggable to interact with the graph. The functions <code>dragstarted</code>, <code>dragged</code>, and <code>dragended</code> handle the drag events and update the simulation accordingly.</p>
 </li>
-</ul>
-<h2 id="implementation-with-pointer-traversal">Implementation with Pointer Traversal</h2>
-<ul>
-<li>
-<p><strong>Pointer-based Storage:</strong> Each node in the graph has pointers that directly reference its neighboring nodes or connected edges. Similarly, edges point back to the nodes they connect.</p>
-</li>
-<li>
-<p><strong>Efficiency in Traversal:</strong> This direct referencing allows for fast and efficient traversal operations, as the database can quickly navigate through the graph structure without needing to perform expensive search operations.</p>
-</li>
-<li>
-<p><strong>Optimization for Graph Operations:</strong> This method is particularly optimized for typical graph operations like finding shortest paths, neighbors, or specific patterns within the graph.</p>
-</li>
-</ul>
-<h2 id="comparison-to-rdbms-storage-of-graphs">Comparison to RDBMS Storage of Graphs</h2>
-<ul>
-<li>
-<p><strong>RDBMS Approach:</strong> In a traditional relational database management system (RDBMS), graphs are often stored in tables, with separate tables for nodes and edges. Relationships are established using foreign keys.</p>
-</li>
-<li>
-<p><strong>Performance Issues:</strong> This approach can be less performant for graph operations because:</p>
-<ul>
-<li><strong>Join Operations:</strong> Traversing the graph typically requires multiple join operations between tables, which can be computationally expensive, especially for large and complex graphs.</li>
-<li><strong>Non-Native Structure:</strong> Relational databases are not inherently designed for graph-like queries, leading to inefficiencies in handling deeply connected data.</li>
-<li><strong>Scalability Concerns:</strong> As the size and complexity of the graph grow, the performance of RDBMS in handling graph operations tends to degrade more rapidly compared to native graph databases.</li>
-</ul>
-</li>
-</ul>
-<p>In summary, native labeled property graphs are optimized for graph data and operations, offering significant performance benefits, especially for complex and deeply interconnected datasets. They are contrasted with RDBMS systems, which, while versatile, often struggle with the demands of graph processing due to their non-native handling of graph structures and reliance on join operations.</p>
+</ol>
+<p>This code creates an interactive force-directed graph where the nodes are connected to their three nearest neighbors. You can further tweak the parameters of the force simulation to achieve the desired behavior and appearance.</p>
+<p><a class="md-button md-button--primary" href="d3-force.html">Run the D3 Force Demo</a></p>
+<h2 id="forces-with-sliders">Forces with Sliders</h2>
+<p><a href="d3-force-sliders.html">Forces with Sliders Demo</a></p>
 
 
 
@@ -845,7 +975,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lessons/01-graph-terminology/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Terminology" rel="prev">
+          <a href="../data-element-match/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Element Matching" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -855,20 +985,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Terminology
+                Data Element Matching
               </div>
             </div>
           </a>
         
         
           
-          <a href="../graph-query-languages/" class="md-footer__link md-footer__link--next" aria-label="Next: Graph Query Languages" rel="next">
+          <a href="../../how-we-built-this-site/" class="md-footer__link md-footer__link--next" aria-label="Next: How We Built This Site" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Graph Query Languages
+                How We Built This Site
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -901,10 +1031,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>
