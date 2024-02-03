@@ -86,7 +86,14 @@ Graphs that evolve over time with additions or deletions of nodes, edges, or cha
 
 #### Edge
 
-A connection between two vertices in a graph, which can be directed (indicating a one-way relationship) or undirected (indicating a two-way relationship). For example, in a road network graph, an edge could represent a road connecting two intersections.
+A connection between two vertices in a graph, which can be directed (indicating a one-way relationship) or undirected (indicating a two-way relationship).
+
+For example, in a road network graph, an edge could represent a road connecting two intersections.  A one-way street could be represented as a directed edge.
+
+In the [LPG](#labeled-property-graph) graphs that we study in this book, all our edges connect two vertices and are called binary edges.  Edges
+are also typed so that they connect specific types of nodes.
+
+* Also known as: link, arc, relationship
 
 #### Edge Partitioning
 
@@ -130,7 +137,7 @@ A database that uses graph structures for semantic queries with nodes, edges, an
 
 #### Graph Embeddings
 
-The process of transforming nodes, edges, and their features into a vector space while preserving graph topology and properties. These embeddings can be used in various machine learning applications. Example: Creating vector representations of social network users to feed into machine learning models for friend suggestion.
+The process of transforming nodes, edges, and their features into a vector space while preserving graph topology and properties. These embeddings can be used in various machine-learning applications. Example: Creating vector representations of social network users to feed into machine learning models for friend suggestions.
 
 #### Graph Neural Networks (GNNs)
 
@@ -144,6 +151,27 @@ The process of dividing a graph into smaller components while minimizing the num
 
 The task of identifying regularities or patterns within graph data. This is crucial in detecting structured patterns associated with fraudulent activities. Example: Detecting common patterns in out-of-network referral practices that might suggest fraudulent behavior.
 
+#### Graph Scale
+
+The "Scale" in the graph benchmarks refers to the size of the problem being solved. Specifically, it indicates the exponent in the graph size, which is 2 raised to the power of the "Scale" value.
+
+For example, the [Graph500](http://graph500.org) benchmark measures the performance of supercomputers in handling large-scale graph processing tasks, which are common in data-intensive applications like social network analysis, cybersecurity, and bioinformatics.
+
+In the recent graph 500 listings:
+
+-   A Scale of 42 means the graph has 2 to the 42nd power vertices (nodes).
+-   A Scale of 41 means the graph has 2 to the 41st power vertices.
+
+2 to the 42nd power equals 4,398,046,511,104. This means a graph with a Scale of 42 in the Graph500 benchmark would have over 4.39 trillion vertices.
+
+The larger the scale, the larger the graph, and thus, the more challenging the computation. This scale value helps to quantify the size and complexity of the graph problem that the supercomputer is capable of handling efficiently.
+
+#### GTEP (Billion of Traversed Edges per Second)
+
+A performance benchmark metric used primarily in the field of graph computing and data analysis. It quantifies the speed at which a system can traverse the edges in a graph data structure. One edge traversal is counted each time the system moves from one node to another along an edge connecting them.
+
+GTEP metric is crucial in evaluating the efficiency of graph processing systems, which are widely used in various applications like social network analysis, recommendation engines, and network topology analysis. Higher GTEP values indicate faster data processing capabilities, which is vital for handling large-scale, complex graph structures.
+
 #### Hamiltonian Cycle
 
 A cycle in a graph that visits each vertex exactly once and returns to the starting vertex. Determining if such a cycle exists in a graph is a well-known problem. Example: Used in solving routing problems like the traveling salesman problem.
@@ -151,6 +179,19 @@ A cycle in a graph that visits each vertex exactly once and returns to the start
 #### Heuristic
 
 A technique designed for solving a problem more quickly when classic methods are too slow, or for finding an approximate solution when classic methods fail to find any exact solution. Example: Used in A\* search algorithm for pathfinding and graph traversal.
+
+#### Homogeneous Graph
+A graph structure where all nodes (or vertices) are of the same type. This uniformity in node types distinguishes it from heterogeneous graphs where nodes have multiple types. An example is a citation graph where each node represents a scientific paper.
+
+Homogeneous graphs are ideal for identifying patterns or shapes within networks.  They are also used for benchmarking where the only key matric is number of nodes traversed per second.
+
+#### Hypergraph
+
+A type of graph that has edges that can connect more than two nodes.  In the [LPG](#labeled-property-graph) models used in this book, edges connect pairs of nodes.
+
+Although many academics favor the use of hypergraphs for theoretical research, there is no evidence they have better abilities to represent knowledge.  Any hypergraph can be converted into an LPG graph by converting edges with more than two connections into a node.  The concept of directionality is also much more complex in hypergraphs.
+
+Unlike distributed graphs like TigerGraph, MemGraph and DGraph, all of which work with binary edges, there are no distributed hypergraph products.
 
 #### Inbound Edge
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+        .node { fill: steelblue; }
+        .link { stroke: gray; stroke-width: 1.5px; }
+    </style>
+</head>
+<body>
+    <svg width="500" height="500"></svg>
+    <script>
+        // Create 20 random vertices
+        let vertices = Array.from({length: 20}, () => ({ 
+            x: Math.random() * 500, 
+            y: Math.random() * 500 
+        }));
+
+        // Function to calculate distance between two points
+        function distance(a, b) {
+            return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+        }
+
+        // Find three nearest neighbors for each vertex
+        let edges = [];
+        vertices.forEach((v, i) => {
+            let distances = vertices.map((w, j) => ({ index: j, dist: distance(v, w) }));
+            distances.sort((a, b) => a.dist - b.dist);
+            for (let k = 1; k <= 3; k++) {
+                edges.push({ source: i, target: distances[k].index });
+            }
+        });
+
+        // Set up D3.js to draw the graph
+        let svg = d3.select("svg");
+        let links = svg.selectAll(".link")
+            .data(edges)
+            .enter()
+            .append("line")
+            .attr("class", "link")
+            .attr("x1", d => vertices[d.source].x)
+            .attr("y1", d => vertices[d.source].y)
+            .attr("x2", d => vertices[d.target].x)
+            .attr("y2", d => vertices[d.target].y);
+
+        let nodes = svg.selectAll(".node")
+            .data(vertices)
+            .enter()
+            .append("circle")
+            .attr("class", "node")
+            .attr("r", 5)
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y);
+    </script>
+</body>
+</html>
