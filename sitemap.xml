@@ -91,6 +91,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/lessons/02-javascript-graph-libs/</loc>
+         <lastmod>2024-02-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/lessons/20-entity-resolution/</loc>
+         <lastmod>2024-02-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>

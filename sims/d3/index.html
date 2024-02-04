@@ -318,6 +318,8 @@
       
         
       
+        
+      
     
     
       
@@ -936,10 +938,18 @@
 
 
 <h1 id="d3-graph-test">D3 Graph Test</h1>
+<p><img alt="D3 Example Program" src="d3.png" width="400px" /></p>
+<p><a class="md-button md-button--primary" href="d3.html">Run the 20 Vertex D3 Demo</a></p>
+<p>D3 is a general-purpose charting library with a nice set
+of tools for drawing graph networks.  D3 generates
+SVG so if you know SVG it is easy to modify.  Because
+D3 is popular there are many example programs that GPT
+was trained on and GPT does a good job of generating
+high-quality D3.js code.</p>
 <h2 id="prompt-1">Prompt 1</h2>
 <div class="highlight"><pre><span></span><code>Create a d3.js program that displays a network graph
 of 20 vertices that are randomly placed on a 500x500 canvas.  
-Have each node be connected to the three nearest nodes.
+Make each node connected to the three nearest nodes.
 </code></pre></div>
 <h2 id="response-1">Response 1</h2>
 <p>Creating a D3.js program to display a network graph as described involves several steps. First, you'll need to generate 20 vertices with random positions on a 500x500 canvas. Then, for each vertex, you must find the three nearest vertices and draw lines (edges) to connect them. Here's a basic outline of the code you would write:</p>
@@ -950,7 +960,6 @@ Have each node be connected to the three nearest nodes.
 <li><strong>Draw the Graph</strong>: Use D3.js to draw the vertices and the edges connecting each vertex to its three nearest neighbors.</li>
 </ol>
 <p>Here's a simplified version of the code you might use:</p>
-<p><a class="md-button md-button--primary" href="d3.html">Run the 20 Vertex D3 Demo</a></p>
 <p>This code sets up a simple D3.js environment, generates random vertices, computes the nearest neighbors, and then uses D3.js to draw the nodes and edges on an SVG canvas. Note that this is a basic implementation and may need optimizations or enhancements based on your specific requirements.</p>
 <h2 id="prompt-force-directed-graph">Prompt Force Directed Graph</h2>
 <div class="highlight"><pre><span></span><code>OK, that is perfect.  Now can you do the same graph, but use a force-directed graph to adjust the 
@@ -973,7 +982,8 @@ spacing of the nodes on the canvas with D3?
 <p>This code creates an interactive force-directed graph where the nodes are connected to their three nearest neighbors. You can further tweak the parameters of the force simulation to achieve the desired behavior and appearance.</p>
 <p><a class="md-button md-button--primary" href="d3-force.html">Run the D3 Force Demo</a></p>
 <h2 id="forces-with-sliders">Forces with Sliders</h2>
-<p><a href="d3-force-sliders.html">Forces with Sliders Demo</a></p>
+<p><img alt="" src="d3-force-sliders.png" /></p>
+<p><a class="md-button md-button--primary" href="d3-force-sliders.html">Forces with Sliders Demo</a></p>
 
 
 
