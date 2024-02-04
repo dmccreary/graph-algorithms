@@ -1,12 +1,17 @@
 # JavaScript Graph Libraries
 
+What are the best JavaScript libraries for animating graph algorithms?
+Let's ask ChatGPT!
+
 ## Prompt
 
-```linenums=""
-I am looking for a lightweight JavaScript library for drawing network graphs. What are the most popular easy-to-use libraries in this area?
+```linenums="0"
+I am looking for a lightweight JavaScript library for drawing
+network graphs. What are the most popular easy-to-use
+libraries in this area?
 ```
 
-# ChatGPT Response
+## ChatGPT Response
 
 For drawing network graphs in JavaScript, there are several popular and lightweight libraries you can consider. Each of these libraries has its own set of features and strengths, making them suitable for various use cases. Here are some of the most widely used ones:
 
@@ -22,8 +27,11 @@ For drawing network graphs in JavaScript, there are several popular and lightwei
 
 Each of these libraries has its own strengths, so the best choice depends on your specific requirements, such as the size and complexity of the network graph, the level of interactivity needed, and your personal comfort with the library's API and documentation.
 
-## Integration Challenges with P5.js
+But wait.  Will we be able to allow students to add controls to
+step through the rendering?  Can they work with our other MicroSims?
+Once again, we can check with ChatGPT.
 
+## Integration Challenges with P5.js
 
 ```
 You Will any of these libraries work with p5.js?
@@ -46,3 +54,13 @@ For integration:
 -   **Custom Integration**: For a more seamless integration, you might need to write custom code to handle the interactions between p5.js and the network graph library, ensuring they don't conflict in their rendering or event handling.
 
 In summary, while direct integration of p5.js with these network graph libraries isn't straightforward due to overlapping functionalities, it's certainly possible with some custom coding and careful management of the canvas and DOM elements. The approach would largely depend on the specific requirements of your project and your comfort level with both libraries.
+
+## Findings
+
+This is a classic case of *"who owns the drawing canvas?"*.  For doing
+simple graph drawings, the standard network graph libraries may work fine.
+But for most of our detailed simulations, we may need fine-grain
+control of the canvas and the animation process.  Tools like
+p5.js are ideal for controlling animations.  p5.js allows detailed control of
+canvas setup, drawing and framerate.  Because p5.js is very popular, generative AI
+has ample sample programs in its training dataset.
