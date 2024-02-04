@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Network Graph</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <style type="text/css">
+        body {font-family: Arial, Helvetica, sans-serif;}
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            border: 1px solid lightgray;
+        }
+        .slider {
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="mynetwork"></div>
+<br>
+<label for="gravitationalConstant">Gravitational Constant:</label>
+<input type="range" id="gravitationalConstant" min="-3000" max="0" value="-2000" class="slider">
+<br>
+<label for="centralGravity">Central Gravity:</label>
+<input type="range" id="centralGravity" min="0" max="1" step="0.1" value="0.3" class="slider">
+<br>
+<label for="springLength">Spring Length:</label>
+<input type="range" id="springLength" min="0" max="200" value="95" class="slider">
+<br/>
+<a href="./">Back to Lesson Plan</a>
+<script type="text/javascript">
+    const nodes = [];
+    const edges = [];
+
+    // Generate 20 random nodes
+    for (let id = 1; id <= 20; id++) {
+        nodes.push({ id: id, label: 'Node ' + id });
+    }
+
+    // Function to calculate distance between two nodes
+    function distance(node1, node2) {
+        return Math.sqrt(Math.pow(node1.x - node2.x, 2) + Math.pow(node1.y - node2.y, 2));
+    }
+
+    // Placeholder for node positions
+    let positions = {};
+
+    // Connect each node to the three nearest nodes
+    nodes.forEach(node => {
+        let distances = nodes.map(other => ({ id: other.id, dist: distance(node, other) }));
+        distances.sort((a, b) => a.dist - b.dist);
+
+        for (let i = 1; i <= 3; i++) {
+            if (node.id !== distances[i].id) {
+                edges.push({ from: node.id, to: distances[i].id });
+            }
+        }
+    });
+
+    // Create a network
+    const container = document.getElementById('mynetwork');
+    const data = {
+        nodes: new vis.DataSet(nodes),
+        edges: new vis.DataSet(edges)
+    };
+
+    // Initial Physics Options
+    const options = {
+        physics: {
+            barnesHut: {
+                gravitationalConstant: -2000,
+                centralGravity: 0.3,
+                springLength: 95
+            }
+        }
+    };
+
+    // Create the network
+    const network = new vis.Network(container, data, options);
+
+    // Slider event listeners
+    document.getElementById('gravitationalConstant').addEventListener('input', function() {
+        network.setOptions({ physics: { barnesHut: { gravitationalConstant: parseInt(this.value) } } });
+    });
+
+    document.getElementById('centralGravity').addEventListener('input', function() {
+        network.setOptions({ physics: { barnesHut: { centralGravity: parseFloat(this.value) } } });
+    });
+
+    document.getElementById('springLength').addEventListener('input', function() {
+        network.setOptions({ physics: { barnesHut: { springLength: parseInt(this.value) } } });
+    });
+</script>
+
+</body>
+</html>
