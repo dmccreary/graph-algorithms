@@ -9,11 +9,12 @@ nav:
   - Home: index.md
   - About: about.md
   - Topics: topic-lists.md
-  - List of Graph Algorithms: list-of-algorithms.md
   - Lessons:
     - Introduction: lessons/index.md
     - Terminology: lessons/01-graph-terminology.md
-    - Labeled Property Graphs: lpg.md
+    - List of Graph Algorithms: lessons/list-of-algorithms.md
+    - JavaScript Libraries: lessons/02-javascript-graph-libs.md
+    - Labeled Property Graphs: lessons/lpg.md
     - Graph Query Languages: graph-query-languages.md
     - Relationship Traversal: relationship-traversal.md
     - Entity Resolution: lessons/20-entity-resolution.md
