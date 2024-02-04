@@ -453,6 +453,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#chatgpt-response" class="md-nav__link">
+    ChatGPT Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-challenges-with-p5js" class="md-nav__link">
+    Integration Challenges with P5.js
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#findings" class="md-nav__link">
+    Findings
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -792,6 +813,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#chatgpt-response" class="md-nav__link">
+    ChatGPT Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-challenges-with-p5js" class="md-nav__link">
+    Integration Challenges with P5.js
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#findings" class="md-nav__link">
+    Findings
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -811,44 +853,39 @@
 
 
 <h1 id="javascript-graph-libraries">JavaScript Graph Libraries</h1>
+<p>What are the best JavaScript libraries for animating graph algorithms?
+Let's ask ChatGPT!</p>
 <h2 id="prompt">Prompt</h2>
-<p><code>linenums=""
-I am looking for a lightweight JavaScript library for drawing network graphs. What are the most popular easy-to-use libraries in this area?
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code># ChatGPT Response
-
-For drawing network graphs in JavaScript, there are several popular and lightweight libraries you can consider. Each of these libraries has its own set of features and strengths, making them suitable for various use cases. Here are some of the most widely used ones:
-
-1.  **D3.js**: This is one of the most powerful and flexible libraries for creating complex, interactive data visualizations in web browsers. It&#39;s not exclusively for network graphs, but it&#39;s highly customizable and can create almost any type of data visualization.
-
-2.  **Cytoscape.js**: It&#39;s specifically designed for graph-based visualizations and network analysis. It&#39;s feature-rich, supporting various graph layouts, styles, and user interactions.
-
-3.  **Sigma.js**: This library is optimized for displaying large network graphs. It&#39;s easy to use and can render thousands of nodes smoothly. Sigma.js focuses on the rendering part and is great for interactive network visualizations.
-
-4.  **Vis.js**: Another easy-to-use library for dynamic, browser-based visualization. It&#39;s designed to handle large amounts of dynamic data and has simple and flexible APIs for network graphs.
-
-5.  **Force.js**: A smaller, more lightweight option focused on force-directed graph layouts. It&#39;s a good choice if you need something simple and aren&#39;t looking for a full suite of features.
-
-Each of these libraries has its own strengths, so the best choice depends on your specific requirements, such as the size and complexity of the network graph, the level of interactivity needed, and your personal comfort with the library&#39;s API and documentation.
-
-## Integration Challenges with P5.js
+<div class="highlight"><pre><span></span><code>I am looking for a lightweight JavaScript library for drawing
+network graphs. What are the most popular easy-to-use
+libraries in this area?
+</code></pre></div>
+<h2 id="chatgpt-response">ChatGPT Response</h2>
+<p>For drawing network graphs in JavaScript, there are several popular and lightweight libraries you can consider. Each of these libraries has its own set of features and strengths, making them suitable for various use cases. Here are some of the most widely used ones:</p>
+<ol>
+<li>
+<p><strong>D3.js</strong>: This is one of the most powerful and flexible libraries for creating complex, interactive data visualizations in web browsers. It's not exclusively for network graphs, but it's highly customizable and can create almost any type of data visualization.</p>
+</li>
+<li>
+<p><strong>Cytoscape.js</strong>: It's specifically designed for graph-based visualizations and network analysis. It's feature-rich, supporting various graph layouts, styles, and user interactions.</p>
+</li>
+<li>
+<p><strong>Sigma.js</strong>: This library is optimized for displaying large network graphs. It's easy to use and can render thousands of nodes smoothly. Sigma.js focuses on the rendering part and is great for interactive network visualizations.</p>
+</li>
+<li>
+<p><strong>Vis.js</strong>: Another easy-to-use library for dynamic, browser-based visualization. It's designed to handle large amounts of dynamic data and has simple and flexible APIs for network graphs.</p>
+</li>
+<li>
+<p><strong>Force.js</strong>: A smaller, more lightweight option focused on force-directed graph layouts. It's a good choice if you need something simple and aren't looking for a full suite of features.</p>
+</li>
+</ol>
+<p>Each of these libraries has its own strengths, so the best choice depends on your specific requirements, such as the size and complexity of the network graph, the level of interactivity needed, and your personal comfort with the library's API and documentation.</p>
+<p>But wait.  Will we be able to allow students to add controls to
+step through the rendering?  Can they work with our other MicroSims?
+Once again, we can check with ChatGPT.</p>
+<h2 id="integration-challenges-with-p5js">Integration Challenges with P5.js</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>You Will any of these libraries work with p5.js?
 </code></pre></div></td></tr></table></div>
-You Will any of these libraries work with p5.js?</code></p>
 <p>Integrating network graph libraries with p5.js depends on the specific requirements of your project and the compatibility of the libraries. p5.js is mainly a canvas drawing library, focusing on creative coding and making coding accessible for artists, designers, educators, and beginners. While p5.js doesn't natively support network graph visualizations, it can be used in conjunction with other JavaScript libraries that do.</p>
 <p>Among the libraries mentioned earlier:</p>
 <ol>
@@ -872,6 +909,14 @@ You Will any of these libraries work with p5.js?</code></p>
 </li>
 </ul>
 <p>In summary, while direct integration of p5.js with these network graph libraries isn't straightforward due to overlapping functionalities, it's certainly possible with some custom coding and careful management of the canvas and DOM elements. The approach would largely depend on the specific requirements of your project and your comfort level with both libraries.</p>
+<h2 id="findings">Findings</h2>
+<p>This is a classic case of <em>"who owns the drawing canvas?"</em>.  For doing
+simple graph drawings, the standard network graph libraries may work fine.
+But for most of our detailed simulations, we may need fine-grain
+control of the canvas and the animation process.  Tools like
+p5.js are ideal for controlling animations.  p5.js allows detailed control of
+canvas setup, drawing and framerate.  Because p5.js is very popular, generative AI
+has ample sample programs in its training dataset.</p>
 
 
   
