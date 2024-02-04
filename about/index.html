@@ -55,6 +55,16 @@
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-BFGTE9XVHQ"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-BFGTE9XVHQ",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-BFGTE9XVHQ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -295,6 +305,13 @@
         <li class="md-nav__item">
   <a href="#focus-on-interactive-simulations" class="md-nav__link">
     Focus on Interactive Simulations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    Acknowledgments
   </a>
   
 </li>
@@ -624,6 +641,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    Acknowledgments
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -643,12 +667,32 @@
 
 
 <h1 id="about-the-graph-algorithms-book">About the Graph Algorithms Book</h1>
-<p>Could the patent on a single graph algorithm really be worth 350 million dollars?  Yes, it can!</p>
+<p>How important are graph algorithms?
+Could a single graph algorithm really be worth $350 million?  Yes, it can!</p>
 <p>When Larry Page was a student at
-Stanford he created the PageRank algorithm for predicting how high a page should be ranked in a search result.  The patent, which was owned by Stanford was licensed to Google for stock.  When Google went public the stock was valued at $350 million!</p>
+Stanford he created the <a href="https://en.wikipedia.org/wiki/PageRank">PageRank</a> algorithm for predicting how high a page should be ranked in a search result.  The patent, which was owned by Stanford was licensed to Google for stock.  When Google went public the stock was valued at $350 million!</p>
 <p>This story is just one example of why graph algorithms are relevant to modeling the world around us.  In the graph community, we have the expression <em>"graphs are everywhere."</em>  This statement reflects the fact that graph data models, particularly the <a href="../glossary/#labeled-property-graph">labeled property graph</a> model.</p>
 <h2 id="focus-on-interactive-simulations">Focus on Interactive Simulations</h2>
+<p>The reason this book was created was to address the lack of an
+easy-to-customize interactive website on graph algorithms that includes
+modern work on graph machine learning.  Our goal is to allow anyone who wants to teach graph algorithms the ability to use
+this content for their courses.</p>
+<p>Our focus is not to just describe the algorithms with descriptive text but to
+allow students to have fine-grain control of animations of the algorithms
+in action.  In the past, this would be too expensive to create and maintain
+these animations.  However, with the assistance of generative AI tools,
+these animations are easy to create, easy to customize and easy to
+maintain.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>I want to thank my colleagues, <a href="https://www.linkedin.com/in/arunbatchu/">Arun Batchu</a>(https://www.linkedin.com/in/arunbatchu/), <a href="https://www.linkedin.com/in/parker-erickson/">Parker Erickson</a> and <a href="https://www.linkedin.com/in/jonherke/">Jon Herke</a> for their encouragement in the creation of this website.</p>
+<p>Much of the work on building small simulations and animations (MicroSims) were created by <a href="https://www.linkedin.com/in/valockhart/">Val Lockhart</a> and <a href="https://www.linkedin.com/in/troyapeterson/">Troy Peterson</a>.  Our work leverages their innovations and we are grateful for their work.</p>
+<p>I also want to acknowledge all the people who contributed to open-source
+libraries such as <a href="https://p5js.org/">p5.js</a>, <a href="https://visjs.org/">vis.js</a> and 
+the <a href="https://d3-graph-gallery.com/network.html">D3 Network Graph</a>.  This
+website would not be possible without these tools.</p>
 
+
+  
 
 
 
