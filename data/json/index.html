@@ -18,7 +18,7 @@
         <link rel="prev" href="../us-cities/">
       
       
-        <link rel="next" href="../../sims/">
+        <link rel="next" href="../json-std/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -366,6 +366,10 @@
           
         
       
+        
+          
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -505,6 +509,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json-std/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JSON Data Standard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -608,6 +632,25 @@
   
   <span class="md-ellipsis">
     How We Built This Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
   </span>
   
 
@@ -739,7 +782,10 @@
 
 
 <h1 id="generating-a-json-data-file">Generating a JSON Data File</h1>
-<p><img alt="" src="json.png" /></p>
+<p><img alt="" src="json.png" width="350pt" /></p>
+<p>In this section, we will demonstrate how we can use generative AI
+to generate a JSON data file and then use that JSON file
+to load graph data.</p>
 <p><a class="md-button md-button--primary" href="json.html">Run the JSON file reader MicroSim</a>
 <a href="https://editor.p5js.org/dmccreary/sketches/ODXILDo8c">Edit MicroSim</a></p>
 <h2 id="sample-prompt">Sample prompt</h2>
@@ -839,9 +885,7 @@ syntax validator whenever possible.</p>
 <span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// demo of loading graph data from a JSON file</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// demo of loading graph data from a JSON file</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">graphData</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -880,8 +924,38 @@ syntax validator whenever possible.</p>
 <span class="w">    </span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Loading data...&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
-
-<span class="c1">// You can add additional functions or interactions here if needed</span>
+</code></pre></div></td></tr></table></div>
+<p>Note that the following line:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">graphData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadJSON</span><span class="p">(</span><span class="s1">&#39;cities.json&#39;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Needs to be customized for your application.  In general, we
+will create applications that load test data from a file called <code>graph.json</code>.</p>
+<p>That JSON file has two components: nodes and edges.
+The nodes and edges each contain an array of objects.
+We will use the following format:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;nodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node 3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;edges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node 3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node 3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -929,13 +1003,13 @@ syntax validator whenever possible.</p>
         
         
           
-          <a href="../../sims/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
+          <a href="../json-std/" class="md-footer__link md-footer__link--next" aria-label="Next: JSON Data Standard" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                JSON Data Standard
               </div>
             </div>
             <div class="md-footer__button md-icon">
