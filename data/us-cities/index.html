@@ -456,6 +456,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    Sample Prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-table-generate-by-chatgpt" class="md-nav__link">
+    Sample Table Generate by ChatGPT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-of-reading-json-file" class="md-nav__link">
     Example of Reading JSON File
   </a>
@@ -686,6 +700,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    Sample Prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-table-generate-by-chatgpt" class="md-nav__link">
+    Sample Table Generate by ChatGPT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-of-reading-json-file" class="md-nav__link">
     Example of Reading JSON File
   </a>
@@ -712,6 +740,190 @@
 
 <h1 id="generating-data-for-us-cities">Generating Data for US Cities</h1>
 <p><img alt="" src="us-cities.png" /></p>
+<p>Understanding graph algorithms such as the traveling salesperson algorithm requires
+we create a realistic graph that represents geo-locations.  But
+manually typing the names of cities and their longitude and latitude
+is a slow and painful process.  But generative AI can help us.
+It is very good at generating realistic-looking synthetic data.</p>
+<p>In this example, we will generate a small geospatial dataset we will use in this course for demonstrating graph algorithms.  We chose a dataset that we know is referenced frequently on the web: large US cities.</p>
+<h2 id="sample-prompt">Sample Prompt</h2>
+<div class="highlight"><pre><span></span><code>Create a table of the top 20 metro areas in the US.  Add one row in the table for each metro area. Create the following columns:
+
+1. Name of the largest city in the metro area
+2. Population
+3. Longitude
+4. Latitude
+</code></pre></div>
+<p>You will note that we didn't really need seven digits of precision, but we can ask
+ChatGPT to reduce the precision later.</p>
+<h2 id="sample-table-generate-by-chatgpt">Sample Table Generate by ChatGPT</h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Metropolitan Area</th>
+<th>Population</th>
+<th>Longitude</th>
+<th>Latitude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>New York-Newark-Jersey City</td>
+<td>19,216,182</td>
+<td>-74.0060°</td>
+<td>40.7128°</td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Los Angeles-Long Beach-Anaheim</td>
+<td>13,214,799</td>
+<td>-118.2437°</td>
+<td>34.0522°</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Chicago-Naperville-Elgin</td>
+<td>9,458,539</td>
+<td>-87.6298°</td>
+<td>41.8781°</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Dallas-Fort Worth-Arlington</td>
+<td>7,573,136</td>
+<td>-96.7970°</td>
+<td>32.7767°</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Houston-The Woodlands-Sugar Land</td>
+<td>7,122,240</td>
+<td>-95.3698°</td>
+<td>29.7604°</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Washington-Arlington-Alexandria</td>
+<td>6,280,487</td>
+<td>-77.0369°</td>
+<td>38.9072°</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Miami-Fort Lauderdale-Pompano Beach</td>
+<td>6,166,488</td>
+<td>-80.1918°</td>
+<td>25.7617°</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Philadelphia-Camden-Wilmington</td>
+<td>6,102,434</td>
+<td>-75.1652°</td>
+<td>39.9526°</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Atlanta-Sandy Springs-Alpharetta</td>
+<td>6,018,744</td>
+<td>-84.3863°</td>
+<td>33.7490°</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Phoenix-Mesa-Chandler</td>
+<td>4,948,203</td>
+<td>-112.0740°</td>
+<td>33.4484°</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Boston-Cambridge-Newton</td>
+<td>4,873,019</td>
+<td>-71.0589°</td>
+<td>42.3601°</td>
+</tr>
+<tr>
+<td>12</td>
+<td>San Francisco-Oakland-Berkeley</td>
+<td>4,731,803</td>
+<td>-122.4194°</td>
+<td>37.7749°</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Riverside-San Bernardino-Ontario</td>
+<td>4,650,631</td>
+<td>-117.3755°</td>
+<td>34.1083°</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Detroit-Warren-Dearborn</td>
+<td>4,326,442</td>
+<td>-83.0458°</td>
+<td>42.3314°</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Seattle-Tacoma-Bellevue</td>
+<td>3,979,845</td>
+<td>-122.3321°</td>
+<td>47.6062°</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Minneapolis-St. Paul-Bloomington</td>
+<td>3,640,043</td>
+<td>-93.2650°</td>
+<td>44.9778°</td>
+</tr>
+<tr>
+<td>17</td>
+<td>San Diego-Chula Vista-Carlsbad</td>
+<td>3,338,330</td>
+<td>-117.1611°</td>
+<td>32.7157°</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Tampa-St. Petersburg-Clearwater</td>
+<td>3,194,831</td>
+<td>-82.5415°</td>
+<td>27.9506°</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Denver-Aurora-Lakewood</td>
+<td>2,963,821</td>
+<td>-104.9903°</td>
+<td>39.7392°</td>
+</tr>
+<tr>
+<td>20</td>
+<td>St. Louis</td>
+<td>2,803,707</td>
+<td>-90.1994°</td>
+<td>38.6270°</td>
+</tr>
+</tbody>
+</table>
+<p>We also can ask ChatGPT to reformat this table as a <a href="us-cities.json">JSON file</a>
+for download.  This is the type of file format we will use in our other
+demos.</p>
+<p>One word of caution.  ChatGPT frequently will add an extra comma to the
+end of a record set.  This will cause a load error.  We suggest
+you view the JSON file in a tool that checks syntax or use
+a JSON syntax checker.</p>
 <p><a class="md-button md-button--primary" href="us-cities.html">Run the US Cities Map MicroSim</a>
 <a href="https://editor.p5js.org/dmccreary/sketches/7_BOWzJak">Edit</a></p>
 <p><a href="https://chat.openai.com/share/a805f2cc-d10f-4f80-b47e-5d63ba3f005e">ChatGPT Dialog</a></p>
