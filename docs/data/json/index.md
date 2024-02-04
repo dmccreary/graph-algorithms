@@ -1,6 +1,10 @@
 # Generating a JSON Data File
 
-![](./json.png)
+![](./json.png){ width="350pt"}
+
+In this section, we will demonstrate how we can use generative AI
+to generate a JSON data file and then use that JSON file
+to load graph data.
 
 [Run the JSON file reader MicroSim](json.html){ .md-button .md-button--primary }
 [Edit MicroSim](https://editor.p5js.org/dmccreary/sketches/ODXILDo8c)
@@ -95,7 +99,32 @@ function draw() {
     text("Loading data...", 10, height / 2);
   }
 }
+```
 
-// You can add additional functions or interactions here if needed
+Note that the following line:
 
+```js
+graphData = loadJSON('cities.json');
+```
+
+Needs to be customized for your application.  In general, we
+will create applications that load test data from a file called ```graph.json```.
+
+That JSON file has two components: nodes and edges.
+The nodes and edges each contain an array of objects.
+We will use the following format:
+
+```json
+{
+  "nodes": [
+    { "name": "Node 1", "x": 100, "y": 100 },
+    { "name": "Node 2", "x": 200, "y": 200 },
+    { "name": "Node 3", "x": 100, "y": 300 }
+  ],
+  "edges": [
+    { "from": "Node 1", "to": "Node 2", "weight": 10 },
+    { "from": "Node 2", "to": "Node 3", "weight": 20 },
+    { "from": "Node 3", "to": "Node 1", "weight": 30 }
+  ]
+}
 ```

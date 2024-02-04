@@ -2,7 +2,7 @@
 let graphData;
 
 function preload() {
-  graphData = loadJSON('graph.json'); // Make sure to replace with your actual JSON file name
+  graphData = loadJSON('graph.json');
 }
 
 function setup() {
@@ -23,16 +23,16 @@ function draw() {
       node.y = round(random(10, 390));
       circle(node.x, node.y, 20);
       fill('black');
-      text(city.name, city.x + 12, city.y + 4);
+      text(node.name, node.x + 12, node.y + 4);
     });
 
     // Draw the edges
     stroke('black');
     strokeWeight(3);
     graphData.edges.forEach(edge => {
-      let fromCity = graphData.cities.find(city => city.name === edge.from);
-      let toCity = graphData.cities.find(city => city.name === edge.to);
-      line(fromCity.x, fromCity.y, toCity.x, toCity.y);
+      let sourceNode = graphData.nodes.find(node => node.name === edge.source);
+      let targetNode = graphData.nodes.find(node => node.name === edge.target);
+      line(sourceNode.x, sourceNode.y, targetNode.x, targetNode.y);
     });
   } else {
     fill('black');

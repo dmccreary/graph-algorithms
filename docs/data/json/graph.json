@@ -1,0 +1,12 @@
+{
+    "nodes": [
+      { "id": 1, "name": "Node 1", "x": 100, "y": 100 },
+      { "id": 1, "name": "Node 2", "x": 200, "y": 200 },
+      { "id": 1, "name": "Node 3", "x": 100, "y": 300 }
+    ],
+    "edges": [
+      { "from": 1, "to": 2, "weight": 10 },
+      { "from": 2, "to": 3, "weight": 20 },
+      { "from": 3, "to": 1, "weight": 30 }
+    ]
+  }

@@ -22,6 +22,7 @@ nav:
     - Introduction: data/index.md
     - US Cities: data/us-cities/index.md
     - Loading JSON Data: data/json/index.md
+    - JSON Data Standard: data/json-std/index.md
   - Sims:
     - Introduction: sims/index.md
     - Degree: sims/degree/index.md
@@ -36,11 +37,7 @@ nav:
     - D3: sims/d3/index.md
     - Vis.js: sims/vis/index.md
   - How We Built This Site: how-we-built-this-site.md
-
-
-
-
-
+  - References: references.md
   - Glossary: glossary.md
   - License: license.md
   - Contact: contact.md

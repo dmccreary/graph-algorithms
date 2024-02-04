@@ -30,7 +30,6 @@ ChatGPT to reduce the precision later.
 | Rank | Metropolitan Area | Population | Longitude | Latitude |
 | --- |  --- |  --- |  --- |  --- |
 | 1 | New York-Newark-Jersey City | 19,216,182 | \-74.0060° | 40.7128° |
-| --- |  --- |  --- |  --- |  --- |
 | 2 | Los Angeles-Long Beach-Anaheim | 13,214,799 | \-118.2437° | 34.0522° |
 | 3 | Chicago-Naperville-Elgin | 9,458,539 | \-87.6298° | 41.8781° |
 | 4 | Dallas-Fort Worth-Arlington | 7,573,136 | \-96.7970° | 32.7767° |
@@ -55,10 +54,11 @@ We also can ask ChatGPT to reformat this table as a [JSON file](us-cities.json)
 for download.  This is the type of file format we will use in our other
 demos.
 
-One word of caution.  ChatGPT frequently will add an extra comma to the
-end of a record set.  This will cause a load error.  We suggest
-you view the JSON file in a tool that checks syntax or use
-a JSON syntax checker.
+!!! Caution
+    ChatGPT frequently will add an extra comma to the
+    end of a record set.  This will cause a load error.  We suggest
+    you view the JSON file in a tool that checks syntax or use
+    a JSON syntax checker.
 
 [Run the US Cities Map MicroSim](./us-cities.html){ .md-button .md-button--primary }
 [Edit](https://editor.p5js.org/dmccreary/sketches/7_BOWzJak)
