@@ -36,3 +36,4 @@ The site code with papers has an [entity resolution leaderboard](https://papersw
 ## References
 
 * [Wikipedia Entity Resolution](https://en.wikipedia.org/wiki/Record_linkage)
+* [Entity Matching using Large Language Models](https://arxiv.org/pdf/2310.11244v1.pdf)
