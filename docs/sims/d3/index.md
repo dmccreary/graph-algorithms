@@ -1,11 +1,22 @@
 # D3 Graph Test
 
+![D3 Example Program](./d3.png){ width="400px"}
+
+[Run the 20 Vertex D3 Demo](./d3.html){ .md-button .md-button--primary }
+
+D3 is a general-purpose charting library with a nice set
+of tools for drawing graph networks.  D3 generates
+SVG so if you know SVG it is easy to modify.  Because
+D3 is popular there are many example programs that GPT
+was trained on and GPT does a good job of generating
+high-quality D3.js code.
+
 ## Prompt 1
 
 ```linenums="0"
 Create a d3.js program that displays a network graph
 of 20 vertices that are randomly placed on a 500x500 canvas.  
-Have each node be connected to the three nearest nodes.
+Make each node connected to the three nearest nodes.
 ```
 
 ## Response 1
@@ -19,7 +30,6 @@ Creating a D3.js program to display a network graph as described involves severa
 
 Here's a simplified version of the code you might use:
 
-[Run the 20 Vertex D3 Demo](./d3.html){ .md-button .md-button--primary }
 
 This code sets up a simple D3.js environment, generates random vertices, computes the nearest neighbors, and then uses D3.js to draw the nodes and edges on an SVG canvas. Note that this is a basic implementation and may need optimizations or enhancements based on your specific requirements.
 
@@ -48,4 +58,6 @@ This code creates an interactive force-directed graph where the nodes are connec
 
 ## Forces with Sliders
 
-[Forces with Sliders Demo](d3-force-sliders.html)
+![](d3-force-sliders.png)
+
+[Forces with Sliders Demo](d3-force-sliders.html){ .md-button .md-button--primary }

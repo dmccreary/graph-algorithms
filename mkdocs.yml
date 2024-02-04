@@ -16,6 +16,7 @@ nav:
     - Labeled Property Graphs: lpg.md
     - Graph Query Languages: graph-query-languages.md
     - Relationship Traversal: relationship-traversal.md
+    - Entity Resolution: lessons/20-entity-resolution.md
   - Generating Graph Data:
     - Introduction: data/index.md
     - US Cities: data/us-cities/index.md

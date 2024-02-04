@@ -6,6 +6,7 @@
         body {font-family: Arial, Helvetica, sans-serif;}
         .node { fill: steelblue; }
         .link { stroke: gray; stroke-width: 1.5px; }
+        svg {border: 1px solid lightgray;}
     </style>
 </head>
 <body>
@@ -14,8 +15,8 @@
         // Create 20 random vertices
         let vertices = Array.from({length: 20}, (_, i) => ({ 
             id: i, 
-            x: Math.random() * 500, 
-            y: Math.random() * 500 
+            x: 10 + Math.random() * 480, 
+            y: 10 + Math.random() * 480 
         }));
 
         // Function to calculate distance between two points
@@ -85,5 +86,7 @@
             d.fy = null;
         }
     </script>
+    <p>Drag nodes to move</p>
+    <a href="./">Back to Lesson Plan</a>
 </body>
 </html>

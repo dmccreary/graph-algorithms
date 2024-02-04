@@ -73,3 +73,7 @@ springLength
 ```
 
 [Vis Force Sliders](./vis-force-sliders.html){ .md-button .md-button--primary }
+
+## Breath First Search Demo
+
+[BFS Demo](./bfs.html)
