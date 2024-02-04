@@ -32,6 +32,7 @@ nav:
     - Matching: sims/matching/index.md
     - Data Element Matching: sims/data-element-match/index.md
     - D3: sims/d3/index.md
+    - Vis.js: sims/vis/index.md
   - How We Built This Site: how-we-built-this-site.md
 
 

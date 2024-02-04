@@ -3,7 +3,9 @@
 ## Prompt 1
 
 ```linenums="0"
-Create a d3.js program that displays a network graph of 20 vertices that are randomly placed on a 500x500 canvas.  Have each node be connected to the three nearest nodes.
+Create a d3.js program that displays a network graph
+of 20 vertices that are randomly placed on a 500x500 canvas.  
+Have each node be connected to the three nearest nodes.
 ```
 
 ## Response 1
