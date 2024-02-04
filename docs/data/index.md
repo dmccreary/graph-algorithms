@@ -25,7 +25,7 @@ Round all numbers to three significant places.
 If you are happy with the results you can issue
 the following prompt:
 
-```linenums="0
+```linenums="0"
 Return a downloadable JSON file of this table.
 ```
 
