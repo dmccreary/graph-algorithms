@@ -12,13 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/shortest-path/">
+        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/lessons/10-rules/">
       
       
-        <link rel="prev" href="../bfs/">
+        <link rel="prev" href="../../relationship-traversal/">
       
       
-        <link rel="next" href="../spanning-tree/">
+        <link rel="next" href="../20-entity-resolution/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Shortest Path - Graph Algorithms</title>
+        <title>Business Rule Execution - Graph Algorithms</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#shortest-path" class="md-skip">
+        <a href="#executing-business-rules-in-graph-databases" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Shortest Path
+              Business Rule Execution
             
           </span>
         </div>
@@ -293,6 +293,8 @@
       
   
   
+    
+  
   
     
     
@@ -319,28 +321,214 @@
       
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="../../lessons/" class="md-nav__link">
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Lessons
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lessons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-graph-terminology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terminology
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../list-of-algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    List of Graph Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-javascript-graph-libs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lpg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Labeled Property Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-query-languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph Query Languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../relationship-traversal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relationship Traversal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Business Rule Execution
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-entity-resolution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entity Resolution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -403,8 +591,6 @@
       
   
   
-    
-  
   
     
     
@@ -459,332 +645,28 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Sims
   </span>
   
 
-            </a>
-            
-              <label class="md-nav__link " for="__nav_6">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Sims
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../degree/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Degree
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../weighted-graph/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Weighted
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../force/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Force Directed Graph Layout
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bfs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Breath First Search
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Shortest Path
-  </span>
+    </a>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Shortest Path
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#background" class="md-nav__link">
-    Background
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-dijkstras-algorithm-works" class="md-nav__link">
-    How Dijkstra's Algorithm Works:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#characteristics" class="md-nav__link">
-    Characteristics:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#real-world-applications" class="md-nav__link">
-    Real-World Applications:
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../spanning-tree/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Spanning Tree
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../page-rank/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    PageRank
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../matching/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Matching
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../data-element-match/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Data Element Matching
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../d3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    D3
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Vis.js
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -905,42 +787,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#background" class="md-nav__link">
-    Background
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-dijkstras-algorithm-works" class="md-nav__link">
-    How Dijkstra's Algorithm Works:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#characteristics" class="md-nav__link">
-    Characteristics:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#real-world-applications" class="md-nav__link">
-    Real-World Applications:
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -957,62 +803,41 @@
   
 
 
-<h1 id="shortest-path">Shortest Path</h1>
-<p>Given a graph, how do we find the shortest path between two points on the graph?</p>
-<p>The classic way to do this is to use Dijkstra's shortest path algorithm.</p>
-<p>In this lesson, we describe what Dijkstra's shortest path algorithm is and how it is used to solve real-world practical graph analytics problems.</p>
-<h2 id="background">Background</h2>
-<p>Dijkstra's shortest path algorithm is a famous algorithm in computer science, used for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956.</p>
-<h2 id="how-dijkstras-algorithm-works">How Dijkstra's Algorithm Works:</h2>
+<h1 id="executing-business-rules-in-graph-databases">Executing Business Rules In Graph Databases</h1>
+<p>Graph databases can be highly effective for executing business rules due to their structure and capabilities. Here's how they can be used in this context:</p>
 <ol>
 <li>
-<p><strong>Initialization</strong>: It starts with a source node and initializes the shortest path to all other nodes as infinity (or a very high value), and to the source node as 0.</p>
+<p><strong>Modeling Complex Relationships</strong>: Graph databases excel at handling complex, interrelated data. They can represent intricate business rules that involve multiple entities and their relationships, making it easier to understand and enforce these rules.</p>
 </li>
 <li>
-<p><strong>Exploration of Neighbors</strong>: The algorithm then repeatedly selects the node with the smallest known distance from the source node that hasn't been processed yet.</p>
+<p><strong>Flexibility in Rule Definition</strong>: Business rules often involve relationships between different entities (like customers, products, and transactions). Graph databases allow for a flexible definition of these rules because they naturally accommodate complex relationships without requiring extensive joins like in relational databases.</p>
 </li>
 <li>
-<p><strong>Distance Update</strong>: For the selected node, it checks all its neighbors. If the sum of the current shortest distance to that node and the weight of the edge to a neighbor is less than the known distance to the neighbor, it updates the shortest distance to the neighbor.</p>
+<p><strong>Efficient Query Performance</strong>: When business rules require traversing relationships (like finding all customers who bought a particular set of products and then recommending similar products), graph databases can perform these tasks more efficiently than traditional databases due to their structure.</p>
 </li>
 <li>
-<p><strong>Mark as Processed</strong>: The node is then marked as processed, meaning it will not be checked again.</p>
+<p><strong>Real-time Insights and Decision Making</strong>: Graph databases can provide real-time insights, which is crucial for executing business rules that depend on the current state of data, such as fraud detection or real-time recommendations.</p>
 </li>
 <li>
-<p><strong>Repeat</strong>: Steps 2-4 are repeated until all nodes have been processed or the shortest path to all reachable nodes have been found.</p>
+<p><strong>Scalability</strong>: As the complexity and volume of data grow, graph databases can scale more effectively than traditional databases for certain types of queries, especially those involving deep relationships.</p>
+</li>
+<li>
+<p><strong>Pattern Recognition and Fraud Detection</strong>: Business rules often include detecting unusual patterns, which could indicate fraud or other anomalies. Graph databases can efficiently identify these patterns due to their ability to quickly traverse connected data.</p>
+</li>
+<li>
+<p><strong>Data Governance and Compliance</strong>: By mapping the relationships and dependencies between various data points, graph databases can help organizations better adhere to business rules and regulations, ensuring compliance.</p>
+</li>
+<li>
+<p><strong>Personalization and Recommendation Engines</strong>: For rules that involve personalizing content or recommendations to users, graph databases can dynamically adjust to changes in user behavior or preferences, providing more accurate and timely recommendations.</p>
+</li>
+<li>
+<p><strong>Impact Analysis</strong>: When a business rule changes, understanding its impact on various parts of the organization is crucial. Graph databases can help in quickly identifying all affected entities and relationships.</p>
+</li>
+<li>
+<p><strong>Integration with Other Systems</strong>: Graph databases can integrate with other systems like Business Intelligence (BI) tools or Machine Learning models, enhancing the capability to execute complex business rules.</p>
 </li>
 </ol>
-<h2 id="characteristics">Characteristics:</h2>
-<ul>
-<li><strong>Greedy Algorithm</strong>: It makes the optimal choice at each step, aiming to find the global optimum.</li>
-<li><strong>Single-Source Shortest Paths</strong>: It finds the shortest paths from a single source node to all other nodes.</li>
-<li><strong>Non-Negative Weights</strong>: It works correctly only when all edge weights are non-negative.</li>
-</ul>
-<h2 id="real-world-applications">Real-World Applications:</h2>
-<ol>
-<li>
-<p><strong>GPS and Routing Systems</strong>: One of the most common applications is in GPS systems for finding the shortest path between two locations on a map.</p>
-</li>
-<li>
-<p><strong>Network Routing Protocols</strong>: In computer networks, routing protocols like OSPF (Open Shortest Path First) use Dijkstra's algorithm to calculate the shortest path for data packets.</p>
-</li>
-<li>
-<p><strong>Social Networking Applications</strong>: Finding shortest paths in social networks, like the degrees of separation between people.</p>
-</li>
-<li>
-<p><strong>Urban Planning and Traffic Management</strong>: Used for analyzing traffic patterns and planning road networks in urban areas.</p>
-</li>
-<li>
-<p><strong>Telecommunications</strong>: Used in telephone network systems to route calls through the network in the most efficient way.</p>
-</li>
-<li>
-<p><strong>Biological Networks</strong>: In bioinformatics, it's used to understand and analyze the pathways in biological networks.</p>
-</li>
-<li>
-<p><strong>Robotics and Artificial Intelligence</strong>: For pathfinding in robotics and certain AI applications, like navigating through a grid or network.</p>
-</li>
-</ol>
-<p>Dijkstra's algorithm is highly versatile and forms the basis of many complex systems and applications in the real world, where the efficient traversal of a graph is necessary.</p>
-<p><a href="https://chat.openai.com/c/5749b49c-71d3-43d1-aa8b-a7ed6528d7b8">ChatGPT Dialog</a></p>
+<p>By leveraging these capabilities, organizations can implement and enforce complex business rules more effectively, leading to better decision-making, enhanced customer experiences, and improved operational efficiency.</p>
 
 
   
@@ -1042,7 +867,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../bfs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Breath First Search" rel="prev">
+          <a href="../../relationship-traversal/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Relationship Traversal" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1052,20 +877,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Breath First Search
+                Relationship Traversal
               </div>
             </div>
           </a>
         
         
           
-          <a href="../spanning-tree/" class="md-footer__link md-footer__link--next" aria-label="Next: Spanning Tree" rel="next">
+          <a href="../20-entity-resolution/" class="md-footer__link md-footer__link--next" aria-label="Next: Entity Resolution" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Spanning Tree
+                Entity Resolution
               </div>
             </div>
             <div class="md-footer__button md-icon">
