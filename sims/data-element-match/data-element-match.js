@@ -11,9 +11,13 @@ var angle = 0; // percent done with animate
 var top_margin = 60;
 var src_col_x = 50;
 var tar_col_x = 400;
+let canvasWidth = 600;
+let drawHeight = 450;
+let canvasHeight=500;
 
+// for full screen use widdowWidth and windowHeight
 function setup() {
-  const canvas = createCanvas(windowWidth, windowHeight);
+  const canvas = createCanvas(canvasWidth, canvasHeight);
   var mainElement = document.querySelector('main');
   canvas.parent(mainElement);
   // we want this [2, 3, 1, 6, 8, 9, 5, 7, 0, 4]
