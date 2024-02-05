@@ -1,10 +1,10 @@
-# Generating Datasets for Graph Algorithms
+# Using Generative AI to Create Datasets for Graph Algorithms
 
 The best way to quickly understand graph algorithms is to
-have high-quality data sets to help you visualize how
+have high-quality datasets to help you visualize how
 the graph algorithms work step-by-step.
 
-We will explore how to use generative AI to generate data sets.
+This section demonstrates how to use generative AI to generate data sets.
 
 ## Sample Prompt
 
