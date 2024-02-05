@@ -1,9 +1,6 @@
 # Data Element Matcher
 
-<figure markdown>
-   ![Image Name](./image.png){ width="400" }
-   <figcaption>Figure caption.</figcaption>
-</figure>
+![Image Name](./data-element-match.png){ width="400" }
 
 [Run the Data Element Match Demo](./data-element-match.html){ .md-button .md-button--primary }
 

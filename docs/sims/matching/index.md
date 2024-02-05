@@ -1,6 +1,6 @@
 # Graph Matching
 
-1[](./student-mentor-match.png)
+![Student Matching](./student-mentor-match.png)
 
 Many people don't list matching problems as simply graph problems.
 Perhaps this is because people try to use spreadsheets to attack
