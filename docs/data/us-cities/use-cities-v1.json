@@ -1,0 +1,142 @@
+[
+    {
+        "Rank": 1,
+        "Metropolitan Area": "New York",
+        "Population": 19216000,
+        "Longitude": -74.006,
+        "Latitude": 40.713
+    },
+    {
+        "Rank": 2,
+        "Metropolitan Area": "Los Angeles",
+        "Population": 13215000,
+        "Longitude": -118.244,
+        "Latitude": 34.052
+    },
+    {
+        "Rank": 3,
+        "Metropolitan Area": "Chicago",
+        "Population": 9459000,
+        "Longitude": -87.63,
+        "Latitude": 41.878
+    },
+    {
+        "Rank": 4,
+        "Metropolitan Area": "Dallas",
+        "Population": 7573000,
+        "Longitude": -96.797,
+        "Latitude": 32.777
+    },
+    {
+        "Rank": 5,
+        "Metropolitan Area": "Houston",
+        "Population": 7122000,
+        "Longitude": -95.37,
+        "Latitude": 29.76
+    },
+    {
+        "Rank": 6,
+        "Metropolitan Area": "Washington",
+        "Population": 6280000,
+        "Longitude": -77.037,
+        "Latitude": 38.907
+    },
+    {
+        "Rank": 7,
+        "Metropolitan Area": "Miami",
+        "Population": 6166000,
+        "Longitude": -80.192,
+        "Latitude": 25.762
+    },
+    {
+        "Rank": 8,
+        "Metropolitan Area": "Philadelphia",
+        "Population": 6102000,
+        "Longitude": -75.165,
+        "Latitude": 39.953
+    },
+    {
+        "Rank": 9,
+        "Metropolitan Area": "Atlanta",
+        "Population": 6019000,
+        "Longitude": -84.386,
+        "Latitude": 33.749
+    },
+    {
+        "Rank": 10,
+        "Metropolitan Area": "Phoenix",
+        "Population": 4948000,
+        "Longitude": -112.074,
+        "Latitude": 33.448
+    },
+    {
+        "Rank": 11,
+        "Metropolitan Area": "Boston",
+        "Population": 4873000,
+        "Longitude": -71.059,
+        "Latitude": 42.36
+    },
+    {
+        "Rank": 12,
+        "Metropolitan Area": "San Francisco",
+        "Population": 4732000,
+        "Longitude": -122.419,
+        "Latitude": 37.775
+    },
+    {
+        "Rank": 13,
+        "Metropolitan Area": "Riverside",
+        "Population": 4651000,
+        "Longitude": -117.376,
+        "Latitude": 34.108
+    },
+    {
+        "Rank": 14,
+        "Metropolitan Area": "Detroit",
+        "Population": 4326000,
+        "Longitude": -83.046,
+        "Latitude": 42.331
+    },
+    {
+        "Rank": 15,
+        "Metropolitan Area": "Seattle",
+        "Population": 3980000,
+        "Longitude": -122.332,
+        "Latitude": 47.606
+    },
+    {
+        "Rank": 16,
+        "Metropolitan Area": "Minneapolis",
+        "Population": 3640000,
+        "Longitude": -93.265,
+        "Latitude": 44.978
+    },
+    {
+        "Rank": 17,
+        "Metropolitan Area": "San Diego",
+        "Population": 3338000,
+        "Longitude": -117.161,
+        "Latitude": 32.716
+    },
+    {
+        "Rank": 18,
+        "Metropolitan Area": "Tampa",
+        "Population": 3195000,
+        "Longitude": -82.541,
+        "Latitude": 27.951
+    },
+    {
+        "Rank": 19,
+        "Metropolitan Area": "Denver",
+        "Population": 2964000,
+        "Longitude": -104.99,
+        "Latitude": 39.739
+    },
+    {
+        "Rank": 20,
+        "Metropolitan Area": "St. Louis",
+        "Population": 2804000,
+        "Longitude": -90.199,
+        "Latitude": 38.627
+    }
+]

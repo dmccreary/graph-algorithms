@@ -1,0 +1,18 @@
+{
+    "nodes": [
+        {"id": 1, "name": "Seattle", "x": 40, "y": 40},
+        {"id": 2, "name": "Minneapolis", "x":300, "y": 50},
+        {"id": 3, "name": "Boston"},
+        {"id": 4, "name": "Miami"},
+        {"id": 5, "name": "Chicago"},
+        {"id": 6, "name": "Denver"},
+        {"id": 7, "name": "Phoenix"},
+        {"id": 8, "name": "San Diego"},
+        {"id": 9, "name": "San Francisco"}
+    ],
+    "edges": [
+        {"desc": "Seattle to Minneapolis", "from": 1, "to": 2, "dist": 250},
+        {"desc": "Minneapolis to Chicago", "from": 2, "to": 5, "dist": 100},
+        {"desc": "Minneapolis to Chicago", "from": 5, "to": 1}
+    ]
+}

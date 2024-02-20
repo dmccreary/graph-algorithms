@@ -68,6 +68,17 @@ The number of edges connected to a vertex. In directed graphs, this includes in-
 
 An algorithm used for traversing or searching a graph. It starts at the root and explores as far as possible along each branch before backtracking. Example: Used in solving puzzles such as mazes.
 
+ #### Deterministic Algorithm
+ A type of algorithm that, given a particular input, will **always** produce the same output with a predictable computation process.
+ 
+ In deterministic algorithms, each step and decision is specifically defined and does not involve any randomness or probability. The outcome and the state of the system at each stage of the algorithm are entirely predictable based on the input.
+
+ Deterministic algorithms also have a high degree of explainability compared to machine-learning models.
+
+**Example:** A common example of a deterministic algorithm is the [depth-first search](#depth-first-search-dfs) algorithm.
+
+See also: Machine Learning Model
+
 #### Dijkstra's Algorithm
 
 An algorithm that finds the shortest paths between nodes in a graph, which may represent, for example, road networks. It can be used for weighted graphs without negative weights. Example: Used in GPS devices to find the shortest driving route.

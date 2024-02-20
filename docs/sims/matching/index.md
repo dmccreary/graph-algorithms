@@ -26,6 +26,8 @@ often lack a user interface for viewing, testing and interactively changing the 
 
 * [Custom Curve With Percent](https://editor.p5js.org/dmccreary/sketches/T0tSaTPCr) - I used generative AI to create a custom version of the curve() function that had one additional parameter: the percent of the line to be drawn.
 
+* [curveVertex Demo](https://editor.p5js.org/dmccreary/sketches/ooIy00BxV)
+
 ## Sample Vis.js Arrows for Matching
 
 * [Vis.js Arrow Alignment](https://visjs.github.io/vis-network/examples/network/edgeStyles/arrowAlignment.html) - this is a great demo of "arrow alignment" using curves.
