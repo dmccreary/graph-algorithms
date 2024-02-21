@@ -9,3 +9,7 @@
 ## About this MicroSim
 
 [Link to the ChatGPT Dialog](https://chat.openai.com/c/847dd95d-919c-4fc1-a317-1fdac2926f71)
+
+## Sample using Vis.js
+
+[Vis.js](./vis.html)
