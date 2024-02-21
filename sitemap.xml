@@ -2,177 +2,182 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/about/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/contact/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/glossary/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/graph-query-languages/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/how-we-built-this-site/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/license/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/references/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/relationship-traversal/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/topic-lists/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/data/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/data/geospacial/</loc>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/data/json/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/data/json-std/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/data/us-cities/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/lessons/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/lessons/01-graph-terminology/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/lessons/02-javascript-graph-libs/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/lessons/03-deterministic-vs-ml/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/lessons/10-rules/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/lessons/20-entity-resolution/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/lessons/list-of-algorithms/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/lessons/lpg/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/bfs/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/d3/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/data-element-match/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/degree/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/force/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/matching/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/page-rank/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/shortest-path/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/spanning-tree/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/template/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/vis/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/weighted-graph/</loc>
-         <lastmod>2024-02-20</lastmod>
+         <lastmod>2024-02-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
