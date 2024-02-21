@@ -24,6 +24,7 @@ nav:
     - US Cities: data/us-cities/index.md
     - Loading JSON Data: data/json/index.md
     - JSON Data Standard: data/json-std/index.md
+    - Geospacial: data/geospacial/index.md
   - Sims:
     - Introduction: sims/index.md
     - Degree: sims/degree/index.md
