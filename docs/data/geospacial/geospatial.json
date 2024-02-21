@@ -1,0 +1,77 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Address",
+            "x": 100,
+            "y": 100
+        },
+        {
+            "id": 2,
+            "name": "City",
+            "x": 200,
+            "y": 200
+        },
+        {
+            "id": 3,
+            "name": "State",
+            "x": 300,
+            "y": 300
+        },
+        {
+            "id": 4,
+            "name": "Zipcode",
+            "x": 400,
+            "y": 100
+        },
+        {
+            "id": 5,
+            "name": "County",
+            "x": 500,
+            "y": 200
+        },
+        {
+            "id": 6,
+            "name": "Country",
+            "x": 600,
+            "y": 300
+        }
+    ],
+    "edges": [
+        {
+            "name": "LOCATED_IN",
+            "source": 1,
+            "target": 2
+        },
+        {
+            "name": "LOCATED_IN",
+            "source": 2,
+            "target": 3
+        },
+        {
+            "name": "LOCATED_IN",
+            "source": 3,
+            "target": 6
+        },
+        {
+            "name": "PART_OF",
+            "source": 2,
+            "target": 5
+        },
+        {
+            "name": "LOCATED_IN",
+            "source": 5,
+            "target": 3
+        },
+        {
+            "name": "ASSIGNED_TO",
+            "source": 4,
+            "target": 2
+        },
+        {
+            "name": "ASSIGNED_TO",
+            "source": 4,
+            "target": 5
+        }
+    ]
+}
