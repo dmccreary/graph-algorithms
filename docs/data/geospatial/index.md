@@ -3,6 +3,8 @@
 ![Geospatial Image](./geospatial.png){ width="400" }
 
 [Link to Standardized Geospatial Graph Model with Vis.js](./vis.html){ .md-button .md-button--primary }
+<br/>
+[Vis HTML/JavaScript Code](https://github.com/dmccreary/graph-algorithms/blob/main/docs/data/geospatial/vis.html)
 
 A standardized geospatial model is crucial for large organizations due to several reasons:
 
@@ -32,7 +34,7 @@ The models you use may be based on the following rules for US addresses:
 2. Every City is LOCATED_IN in a single State
 3. Every State is LOCATED_IN a single Country
 4. Every County is LOCATED_IN a single State
-5. Every Address is ASSIGNED_TO a single Zipocde
+5. Every Address is ASSIGNED_TO a single Zipcode
 6. Every City is PART_OF one or more County (a city can be in many counties)
 7. A Zipode is ASSIGNED_TO a single City
 8. A Zipcode is ASSIGNED_TO a single County
@@ -43,7 +45,7 @@ LOCATED_IN a single Country.
 Note that we can now add other "regions" such as a "Metropolitan Region" which
 is a collection of Cities.
 
-!!! Prompt Engineering Tip
+!!! Prompt_Tip
     When asking generative AI to create a custom script, you can include
     only the rules that are relevant above.  Many queries will work
     with rules 1 to 5 above.
