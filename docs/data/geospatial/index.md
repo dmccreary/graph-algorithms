@@ -1,6 +1,6 @@
-# Geospacial
+# Geospatial
 
-![Image Name](./geospatial.png){ width="400" }
+![Geospatial Image](./geospatial.png){ width="400" }
 
 [Link to Standardized Geospacial Graph Model with Vis.js](./vis.html){ .md-button .md-button--primary }
 
