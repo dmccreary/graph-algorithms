@@ -2,7 +2,7 @@
 
 ![Geospatial Image](./geospatial.png){ width="400" }
 
-[Link to Standardized Geospacial Graph Model with Vis.js](./vis.html){ .md-button .md-button--primary }
+[Link to Standardized Geospatial Graph Model with Vis.js](./vis.html){ .md-button .md-button--primary }
 
 A standardized geospatial model is crucial for large organizations due to several reasons:
 
