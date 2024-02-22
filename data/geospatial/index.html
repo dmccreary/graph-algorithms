@@ -26,7 +26,7 @@
     
     
       
-        <title>Geospatial - Graph Algorithms</title>
+        <title>Geospatial Standards - Graph Algorithms</title>
       
     
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Geospatial
+              Geospatial Standards
             
           </span>
         </div>
@@ -507,7 +507,7 @@
           
   
   <span class="md-ellipsis">
-    Geospatial
+    Geospatial Standards
   </span>
   
 
@@ -518,7 +518,7 @@
         
   
   <span class="md-ellipsis">
-    Geospatial
+    Geospatial Standards
   </span>
   
 
@@ -538,6 +538,24 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-geospatial-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Geospatial Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-geospatial-loaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Geospatial Loaders
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#sample-rendering-with-p5js" class="md-nav__link">
@@ -780,6 +798,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sample-geospatial-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Geospatial Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-geospatial-loaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Geospatial Loaders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sample-rendering-with-p5js" class="md-nav__link">
     <span class="md-ellipsis">
       Sample Rendering with p5.js
@@ -837,6 +873,34 @@
 </li>
 </ol>
 <p>In summary, for large organizations, having a standardized geospatial model is key to efficient, accurate, and cost-effective handling of geographical data. It supports better decision-making, facilitates data sharing and integration, and prepares the organization for future technological advancements.</p>
+<h2 id="sample-geospatial-rules">Sample Geospatial Rules</h2>
+<p>The models you use may be based on the following rules for US addresses:</p>
+<ol>
+<li>Every Address is LOCATED_IN in a single City</li>
+<li>Every City is LOCATED_IN in a single State</li>
+<li>Every State is LOCATED_IN a single Country</li>
+<li>Every County is LOCATED_IN a single State</li>
+<li>Every Address is ASSIGNED_TO a single Zipocde</li>
+<li>Every City is PART_OF one or more County (a city can be in many counties)</li>
+<li>A Zipode is ASSIGNED_TO a single City</li>
+<li>A Zipcode is ASSIGNED_TO a single County</li>
+</ol>
+<p>From these rules, we can infer many other rules such as each County is
+LOCATED_IN a single Country.</p>
+<p>Note that we can now add other "regions" such as a "Metropolitan Region" which
+is a collection of Cities.</p>
+<div class="admonition prompt engineering tip">
+<p class="admonition-title">Prompt</p>
+<p>When asking generative AI to create a custom script, you can include
+only the rules that are relevant above.  Many queries will work
+with rules 1 to 5 above.</p>
+</div>
+<h2 id="sample-geospatial-loaders">Sample Geospatial Loaders</h2>
+<p>Once our geospatial model is fixed, we can then focus on building queries
+that tie people and organizations to the Address vertex.  In general,
+we only need to link an entity to an Address.  The rest of the relationships
+can be inferred.  This keeps our in-memory footprint smaller and makes
+queries more consistent.</p>
 <h2 id="sample-rendering-with-p5js">Sample Rendering with p5.js</h2>
 <p><a href="geospatial.html">Link to Geospatial Model Rendered with p5.js</a>
 <a href="https://editor.p5js.org/dmccreary/sketches/6NfvxKZ_D">Edit GeoSpacial Model MicroSim</a></p>
