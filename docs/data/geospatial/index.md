@@ -24,6 +24,38 @@ A standardized geospatial model is crucial for large organizations due to severa
 
 In summary, for large organizations, having a standardized geospatial model is key to efficient, accurate, and cost-effective handling of geographical data. It supports better decision-making, facilitates data sharing and integration, and prepares the organization for future technological advancements.
 
+## Sample Geospatial Rules
+
+The models you use may be based on the following rules for US addresses:
+
+1. Every Address is LOCATED_IN in a single City
+2. Every City is LOCATED_IN in a single State
+3. Every State is LOCATED_IN a single Country
+4. Every County is LOCATED_IN a single State
+5. Every Address is ASSIGNED_TO a single Zipocde
+6. Every City is PART_OF one or more County (a city can be in many counties)
+7. A Zipode is ASSIGNED_TO a single City
+8. A Zipcode is ASSIGNED_TO a single County
+
+From these rules, we can infer many other rules such as each County is
+LOCATED_IN a single Country.
+
+Note that we can now add other "regions" such as a "Metropolitan Region" which
+is a collection of Cities.
+
+!!! Prompt Engineering Tip
+    When asking generative AI to create a custom script, you can include
+    only the rules that are relevant above.  Many queries will work
+    with rules 1 to 5 above.
+
+## Sample Geospatial Loaders
+
+Once our geospatial model is fixed, we can then focus on building queries
+that tie people and organizations to the Address vertex.  In general,
+we only need to link an entity to an Address.  The rest of the relationships
+can be inferred.  This keeps our in-memory footprint smaller and makes
+queries more consistent.
+
 ## Sample Rendering with p5.js
 
 [Link to Geospatial Model Rendered with p5.js](./geospatial.html)
