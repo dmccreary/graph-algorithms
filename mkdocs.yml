@@ -15,7 +15,7 @@ nav:
     - List of Graph Algorithms: lessons/list-of-algorithms.md
     - JavaScript Libraries: lessons/02-javascript-graph-libs.md
     - Deterministic vs ML: lessons/03-deterministic-vs-ml.md
-    - Temporal Graphs: - lessons/04-temporal-graphs.md
+    - Temporal Graphs: lessons/04-temporal-graphs.md
     - Labeled Property Graphs: lessons/lpg.md
     - Graph Query Languages: graph-query-languages.md
     - Relationship Traversal: relationship-traversal.md
