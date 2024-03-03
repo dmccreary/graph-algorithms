@@ -12,13 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/weighted-graph/">
+        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/cytoscape/">
       
       
-        <link rel="prev" href="../degree/">
+        <link rel="prev" href="../vis/">
       
       
-        <link rel="next" href="../force/">
+        <link rel="next" href="../../how-we-built-this-site/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Weighted - Graph Algorithms</title>
+        <title>Cytoscape.js - Graph Algorithms</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#weighted-graph" class="md-skip">
+        <a href="#cytoscapejs" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Weighted
+              Cytoscape.js
             
           </span>
         </div>
@@ -525,29 +525,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Weighted
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../weighted-graph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -556,40 +536,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-list-of-nodes-and-place-them-on-the-canvas" class="md-nav__link">
-    Create a list of nodes and place them on the canvas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sample-prompt" class="md-nav__link">
-    Sample Prompt
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -779,9 +725,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../cytoscape/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cytoscape.js
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -790,6 +756,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gtp-4-response" class="md-nav__link">
+    GTP-4 Response
+  </a>
+  
+    <nav class="md-nav" aria-label="GTP-4 Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-html-boilerplate" class="md-nav__link">
+    1. HTML Boilerplate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-javascript-for-graph-appjs" class="md-nav__link">
+    2. JavaScript for Graph (app.js)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How It Works
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -924,16 +951,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-list-of-nodes-and-place-them-on-the-canvas" class="md-nav__link">
-    Create a list of nodes and place them on the canvas
+  <a href="#prompt" class="md-nav__link">
+    Prompt
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-prompt" class="md-nav__link">
-    Sample Prompt
+  <a href="#gtp-4-response" class="md-nav__link">
+    GTP-4 Response
   </a>
+  
+    <nav class="md-nav" aria-label="GTP-4 Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-html-boilerplate" class="md-nav__link">
+    1. HTML Boilerplate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-javascript-for-graph-appjs" class="md-nav__link">
+    2. JavaScript for Graph (app.js)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How It Works
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -955,20 +1009,71 @@
   
 
 
-<h1 id="weighted-graph">Weighted Graph</h1>
-<p><img alt="Weighted Graph" src="weighted-graph.png" width="400" /></p>
-<p><a class="md-button md-button--primary" href="weighted-graph.html">Link to Demo</a>
-<a href="https://editor.p5js.org/dmccreary/sketches/ssrtXzl5_">Edit</a></p>
-<h2 id="create-a-list-of-nodes-and-place-them-on-the-canvas">Create a list of nodes and place them on the canvas</h2>
-<h2 id="sample-prompt">Sample Prompt</h2>
-<div class="highlight"><pre><span></span><code>Create a list of the 10 large major metropolitan cities
-in the US and place them on a 400x400 canvas.
-Round each point to the nearest integer.
-Then create a p5.js sketch that will connect each
-city to the nearest three cities.
-Draw a graph that places the distance between
-the nodes at the halfway point between the nodes.
+<h1 id="cytoscapejs">Cytoscape.js</h1>
+<p><img alt="Cytoscape Demo" src="cytoscape.png" width="400" /></p>
+<p><a class="md-button md-button--primary" href="cytoscape.html">Run the Cytosscape.js Demo</a>
+<a href="">HTML</a>
+<a href="">JavaScript</a></p>
+<h2 id="prompt">Prompt</h2>
+<div class="highlight"><pre><span></span><code>Create a cytoscape.js application that draws a
+force-directed graph layout.  Have the application
+generate 20 vertices and make each vertex be connected
+to either two or three other vertices.
 </code></pre></div>
+<h2 id="gtp-4-response">GTP-4 Response</h2>
+<p>Creating a force-directed graph with Cytoscape.js involves a few steps, 
+including setting up a basic HTML/CSS/JavaScript environment, 
+initializing Cytoscape with a configuration object, 
+defining the graph elements (nodes and edges), 
+and specifying a layout algorithm. Below is a simple example 
+application that meets your specifications.</p>
+<h3 id="1-html-boilerplate">1. HTML Boilerplate</h3>
+<p>First, you need an HTML document to host the graph. This document includes a reference to the Cytoscape.js library.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Force-Directed Graph<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">#</span><span class="nn">cy</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
+<span class="w">            </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/cytoscape@3.19.1/dist/cytoscape.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cy&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;app.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="2-javascript-for-graph-appjs">2. JavaScript for Graph (app.js)</h3>
+<p>You'll need to create an <code>app.js</code> file with the JavaScript code to generate the graph. 
+This code initializes Cytoscape with a specified container and 
+configuration, generates 20 vertices (nodes), and 
+randomly connects each node to two or three others.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1030,89 +1135,76 @@ the nodes at the halfway point between the nodes.
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">//</span> <span class="n">weighted</span> <span class="n">graph</span> <span class="n">example</span>
-<span class="o">//</span> <span class="n">I</span> <span class="n">used</span> <span class="n">ChatGPT</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">sample</span> <span class="n">cities</span> <span class="ow">and</span> <span class="n">moved</span> <span class="n">them</span> <span class="n">around</span>
-<span class="n">let</span> <span class="n">cities</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;New York&quot;</span><span class="p">:</span>      <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">520</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-  <span class="s2">&quot;Los Angeles&quot;</span><span class="p">:</span>   <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>  <span class="n">y</span><span class="p">:</span><span class="mi">180</span><span class="p">},</span>
-  <span class="s2">&quot;Chicago&quot;</span><span class="p">:</span>       <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">290</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">120</span><span class="p">},</span>
-  <span class="s2">&quot;Phoenix&quot;</span><span class="p">:</span>       <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">310</span><span class="p">},</span>
-  <span class="s2">&quot;Miami&quot;</span><span class="p">:</span>         <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">510</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">340</span><span class="p">},</span>
-  <span class="s2">&quot;San Diego&quot;</span><span class="p">:</span>     <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>  <span class="n">y</span><span class="p">:</span><span class="mi">330</span><span class="p">},</span>
-  <span class="s2">&quot;Dallas&quot;</span><span class="p">:</span>        <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">270</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">290</span><span class="p">},</span>
-  <span class="s2">&quot;Seattle&quot;</span><span class="p">:</span>       <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>  <span class="n">y</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
-  <span class="s2">&quot;Minneapolis&quot;</span><span class="p">:</span>   <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-  <span class="s2">&quot;San Francisco&quot;</span><span class="p">:</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">150</span><span class="p">}</span>
-<span class="p">};</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;DOMContentLoaded&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">cy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cytoscape</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">container</span><span class="o">:</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;cy&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">elements</span><span class="o">:</span><span class="w"> </span><span class="nx">generateGraphElements</span><span class="p">(</span><span class="mf">20</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;node&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="s1">&#39;background-color&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#666&#39;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s1">&#39;label&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;data(id)&#39;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;edge&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="s1">&#39;width&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">                    </span><span class="s1">&#39;line-color&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#ccc&#39;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s1">&#39;curve-style&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bezier&#39;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nx">layout</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cose&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">idealEdgeLength</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nodeOverlap</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">refresh</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">fit</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">randomize</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">componentSpacing</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nodeRepulsion</span><span class="o">:</span><span class="w"> </span><span class="mf">400000</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">edgeElasticity</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nestingFactor</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">gravity</span><span class="o">:</span><span class="w"> </span><span class="mf">80</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">numIter</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">initialTemp</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">coolingFactor</span><span class="o">:</span><span class="w"> </span><span class="mf">0.95</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">minTemp</span><span class="o">:</span><span class="w"> </span><span class="mf">1.0</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
 
-<span class="n">function</span> <span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">const</span> <span class="n">canvas</span> <span class="o">=</span> <span class="n">createCanvas</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">440</span><span class="p">);</span>
-  <span class="n">var</span> <span class="n">mainElement</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">);</span>
-  <span class="n">canvas</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">mainElement</span><span class="p">);</span>
-  <span class="n">textSize</span><span class="p">(</span><span class="mi">14</span><span class="p">);</span>
-  <span class="n">calculateNeighbors</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">generateGraphElements</span><span class="p">(</span><span class="nx">vertexCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">vertexCount</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">elements</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;n&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="n">function</span> <span class="n">draw</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">vertexCount</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">edgeCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// Randomly 2 or 3 edges</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">connected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="nx">connected</span><span class="p">.</span><span class="nx">size</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">edgeCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nx">targetIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">vertexCount</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="nx">targetIndex</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">connected</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">elements</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;n&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;n&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">targetIndex</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+<span class="w">                </span><span class="nx">connected</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-  <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="n">draw</span> <span class="n">lines</span> <span class="n">to</span> <span class="n">nearest</span> <span class="n">three</span> <span class="n">cities</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">neighbor</span> <span class="n">of</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">neighbors</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">let</span> <span class="n">neighborX</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">;</span>
-      <span class="n">let</span> <span class="n">neighborY</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">;</span>
-      <span class="n">stroke</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">need</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">line</span> <span class="ow">in</span>
-      <span class="n">line</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">neighborX</span><span class="p">,</span> <span class="n">neighborY</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">put</span> <span class="n">the</span> <span class="n">distance</span> <span class="n">text</span> <span class="n">at</span> <span class="n">midpoint</span>
-      <span class="n">let</span> <span class="n">midX</span> <span class="o">=</span> <span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">neighborX</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-      <span class="n">let</span> <span class="n">midY</span> <span class="o">=</span> <span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">neighborY</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-      <span class="o">//</span> <span class="n">calculate</span> <span class="n">the</span> <span class="n">distance</span>
-      <span class="n">let</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">dist</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">neighborX</span><span class="p">,</span> <span class="n">neighborY</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">place</span> <span class="n">a</span> <span class="n">white</span> <span class="n">box</span> <span class="n">behind</span> <span class="n">weight</span>
-      <span class="n">noStroke</span><span class="p">();</span>
-      <span class="n">fill</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">);</span>
-      <span class="n">rect</span><span class="p">(</span><span class="n">midX</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span> <span class="n">midY</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">draw</span> <span class="n">the</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">black</span> <span class="ow">and</span> <span class="n">align</span> <span class="n">it</span>
-      <span class="n">fill</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
-      <span class="n">textAlign</span><span class="p">(</span><span class="n">CENTER</span><span class="p">,</span><span class="n">CENTER</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">nf</span> <span class="ow">is</span> <span class="n">number</span> <span class="nb">format</span> <span class="k">with</span> <span class="mi">0</span> <span class="n">decimal</span> <span class="n">places</span>
-      <span class="n">text</span><span class="p">(</span><span class="n">nf</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">midX</span><span class="p">,</span> <span class="n">midY</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">255</span><span class="p">);</span>
-    <span class="n">circle</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="n">noLoop</span><span class="p">();</span> <span class="o">//</span> <span class="n">Static</span> <span class="n">drawing</span>
-<span class="p">}</span>
-
-<span class="n">function</span> <span class="n">calculateNeighbors</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">let</span> <span class="n">distances</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">otherCity</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">otherCity</span> <span class="o">!==</span> <span class="n">city</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">let</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dist</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">otherCity</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">otherCity</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">);</span>
-        <span class="n">distances</span><span class="o">.</span><span class="n">push</span><span class="p">({</span> <span class="n">city</span><span class="p">:</span> <span class="n">otherCity</span><span class="p">,</span> <span class="n">distance</span><span class="p">:</span> <span class="n">d</span> <span class="p">});</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">distances</span><span class="o">.</span><span class="n">sort</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">distance</span> <span class="o">-</span> <span class="n">b</span><span class="o">.</span><span class="n">distance</span><span class="p">);</span>
-    <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">neighbors</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">d</span> <span class="o">=&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">city</span><span class="p">);</span>
-  <span class="p">}</span>
-
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">elements</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<h3 id="how-it-works">How It Works</h3>
+<ul>
+<li>The HTML file sets up a webpage with a <code>&lt;div&gt;</code> element where the graph will be rendered.</li>
+<li>The CSS styles define the size of the graph's container and some basic styles for the nodes and edges.</li>
+<li>The JavaScript (<code>app.js</code>) uses Cytoscape.js to create a graph inside the specified container. It defines a <code>generateGraphElements</code> function to dynamically create nodes and edges. Each node is connected to either two or three other nodes randomly.</li>
+<li>The graph layout is set to use Cytoscape's <code>cose</code> layout, a force-directed layout algorithm, which positions the nodes in an aesthetically pleasing manner based on their connections.</li>
+</ul>
 
 
   
@@ -1142,7 +1234,7 @@ the nodes at the halfway point between the nodes.
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../degree/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Degree" rel="prev">
+          <a href="../vis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vis.js" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1152,20 +1244,20 @@ the nodes at the halfway point between the nodes.
                 Previous
               </span>
               <div class="md-ellipsis">
-                Degree
+                Vis.js
               </div>
             </div>
           </a>
         
         
           
-          <a href="../force/" class="md-footer__link md-footer__link--next" aria-label="Next: Force Directed Graph Layout" rel="next">
+          <a href="../../how-we-built-this-site/" class="md-footer__link md-footer__link--next" aria-label="Next: How We Built This Site" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Force Directed Graph Layout
+                How We Built This Site
               </div>
             </div>
             <div class="md-footer__button md-icon">
