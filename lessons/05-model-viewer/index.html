@@ -12,7 +12,7 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/template/">
+        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/lessons/05-model-viewer/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>MicroSim Template - Graph Algorithms</title>
+        <title>Model Viewer - Graph Algorithms</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#microsim-template" class="md-skip">
+        <a href="#model-viewer" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MicroSim Template
+              Model Viewer
             
           </span>
         </div>
@@ -325,7 +325,7 @@
         
   
   
-    <a href="../../lessons/" class="md-nav__link">
+    <a href="../" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -463,7 +463,7 @@
         
   
   
-    <a href="../" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -604,86 +604,80 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-this-microsim" class="md-nav__link">
-    About this MicroSim
+  <a href="#prompt" class="md-nav__link">
+    Prompt
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-prompt" class="md-nav__link">
-    Sample Prompt
+  <a href="#summary-of-response" class="md-nav__link">
+    Summary of Response
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-response" class="md-nav__link">
-    Sample Response
+  <a href="#full-response" class="md-nav__link">
+    Full Response
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lesson-plan" class="md-nav__link">
-    Lesson Plan
-  </a>
-  
-    <nav class="md-nav" aria-label="Lesson Plan">
+    <nav class="md-nav" aria-label="Full Response">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#grade-level-subject-and-topic" class="md-nav__link">
-    Grade Level, Subject and Topic
+  <a href="#step-1-setting-up-the-project-environment" class="md-nav__link">
+    Step 1: Setting Up the Project Environment
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#activities" class="md-nav__link">
-    Activities
-  </a>
-  
-    <nav class="md-nav" aria-label="Activities">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fill-color" class="md-nav__link">
-    Fill Color
+  <a href="#step-2-loading-and-parsing-json-data" class="md-nav__link">
+    Step 2: Loading and Parsing JSON Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#border-weight" class="md-nav__link">
-    Border Weight
+  <a href="#step-3-initializing-the-graph" class="md-nav__link">
+    Step 3: Initializing the Graph
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#border-color" class="md-nav__link">
-    Border Color
+  <a href="#4-applying-force-directed-layout" class="md-nav__link">
+    4. Applying Force-Directed Layout
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#change-the-radius" class="md-nav__link">
-    Change the Radius
+  <a href="#5-displaying-names" class="md-nav__link">
+    5. Displaying Names
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#change-the-location" class="md-nav__link">
-    Change the Location
+  <a href="#6-handling-clicks-and-displaying-properties" class="md-nav__link">
+    6. Handling Clicks and Displaying Properties
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#7-bringing-it-all-together" class="md-nav__link">
+    7. Bringing It All Together
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
   
 </li>
         
@@ -710,22 +704,44 @@
   
 
 
-<h1 id="microsim-template">MicroSim Template</h1>
-<figure markdown>
-   ![Image Name](./image.png){ width="400" }
-   <figcaption>Figure caption.</figcaption>
-</figure>
+<h1 id="model-viewer">Model Viewer</h1>
+<p>How would you create a JavaScript application that views a graph
+LPG data model using a specific library such as the sigma.js
+library?  This is a complex task that goes beyond the 
+capabilities of today's large-language models.</p>
+<p>Here is a sample prompt that decomposes the problem into sections:</p>
+<h2 id="prompt">Prompt</h2>
+<div class="highlight"><pre><span></span><code>I would like to create a read-only graph network viewer using the sigma.js library.
+The viewer must be able to do the following:
 
-<p><a class="md-button md-button--primary" href="template.html">Link to Demo</a>
-<a href="">Edit MicroSim</a></p>
-<h2 id="about-this-microsim">About this MicroSim</h2>
-<p>This MicroSim teaches us how to
-specify the drawing of a static filled circle.</p>
-<h2 id="sample-prompt">Sample Prompt</h2>
-<div class="highlight"><pre><span></span><code>Create a single file p5.js sketch.
-Draw a green circle on a 600x400 canvas with a radius of 200.
+1. Given a JSON file of vertices and edges,
+display a network graph using a force-directed layout.
+2. The viewer must display the names of the vertices
+and edges.
+3. When the user clicks on a vertex or edge, the properties
+of that vertex or edge must be displayed in an inspector window.
+
+How would you go about structuring this project?  Break it down
+into JavaScript functions.  Show your reasoning step-by-step.
 </code></pre></div>
-<h2 id="sample-response">Sample Response</h2>
+<h2 id="summary-of-response">Summary of Response</h2>
+<ol>
+<li>Setup the HTML (load libraries and display regions)<ol>
+<li>Make the application 800 wide and 600 high</li>
+<li>Draw the graph network in the left 400</li>
+<li>Draw the inspector in the right 400</li>
+</ol>
+</li>
+<li>Load and Parson JSON data</li>
+<li>Initialize the Graph</li>
+<li>Apply the Force-directed graph algorithm</li>
+<li>Display Names and Labels</li>
+<li>Handle Interactivity</li>
+</ol>
+<h2 id="full-response">Full Response</h2>
+<p>Creating a read-only graph network viewer with the sigma.js library involves several steps, from parsing the JSON data to visualizing the graph and handling user interactions. Here's a structured approach to developing this project, broken down into JavaScript functions and components:</p>
+<h3 id="step-1-setting-up-the-project-environment">Step 1: Setting Up the Project Environment</h3>
+<p>First, ensure you have a basic HTML and JavaScript project setup, including sigma.js. You can include sigma.js via a CDN or install it via npm/yarn if you're using a build system like webpack or Parcel.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -737,36 +753,159 @@ Draw a green circle on a 600x400 canvas with a radius of 200.
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">aspectRatio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.91</span><span class="p">;</span><span class="w"> </span><span class="c1">// Open Graph standard</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">aspectRatio</span><span class="p">;</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="s1">&#39;canvas-container&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">245</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">);</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Graph Network Viewer<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;graph-container&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 800px; height: 600px;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;inspector&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 400px; height: 600px; overflow: auto;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="cm">&lt;!-- Include sigma.js --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;path_to_sigma/sigma.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- Your script --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;your_script.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="step-2-loading-and-parsing-json-data">Step 2: Loading and Parsing JSON Data</h3>
+<p>Create a function to load and parse the JSON file. This file should contain your vertices (nodes) and edges with their properties, including names.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">loadGraphData</span><span class="p">(</span><span class="nx">filePath</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">filePath</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span><span class="w"> </span><span class="c1">// Assuming data is in the format { nodes: [...], edges: [...] }</span>
+<span class="w">        </span><span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="lesson-plan">Lesson Plan</h2>
-<h3 id="grade-level-subject-and-topic">Grade Level, Subject and Topic</h3>
-<p>9th grade geometry. Circle and radius.</p>
-<h3 id="activities">Activities</h3>
-<h4 id="fill-color">Fill Color</h4>
-<p>Change the color in the prompt.  You
-can specify any one of the <a href="https://www.w3schools.com/tags/ref_colornames.asp">140 named colors</a>.</p>
-<h4 id="border-weight">Border Weight</h4>
-<p>Change the prompt to include a black border of
-width 10.</p>
-<h4 id="border-color">Border Color</h4>
-<p>Change the prompt to make the border purple.</p>
-<h4 id="change-the-radius">Change the Radius</h4>
-<p>Change the prompt to make the circle smaller
-or larger by changing the radius from 10 to 200.</p>
-<h4 id="change-the-location">Change the Location</h4>
-<p>Change the prompt to move the circle to the left or right.</p>
+<h3 id="step-3-initializing-the-graph">Step 3: Initializing the Graph</h3>
+<p>Using sigma.js, initialize the graph. You'll need a function that takes the parsed JSON data and adds the nodes and edges to the sigma instance.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">initializeGraph</span><span class="p">(</span><span class="nx">graphData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;graph-container&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sigmaInstance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">sigma</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">graph</span><span class="o">:</span><span class="w"> </span><span class="nx">graphData</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">container</span><span class="o">:</span><span class="w"> </span><span class="nx">container</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">defaultNodeLabelColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">edgeLabelSize</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;proportional&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="c1">// Add more settings to customize the appearance</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="nx">sigmaInstance</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">sigmaInstance</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="4-applying-force-directed-layout">4. Applying Force-Directed Layout</h3>
+<p>Sigma.js supports various layouts, including force-directed ones. Depending on the version or plugins you're using, the way to apply a layout might differ. Here, let's assume you have a force-directed layout plugin or functionality available.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">applyForceDirectedLayout</span><span class="p">(</span><span class="nx">sigmaInstance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// This is highly dependent on the specific sigma.js version or plugins used.</span>
+<span class="w">    </span><span class="c1">// Check the documentation for applying a force-directed layout.</span>
+<span class="w">    </span><span class="c1">// Example (pseudocode):</span>
+<span class="w">    </span><span class="c1">// const forceLayout = new sigma.layouts.forceAtlas2.configure(sigmaInstance, options);</span>
+<span class="w">    </span><span class="c1">// sigma.layouts.startForceAtlas2();</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="5-displaying-names">5. Displaying Names</h3>
+<p>To display the names of vertices and edges, ensure your JSON data includes these as properties, and configure sigma.js to display them. This might involve setting the right <code>settings</code> on sigma instance initialization or using a custom rendering function.</p>
+<h3 id="6-handling-clicks-and-displaying-properties">6. Handling Clicks and Displaying Properties</h3>
+<p>Add event listeners to sigma instances for clicks on nodes and edges. Then, display the properties in the inspector window.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>javascriptCopy code
+`function setupInteractivity(sigmaInstance) {
+    sigmaInstance.bind(&#39;clickNode&#39;, function(e) {
+        const node = e.data.node;
+        displayPropertiesInInspector(node);
+    });
+
+    sigmaInstance.bind(&#39;clickEdge&#39;, function(e) {
+        const edge = e.data.edge;
+        displayPropertiesInInspector(edge);
+    });
+}
+
+function displayPropertiesInInspector(element) {
+    const inspector = document.getElementById(&#39;inspector&#39;);
+    inspector.innerHTML = &#39;&#39;; // Clear previous content
+    Object.keys(element).forEach(key =&gt; {
+        const value = element[key];
+        const div = document.createElement(&#39;div&#39;);
+        div.textContent = `${key}: ${value}`;
+        inspector.appendChild(div);
+    });
+}
+`
+</code></pre></div></td></tr></table></div>
+<h3 id="7-bringing-it-all-together">7. Bringing It All Together</h3>
+<p>Finally, use these functions to load the graph data, initialize the graph with sigma.js, apply the layout, and set up interactivity.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>javascriptCopy code
+`loadGraphData(&#39;path_to_your_json_file.json&#39;).then(graphData =&gt; {
+    const sigmaInstance = initializeGraph(graphData);
+    applyForceDirectedLayout(sigmaInstance); // If applicable
+    setupInteractivity(sigmaInstance);
+});
+`
+</code></pre></div></td></tr></table></div>
+<h3 id="conclusion">Conclusion</h3>
+<p>This structured approach covers loading and parsing JSON data, initializing the graph with sigma.js, applying a force-directed layout, and handling user interactions. It's important to adapt the pseudocode to your specific version of sigma.js and its available features or plugins. Always refer to the latest sigma.js documentation for detailed guidance on its API and best practices.</p>
 
 
   
