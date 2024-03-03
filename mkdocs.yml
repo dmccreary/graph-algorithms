@@ -14,12 +14,16 @@ nav:
     - Terminology: lessons/01-graph-terminology.md
     - List of Graph Algorithms: lessons/list-of-algorithms.md
     - JavaScript Libraries: lessons/02-javascript-graph-libs.md
+    - Deterministic vs ML: lessons/03-deterministic-vs-ml.md
+    - Temporal Graphs: - lessons/04-temporal-graphs.md
     - Labeled Property Graphs: lessons/lpg.md
     - Graph Query Languages: graph-query-languages.md
     - Relationship Traversal: relationship-traversal.md
     - Business Rule Execution: lessons/10-rules.md
     - Entity Resolution: lessons/20-entity-resolution.md
-    - Data Visualization: lessons/06-data-visualization.md
+    - Model Viewer: lessons/05-model-viewer.md
+    - Data Visualization: lessons/06-data-vis.md
+    - Cytoscape: lessons/07-cytoscape.md
   - Generating Graph Data:
     - Introduction: data/index.md
     - US Cities: data/us-cities/index.md
