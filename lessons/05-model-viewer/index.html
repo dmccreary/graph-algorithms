@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/lessons/05-model-viewer/">
       
       
+        <link rel="prev" href="../20-entity-resolution/">
+      
+      
+        <link rel="next" href="../06-data-vis/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -289,6 +293,8 @@
       
   
   
+    
+  
   
     
     
@@ -315,30 +321,437 @@
       
         
       
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+        
       
         
-  
-  
-    <a href="../" class="md-nav__link">
       
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Lessons
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lessons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-graph-terminology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terminology
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../list-of-algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    List of Graph Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-javascript-graph-libs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-deterministic-vs-ml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deterministic vs ML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-temporal-graphs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Temporal Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lpg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Labeled Property Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-query-languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph Query Languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../relationship-traversal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relationship Traversal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business Rule Execution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-entity-resolution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entity Resolution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Model Viewer
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Model Viewer
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-response" class="md-nav__link">
+    Summary of Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-response" class="md-nav__link">
+    Full Response
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-setting-up-the-project-environment" class="md-nav__link">
+    Step 1: Setting Up the Project Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-loading-and-parsing-json-data" class="md-nav__link">
+    Step 2: Loading and Parsing JSON Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-initializing-the-graph" class="md-nav__link">
+    Step 3: Initializing the Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-applying-force-directed-layout" class="md-nav__link">
+    4. Applying Force-Directed Layout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-displaying-names" class="md-nav__link">
+    5. Displaying Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-handling-clicks-and-displaying-properties" class="md-nav__link">
+    6. Handling Clicks and Displaying Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-bringing-it-all-together" class="md-nav__link">
+    7. Bringing It All Together
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-data-vis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cytoscape/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cytoscape
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -938,6 +1351,44 @@ function displayPropertiesInInspector(element) {
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../20-entity-resolution/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Entity Resolution" rel="prev">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Entity Resolution
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-data-vis/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Visualization" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Data Visualization
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
