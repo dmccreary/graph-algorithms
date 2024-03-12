@@ -1,0 +1,9 @@
+# Temporal Graph Algorithms
+
+Recent developments in temporal graph machine learning have focused on extending the capabilities of Graph Neural Networks (GNNs) to dynamic graphs. Longa (2023) provides a comprehensive overview of the current state-of-the-art, categorizing existing approaches and identifying open challenges. Rossi (2020) introduces Temporal Graph Networks (TGNs), a framework for deep learning on dynamic graphs, which outperforms previous models and is more computationally efficient. Gurevin (2022) proposes a real-time graph learning pipeline that handles updates on a graph in real-time, addressing the challenge of dynamic graph changes. These advancements collectively contribute to the field's progress in handling dynamic graph data.
+
+## Graph Neural Networks for temporal graphs: State of the art, open challenges, and opportunities
+
+[Arxiv.org](https://arxiv.org/abs/2302.01018)
+
+Graph Neural Networks (GNNs) have become the leading paradigm for learning on (static) graph-structured data. However, many real-world systems are dynamic in nature, since the graph and node/edge attributes change over time. In recent years, GNN-based models for temporal graphs have emerged as a promising area of research to extend the capabilities of GNNs. In this work, we provide the first comprehensive overview of the current state-of-the-art of temporal GNN, introducing a rigorous formalization of learning settings and tasks and a novel taxonomy categorizing existing approaches in terms of how the temporal aspect is represented and processed. We conclude the survey with a discussion of the most relevant open challenges for the field, from both research and application perspectives.
