@@ -12,28 +12,28 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/relationship-traversal/">
+        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/data/skos/">
       
       
-        <link rel="prev" href="../graph-query-languages/">
+        <link rel="prev" href="../geospatial/">
       
       
-        <link rel="next" href="../lessons/10-rules/">
+        <link rel="next" href="../../sims/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
     
     
       
-        <title>Relationship Traversal - Graph Algorithms</title>
+        <title>SKOS - Graph Algorithms</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#relationship-traversal" class="md-skip">
+        <a href="#skos" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Graph Algorithms" class="md-header__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
+    <a href="../.." title="Graph Algorithms" class="md-header__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Relationship Traversal
+              SKOS
             
           </span>
         </div>
@@ -209,7 +209,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Graph Algorithms" class="md-nav__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
+    <a href="../.." title="Graph Algorithms" class="md-nav__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -239,7 +239,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -259,7 +259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -279,7 +279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../topic-lists/" class="md-nav__link">
+      <a href="../../topic-lists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -296,8 +296,6 @@
       
   
   
-    
-  
   
   
     
@@ -331,6 +329,73 @@
       
         
       
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../lessons/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Lessons
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
         
       
     
@@ -342,32 +407,32 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../lessons/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Lessons
+    Generating Graph Data
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Lessons
+            Generating Graph Data
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -380,11 +445,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../lessons/01-graph-terminology/" class="md-nav__link">
+      <a href="../us-cities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Terminology
+    US Cities
   </span>
   
 
@@ -401,11 +466,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../lessons/list-of-algorithms/" class="md-nav__link">
+      <a href="../json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    List of Graph Algorithms
+    Loading JSON Data
   </span>
   
 
@@ -422,11 +487,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../lessons/02-javascript-graph-libs/" class="md-nav__link">
+      <a href="../json-std/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    JavaScript Libraries
+    JSON Data Standard
   </span>
   
 
@@ -443,74 +508,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../lessons/03-deterministic-vs-ml/" class="md-nav__link">
+      <a href="../geospatial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Deterministic vs ML
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lessons/04-temporal-graphs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Temporal Graphs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lessons/lpg/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Labeled Property Graphs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../graph-query-languages/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Graph Query Languages
+    Geospatial Standards
   </span>
   
 
@@ -540,117 +542,12 @@
         
   
   <span class="md-ellipsis">
-    Relationship Traversal
+    SKOS
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lessons/10-rules/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Business Rule Execution
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lessons/20-entity-resolution/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Entity Resolution
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lessons/05-model-viewer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Model Viewer
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lessons/06-data-vis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Data Visualization
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lessons/07-cytoscape/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cytoscape
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -696,71 +593,6 @@
           
         
       
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../data/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Generating Graph Data
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
         
           
         
@@ -802,7 +634,7 @@
         
   
   
-    <a href="../sims/" class="md-nav__link">
+    <a href="../../sims/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -828,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-we-built-this-site/" class="md-nav__link">
+      <a href="../../how-we-built-this-site/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -848,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../references/" class="md-nav__link">
+      <a href="../../references/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -868,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
+      <a href="../../glossary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -888,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../license/" class="md-nav__link">
+      <a href="../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -908,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -957,18 +789,9 @@
   
 
 
-<h1 id="relationship-traversal">Relationship Traversal</h1>
-<p><img alt="" src="../img/graph-vs-rdbms.png" /></p>
-<p>The chart illustrates the significant performance advantage that native graph databases typically have over RDBM systems in scenarios involving large and complex graph structures.  The chart provides a comparison of the predicted relationship traversal performance in a scenario with a very large graph, consisting of 1 billion vertices and 100 billion edges.</p>
-<ul>
-<li>
-<p><strong>Native Labeled Property Graph (Green Line):</strong> Demonstrates a very slow linear growth in traversal time. This represents the high efficiency of graph databases in traversing relationships, benefiting from their optimized structure for direct pointer access and effective handling of large-scale graphs.</p>
-</li>
-<li>
-<p><strong>RDBMS System (Red Line):</strong> Shows an exponential growth in traversal time. This reflects the significant performance impact of JOIN operations in RDBMS systems, especially as the number of relationships increases. In large and complex datasets, such as the one described, the cost of these operations grows rapidly, leading to much slower performance compared to graph databases.</p>
-</li>
-</ul>
-<p>This chart is a conceptual representation to highlight the potential performance differences in handling large-scale graph data between native graph databases and traditional RDBMS systems. The actual performance can vary depending on the specific database architecture, indexing strategies, and query optimizations used. ​</p>
+<h1 id="skos">SKOS</h1>
+<p><a href="skos.html">SKOS Demo</a></p>
+<p><a href="skos-2.html">SKOS 2</a></p>
 
 
 
@@ -1006,7 +829,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../graph-query-languages/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Graph Query Languages">
+          <a href="../geospatial/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Geospatial Standards">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1016,20 +839,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Graph Query Languages
+                Geospatial Standards
               </div>
             </div>
           </a>
         
         
           
-          <a href="../lessons/10-rules/" class="md-footer__link md-footer__link--next" aria-label="Next: Business Rule Execution">
+          <a href="../../sims/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Business Rule Execution
+                Introduction
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1063,10 +886,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>
