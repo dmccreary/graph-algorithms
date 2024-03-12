@@ -30,6 +30,9 @@
         {from: 'Concept', to: 'Collection', arrows: 'to', label: 'isContainedIn'},
         {from: 'Concept', to: 'ConceptScheme', arrows: 'to', label: 'isIn'},
         {from: 'ConceptScheme', to: 'TopConcept', arrows: 'to', label: 'hasTopConcept'},
+        {from: 'Concept', to: 'Concept', arrows: 'to', label: 'related', 
+         font: {align: 'middle'}, 
+         smooth: {type: 'curvedCW', roundness: 0.2}}
         // Define more edges as needed
     ]);
 
@@ -39,7 +42,22 @@
         nodes: nodes,
         edges: edges
     };
-    var options = {};
+    var options ={
+        physics: {
+            enabled: true,
+            forceAtlas2Based: {
+                gravitationalConstant: -50,
+                centralGravity: 0.01,
+                springLength: 100,
+                springConstant: 0.08
+            },
+            solver: 'forceAtlas2Based',
+            timestep: 0.35,
+            stabilization: {iterations: 150}
+        }
+    }
+
+
     var network = new vis.Network(container, data, options);
 </script>
 
