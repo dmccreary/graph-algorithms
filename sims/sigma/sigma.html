@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Graph with Sigma.js</title>
+    <style>
+        #graph-container {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/sigma.min.js"></script>
+</head>
+<body>
+    <div id="graph-container"></div>
+    <script>
+        // Initialize sigma:
+        var s = new sigma({
+            renderer: {
+                container: document.getElementById('graph-container'),
+                type: 'canvas'
+            },
+            settings: {
+                defaultNodeColor: '#0000FF',
+                defaultLabelColor: '#FFFFFF',
+                labelThreshold: 0,
+                defaultLabelSize: 12,
+                edgeColor: 'default',
+                defaultEdgeColor: '#ccc',
+                labelSize: 'fixed'
+            }
+        });
+
+        // Generate nodes and edges:
+        var i, N = 20, E = 30;
+        var g = {
+            nodes: [],
+            edges: []
+        };
+
+        // Add nodes:
+        for (i = 0; i < N; i++) {
+            g.nodes.push({
+                id: 'n' + i,
+                label: 'N ' + i,
+                x: Math.random(),
+                y: Math.random(),
+                size: 3,
+                color: '#0000FF'
+            });
+        }
+
+        // Add edges:
+        for (i = 0; i < E; i++) {
+            g.edges.push({
+                id: 'e' + i,
+                source: 'n' + (Math.floor(Math.random() * N)),
+                target: 'n' + (Math.floor(Math.random() * N)),
+                size: 3,
+                color: '#ccc'
+            });
+        }
+
+        // Load the graph in sigma:
+        s.graph.read(g);
+
+        // Refresh to display:
+        s.refresh();
+    </script>
+    <a href="./">Back to Lesson Plan</a>
+</body>
+</html>
+
+
