@@ -30,6 +30,7 @@ nav:
     - Loading JSON Data: data/json/index.md
     - JSON Data Standard: data/json-std/index.md
     - Geospatial Standards: data/geospatial/index.md
+    - SKOS: data/skos/index.md
   - Sims:
     - Introduction: sims/index.md
     - Degree: sims/degree/index.md
