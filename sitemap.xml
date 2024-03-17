@@ -71,6 +71,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/data/skos/</loc>
+         <lastmod>2024-03-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/data/us-cities/</loc>
          <lastmod>2024-03-17</lastmod>
          <changefreq>daily</changefreq>

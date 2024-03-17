@@ -384,6 +384,10 @@
           
         
       
+        
+          
+        
+      
     
     
       
@@ -595,6 +599,13 @@
         <li class="md-nav__item">
   <a href="#prompt" class="md-nav__link">
     Prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-code" class="md-nav__link">
+    Sample Code
   </a>
   
 </li>
@@ -983,6 +994,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sample-code" class="md-nav__link">
+    Sample Code
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1002,25 +1020,200 @@
 
 
 <h1 id="degree-v2">Degree V2</h1>
-<p><a href="degree-v2.html">Run the MicroSim</a></p>
+<p><img alt="" src="degree-v2.png" width="400" /></p>
+<p><a class="md-button md-button--primary" href="degree-v2.html">Run the Degree V2 MicroSim</a></p>
+<p><a href="https://editor.p5js.org/dmccreary/sketches/yHTEP4S_c">Edit the Degree V2 MicroSim</a></p>
 <h2 id="prompt">Prompt</h2>
 <div class="highlight"><pre><span></span><code>Create a p5.js sketch on a 500x600 canvas.
 This sketch demonstrates how the degree of a network graph changes based on the number of connections between vertices of the graph.
-The drawing region is 500x500.  The control region is the bottom 100 below the drawing region.
+The drawing region is 500x500.
+The control region is the bottom 100 below the drawing region.
 Set a global variable of canvasWidth to be 500.
 Set a global variable of drawingHeight to be 500.
 Set a global variable of controlRegionHeight to be 100.
+Set a global variable of leftMargin to be 100.
+Use the leftMargin to place the label and values of the sliders in the control region.
+At the beginning of each draw, draw the background of the drawing region in aliceblue.
+Draw the background of the control region white.
 Create a function that draws N small circles around the edge of a large circle.
 N is a parameter of the function.
+Create another function that draws the network between the edges circles with the degree from the degreeSlider.
 The small circles are spaced evenly around the edge of the large circle.
 The small circles have a maximum radius of 20.
-The large circle has a radius of 200.
+The large circle has a radius of 230.
 Add a slider called nSlider that changes the number of small circles on the edge of the large circle.
 The range of nSlider is from 4 to 20 with a default value of 10.
 Add a second slider called degreeSlider that changes the number of edges between each small circle and other small circles.
 The degreeSlider ranges from 1 to N.
 Draw lines from each small circle to others based on the degree slider.
+Draw the label and values in the leftMargin of the controls.
+Make the size of the sliders be the canvasWidth less the leftMargin.
 </code></pre></div>
+<h2 id="sample-code">Sample Code</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Network Graph Degree Demo</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">450</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">drawingHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">450</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">xCenter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">yCenter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">drawingHeight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">controlRegionHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">60</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">nSlider</span><span class="p">,</span><span class="w"> </span><span class="nx">degreeSlider</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">leftMargin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">drawingHeight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">controlRegionHeight</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">textSize</span><span class="p">(</span><span class="mf">16</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// slider to control the number of vertices on the edge of the circle</span>
+<span class="w">  </span><span class="nx">nSlider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createSlider</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">).</span><span class="nx">position</span><span class="p">(</span><span class="nx">leftMargin</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">nSlider</span><span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="o">-</span><span class="nx">leftMargin</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// slider to control the degree of connections</span>
+<span class="w">  </span><span class="nx">degreeSlider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createSlider</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">).</span><span class="nx">position</span><span class="p">(</span><span class="nx">leftMargin</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">degreeSlider</span><span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="o">-</span><span class="nx">leftMargin</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;aliceblue&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">drawingHeight</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="nx">drawingHeight</span><span class="p">,</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">controlRegionHeight</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// get the updates from any changes in the slider values</span>
+<span class="w">  </span><span class="nx">numberNodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nSlider</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">degreeValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">degreeSlider</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// what we want is the degree to be less than the number of nodes</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">degreeValue</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">numberNodes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">degreeValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numberNodes</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// update the degree</span>
+<span class="w">    </span><span class="nx">degreeSlider</span><span class="p">.</span><span class="nx">value</span><span class="p">(</span><span class="nx">numberNodes</span><span class="p">);</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">drawNetwork</span><span class="p">(</span><span class="nx">xCenter</span><span class="p">,</span><span class="w"> </span><span class="nx">yCenter</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="nx">numberNodes</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">drawLines</span><span class="p">(</span><span class="nx">xCenter</span><span class="p">,</span><span class="w"> </span><span class="nx">yCenter</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="nx">numberNodes</span><span class="p">,</span><span class="w"> </span><span class="nx">degreeValue</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// degreeSlider.attribute(&#39;max&#39;, nSlider.value()); // Ensure degreeSlider max does not exceed nSlider value</span>
+
+<span class="w">  </span><span class="c1">// Draw labels and values</span>
+<span class="w">  </span><span class="nx">noStroke</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Nodes: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numberNodes</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">drawingHeight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Degree: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">degreeValue</span><span class="o">*</span><span class="mf">2</span><span class="p">),</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">drawingHeight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">40</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">drawNetwork</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">largeCircleRadius</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TWO_PI</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">n</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">stroke</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">255</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// ellipse(x, y, largeCircleRadius * 2, largeCircleRadius * 2); // Draw large circle</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">n</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">xOff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cos</span><span class="p">(</span><span class="nx">angle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">largeCircleRadius</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">yOff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sin</span><span class="p">(</span><span class="nx">angle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">largeCircleRadius</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">fill</span><span class="p">(</span><span class="mf">100</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">circle</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">xOff</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">yOff</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span><span class="w"> </span><span class="c1">// Draw small circles</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// note that degree is half what we see on the canvas</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">drawLines</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">largeCircleRadius</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">degree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TWO_PI</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">n</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">n</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">degree</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">iAngle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">jAngle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">angle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">((</span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">j</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">n</span><span class="p">);</span><span class="w"> </span><span class="c1">// Wrap around the circle</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cos</span><span class="p">(</span><span class="nx">iAngle</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">largeCircleRadius</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">y1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sin</span><span class="p">(</span><span class="nx">iAngle</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">largeCircleRadius</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cos</span><span class="p">(</span><span class="nx">jAngle</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">largeCircleRadius</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sin</span><span class="p">(</span><span class="nx">jAngle</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">largeCircleRadius</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">stroke</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">102</span><span class="p">,</span><span class="w"> </span><span class="mf">153</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">line</span><span class="p">(</span><span class="nx">x1</span><span class="p">,</span><span class="w"> </span><span class="nx">y1</span><span class="p">,</span><span class="w"> </span><span class="nx">x2</span><span class="p">,</span><span class="w"> </span><span class="nx">y2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Draw line between vertices</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a bug in the code that tries to make sure that
+the degree is always less than the number of nodes.</p>
+</div>
+<p><a href="https://editor.p5js.org/dmccreary/sketches/LzAtUbzWf">Random Node Distribution Example</a></p>
 
 
   
