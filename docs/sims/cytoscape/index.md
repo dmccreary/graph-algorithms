@@ -10,10 +10,9 @@
 ## Prompt
 
 ```linenums="0"
-Create a cytoscape.js application that draws a
-force-directed graph layout.  Have the application
-generate 20 vertices and make each vertex be connected
-to either two or three other vertices.
+Create a cytoscape.js application that draws a force-directed graph layout.
+Have the application generate 20 vertices
+and make each vertex be connected to either two or three other vertices.
 ```
 
 ## GTP-4 Response
@@ -130,3 +129,57 @@ function generateGraphElements(vertexCount) {
 -   The CSS styles define the size of the graph's container and some basic styles for the nodes and edges.
 -   The JavaScript (`app.js`) uses Cytoscape.js to create a graph inside the specified container. It defines a `generateGraphElements` function to dynamically create nodes and edges. Each node is connected to either two or three other nodes randomly.
 -   The graph layout is set to use Cytoscape's `cose` layout, a force-directed layout algorithm, which positions the nodes in an aesthetically pleasing manner based on their connections.
+
+## Version 2
+
+![](./cytoscape-v2.png)
+
+What if we want the label to display within the vertex circle?
+In Cytoscape this can be done by just changing a few lines of the style
+element.  This shows that the library has
+a clear separation of the UI and the back-end model.
+
+[Run the Cytoscape.js V2 Demo](./cytoscape-v2.html){ .md-button .md-button--primary }
+
+### Prompt
+
+```linenums="0"
+That worked perfectly.  Thank you!
+How would I modify the program to place the names of 
+each node inside the circle of the vertex?
+```
+ ### Response
+
+ To modify the program so that the names of each node appear inside the circle of the vertex, you need to adjust the `style` configuration for the nodes in the Cytoscape.js initialization object. Specifically, you will modify the `label` property within the node style definition to display the node's id (or any other identifier you have assigned to the `data` of each node). This will place the label inside the node by default.
+
+Here is how you can adjust the `style` section of your Cytoscape.js configuration:
+
+```javascript
+style: [
+    {
+        selector: 'node',
+        style: {
+            'background-color': '#666',
+            'label': 'data(id)', // This line configures the label to be the node id
+            'text-valign': 'center', // Vertically center the text inside the node
+            'text-halign': 'center', // Horizontally center the text inside the node
+            'color': '#fff', // Set the text color to white for better visibility
+            'font-size': '10px' // Adjust the font size as needed
+        }
+    },
+    {
+        selector: 'edge',
+        style: {
+            'width': 3,
+            'line-color': '#ccc',
+            'curve-style': 'bezier'
+        }
+    }
+],
+```
+
+In this modified style configuration, the `text-valign` and `text-halign` properties ensure that the text is centered both vertically and horizontally within the node. The `color` property changes the text color, and `font-size` can be adjusted to fit the text within the nodes comfortably.
+
+Remember, the `label` property is set to `'data(id)'`, which means it will display the `id` of each node. If you're using a different identifier or if you want to display another piece of data, you'll need to adjust this to match the data attribute you wish to display (e.g., `'data(name)'` if each node's data includes a `name` attribute).
+
+Integrating this style configuration into your Cytoscape.js setup will result in the node names (or ids) being displayed inside the circles of each vertex, enhancing the readability and informational value of the graph.

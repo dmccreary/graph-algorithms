@@ -33,6 +33,7 @@ nav:
   - Sims:
     - Introduction: sims/index.md
     - Degree: sims/degree/index.md
+    - Degree V2: sims/degree-v2/index.md
     - Weighted: sims/weighted-graph/index.md
     - Force Directed Graph Layout: sims/force/index.md
     - Breath First Search: sims/bfs/index.md
@@ -44,6 +45,7 @@ nav:
     - D3: sims/d3/index.md
     - Vis.js: sims/vis/index.md
     - Cytoscape.js: sims/cytoscape/index.md
+    - Sigma.js : sims/sigma/index.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
   - Glossary: glossary.md
