@@ -66,4 +66,11 @@ queries more consistent.
 
 [Link to the ChatGPT Dialog](https://chat.openai.com/c/847dd95d-919c-4fc1-a317-1fdac2926f71)
 
+## Region Names
+
+In addition to names of cities, counties and states users also frequently ask for region names.
+These region names can be linked to our existing cities counties and states.
+
+Here is a sample list of [Region Names](./region-names.md).  For each of these regions, we can ask ChatGPT to create a list of States, Counties and Cities that they include.
+
 
