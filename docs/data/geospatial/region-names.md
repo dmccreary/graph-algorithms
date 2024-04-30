@@ -76,7 +76,6 @@ These regions each have their own unique features and are integral to the cultur
 
 35.  **The Cascades**: A major mountain range of the western United States, extending from southern British Columbia through Washington and Oregon to Northern California, known for its breathtaking landscapes and volcanic peaks.
 
-
 36.  **The Ozarks**: A geographically and culturally significant area covering parts of Missouri, Arkansas, Oklahoma, and Kansas, known for its beautiful landscapes, mountains, lakes, and rivers, offering plentiful outdoor recreation opportunities.
 
 37.  **The Great Lakes Region**: Encompassing states bordering the Great Lakes --- Michigan, Ohio, New York, Pennsylvania, Wisconsin, Illinois, Indiana, and Minnesota. Known for its industrial history, natural beauty, and as a vital water source.
