@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Example 5: Recluster on Double Click</title>
+  <title>vis.js Cluster by Domain with Re-collapse</title>
   <!-- Load vis.js from CDN -->
   <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
   <style type="text/css">
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<h2>Example 5: Recluster on Double Click</h2>
+<h2>vis.js Network - Clustering by Domain with Re-collapse</h2>
 <div id="mynetwork"></div>
 
 <script type="text/javascript">
@@ -54,47 +54,76 @@
     { from: 1, to: 7 }
   ]);
 
-
-  // Create a network
-  var container = document.getElementById('mynetwork');
+// Create a vis.js network
+var container = document.getElementById('mynetwork');
 
   var data = {
     nodes: nodes,
     edges: edges
-  };
+};
 
-  var options = {
-    nodes: {
-      shape: 'circle',
-      size: 16
-    },
-    physics: true  // Disable physics to cluster immediately
-  };
+// general display options
+var options = {
+  nodes: {
+    shape: 'circle',
+    size: 16
+  },
+  physics: true  // Enable or disable physics to cluster immediately
+};
 
-  var network = new vis.Network(container, data, options);
+var network = new vis.Network(container, data, options);
 
-      // Cluster after stabilization
+// Cluster after stabilization
 network.once('stabilized', function () {
   clusterByDomain();
 });
 
-  // Object to keep track of clusters and their associated nodes
-  var clusters = {};
-  var lastClusterId = 0;
+// Objects to keep track of clusters and their associated nodes
+var clusters = {};
+var lastClusterId = 0;
 
-  // Function to create a unique cluster ID
-  function getClusterId(domain) {
+// Function to create a unique cluster ID
+function getClusterId(domain) {
     return 'cluster:' + domain;
-  }
+}
 
-  // Function to cluster nodes by the 'domain' attribute
-  function clusterByDomain() {
-    // Get unique domains from nodes
-    var allNodes = nodes.get();
-    var domains = [...new Set(allNodes.map(node => node.domain))];
+// Function to cluster nodes by the 'domain' attribute
+function clusterByDomain() {
+  // Get unique domains from nodes
+  var allNodes = nodes.get();
+  var domains = [...new Set(allNodes.map(node => node.domain))];
 
-    domains.forEach(function(domain) {
-      var clusterId = getClusterId(domain);
+  domains.forEach(function(domain) {
+    // Define colors based on domain
+    var domainColors = {
+      'A': { border: '#FF0000', background: '#FFCCCC' }, // Red
+      'B': { border: '#00FF00', background: '#CCFFCC' }, // Green
+      'C': { border: '#0000FF', background: '#CCCCFF' }  // Blue
+    };
+
+    var clusterOptionsByData = {
+      joinCondition: function(childNode) {
+        return childNode.domain === domain;
+      },
+      clusterNodeProperties: {
+        id: 'cluster:' + domain,
+        label: '<b>Cluster ' + domain + '</b>',
+        shape: 'square',
+        size: 50,
+        align: 'horizontal', // Center align the text
+        color: domainColors[domain],
+        font: {
+            color: '#000000',  // Black font color
+            size: 16,          // Font size
+            vadjust: -65,      // Adjust label position upwards
+            align: 'horizontal', // Center align the text
+            multi: true
+          }
+      }
+    };
+    network.cluster(clusterOptionsByData);
+  });
+}
 
       // Define clustering options for each domain
       var clusterOptionsByData = {
@@ -111,13 +140,13 @@ network.once('stabilized', function () {
           clusterOptions.shape = 'square';
           clusterOptions.size = 50;
           clusterOptions.color = {
-            border: 'color',      // Orange border
+            border: '#FFA500',      // Orange border
             background: '#FFE5B4'   // Light orange background
           };
           clusterOptions.font = {
             color: '#000000',
             size: 16,
-            vadjust: -65,
+            vadjust: -35,
             align: 'horizontal',
             multi: true
           };
@@ -178,7 +207,7 @@ network.once('stabilized', function () {
         clusterOptions.font = {
           color: '#000000',
           size: 16,
-          vadjust: -65,
+          vadjust: -35,
           align: 'horizontal',
           multi: true
         };

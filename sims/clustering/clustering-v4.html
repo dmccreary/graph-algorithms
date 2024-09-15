@@ -14,7 +14,9 @@
 </head>
 <body>
 
-<h2>vis.js Network - Clustering by Domain Attribute</h2>
+<h2>Exampe 4: Clustering by Domain Attribute and Repositioning the Label</h2>
+<a href=".">Back</a><br/>
+
 <div id="mynetwork"></div>
 
 <script type="text/javascript">
@@ -63,23 +65,23 @@
     edges: edges
   };
 
-  var options = {
-    nodes: {
-      shape: 'dot',
-      size: 16
-    },
-    physics: true  // Disable physics to cluster immediately
-  };
+var options = {
+  nodes: {
+    shape: 'circle',
+    size: 16
+  },
+  physics: true  // Disable/enable physics to cluster immediately
+};
 
-  var network = new vis.Network(container, data, options);
+var network = new vis.Network(container, data, options);
 
-    // Cluster after stabilization
+// Cluster after stabilization
 network.once('stabilized', function () {
   clusterByDomain();
 });
 
-  // Function to cluster nodes by the 'domain' attribute
-  function clusterByDomain() {
+// Function to cluster nodes by the 'domain' attribute
+function clusterByDomain() {
   // Get unique domains from nodes
   var allNodes = nodes.get();
   var domains = [...new Set(allNodes.map(node => node.domain))];

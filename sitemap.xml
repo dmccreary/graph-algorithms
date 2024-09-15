@@ -146,6 +146,31 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/library-analysis/</loc>
+         <lastmod>2024-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/library-analysis/cytoscape/</loc>
+         <lastmod>2024-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/library-analysis/d3/</loc>
+         <lastmod>2024-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/library-analysis/sigma/</loc>
+         <lastmod>2024-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/library-analysis/vis/</loc>
+         <lastmod>2024-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/</loc>
          <lastmod>2024-09-15</lastmod>
          <changefreq>daily</changefreq>
@@ -157,16 +182,6 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/clustering/</loc>
-         <lastmod>2024-09-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/graph-algorithms/sims/cytoscape/</loc>
-         <lastmod>2024-09-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/graph-algorithms/sims/d3/</loc>
          <lastmod>2024-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -206,22 +221,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/graph-algorithms/sims/sigma/</loc>
-         <lastmod>2024-09-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/spanning-tree/</loc>
          <lastmod>2024-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/graph-algorithms/sims/template/</loc>
-         <lastmod>2024-09-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://dmccreary.github.io/graph-algorithms/sims/vis/</loc>
          <lastmod>2024-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>

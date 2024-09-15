@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<h2>vis.js Network - Clustering by Domain Attribute</h2>
+<h2>Clustering by Domain Attribute: Example 2 Styling the Cluster Icon</h2>
 
 <a href=".">Back</a><br/>
 <div id="mynetwork"></div>
@@ -64,9 +64,10 @@
     edges: edges
   };
 
+  // note that the dot shape puts the label under the circle
   var options = {
     nodes: {
-      shape: 'dot',
+      shape: 'circle',
       size: 16
     },
     physics: true  // Disable physics to cluster immediately

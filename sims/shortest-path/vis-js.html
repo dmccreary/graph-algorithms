@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dijkstra's Algorithm Visualization with vis.js</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css" rel="stylesheet" type="text/css" />
+  <style>
+    #network {
+      width: 600px;
+      height: 400px;
+      border: 1px solid lightgray;
+    }
+    #controls {
+      margin-top: 10px;
+    }
+    #controls button {
+      margin-right: 10px;
+    }
+    #speedControl {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Dijkstra's Algorithm Visualization</h2>
+<div id="network"></div>
+
+<div id="controls">
+  <button id="previousBtn">Previous</button>
+  <button id="nextBtn">Next</button>
+  <button id="solveBtn">Solve</button>
+</div>
+
+<div id="speedControl">
+  Animation Speed: <input type="range" id="speedSlider" min="100" max="2000" value="1000"> <span id="speedValue">1000 ms</span>
+</div>
+
+<script type="text/javascript">
+  // Initialize variables
+  var nodes = new vis.DataSet();
+  var edges = new vis.DataSet();
+  var network = null;
+  var animationSteps = [];
+  var currentStep = 0;
+  var animationSpeed = 1000; // default 1 second per step
+  var startNode = null;
+  var endNode = null;
+  var timer = null;
+
+  // Create nodes
+  for (var i = 1; i <= 30; i++) {
+    nodes.add({id: i, label: String(i)});
+  }
+
+  // Function to generate a connected graph where each node has at least 3 edges
+  function generateGraph() {
+    var nodeIds = nodes.getIds();
+    var connected = new Set();
+
+    // First, create a ring to ensure the graph is connected
+    for (var i = 0; i < nodeIds.length; i++) {
+      var from = nodeIds[i];
+      var to = nodeIds[(i + 1) % nodeIds.length]; // wrap around
+      var weight = Math.floor(Math.random() * 20) + 1;
+      edges.add({from: from, to: to, label: String(weight), value: weight});
+      connected.add(from);
+      connected.add(to);
+    }
+
+    // Now, add edges to make sure each node has at least 3 connections
+    nodeIds.forEach(function (nodeId) {
+      var connections = network.getConnectedNodes(nodeId);
+      var neededConnections = 3 - connections.length;
+      var attempts = 0;
+      while (neededConnections > 0 && attempts < 100) {
+        var targetNode = nodeIds[Math.floor(Math.random() * nodeIds.length)];
+        if (targetNode != nodeId) {
+          var existingEdge = edges.get({
+            filter: function (edge) {
+              return (edge.from == nodeId && edge.to == targetNode) || (edge.from == targetNode && edge.to == nodeId);
+            }
+          });
+          if (existingEdge.length === 0) {
+            var weight = Math.floor(Math.random() * 20) + 1;
+            edges.add({from: nodeId, to: targetNode, label: String(weight), value: weight});
+            neededConnections--;
+          }
+        }
+        attempts++;
+      }
+    });
+  }
+
+  // Create the network first to use network methods
+  var container = document.getElementById('network');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+    edges: {
+      arrows: 'to',
+      labelHighlightBold: true,
+      font: {align: 'middle'}
+    },
+    nodes: {
+      shape: 'dot',
+      size: 10
+    },
+    physics: {
+      enabled: true,
+      stabilization: false // Disable stabilization to display network immediately
+    },
+    interaction: {
+      hover: true
+    }
+  };
+  network = new vis.Network(container, data, options);
+
+  // Generate the graph after network is initialized
+  generateGraph();
+
+  // Initialize the algorithm immediately
+  initializeAlgorithm();
+
+  // Initialize the Dijkstra's algorithm
+  function initializeAlgorithm() {
+    // Randomly select start and end nodes
+    startNode = Math.floor(Math.random() * 30) + 1;
+    do {
+      endNode = Math.floor(Math.random() * 30) + 1;
+    } while (endNode === startNode);
+
+    // Highlight start and end nodes
+    nodes.update({id: startNode, color: {background: 'green'}});
+    nodes.update({id: endNode, color: {background: 'red'}});
+
+    // Run Dijkstra's algorithm and record steps
+    var result = dijkstra(nodes.getIds(), edges.get(), startNode);
+    animationSteps = result.steps;
+
+    // Reset current step
+    currentStep = 0;
+  }
+
+  // Dijkstra's algorithm implementation
+  function dijkstra(nodeIds, edgeList, start) {
+    var distances = {};
+    var prev = {};
+    var steps = [];
+    var unvisited = new Set(nodeIds);
+
+    // Initialize distances
+    nodeIds.forEach(function (nodeId) {
+      distances[nodeId] = Infinity;
+      prev[nodeId] = null;
+    });
+    distances[start] = 0;
+
+    while (unvisited.size > 0) {
+      // Find the unvisited node with the smallest distance
+      var current = null;
+      unvisited.forEach(function (nodeId) {
+        if (current === null || distances[nodeId] < distances[current]) {
+          current = nodeId;
+        }
+      });
+
+      // If the smallest distance is infinity, we are done
+      if (distances[current] === Infinity) {
+        break;
+      }
+
+      unvisited.delete(current);
+
+      // For each neighbor of the current node
+      edgeList.forEach(function (edge) {
+        if (edge.from == current && unvisited.has(edge.to)) {
+          var alt = distances[current] + parseInt(edge.value);
+          if (alt < distances[edge.to]) {
+            distances[edge.to] = alt;
+            prev[edge.to] = current;
+
+            // Record the step
+            steps.push({
+              action: 'update',
+              node: edge.to,
+              distance: alt,
+              prevNode: current
+            });
+          }
+        } else if (edge.to == current && unvisited.has(edge.from)) {
+          var alt = distances[current] + parseInt(edge.value);
+          if (alt < distances[edge.from]) {
+            distances[edge.from] = alt;
+            prev[edge.from] = current;
+
+            // Record the step
+            steps.push({
+              action: 'update',
+              node: edge.from,
+              distance: alt,
+              prevNode: current
+            });
+          }
+        }
+      });
+    }
+
+    // Record the shortest path
+    var path = [];
+    var u = endNode;
+    if (prev[u] !== undefined || u == startNode) {
+      while (u) {
+        path.unshift(u);
+        u = prev[u];
+      }
+    }
+
+    return {distances: distances, prev: prev, steps: steps, path: path};
+  }
+
+  // Event handlers for buttons
+  document.getElementById('nextBtn').addEventListener('click', function () {
+    if (currentStep < animationSteps.length) {
+      animateStep(currentStep);
+      currentStep++;
+    }
+  });
+
+  document.getElementById('previousBtn').addEventListener('click', function () {
+    if (currentStep > 0) {
+      currentStep--;
+      animateStep(currentStep, true);
+    }
+  });
+
+  document.getElementById('solveBtn').addEventListener('click', function () {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+      this.textContent = 'Solve';
+    } else {
+      this.textContent = 'Pause';
+      timer = setInterval(function () {
+        if (currentStep < animationSteps.length) {
+          animateStep(currentStep);
+          currentStep++;
+        } else {
+          clearInterval(timer);
+          document.getElementById('solveBtn').textContent = 'Solve';
+          showShortestPath();
+        }
+      }, animationSpeed);
+    }
+  });
+
+  // Speed slider control
+  document.getElementById('speedSlider').addEventListener('input', function () {
+    animationSpeed = this.value;
+    document.getElementById('speedValue').textContent = this.value + ' ms';
+    if (timer) {
+      clearInterval(timer);
+      timer = setInterval(function () {
+        if (currentStep < animationSteps.length) {
+          animateStep(currentStep);
+          currentStep++;
+        } else {
+          clearInterval(timer);
+          document.getElementById('solveBtn').textContent = 'Solve';
+          showShortestPath();
+        }
+      }, animationSpeed);
+    }
+  });
+
+  // Animate a single step
+  function animateStep(stepIndex, reverse = false) {
+    var step = animationSteps[stepIndex];
+    if (!step) return;
+
+    if (step.action === 'update') {
+      var color = reverse ? undefined : 'orange';
+      nodes.update({id: step.node, color: {background: color}});
+      edges.forEach(function (edge) {
+        if ((edge.from == step.prevNode && edge.to == step.node) ||
+            (edge.to == step.prevNode && edge.from == step.node)) {
+          edges.update({id: edge.id, color: {color: color}});
+        }
+      });
+    }
+  }
+
+  // Show the shortest path after solving
+  function showShortestPath() {
+    var result = dijkstra(nodes.getIds(), edges.get(), startNode);
+    var path = result.path;
+    for (var i = 0; i < path.length - 1; i++) {
+      var from = path[i];
+      var to = path[i + 1];
+      edges.forEach(function (edge) {
+        if ((edge.from == from && edge.to == to) || (edge.to == from && edge.from == to)) {
+          edges.update({id: edge.id, color: {color: 'blue'}, width: 4});
+        }
+      });
+      nodes.update({id: to, color: {background: 'blue'}});
+    }
+  }
+</script>
+
+</body>
+</html>
