@@ -46,4 +46,6 @@ Dijkstra's shortest path algorithm is a famous algorithm in computer science, us
 
 Dijkstra's algorithm is highly versatile and forms the basis of many complex systems and applications in the real world, where the efficient traversal of a graph is necessary.
 
+[Vis-js Demo](./vis-js.html)
+
 [ChatGPT Dialog](https://chat.openai.com/c/5749b49c-71d3-43d1-aa8b-a7ed6528d7b8)

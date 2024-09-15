@@ -1,9 +1,7 @@
 # Sigma JavaScript
 
-<figure markdown>
-   ![Image Name](./image.png){ width="400" }
-   <figcaption>Figure caption.</figcaption>
-</figure>
+
+![Image Name](./sigma.png){ width="400"}
 
 [Link to Demo](./sigma.html){ .md-button .md-button--primary }
 

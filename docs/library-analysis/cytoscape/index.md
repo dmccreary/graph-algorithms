@@ -1,11 +1,14 @@
 # Cytoscape.js
 
-![Cytoscape Demo](./cytoscape.png){ width="400" }
+Cytoscape.js a a JavaScript library for
+displaying graph networks.
+
+![Cytoscape Demo](./cytoscape.png){ width="400"}
 
 
 [Run the Cytosscape.js Demo](./cytoscape.html){ .md-button .md-button--primary }
-[HTML]()
-[JavaScript]()
+[HTML](./cytoscape.html)
+[JavaScript App.js file](./app.js)
 
 ## Prompt
 

@@ -9,6 +9,12 @@ nav:
   - Home: index.md
   - About: about.md
   - Topics: topic-lists.md
+  - JS Library Analysis:
+    - Introduction: library-analysis/index.md
+    - D3: library-analysis/d3/index.md
+    - Vis.js: library-analysis/vis/index.md
+    - Cytoscape.js: library-analysis/cytoscape/index.md
+    - Sigma.js : library-analysis/sigma/index.md
   - Lessons:
     - Introduction: lessons/index.md
     - Terminology: lessons/01-graph-terminology.md
@@ -43,11 +49,7 @@ nav:
     - PageRank: sims/page-rank/index.md
     - Matching: sims/matching/index.md
     - Data Element Matching: sims/data-element-match/index.md
-    - D3: sims/d3/index.md
-    - Vis.js: sims/vis/index.md
     - Clustering: sims/clustering/index.md
-    - Cytoscape.js: sims/cytoscape/index.md
-    - Sigma.js : sims/sigma/index.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
   - Glossary: glossary.md

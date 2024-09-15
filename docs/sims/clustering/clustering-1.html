@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>vis.js Cluster by Domain Example</title>
+  <title>Cluster Graph Nodes Example 1</title>
   <!-- Load vis.js from CDN -->
   <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
   <style type="text/css">
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<h2>vis.js Network - Clustering by Domain Attribute</h2>
+<h2>Clustering Nodes by Domain Attribute</h2>
 
 <a href=".">Back</a><br/>
 <div id="mynetwork"></div>
@@ -64,9 +64,10 @@
     edges: edges
   };
 
+  // used circle not dot since it centers the label inside the vertex
   var options = {
     nodes: {
-      shape: 'dot',
+      shape: 'circle',
       size: 16
     },
     physics: true  // Disable physics to cluster immediately
