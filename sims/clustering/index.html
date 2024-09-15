@@ -12,13 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/d3/">
+        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/sims/clustering/">
       
       
-        <link rel="prev" href="../data-element-match/">
+        <link rel="prev" href="../vis/">
       
       
-        <link rel="next" href="../vis/">
+        <link rel="next" href="../cytoscape/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>D3 - Graph Algorithms</title>
+        <title>Clustering - Graph Algorithms</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#d3-graph-test" class="md-skip">
+        <a href="#clustering-in-visjs" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              D3
+              Clustering
             
           </span>
         </div>
@@ -757,30 +757,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    D3
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../d3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -789,62 +769,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prompt-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt 1
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Response 1
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt-force-directed-graph" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt Force Directed Graph
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#forces-with-sliders" class="md-nav__link">
-    <span class="md-ellipsis">
-      Forces with Sliders
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -875,10 +799,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../clustering/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Clustering
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -887,6 +831,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-drawing-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Drawing Properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#individual-cluster-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Individual Cluster Colors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositioning-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositioning Text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recollapse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recollapse
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1068,36 +1068,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prompt-1" class="md-nav__link">
+  <a href="#cluster-drawing-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Prompt 1
+      Cluster Drawing Properties
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#response-1" class="md-nav__link">
+  <a href="#individual-cluster-colors" class="md-nav__link">
     <span class="md-ellipsis">
-      Response 1
+      Individual Cluster Colors
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prompt-force-directed-graph" class="md-nav__link">
+  <a href="#repositioning-text" class="md-nav__link">
     <span class="md-ellipsis">
-      Prompt Force Directed Graph
+      Repositioning Text
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#forces-with-sliders" class="md-nav__link">
+  <a href="#recollapse" class="md-nav__link">
     <span class="md-ellipsis">
-      Forces with Sliders
+      Recollapse
     </span>
   </a>
   
@@ -1121,53 +1121,100 @@
   
 
 
-<h1 id="d3-graph-test">D3 Graph Test</h1>
-<p><img alt="D3 Example Program" src="d3.png" width="400px" /></p>
-<p><a class="md-button md-button--primary" href="d3.html">Run the 20 Vertex D3 Demo</a></p>
-<p>D3 is a general-purpose charting library with a nice set
-of tools for drawing graph networks.  D3 generates
-SVG so if you know SVG it is easy to modify.  Because
-D3 is popular there are many example programs that GPT
-was trained on and GPT does a good job of generating
-high-quality D3.js code.</p>
-<h2 id="prompt-1">Prompt 1</h2>
-<div class="highlight"><pre><span></span><code>Create a d3.js program that displays a network graph
-of 20 vertices that are randomly placed on a 500x500 canvas.  
-Make each node connected to the three nearest nodes.
-</code></pre></div>
-<h2 id="response-1">Response 1</h2>
-<p>Creating a D3.js program to display a network graph as described involves several steps. First, you'll need to generate 20 vertices with random positions on a 500x500 canvas. Then, for each vertex, you must find the three nearest vertices and draw lines (edges) to connect them. Here's a basic outline of the code you would write:</p>
-<ol>
-<li><strong>Set Up the Environment</strong>: Include D3.js in your HTML file.</li>
-<li><strong>Create Vertices</strong>: Generate 20 vertices with random x and y coordinates within the 500x500 canvas.</li>
-<li><strong>Calculate Nearest Neighbors</strong>: For each vertex, calculate the distance to every other vertex and identify the three nearest ones.</li>
-<li><strong>Draw the Graph</strong>: Use D3.js to draw the vertices and the edges connecting each vertex to its three nearest neighbors.</li>
-</ol>
-<p>Here's a simplified version of the code you might use:</p>
-<p>This code sets up a simple D3.js environment, generates random vertices, computes the nearest neighbors, and then uses D3.js to draw the nodes and edges on an SVG canvas. Note that this is a basic implementation and may need optimizations or enhancements based on your specific requirements.</p>
-<h2 id="prompt-force-directed-graph">Prompt Force Directed Graph</h2>
-<div class="highlight"><pre><span></span><code>OK, that is perfect.  Now can you do the same graph, but use a force-directed graph to adjust the 
-spacing of the nodes on the canvas with D3?
-</code></pre></div>
-<p>Certainly! To create a force-directed graph using D3.js, you'll modify the previous setup to include D3's force simulation. The force simulation will automatically adjust the positions of the nodes based on the forces you define, such as link forces, charge forces, and centering forces.</p>
-<p>Here's an updated version of the code to use a force-directed layout:</p>
-<p>This code introduces a few new concepts:</p>
-<ol>
-<li>
-<p><strong>Force Simulation</strong>: We create a D3 force simulation that affects the nodes and links. The forces applied are link force (to keep linked nodes at a certain distance), charge force (to repel nodes from each other), and a centering force (to keep the graph centered in the SVG element).</p>
-</li>
-<li>
-<p><strong>Ticked Function</strong>: The simulation runs continuously and updates the positions of nodes and links. The <code>ticked</code> function is called at each tick of the simulation to update the positions of the nodes and links.</p>
-</li>
-<li>
-<p><strong>Drag Behavior</strong>: Nodes are made draggable to interact with the graph. The functions <code>dragstarted</code>, <code>dragged</code>, and <code>dragended</code> handle the drag events and update the simulation accordingly.</p>
-</li>
-</ol>
-<p>This code creates an interactive force-directed graph where the nodes are connected to their three nearest neighbors. You can further tweak the parameters of the force simulation to achieve the desired behavior and appearance.</p>
-<p><a class="md-button md-button--primary" href="d3-force.html">Run the D3 Force Demo</a></p>
-<h2 id="forces-with-sliders">Forces with Sliders</h2>
-<p><img alt="" src="d3-force-sliders.png" /></p>
-<p><a class="md-button md-button--primary" href="d3-force-sliders.html">Forces with Sliders Demo</a></p>
+<h1 id="clustering-in-visjs">Clustering in vis.js</h1>
+<p><img alt="" src="cluster-a-b-c.png" /></p>
+<p><a href="clustering.html">example</a></p>
+<p>Double click on a cluster to expand</p>
+<h2 id="cluster-drawing-properties">Cluster Drawing Properties</h2>
+<p><img alt="" src="cluster-boxes.png" /></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">clusterNodeProperties</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cluster:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">domain</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Cluster &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">domain</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">shape</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;square&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Change shape to square</span>
+<span class="w">    </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w">        </span><span class="c1">// Increase size</span>
+<span class="w">    </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#FFA500&#39;</span><span class="p">,</span><span class="w">      </span><span class="c1">// Set border color (e.g., orange)</span>
+<span class="w">        </span><span class="nx">background</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#FFE5B4&#39;</span><span class="w">   </span><span class="c1">// Set background color (e.g., light orange)</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">font</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#000000&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Set font color to black for readability</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><a href="clustering-v2.html">example 2</a></p>
+<h2 id="individual-cluster-colors">Individual Cluster Colors</h2>
+<p><img alt="" src="cluster-boxes-domain-colors.png" /></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">clusterByDomain</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Get unique domains from nodes</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">allNodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nodes</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">allNodes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">node</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">node</span><span class="p">.</span><span class="nx">domain</span><span class="p">))];</span>
+
+<span class="w">  </span><span class="nx">domains</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">domain</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Define colors based on domain</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">domainColors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s1">&#39;A&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">background</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#FFCCCC&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Red</span>
+<span class="w">      </span><span class="s1">&#39;B&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#00FF00&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">background</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#CCFFCC&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Green</span>
+<span class="w">      </span><span class="s1">&#39;C&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">border</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#0000FF&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">background</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#CCCCFF&#39;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// Blue</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">clusterOptionsByData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">joinCondition</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">childNode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">childNode</span><span class="p">.</span><span class="nx">domain</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">domain</span><span class="p">;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">clusterNodeProperties</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cluster:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">domain</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Cluster &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">domain</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">shape</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;square&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">domainColors</span><span class="p">[</span><span class="nx">domain</span><span class="p">],</span>
+<span class="w">        </span><span class="nx">font</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#000000&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">network</span><span class="p">.</span><span class="nx">cluster</span><span class="p">(</span><span class="nx">clusterOptionsByData</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><a href="clustering-v3.html">example 3</a></p>
+<h2 id="repositioning-text">Repositioning Text</h2>
+<p><a href="clustering-v4.html">example 4</a></p>
+<h2 id="recollapse">Recollapse</h2>
+<p><a href="clustering-v5.html">example 5</a></p>
 
 
 
@@ -1205,7 +1252,7 @@ spacing of the nodes on the canvas with D3?
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../data-element-match/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Element Matching">
+          <a href="../vis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vis.js">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1215,20 +1262,20 @@ spacing of the nodes on the canvas with D3?
                 Previous
               </span>
               <div class="md-ellipsis">
-                Data Element Matching
+                Vis.js
               </div>
             </div>
           </a>
         
         
           
-          <a href="../vis/" class="md-footer__link md-footer__link--next" aria-label="Next: Vis.js">
+          <a href="../cytoscape/" class="md-footer__link md-footer__link--next" aria-label="Next: Cytoscape.js">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Vis.js
+                Cytoscape.js
               </div>
             </div>
             <div class="md-footer__button md-icon">
