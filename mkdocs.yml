@@ -45,6 +45,7 @@ nav:
     - Data Element Matching: sims/data-element-match/index.md
     - D3: sims/d3/index.md
     - Vis.js: sims/vis/index.md
+    - Clustering: sims/clustering/index.md
     - Cytoscape.js: sims/cytoscape/index.md
     - Sigma.js : sims/sigma/index.md
   - How We Built This Site: how-we-built-this-site.md
