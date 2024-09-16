@@ -38,7 +38,7 @@ This code creates a simple network graph using vis.js, with 20 nodes randomly pl
 ### Prompt
 
 ```linenums="0"
-That was perfect!  Can you now create the same graph using
+Can you now create the same graph using
 a force directed layout algorithm to space the nodes apart?
 ```
 

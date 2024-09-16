@@ -72,26 +72,26 @@
     edges: edges
   };
 
+  var options = {
+    nodes: {
+      shape: 'circle',
+      size: 16
+    },
+    physics: true  // Enable physics for clustering
+  };
+
   var domainColors = {
         'A': { border: '#FF0000', background: '#FFCCCC' }, // Red
         'B': { border: '#00FF00', background: '#CCFFCC' }, // Green
         'C': { border: '#0000FF', background: '#CCCCFF' }  // Blue
   };
   
-  var options = {
-    nodes: {
-      shape: 'circle',
-      size: 16
-    },
-    physics: true  // Disable physics to cluster immediately
-  };
-
   var network = new vis.Network(container, data, options);
 
-      // Cluster after stabilization
-network.once('stabilized', function () {
-  clusterByDomain();
-});
+  // Cluster after stabilization
+  network.once('stabilized', function () {
+    clusterByDomain();
+  });
 
   // Object to keep track of clusters and their associated nodes
   var clusters = {};
@@ -144,12 +144,12 @@ network.once('stabilized', function () {
         clusterNodeProperties: {
           allowSingleNodeCluster: false,  // Do not create cluster if only one node matches
           id: 'cluster:' + domain,
-        label: '<b>Cluster ' + domain + '</b>',
-        shape: 'square',
-        size: 50,
-        align: 'horizontal', // Center align the text
-        color: domainColors[domain],
-        font: {
+          label: '<b>Cluster ' + domain + '</b>',
+          shape: 'square',
+          size: 50,
+          align: 'horizontal', // Center align the text
+          color: domainColors[domain],
+          font: {
             color: '#000000',  // Black font color
             size: 16,          // Font size
             vadjust: -65,      // Adjust label position upwards
