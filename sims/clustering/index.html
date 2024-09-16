@@ -1490,18 +1490,21 @@ use this list to assign the color:</p>
 <p>Next, we want the text to be positioned in the center of the cluster icon.
 It would be nice to have a "centerLabel" property, but vis.js does not
 support this.  Instead we must move the vertical positioning up
-by setting negative distance.</p>
+by setting negative distance based on the square size.  For a square
+of size 40, we need to move up -55.  For a square if size 50 we need
+to move up -65.</p>
 <p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">clusterNodeProperties</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">font</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">vadjust</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">65</span><span class="p">,</span><span class="w">      </span><span class="c1">// Adjust label position upwards</span>
+<span class="w">    </span><span class="nx">vadjust</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">55</span><span class="p">,</span><span class="w">      </span><span class="c1">// Adjust label position upwards</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<a href="clustering-v4.html">Example 4: Repositioning the Label Within the Square</a></p>
+<img alt="" src="cluster-boxes-domain-colors-centered.png" /></p>
+<p><a href="clustering-v4.html">Example 4: Repositioning the Label Within the Square Cluster</a></p>
 <h2 id="lab-5-recollapse">Lab 5: Recollapse</h2>
 <p>Although we can now double click on each cluster to expand it, we might
 change our mind and want the cluster to be collapsed again into a single
