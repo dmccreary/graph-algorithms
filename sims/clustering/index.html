@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#clustering-in-visjs" class="md-skip">
+        <a href="#clustering-in-graph-visualization" class="md-skip">
           Skip to content
         </a>
       
@@ -851,6 +851,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-is-a-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Cluster?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Clusters?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Use Clusters?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-domain-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Domain Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purpose-and-benefits-of-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Benefits of Clustering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-interactive-examples-with-visjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working Interactive Examples with vis.js
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-a-domain-property-to-each-vertex" class="md-nav__link">
     <span class="md-ellipsis">
       Adding a Domain Property to Each Vertex
@@ -1071,6 +1122,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-is-a-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Cluster?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Clusters?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Use Clusters?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-domain-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Domain Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purpose-and-benefits-of-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Benefits of Clustering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-interactive-examples-with-visjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working Interactive Examples with vis.js
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-a-domain-property-to-each-vertex" class="md-nav__link">
     <span class="md-ellipsis">
       Adding a Domain Property to Each Vertex
@@ -1166,27 +1268,78 @@
   
 
 
-<h1 id="clustering-in-visjs">Clustering in vis.js</h1>
-<p>Network diagrams get vary complicated.  As the number of vertices gets
+<h1 id="clustering-in-graph-visualization">Clustering in Graph Visualization</h1>
+<p>Network diagrams can quickly get vary complicated.  As the number of vertices gets
 larger, the network becomes more difficult to view and see key
-relationships.</p>
-<p>Here is an example of a flatened view of a small graph:</p>
+relationships.  We need ways to quickly collapse a group
+of nodes into a single symbol to reduce complexity.  The primary tool we
+used to do this is called a graph node <a href="../../glossary/#cluster">cluster</a>.</p>
+<h2 id="what-is-a-cluster">What is a Cluster?</h2>
+<p>In graph theory, a cluster in is a <strong>composite node</strong> that encapsulates a group of related nodes and their connections, formed based on specific criteria, to simplify and enhance the visualization of network diagrams. It serves as an interactive element that can be expanded or collapsed, allowing users to explore the network at different levels of detail while reducing visual complexity.</p>
+<h2 id="why-use-clusters">Why Use Clusters?</h2>
+<ul>
+<li>
+<p><strong>Representation of Grouped Nodes</strong>: A cluster acts as a <strong>higher-level abstraction</strong>, encapsulating several nodes (and their edges) into one composite node. This helps in visualizing the network at different levels of detail.</p>
+</li>
+<li>
+<p><strong>Formation Criteria</strong>: Clusters are formed based on <strong>specific conditions or attributes</strong> of the nodes, such as shared properties (e.g., a common <code>domain</code> attribute), connectivity patterns, or spatial proximity.</p>
+</li>
+<li>
+<p><strong>Interactivity</strong>: Clusters are <strong>interactive</strong> elements in the network graph. Users can <strong>expand (open)</strong> a cluster to reveal the individual nodes it contains or <strong>collapse</strong> them back into a single cluster node. This dynamic interaction allows for exploration of the network at varying granularities.</p>
+</li>
+<li>
+<p><strong>Visual Simplification</strong>: By clustering nodes, the network diagram becomes <strong>less cluttered</strong>, making it easier to understand the overall structure and relationships without being overwhelmed by too many individual elements.</p>
+</li>
+</ul>
+<h3 id="example-domain-clusters">Example: Domain Clusters</h3>
+<ul>
+<li>
+<p><strong>Clustering by Attribute (<code>domain</code>)</strong>: Nodes that share the same <code>domain</code> attribute are merged into a cluster. For instance, all nodes with <code>domain: 'A'</code> are grouped into a cluster labeled <strong>'Cluster A'</strong>.</p>
+</li>
+<li>
+<p><strong>Cluster Node Properties</strong>: The appearance of the cluster node can be customized (e.g., shape, size, color, label placement) to distinguish it from regular nodes and to convey meaningful information about the grouped nodes.</p>
+</li>
+<li>
+<p><strong>Re-collapsing Clusters</strong>: The code allows for clusters to be <strong>re-collapsed</strong> by double-clicking on any node that was part of an expanded cluster, enhancing the interactive exploration of the network.</p>
+</li>
+</ul>
+<h3 id="purpose-and-benefits-of-clustering">Purpose and Benefits of Clustering</h3>
+<ul>
+<li>
+<p><strong>Simplifies Complex Networks</strong>: Clustering reduces the number of visible nodes and edges, making large and complex networks more manageable and understandable.</p>
+</li>
+<li>
+<p><strong>Improves Performance</strong>: By displaying fewer elements, rendering performance is enhanced, leading to smoother interactions, especially with large datasets.</p>
+</li>
+<li>
+<p><strong>Enhances User Experience</strong>: Interactive clustering allows users to focus on areas of interest within the network, drilling down into clusters for detailed information or zooming out for an overview.</p>
+</li>
+<li>
+<p><strong>Facilitates Data Analysis</strong>: Grouping related nodes helps in identifying patterns, relationships, and hierarchical structures within the network data.</p>
+</li>
+</ul>
+<h2 id="working-interactive-examples-with-visjs">Working Interactive Examples with vis.js</h2>
+<p>Here is an example of a flattened view of a small graph:</p>
 <p><img alt="" src="unclustered-nodes.png" /></p>
 <p>Note that there are vertices grouped by three letters: "A", "B" and "C".
 In this lesson we will show you how to group communities of nodes
-together under a single icon.  This allows you to quickly focus
+together under a single icon called a <a href="../../glossary/#cluster">cluster</a>.<br />
+This allows you to quickly focus
 in on the key nodes in a graph you are concerned with without
 having the rest of the graph get in the way.</p>
-<p>What we would ideally like is to be able to group the nodes
- into <code>domains</code>.  Each domain will have a label so
- that the software can quickly identify what nodes to cluster
- together or un-cluster to show internal detail.</p>
+<p>When we build large complex data models, we would ideally like is to be able to group the nodes
+into <code>domains</code> of similar items.  For example, Location, Address, City, State and Country
+might all be in the geospatial domain.</p>
+<p>In our example, each domain will have a label property so
+that the software can quickly identify what nodes to cluster
+together or un-cluster to show internal detail.</p>
 <p>Here is a high-level clustered view of the above graph network:</p>
 <p><img alt="" src="cluster-a-b-c.png" /></p>
 <p>Here is a demonstration of opening a clustered node:</p>
-<p><a href="clustering-1.html">Clustering Example 1</a></p>
+<p><a href="clustering-1.html">Simple Interactive Clustering Example 1 (expand only)</a></p>
 <p>Note that you can drag the cluster around and double click on a cluster to expand the nodes
-within that cluster.</p>
+within that cluster.  This first example does not have any way to re-collapse a cluster
+other than refreshing the entire page.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>When generating network diagrams with vis.js,
