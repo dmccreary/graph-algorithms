@@ -1,23 +1,64 @@
-# Clustering in vis.js
+# Clustering in Graph Visualization
 
-Network diagrams get vary complicated.  As the number of vertices gets
+Network diagrams can quickly get vary complicated.  As the number of vertices gets
 larger, the network becomes more difficult to view and see key
-relationships.
+relationships.  We need ways to quickly collapse a group
+of nodes into a single symbol to reduce complexity.  The primary tool we
+used to do this is called a graph node [cluster](../../glossary.md#cluster).
 
-Here is an example of a flatened view of a small graph:
+## What is a Cluster?
+
+In graph theory, a cluster in is a **composite node** that encapsulates a group of related nodes and their connections, formed based on specific criteria, to simplify and enhance the visualization of network diagrams. It serves as an interactive element that can be expanded or collapsed, allowing users to explore the network at different levels of detail while reducing visual complexity.
+
+## Why Use Clusters?
+
+-  **Representation of Grouped Nodes**: A cluster acts as a **higher-level abstraction**, encapsulating several nodes (and their edges) into one composite node. This helps in visualizing the network at different levels of detail.
+
+-  **Formation Criteria**: Clusters are formed based on **specific conditions or attributes** of the nodes, such as shared properties (e.g., a common `domain` attribute), connectivity patterns, or spatial proximity.
+
+-  **Interactivity**: Clusters are **interactive** elements in the network graph. Users can **expand (open)** a cluster to reveal the individual nodes it contains or **collapse** them back into a single cluster node. This dynamic interaction allows for exploration of the network at varying granularities.
+
+-  **Visual Simplification**: By clustering nodes, the network diagram becomes **less cluttered**, making it easier to understand the overall structure and relationships without being overwhelmed by too many individual elements.
+
+### Example: Domain Clusters
+
+-   **Clustering by Attribute (`domain`)**: Nodes that share the same `domain` attribute are merged into a cluster. For instance, all nodes with `domain: 'A'` are grouped into a cluster labeled **'Cluster A'**.
+
+-   **Cluster Node Properties**: The appearance of the cluster node can be customized (e.g., shape, size, color, label placement) to distinguish it from regular nodes and to convey meaningful information about the grouped nodes.
+
+-   **Re-collapsing Clusters**: The code allows for clusters to be **re-collapsed** by double-clicking on any node that was part of an expanded cluster, enhancing the interactive exploration of the network.
+
+### Purpose and Benefits of Clustering
+
+-   **Simplifies Complex Networks**: Clustering reduces the number of visible nodes and edges, making large and complex networks more manageable and understandable.
+
+-   **Improves Performance**: By displaying fewer elements, rendering performance is enhanced, leading to smoother interactions, especially with large datasets.
+
+-   **Enhances User Experience**: Interactive clustering allows users to focus on areas of interest within the network, drilling down into clusters for detailed information or zooming out for an overview.
+
+-   **Facilitates Data Analysis**: Grouping related nodes helps in identifying patterns, relationships, and hierarchical structures within the network data.
+
+
+## Working Interactive Examples with vis.js
+
+Here is an example of a flattened view of a small graph:
 
 ![](./unclustered-nodes.png)
 
 Note that there are vertices grouped by three letters: "A", "B" and "C".
 In this lesson we will show you how to group communities of nodes
-together under a single icon.  This allows you to quickly focus
+together under a single icon called a [cluster](../../glossary.md#cluster).  
+This allows you to quickly focus
 in on the key nodes in a graph you are concerned with without
 having the rest of the graph get in the way.
 
- What we would ideally like is to be able to group the nodes
- into ```domains```.  Each domain will have a label so
- that the software can quickly identify what nodes to cluster
- together or un-cluster to show internal detail.
+When we build large complex data models, we would ideally like is to be able to group the nodes
+into ```domains``` of similar items.  For example, Location, Address, City, State and Country
+might all be in the geospatial domain.
+
+In our example, each domain will have a label property so
+that the software can quickly identify what nodes to cluster
+together or un-cluster to show internal detail.
 
 Here is a high-level clustered view of the above graph network:
 
@@ -25,10 +66,11 @@ Here is a high-level clustered view of the above graph network:
 
 Here is a demonstration of opening a clustered node:
 
-[Clustering Example 1](clustering-1.html)
+[Simple Interactive Clustering Example 1 (expand only)](clustering-1.html)
 
 Note that you can drag the cluster around and double click on a cluster to expand the nodes
-within that cluster.
+within that cluster.  This first example does not have any way to re-collapse a cluster
+other than refreshing the entire page.
 
 !!! Tip
     When generating network diagrams with vis.js,

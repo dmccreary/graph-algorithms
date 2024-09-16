@@ -34,6 +34,10 @@ Metrics used in network analysis to determine the importance or influence of a p
 
 The process of identifying signals that indicate a customer is likely to stop using a service. Graph analysis can help in identifying patterns that precede customer churn. Example: Analyzing customer interaction networks to predict which customers are at risk of churning.
 
+#### Cluster
+
+A single node that represents a group of multiple nodes and their connecting edges that have been merged together based on specific criteria or attributes. Clustering is a technique used to simplify complex network graphs by reducing visual clutter, enhancing readability, and improving performance when dealing with large datasets.
+
 #### Clustering Coefficient
 
 A measure of the degree to which nodes in a graph tend to cluster together. High clustering coefficients indicate a tendency of nodes to form tightly knit groups. Example: Used in market analysis to identify communities or segments within customer networks.
