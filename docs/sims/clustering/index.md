@@ -196,16 +196,20 @@ function clusterByDomain() {
 Next, we want the text to be positioned in the center of the cluster icon.
 It would be nice to have a "centerLabel" property, but vis.js does not
 support this.  Instead we must move the vertical positioning up
-by setting negative distance.
+by setting negative distance based on the square size.  For a square
+of size 40, we need to move up -55.  For a square if size 50 we need
+to move up -65.
 
 ```js
 clusterNodeProperties: {
   font: {
-    vadjust: -65,      // Adjust label position upwards
+    vadjust: -55,      // Adjust label position upwards
   }
 }
 ```
-[Example 4: Repositioning the Label Within the Square](./clustering-v4.html)
+![](./cluster-boxes-domain-colors-centered.png)
+
+[Example 4: Repositioning the Label Within the Square Cluster](./clustering-v4.html)
 
 ## Lab 5: Recollapse
 

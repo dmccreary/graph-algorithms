@@ -22,8 +22,8 @@
 <a href=".">Back to Lesson Plan</a><br/>
 
 <div id="mynetwork"></div>
-<p>Double click on a cluster to expand the cluster.<br/>
-  Double click on a node to collapse the cluster again.
+<p>Double click on a square cluster node to expand the cluster.<br/>
+  Double click on a circular node to re-collapse the cluster again.
 </p>
 
 <script type="text/javascript">
@@ -127,7 +127,7 @@ network.once('stabilized', function () {
           clusterOptions.id = clusterId;
           clusterOptions.label = '<b>Cluster ' + domain + '</b>';
           clusterOptions.shape = 'square';
-          clusterOptions.size = 50;
+          clusterOptions.size = 40;
           clusterOptions.color = {
             border: domainColors[domain].border,      // Set the border color
             background: domainColors[domain].background   // Set the background color
@@ -135,7 +135,7 @@ network.once('stabilized', function () {
           clusterOptions.font = {
             color: '#000000',
             size: 16,
-            vadjust: -65,
+            vadjust: -55,
             align: 'horizontal',
             multi: true
           };
