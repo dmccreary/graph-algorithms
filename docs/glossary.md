@@ -220,6 +220,12 @@ A problem in social network analysis to determine a set of nodes that should be 
 
 Networks that map the influence customers or key opinion leaders have within their social circles. This can be particularly important for understanding how information, trends, and opinions spread among customers. Example: Identifying key influencers within a network who can sway the purchasing decisions of others.
 
+#### Knowledge Representation
+
+A field of artificial intelligence that focuses on designing computer representations that capture information about the world that can be used for solving complex problems.
+
+Finding the best knowledge representation is often considered one of the most difficult areas of artificial intelligence.
+
 #### Know Your Customer (KYC) Compliance
 
 A standard in the finance industry that ensures investment advisors know detailed information about their clients' risk tolerance, investment knowledge, and financial position. Graphs can be used to map customer relationships and transactions to ensure compliance. Example: Analyzing transaction networks to ensure customers are not involved in money laundering.

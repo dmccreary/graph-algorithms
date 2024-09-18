@@ -125,6 +125,7 @@ network.once('stabilized', function () {
 
           // Set cluster properties
           clusterOptions.id = clusterId;
+          // bold
           clusterOptions.label = '<b>Cluster ' + domain + '</b>';
           clusterOptions.shape = 'square';
           clusterOptions.size = 40;
@@ -133,7 +134,7 @@ network.once('stabilized', function () {
             background: domainColors[domain].background   // Set the background color
           };
           clusterOptions.font = {
-            color: '#000000',
+            color: black,
             size: 16,
             vadjust: -55,
             align: 'horizontal',
