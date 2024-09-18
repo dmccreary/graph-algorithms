@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breadth-First Search Simulation</title>
+    <!-- Include the vis.js library -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        #network {
+            width: 800px;
+            height: 600px;
+            background-color: aliceblue;
+            border: 1px solid lightgray;
+            position: relative;
+        }
+        #controls {
+            margin-top: 10px;
+        }
+        #status {
+            margin-top: 10px;
+        }
+        button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="network"></div>
+<div id="controls">
+    <button id="previousButton">Previous</button>
+    <button id="nextButton">Next</button>
+    <button id="solveButton">Solve</button>
+    <button id="resetButton">Reset</button>
+</div>
+<div id="status">Status: Ready</div>
+
+<script type="text/javascript" src="bfs-vis.js"></script>
+
+</body>
+</html>

@@ -106,6 +106,7 @@ function clusterByDomain() {
       },
       clusterNodeProperties: {
         id: 'cluster:' + domain,
+        // bold label
         label: '<b>Cluster ' + domain + '</b>',
         shape: 'square',
         size: 40,
@@ -114,7 +115,7 @@ function clusterByDomain() {
         font: {
             color: '#000000',  // Black font color
             size: 16,          // Font size
-            vadjust: -55,      // Adjust label position upwards
+            vadjust: -55,      // Adjust label position upwards size + 15
             align: 'horizontal', // Center align the text
             multi: true
           }
