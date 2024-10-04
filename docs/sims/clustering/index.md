@@ -296,7 +296,7 @@ function recluster(clusterId) {
 }
 ```
 
-[Example 5: Recollapseing the Cluster](./clustering-v5.html)
+[Example 5: Recollapseing the Cluster](./clustering-v5b.html)
 
 ## Lab 6: Integrating Recollapse
 
