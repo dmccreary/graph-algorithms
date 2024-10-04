@@ -1,6 +1,5 @@
 # Sigma JavaScript
 
-
 ![Image Name](./sigma.png){ width="400"}
 
 [Link to Demo](./sigma.html){ .md-button .md-button--primary }
@@ -122,3 +121,14 @@ Here are some adjustments and tips to ensure labels fit well inside the nodes:
 3.  **Shorten Labels**: If the labels are too long to fit even with size adjustments, consider using shorter labels or abbreviations.
 
 4.  **Custom Node Rendering (Advanced)**: For advanced customization, such as multi-line labels or specific label positioning, you might need to use custom node rendering. This involves writing a custom rendering function that draws the nodes and labels according to your specifications. Sigma.js provides the ability to extend or override the default rendering process, but this requires a good understanding of the library's rendering engine.
+
+
+## Examples
+
+A high-quality graph of data visualization concepts from Wikipedia:
+![Knowledge Representation](./knowledge-representation.png)
+Note the extensive use of icons.
+
+## References
+
+[Sigma Homepage](https://www.sigmajs.org/)
