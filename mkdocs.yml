@@ -15,6 +15,13 @@ nav:
     - Vis.js: library-analysis/vis/index.md
     - Cytoscape.js: library-analysis/cytoscape/index.md
     - Sigma.js : library-analysis/sigma/index.md
+  - Vis Tutorial:
+    - Introduction: vis/index.md
+    - Lab 1 - Base: vis/lab-01.md
+    - Lab 2 - JSON Loader: vis/lab-02.md
+    - Lab 3 - Node Properties: vis/lab-03.md
+    - Lab 4 - Custom Shapes: vis/lab-04.md
+    - Dependency Graph: vis/concept-dependency-graph.md
   - Lessons:
     - Introduction: lessons/index.md
     - Terminology: lessons/01-graph-terminology.md
@@ -39,6 +46,7 @@ nav:
     - SKOS: data/skos/index.md
   - Sims:
     - Introduction: sims/index.md
+    - Legends: sims/legends/index.md
     - Degree: sims/degree/index.md
     - Degree V2: sims/degree-v2/index.md
     - Weighted: sims/weighted-graph/index.md
