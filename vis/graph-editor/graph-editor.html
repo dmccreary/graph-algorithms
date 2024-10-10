@@ -29,13 +29,33 @@
 <div id="sidebar">
   <h3>Graph Editor</h3>
   <input type="file" id="file-input" accept=".json"><br><br>
-  <button onclick="addNode()">Add Node</button>
-  <button onclick="addEdge()">Add Edge</button><br><br>
-  <button onclick="editSelected()">Edit Selected</button>
+  
+  <form id="node-form">
+    <label>ID: <input type="text" id="node-id" disabled></label><br>
+    <label>Label: <input type="text" id="node-label"></label><br>
+    <label>Title: <input type="text" id="node-title"></label><br>
+    <label>Shape: 
+      <select id="node-shape">
+        <option value="ellipse">Ellipse</option>
+        <option value="box">Box</option>
+        <option value="circle">Circle</option>
+        <option value="database">Database</option>
+        <option value="icon">Icon</option>
+      </select>
+    </label><br>
+    <label>Size: <input type="number" id="node-size" value="25"></label><br>
+    <label>Background Color: <input type="color" id="node-bgcolor" value="#ffffff"></label><br>
+    <label>Border Color: <input type="color" id="node-bordercolor" value="#000000"></label><br>
+    <label>x: <input type="number" id="node-x" value="0"></label><br>
+    <label>y: <input type="number" id="node-y" value="0"></label><br>
+    <label>Fixed: <input type="checkbox" id="node-fixed"></label><br><br>
+    <button type="submit">Save Node</button>
+    <button type="button" onclick="addNode()">New Node</button><br><br>
+  </form>
+
   <button onclick="deleteSelected()">Delete Selected</button><br><br>
   <button onclick="saveGraph()">Save</button>
   <button onclick="saveAsGraph()">Save As</button><br><br>
-  <button onclick="changeGlobalOptions()">Global Options</button>
   <div class="stats" id="stats"></div>
 </div>
 

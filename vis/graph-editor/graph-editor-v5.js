@@ -14,27 +14,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   container = document.getElementById('mynetwork');
   if (!container) {
     console.error("Could not find 'mynetwork' container!");
-  } else {
-    console.log("Found 'mynetwork' container with size:", container.clientWidth, container.clientHeight);
   }
   init();
   setupForm();
 });
 
+// Initialize network
 function init() {
   try {
     console.log("Initializing network...");
     network = new vis.Network(container, data, options);
-
-    // Test: Add a node and an edge to see if the graph renders
-    nodes.add({ id: 1, label: "Test Node", x: 0, y: 0, size: 25 });
-    nodes.add({ id: 2, label: "Second Node", x: 100, y: 100, size: 25 });
-    edges.add({ from: 1, to: 2, label: "Test Edge" });
-
-    console.log("Nodes after addition:", nodes.get());
-    console.log("Edges after addition:", edges.get());
-
-    console.log("Network initialized successfully.");
     network.on("selectNode", function (params) {
       console.log("Node selected:", params.nodes);
       populateForm(nodes.get(params.nodes[0]));
@@ -42,12 +31,11 @@ function init() {
     network.on("selectEdge", function (params) {
       console.log('Edge selected:', params.edges);
     });
-    console.log("Network event listeners set up.");
+    console.log("Network initialized successfully.");
   } catch (error) {
     console.error("Error initializing network:", error);
   }
 }
-
 
 // Populate the form when a node is selected for editing
 function populateForm(nodeData) {
@@ -171,38 +159,3 @@ function download(filename, text) {
   element.click();
   document.body.removeChild(element);
 }
-
-// Load graph from JSON file
-document.getElementById('file-input').addEventListener('change', function() {
-  var file = this.files[0];
-  if (file && file.name.endsWith('.json')) {
-    console.log("File selected:", file.name);
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      try {
-        var graphData = JSON.parse(e.target.result);
-        console.log("File contents parsed:", graphData);
-
-        // Clear current nodes and edges before loading new data
-        nodes.clear();
-        edges.clear();
-
-        // Load nodes and edges from the file
-        if (graphData.nodes && graphData.edges) {
-          nodes.add(graphData.nodes);
-          edges.add(graphData.edges);
-          console.log("Nodes loaded:", nodes.get());
-          console.log("Edges loaded:", edges.get());
-          displayStats(); // Update stats
-        } else {
-          console.warn("Invalid graph data structure. No nodes or edges found.");
-        }
-      } catch (err) {
-        console.error("Error parsing JSON file:", err);
-      }
-    };
-    reader.readAsText(file);
-  } else {
-    console.error('Invalid file selected. Please select a .json file.');
-  }
-});
