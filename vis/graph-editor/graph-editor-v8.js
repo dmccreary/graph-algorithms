@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         edgeCreationMode = true;
         selectedNodes = []; // Reset selected nodes
         console.log("Edge creation mode activated. Please select two nodes.");
-        alert("Edge creation mode activated. Select two nodes to create an edge.");
+        // alert("Edge creation mode activated. Select two nodes to create an edge.");
       });
     } else {
       console.error("'Add Edge' button not found.");
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // Add an edge between selected nodes
             edges.add({ from: fromNode, to: toNode, label: "New Edge" });
             console.log("Edge created between:", fromNode, "and", toNode);
-            alert("Edge created between node " + fromNode + " and node " + toNode);
+            // alert("Edge created between node " + fromNode + " and node " + toNode);
   
             // Refresh network to reflect the new edge
             network.setData({ nodes: nodes, edges: edges });
