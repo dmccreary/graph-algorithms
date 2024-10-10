@@ -1,3 +1,10 @@
+// Declare variables for nodes, edges, and network globally so they can be accessed everywhere
+var nodes = new vis.DataSet();
+var edges = new vis.DataSet();
+var network = null;
+var edgeIdCounter = 1; // Counter to keep track of the next edge ID
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
   console.log("DOM fully loaded and parsed");
 
@@ -10,7 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       edgeCreationMode = true;
       selectedNodes = []; // Reset selected nodes
       console.log("Edge creation mode activated. Please select two nodes.");
-      alert("Edge creation mode activated. Select two nodes to create an edge.");
+      // alert("Edge creation mode activated. Select two nodes to create an edge.");
     });
   } else {
     console.error("'Add Edge' button not found.");
@@ -22,8 +29,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log("Initializing network...");
 
     // Create node and edge datasets
-    var nodes = new vis.DataSet();
-    var edges = new vis.DataSet();
     var data = { nodes: nodes, edges: edges };
     var options = {
       physics: {
@@ -36,12 +41,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Create network
     var network = new vis.Network(container, data, options);
     console.log("Network initialized successfully.");
-
-    // Load a test graph to see if network renders correctly
-    nodes.add({ id: 1, label: "Test Node 1", x: 0, y: 0 });
-    nodes.add({ id: 2, label: "Test Node 2", x: 100, y: 100 });
-    nodes.add({ id: 3, label: "Test Node 3", x: 200, y: 200 });
-    edges.add({ from: 1, to: 2, label: "Edge 1" });
     
     console.log("Nodes added:", nodes.get());
     console.log("Edges added:", edges.get());
@@ -62,10 +61,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
           var fromNode = selectedNodes[0];
           var toNode = selectedNodes[1];
 
-          // Add an edge between selected nodes
-          edges.add({ from: fromNode, to: toNode, label: "New Edge" });
+          // Add an edge between selected nodes with sequential ID
+          edges.add({ from: fromNode, to: toNode, id: edgeIdCounter++, label: "New Edge" });
           console.log("Edge created between:", fromNode, "and", toNode);
-          alert("Edge created between node " + fromNode + " and node " + toNode);
+
+          // alert("Edge created between node " + fromNode + " and node " + toNode);
 
           // Refresh network to reflect the new edge
           network.setData({ nodes: nodes, edges: edges });
@@ -112,7 +112,11 @@ document.getElementById('file-input').addEventListener('change', function() {
         // Load nodes and edges from the file
         if (graphData.nodes && graphData.edges) {
           nodes.add(graphData.nodes);
-          edges.add(graphData.edges);
+          // Assign sequential IDs to edges
+          graphData.edges.forEach(function(edge) {
+            edge.id = edgeIdCounter++;
+            edges.add(edge);
+          });
           console.log("Nodes loaded:", nodes.get());
           console.log("Edges loaded:", edges.get());
           displayStats(); // Update stats
