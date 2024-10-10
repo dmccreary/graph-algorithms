@@ -1,129 +1,137 @@
-// graph-editor.js
-
-var nodes = new vis.DataSet();
-var edges = new vis.DataSet();
-var network = null;
-var container = null;
-var data = { nodes: nodes, edges: edges };
-var options = {};
-var selectedNodes = [];
-
-// Wait for DOM to fully load before initializing the network
 document.addEventListener('DOMContentLoaded', (event) => {
   console.log("DOM fully loaded and parsed");
-  container = document.getElementById('mynetwork');
-  if (!container) {
-    console.error("Could not find 'mynetwork' container!");
+
+  // Ensure the button is found and attach event listener for edge creation mode
+  var addEdgeButton = document.getElementById('add-edge-btn');
+  if (addEdgeButton) {
+    console.log("Found 'Add Edge' button.");
+    addEdgeButton.addEventListener('click', function() {
+      console.log("Add Edge button clicked.");
+      edgeCreationMode = true;
+      selectedNodes = []; // Reset selected nodes
+      console.log("Edge creation mode activated. Please select two nodes.");
+      alert("Edge creation mode activated. Select two nodes to create an edge.");
+    });
   } else {
-    console.log("Found 'mynetwork' container with size:", container.clientWidth, container.clientHeight);
+    console.error("'Add Edge' button not found.");
   }
-  init();
-  setupForm();
+
+  // Initialize network only if container is found
+  var container = document.getElementById('mynetwork');
+  if (container) {
+    console.log("Initializing network...");
+
+    // Create node and edge datasets
+    var nodes = new vis.DataSet();
+    var edges = new vis.DataSet();
+    var data = { nodes: nodes, edges: edges };
+    var options = {
+      physics: {
+        enabled: true, // Enable physics to auto-arrange nodes and edges
+        solver: "forceAtlas2Based", // Use a stable layout algorithm
+        stabilization: { iterations: 100 } // Stabilize after 100 iterations
+      }
+    };
+    
+    // Create network
+    var network = new vis.Network(container, data, options);
+    console.log("Network initialized successfully.");
+
+    // Load a test graph to see if network renders correctly
+    nodes.add({ id: 1, label: "Test Node 1", x: 0, y: 0 });
+    nodes.add({ id: 2, label: "Test Node 2", x: 100, y: 100 });
+    nodes.add({ id: 3, label: "Test Node 3", x: 200, y: 200 });
+    edges.add({ from: 1, to: 2, label: "Edge 1" });
+    
+    console.log("Nodes added:", nodes.get());
+    console.log("Edges added:", edges.get());
+
+    // Event listeners for network interactions
+    network.on("selectNode", function (params) {
+      if (params.nodes.length) {
+        var nodeId = params.nodes[0];
+        console.log("Node selected:", nodeId);
+
+        // Only add the node if it's not already selected
+        if (selectedNodes.indexOf(nodeId) === -1) {
+          selectedNodes.push(nodeId);
+        }
+
+        // Check if we're in edge creation mode and two nodes are selected
+        if (edgeCreationMode && selectedNodes.length === 2) {
+          var fromNode = selectedNodes[0];
+          var toNode = selectedNodes[1];
+
+          // Add an edge between selected nodes
+          edges.add({ from: fromNode, to: toNode, label: "New Edge" });
+          console.log("Edge created between:", fromNode, "and", toNode);
+          alert("Edge created between node " + fromNode + " and node " + toNode);
+
+          // Refresh network to reflect the new edge
+          network.setData({ nodes: nodes, edges: edges });
+
+          // Reset edge creation mode and selected nodes
+          selectedNodes = [];
+          edgeCreationMode = false;
+        }
+      }
+    });
+
+    network.on("deselectNode", function (params) {
+      // If nodes are deselected while in edge creation mode, do not reset selected nodes
+      if (params.previousSelection.nodes.length) {
+        console.log("Node deselected. Keeping selected nodes.");
+        // Do not reset selectedNodes here to allow edge creation
+      }
+    });
+
+  } else {
+    console.error("'mynetwork' container not found. Network not initialized.");
+  }
 });
 
-function init() {
-  try {
-    console.log("Initializing network...");
-    network = new vis.Network(container, data, options);
+// Variables for edge creation mode
+var selectedNodes = [];
+var edgeCreationMode = false;
 
-    // Test: Add a node and an edge to see if the graph renders
-    nodes.add({ id: 1, label: "Test Node", x: 0, y: 0, size: 25 });
-    nodes.add({ id: 2, label: "Second Node", x: 100, y: 100, size: 25 });
-    edges.add({ from: 1, to: 2, label: "Test Edge" });
+// Load graph from JSON file
+document.getElementById('file-input').addEventListener('change', function() {
+  var file = this.files[0];
+  if (file && file.name.endsWith('.json')) {
+    console.log("File selected:", file.name);
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        var graphData = JSON.parse(e.target.result);
+        console.log("File contents parsed:", graphData);
 
-    console.log("Nodes after addition:", nodes.get());
-    console.log("Edges after addition:", edges.get());
+        // Clear current nodes and edges before loading new data
+        nodes.clear();
+        edges.clear();
 
-    console.log("Network initialized successfully.");
-    network.on("selectNode", function (params) {
-      console.log("Node selected:", params.nodes);
-      populateForm(nodes.get(params.nodes[0]));
-    });
-    network.on("selectEdge", function (params) {
-      console.log('Edge selected:', params.edges);
-    });
-    console.log("Network event listeners set up.");
-  } catch (error) {
-    console.error("Error initializing network:", error);
-  }
-}
+        // Load nodes and edges from the file
+        if (graphData.nodes && graphData.edges) {
+          nodes.add(graphData.nodes);
+          edges.add(graphData.edges);
+          console.log("Nodes loaded:", nodes.get());
+          console.log("Edges loaded:", edges.get());
+          displayStats(); // Update stats
+          
+          // Refresh network with loaded data
+          network.setData({ nodes: nodes, edges: edges });
 
-
-// Populate the form when a node is selected for editing
-function populateForm(nodeData) {
-  if (!nodeData) {
-    console.warn("No node data found to populate the form.");
-    return;
-  }
-  console.log("Populating form for node:", nodeData);
-  document.getElementById('node-id').value = nodeData.id || '';
-  document.getElementById('node-label').value = nodeData.label || '';
-  document.getElementById('node-title').value = nodeData.title || '';
-  document.getElementById('node-shape').value = nodeData.shape || 'ellipse';
-  document.getElementById('node-size').value = nodeData.size || 25;
-  document.getElementById('node-bgcolor').value = nodeData.color?.background || '#ffffff';
-  document.getElementById('node-bordercolor').value = nodeData.color?.border || '#000000';
-  document.getElementById('node-x').value = nodeData.x || 0;
-  document.getElementById('node-y').value = nodeData.y || 0;
-  document.getElementById('node-fixed').checked = !!nodeData.fixed;
-}
-
-// Setup form for node creation/editing
-function setupForm() {
-  console.log("Setting up form...");
-  document.getElementById('node-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var nodeId = document.getElementById('node-id').value;
-    var nodeData = {
-      id: nodeId || Date.now(), // Generate an ID if not provided
-      label: document.getElementById('node-label').value,
-      title: document.getElementById('node-title').value,
-      shape: document.getElementById('node-shape').value,
-      size: parseInt(document.getElementById('node-size').value),
-      color: {
-        background: document.getElementById('node-bgcolor').value,
-        border: document.getElementById('node-bordercolor').value
-      },
-      x: parseInt(document.getElementById('node-x').value),
-      y: parseInt(document.getElementById('node-y').value),
-      fixed: document.getElementById('node-fixed').checked
+        } else {
+          console.warn("Invalid graph data structure. No nodes or edges found.");
+        }
+      } catch (err) {
+        console.error("Error parsing JSON file:", err);
+      }
     };
-
-    console.log("Form submitted with node data:", nodeData);
-
-    if (nodes.get(nodeId)) {
-      console.log("Updating existing node:", nodeId);
-      nodes.update(nodeData);
-    } else {
-      console.log("Adding new node:", nodeId);
-      nodes.add(nodeData);
-    }
-    displayStats(); // Update stats after node creation or update
-    resetForm();
-  });
-}
-
-// Reset form fields after node is added/edited
-function resetForm() {
-  console.log("Resetting form...");
-  document.getElementById('node-form').reset();
-}
-
-// Add a new node
-function addNode() {
-  console.log("Adding new node...");
-  resetForm(); // Clear form for new node input
-  document.getElementById('node-id').disabled = true; // Disable ID for new nodes
-}
-
-// Delete selected node or edge
-function deleteSelected() {
-  var selection = network.getSelection();
-  console.log("Deleting selected nodes/edges:", selection);
-  nodes.remove(selection.nodes);
-  edges.remove(selection.edges);
-  displayStats(); // Update stats after deletion
-}
+    reader.readAsText(file);
+  } else {
+    console.error('Invalid file selected. Please select a .json file.');
+  }
+});
 
 // Display graph statistics
 function displayStats() {
@@ -139,6 +147,12 @@ function displayStats() {
     'Edges: ' + edgeCount + '<br>' +
     'Orphaned Nodes: ' + orphanedNodes;
   console.log("Stats - Nodes:", nodeCount, "Edges:", edgeCount, "Orphaned Nodes:", orphanedNodes);
+}
+
+// Reset form fields after node is added/edited
+function resetForm() {
+  console.log("Resetting form...");
+  document.getElementById('node-form').reset();
 }
 
 // Save graph to file
@@ -171,38 +185,3 @@ function download(filename, text) {
   element.click();
   document.body.removeChild(element);
 }
-
-// Load graph from JSON file
-document.getElementById('file-input').addEventListener('change', function() {
-  var file = this.files[0];
-  if (file && file.name.endsWith('.json')) {
-    console.log("File selected:", file.name);
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      try {
-        var graphData = JSON.parse(e.target.result);
-        console.log("File contents parsed:", graphData);
-
-        // Clear current nodes and edges before loading new data
-        nodes.clear();
-        edges.clear();
-
-        // Load nodes and edges from the file
-        if (graphData.nodes && graphData.edges) {
-          nodes.add(graphData.nodes);
-          edges.add(graphData.edges);
-          console.log("Nodes loaded:", nodes.get());
-          console.log("Edges loaded:", edges.get());
-          displayStats(); // Update stats
-        } else {
-          console.warn("Invalid graph data structure. No nodes or edges found.");
-        }
-      } catch (err) {
-        console.error("Error parsing JSON file:", err);
-      }
-    };
-    reader.readAsText(file);
-  } else {
-    console.error('Invalid file selected. Please select a .json file.');
-  }
-});
