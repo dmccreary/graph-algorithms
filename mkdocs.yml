@@ -22,6 +22,7 @@ nav:
     - Lab 3 - Node Properties: vis/lab-03.md
     - Lab 4 - Custom Shapes: vis/lab-04.md
     - Dependency Graph: vis/concept-dependency-graph.md
+    - Graph Editor: vis/graph-editor/index.md
   - Lessons:
     - Introduction: lessons/index.md
     - Terminology: lessons/01-graph-terminology.md
