@@ -18,7 +18,7 @@
         <link rel="prev" href="../lab-04/">
       
       
-        <link rel="next" href="../../lessons/">
+        <link rel="next" href="../graph-editor/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -378,6 +378,10 @@
       
         
       
+        
+          
+        
+      
     
     
     
@@ -518,6 +522,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Dependency Graph
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -528,6 +543,55 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Prompt
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph Editor
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -891,6 +955,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Prompt
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -924,6 +1005,29 @@ edge of the concept graph at a location of x=-300.</li>
 <li>By convention, concrete physical concepts are lower in the graph and more abstract mathematical concepts are initially located toward the top of the graph.</li>
 <li>When we want to focus on a concept, that concept is displayed in a larger font.</li>
 </ol>
+<h2 id="sample-prompt">Sample Prompt</h2>
+<div class="highlight"><pre><span></span><code>Generate a vis.js application that shows what concepts must
+be mastered before you understand Ohm&#39;s Law.
+
+Use this graph data:
+
+// create an array with nodes
+    var nodes = new vis.DataSet([
+        {id: 1, label: &quot;Ohm&#39;s Law&quot;, color: &quot;wheat&quot;, size: 150, x: 150, y: 0, fixed: true,font: { size: 24 }, color: {border: &quot;black&quot;}},
+        {id: 2, label: &#39;Voltage&#39;, color: &quot;tan&quot;},
+        {id: 3, label: &#39;Current&#39;, color: &quot;tan&quot;},
+        {id: 4, label: &#39;Resistance&#39;, color: &quot;tan&quot;},
+        {id: 5, label: &#39;Linear Equations&#39;, color: &quot;coral&quot;, shape: &quot;box&quot;, x: -150, y: 0, fixed: true}
+    ]);
+
+    // create an array with edges
+    var edges = new vis.DataSet([
+        {from: 1, to: 2, arrows: &#39;to&#39;, label: &#39;DEPENDS_ON&#39; },
+        {from: 1, to: 3, arrows: &#39;to&#39;, label: &#39;DEPENDS_ON&#39; },
+        {from: 1, to: 4, arrows: &#39;to&#39;, label: &#39;DEPENDS_ON&#39; },
+        {from: 1, to: 5, arrows: &#39;to&#39;, label: &#39;DEPENDS_ON&#39; }
+    ]);
+</code></pre></div>
 
 
 
@@ -978,13 +1082,13 @@ edge of the concept graph at a location of x=-300.</li>
         
         
           
-          <a href="../../lessons/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+          <a href="../graph-editor/" class="md-footer__link md-footer__link--next" aria-label="Next: Graph Editor">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                Graph Editor
               </div>
             </div>
             <div class="md-footer__button md-icon">
