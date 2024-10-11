@@ -281,6 +281,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/vis/fix-x-positions/</loc>
+         <lastmod>2024-10-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/vis/graph-editor/</loc>
          <lastmod>2024-10-11</lastmod>
          <changefreq>daily</changefreq>
