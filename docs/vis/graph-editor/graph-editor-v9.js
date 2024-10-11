@@ -97,32 +97,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
 
-// Handle edge label update form submission
-document.getElementById('edge-form').addEventListener('submit', function(event) {
-  event.preventDefault();
+    // Handle edge label update form submission
+    document.getElementById('edge-form').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-  // var edgeId = document.getElementById('edge-id').value;
-  var edgeId = parseInt(document.getElementById('edge-id').value, 10); // Convert to integer
+      var edgeId = document.getElementById('edge-id').value;
+      var newLabel = document.getElementById('edge-label').value;
 
-  var newLabel = document.getElementById('edge-label').value;
+      if (edgeId) {
+        // Fetch the current edge to avoid overwriting other properties
+        var currentEdge = edges.get(edgeId);
+        if (currentEdge) {
 
-  if (edgeId) {
-    // Fetch the current edge to ensure it exists before updating
-    var currentEdge = edges.get(edgeId);
-    if (currentEdge) {
-      // Update only the label to avoid accidental overwriting of other properties
-      currentEdge.label = newLabel;
+          console.log("Before update:", edges.get(edgeId));
+          edges.update({ id: edgeId, label: newLabel });
+          console.log("After update:", edges.get(edgeId));
 
-      // Perform the update on the dataset, which automatically updates the network visualization
-      console.log("Available edges:", edges.get());
-      edges.update(currentEdge);
-      console.log("Edge updated:", edgeId, "with new label:", newLabel);
-    } else {
-      console.error("Edge with ID:", edgeId, "not found.");
-    }
-  }
-});
-
+          console.log("Edge updated:", edgeId, "with new label:", newLabel);
+        } else {
+          console.error("Edge with ID:", edgeId, "not found.");
+        }
+      }
+    });
 
     console.log("End of container initializations.");
   } else {
@@ -135,7 +131,7 @@ var selectedNodes = [];
 var edgeCreationMode = false;
 
 // Load graph from JSON file
-// To do this we add an event listener if we get a new input file
+// add an event listener if we get a new input file
 document.getElementById('file-input').addEventListener('change', function() {
   var file = this.files[0];
   if (file && file.name.endsWith('.json')) {
@@ -153,21 +149,23 @@ document.getElementById('file-input').addEventListener('change', function() {
         // Load nodes and edges from the file
         if (graphData.nodes && graphData.edges) {
           nodes.add(graphData.nodes);
-
           graphData.edges.forEach(function(edge) {
-            // Assign new ID if one is not provided in the file
+            // Only assign a new ID if one is not provided in the file
             if (!edge.id) {
               edge.id = edgeIdCounter++;
             } else {
-              edgeIdCounter = Math.max(edgeIdCounter, edge.id + 1);
+              edgeIdCounter = Math.max(edgeIdCounter, edge.id + 1); // Ensure counter is ahead of the current ID
             }
             edges.add(edge);
           });
 
           console.log("Nodes loaded:", nodes.get());
           console.log("Edges loaded:", edges.get());
-
           displayStats(); // Update stats
+
+          // Refresh network with loaded data
+          network.setData({ nodes: nodes, edges: edges });
+
         } else {
           console.warn("Invalid graph data structure. No nodes or edges found.");
         }
@@ -187,21 +185,17 @@ function displayStats() {
   var nodeCount = nodes.length;
   var edgeCount = edges.length;
 
-  // error is here for getConnectedEdges no longer working
-  // we want a count of the nodes without edges
-  console.log("Available edges:", edges.get());
-  //var orphanedNodes = nodes.get().filter(function(node) {
-  //  var connectedEdges = network.getConnectedEdges(node.id);
-  //  return connectedEdges.length === 0;
-  //}).length;
-
+  // this is generating a console error because network.getConnectedEdges(node.id); is not found
+  var orphanedNodes = nodes.get().filter(function(node) {
+    var connectedEdges = network.getConnectedEdges(node.id);
+    return connectedEdges.length === 0;
+  }).length;
+  
   document.getElementById('stats').innerHTML =
     'Nodes: ' + nodeCount + '<br>' +
-    'Edges: ' + edgeCount + '<br>'
-    // + 'Orphaned Nodes: ' + orphanedNodes;
-  // console.log("Stats - Nodes:", nodeCount, "Edges:", edgeCount, "Orphaned Nodes:", orphanedNodes);
-  console.log("Stats - Nodes:", nodeCount, "Edges:", edgeCount);
-
+    'Edges: ' + edgeCount + '<br>' +
+    'Orphaned Nodes: ' + orphanedNodes;
+  console.log("Stats - Nodes:", nodeCount, "Edges:", edgeCount, "Orphaned Nodes:", orphanedNodes);
 }
 
 // Reset form fields after node is added/edited
