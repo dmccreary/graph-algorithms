@@ -56,11 +56,18 @@
   </form>
 
   <button id="add-edge-btn">Add Edge</button><br><br>
+  
 
   <button onclick="deleteSelected()">Delete Selected</button><br><br>
   <button onclick="saveGraph()">Save</button>
   <button onclick="saveAsGraph()">Save As</button><br><br>
   <div class="stats" id="stats"></div>
+
+  <form id="edge-form">
+    <label>ID: <input type="text" id="edge-id" disabled></label><br>
+    <label>Label: <input type="text" id="edge-label"></label><br><br>
+    <button type="submit">Save Edge</button><br><br>
+  </form>
 </div>
 
 <div id="main">
