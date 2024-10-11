@@ -1,4 +1,4 @@
-# CSV Reader
+# CSV to JSON Converter
 
 This prompt generates a Python program that reads in a CSV file for
 a graph and returns a JSON file in vis.js format.

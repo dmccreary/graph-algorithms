@@ -23,6 +23,10 @@ nav:
     - Lab 4 - Custom Shapes: vis/lab-04.md
     - Dependency Graph: vis/concept-dependency-graph.md
     - Graph Editor: vis/graph-editor/index.md
+    - vis/csv-reader/index.md
+    - vis/graph-editor/prompt-history.md
+    - vis/node-enricher/index.md
+    - vis/fix-x-positions/index.md
   - Lessons:
     - Introduction: lessons/index.md
     - Terminology: lessons/01-graph-terminology.md
