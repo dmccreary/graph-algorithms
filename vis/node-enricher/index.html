@@ -12,7 +12,7 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/vis/csv-reader/">
+        <link rel="canonical" href="https://dmccreary.github.io/graph-algorithms/vis/node-enricher/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>CSV Reader - Graph Algorithms</title>
+        <title>Index - Graph Algorithms</title>
       
     
     
@@ -81,11 +81,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#csv-reader" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -118,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CSV Reader
+              Index
             
           </span>
         </div>
@@ -756,34 +751,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chatgpt-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      ChatGPT Response
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -801,236 +768,9 @@
   
 
 
-<h1 id="csv-reader">CSV Reader</h1>
-<p>This prompt generates a Python program that reads in a CSV file for
-a graph and returns a JSON file in vis.js format.</p>
-<h2 id="prompt">Prompt</h2>
-<div class="highlight"><pre><span></span><code>I have a CSV file that has graph data in it.
+  <h1>Index</h1>
 
-The fields are:
-ConceptID - the node id in a graph. Unique for all nodes. Required.
-The ConceptName - a node label - Required
-DependencyList - a pipe-delimited list of dependant ConceptIDs.  An edge goes from this concept to other concepts with a directed arrow.
-CategoryID - a group ID for the concept.
-CategoryLabel - the name of the category
 
-There are about 11 Categories
-
-ConceptID,ConceptName,DependencyList,CategoryID,CategoryLabel
-1,Ohm&#39;s Law,2|3|4,1,Fundamental Concepts
-2,Voltage,7,1,Fundamental Concepts
-3,Current,7,1,Fundamental Concepts
-4,Resistance,101,1,Fundamental Concepts
-5,Power,2|3,1,Fundamental Concepts
-6,Energy,5|102,1,Fundamental Concepts
-7,Electric charge,120,1,Fundamental Concepts
-8,Conductors,7,1,Fundamental Concepts
-9,Insulators,7,1,Fundamental Concepts
-10,Capacitance,2|7,1,Fundamental Concepts
-11,Inductance,3|104,1,Fundamental Concepts
-
-Please create a Python program that converts this CSV file into a JSON file that can be easily read by vis.js.  Assume that the category ID will become a group ID.
-</code></pre></div>
-<h2 id="chatgpt-response">ChatGPT Response</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span>
-<span class="normal">97</span>
-<span class="normal">98</span>
-<span class="normal">99</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">csv</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="k">def</span> <span class="nf">csv_to_visjs_json</span><span class="p">(</span><span class="n">csv_filename</span><span class="p">,</span> <span class="n">json_filename</span><span class="p">):</span>
-    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">categories</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="c1"># Read the CSV file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
-        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
-            <span class="c1"># Extract node information</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">concept_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;ConceptID&#39;</span><span class="p">])</span>
-            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid ConceptID &#39;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;ConceptID&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39; skipped.&quot;</span><span class="p">)</span>
-                <span class="k">continue</span>  <span class="c1"># Skip rows with invalid ConceptID</span>
-
-            <span class="n">concept_name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;ConceptName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">concept_name</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Empty ConceptName for ConceptID </span><span class="si">{</span><span class="n">concept_id</span><span class="si">}</span><span class="s2"> skipped.&quot;</span><span class="p">)</span>
-                <span class="k">continue</span>  <span class="c1"># Skip nodes without a name</span>
-
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">category_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;CategoryID&#39;</span><span class="p">])</span>
-            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid CategoryID &#39;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;CategoryID&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39; for ConceptID </span><span class="si">{</span><span class="n">concept_id</span><span class="si">}</span><span class="s2"> skipped.&quot;</span><span class="p">)</span>
-                <span class="k">continue</span>  <span class="c1"># Skip rows with invalid CategoryID</span>
-
-            <span class="n">category_label</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;CategoryLabel&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-            <span class="c1"># Create node object</span>
-            <span class="n">node</span> <span class="o">=</span> <span class="p">{</span>
-                <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">concept_id</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">concept_name</span><span class="p">,</span>
-                <span class="s1">&#39;group&#39;</span><span class="p">:</span> <span class="n">category_id</span>
-            <span class="p">}</span>
-            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-
-            <span class="c1"># Store category information (optional, for groups)</span>
-            <span class="k">if</span> <span class="n">category_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
-                <span class="n">categories</span><span class="p">[</span><span class="n">category_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">category_label</span>
-
-            <span class="c1"># Process DependencyList to create edges</span>
-            <span class="n">dependency_list</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;DependencyList&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">dependency_list</span><span class="p">:</span>
-                <span class="n">dependencies</span> <span class="o">=</span> <span class="n">dependency_list</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">dep</span> <span class="ow">in</span> <span class="n">dependencies</span><span class="p">:</span>
-                    <span class="n">dep</span> <span class="o">=</span> <span class="n">dep</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                    <span class="k">if</span> <span class="n">dep</span><span class="p">:</span>
-                        <span class="k">try</span><span class="p">:</span>
-                            <span class="n">dep_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dep</span><span class="p">)</span>
-                            <span class="n">edge</span> <span class="o">=</span> <span class="p">{</span>
-                                <span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="n">concept_id</span><span class="p">,</span>
-                                <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="n">dep_id</span>
-                            <span class="p">}</span>
-                            <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
-                        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid DependencyID &#39;</span><span class="si">{</span><span class="n">dep</span><span class="si">}</span><span class="s2">&#39; for ConceptID </span><span class="si">{</span><span class="n">concept_id</span><span class="si">}</span><span class="s2"> skipped.&quot;</span><span class="p">)</span>
-                            <span class="k">continue</span>  <span class="c1"># Skip invalid DependencyIDs</span>
-
-    <span class="c1"># Optionally, create a separate groups structure if needed</span>
-    <span class="c1"># Uncomment the following lines if you want to include group labels</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    groups = []</span>
-<span class="sd">    for cid, clabel in categories.items():</span>
-<span class="sd">        group = {</span>
-<span class="sd">            &#39;id&#39;: cid,</span>
-<span class="sd">            &#39;label&#39;: clabel</span>
-<span class="sd">            # You can add more styling options here if needed</span>
-<span class="sd">        }</span>
-<span class="sd">        groups.append(group)</span>
-<span class="sd">    data = {</span>
-<span class="sd">        &#39;nodes&#39;: nodes,</span>
-<span class="sd">        &#39;edges&#39;: edges,</span>
-<span class="sd">        &#39;groups&#39;: groups</span>
-<span class="sd">    }</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="c1"># If not using separate groups, omit the &#39;groups&#39; key</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;nodes&#39;</span><span class="p">:</span> <span class="n">nodes</span><span class="p">,</span>
-        <span class="s1">&#39;edges&#39;</span><span class="p">:</span> <span class="n">edges</span>
-    <span class="p">}</span>
-
-    <span class="c1"># Write the JSON output</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
-        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">jsonfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully converted &#39;</span><span class="si">{</span><span class="n">csv_filename</span><span class="si">}</span><span class="s2">&#39; to &#39;</span><span class="si">{</span><span class="n">json_filename</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="c1"># Define input and output file names</span>
-    <span class="n">input_csv</span> <span class="o">=</span> <span class="s1">&#39;graph-data.csv&#39;</span>
-    <span class="n">output_json</span> <span class="o">=</span> <span class="s1">&#39;graph-data.json&#39;</span>
-
-    <span class="c1"># Convert CSV to JSON</span>
-    <span class="n">csv_to_visjs_json</span><span class="p">(</span><span class="n">input_csv</span><span class="p">,</span> <span class="n">output_json</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p><a href="csv-to-json.py">Python Code</a></p>
 
 
 
