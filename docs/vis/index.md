@@ -31,3 +31,11 @@ Learn the Properties of a Node
 Learn how to create an interactive graph editor
 
 [Graph Editor](./graph-editor/index.md)
+
+## CSV-Reader
+
+[CSV Reader](./csv-reader/index.md)
+
+## Node Enricher
+
+[Node Enricher](./node-enricher/index.md)
