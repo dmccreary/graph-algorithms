@@ -85,6 +85,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
 
+    network.on("selectEdge", function (params) {
+      if (params.edges.length) {
+        var edgeId = params.edges[0];
+        var edge = edges.get(edgeId);
+        console.log("Edge selected:", edgeId);
+  
+        // Fill the form with the edge data
+        document.getElementById('edge-id').value = edge.id;
+        document.getElementById('edge-label').value = edge.label || "";
+      }
+    });
+
+  // Handle edge label update form submission
+  document.getElementById('edge-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var edgeId = document.getElementById('edge-id').value;
+    var newLabel = document.getElementById('edge-label').value;
+
+    if (edgeId) {
+      edges.update({ id: edgeId, label: newLabel });
+      console.log("Edge updated:", edgeId, "with new label:", newLabel);
+      
+      // Refresh network to reflect the updated edge
+      network.setData({ nodes: nodes, edges: edges });
+    }
+  });
+
   } else {
     console.error("'mynetwork' container not found. Network not initialized.");
   }
