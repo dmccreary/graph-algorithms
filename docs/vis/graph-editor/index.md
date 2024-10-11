@@ -16,3 +16,12 @@ Please generate a graph network editor based on vis.js.  The editor should be ab
 Upon reading the file, display statistics about what was in the file including node count and edge count.  Also display the count of orphaned nodes when a file is read.
 Perform checks on data quality as a new file is opened such as edges without nodes.
 ```
+
+
+## Graph Editor Check for Network
+
+[Check for Network after Load of JSON data](./graph-editor-cfn.html)
+
+## References
+
+[Sam Adams TinkerTiny Vis.js Graph Editor](https://github.com/metacognitive-technology/tinkertiny/tree/main) - an interesting UI.  One time code commit in 2022.

@@ -4,6 +4,79 @@ var edges = new vis.DataSet();
 var network = null;
 var edgeIdCounter = 1; // Counter to keep track of the next edge ID
 
+// Function to wait for the network to be ready and then set data
+function waitForNetworkAndSetData(attempts, delay, data) {
+  console.log("Checking if network is ready... Attempt remaining:", attempts);
+  
+  if (network) {
+      // Set data to the network once it is ready
+      network.setData(data);
+      console.log("Network is ready. Data has been set.");
+      
+      // Now we can safely count orphaned nodes and display stats
+      var orphanedNodesCount = countOrphanedNodes();
+      console.log("Orphaned Nodes Count:", orphanedNodesCount);
+      
+      // Call displayStats after setting the data
+      displayStats(); 
+  } else if (attempts > 0) {
+      console.warn("Network is not yet available. Retrying...");
+      setTimeout(function() {
+          waitForNetworkAndSetData(attempts - 1, delay, data); // Recursive call with decremented attempts
+      }, delay);
+  } else {
+      console.error("Failed to initialize network after multiple attempts.");
+  }
+}
+
+// Load graph from JSON file
+// Load graph from JSON file
+function loadGraphFromFile() {
+  document.getElementById('file-input').addEventListener('change', function() {
+      var file = this.files[0];
+      if (file && file.name.endsWith('.json')) {
+          console.log("File selected:", file.name);
+          var reader = new FileReader();
+          reader.onload = function(e) {
+              try {
+                  var graphData = JSON.parse(e.target.result);
+                  console.log("File contents parsed:", graphData);
+
+                  // Clear current nodes and edges before loading new data
+                  nodes.clear();
+                  edges.clear();
+
+                  // Load nodes and edges from the file
+                  if (graphData.nodes && graphData.edges) {
+                      nodes.add(graphData.nodes);
+                      graphData.edges.forEach(function(edge) {
+                          if (!edge.id) {
+                              edge.id = edgeIdCounter++;
+                          } else {
+                              edgeIdCounter = Math.max(edgeIdCounter, edge.id + 1);
+                          }
+                          edges.add(edge);
+                      });
+
+                      // Prepare data to set to the network
+                      var data = { nodes: nodes, edges: edges };
+
+                      // Start waiting for the network to be ready
+                      waitForNetworkAndSetData(100, 100, data); // 100 attempts, 100 ms delay
+                  } else {
+                      console.warn("Invalid graph data structure. No nodes or edges found.");
+                  }
+              } catch (err) {
+                  console.error("Error parsing JSON file:", err);
+              }
+          };
+          reader.readAsText(file);
+      } else {
+          console.error('Invalid file selected. Please select a .json file.');
+      }
+  });
+}
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
   console.log("DOM fully loaded and parsed");
@@ -40,6 +113,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
     // Create network
     var network = new vis.Network(container, data, options);
+
     console.log("In container. Network initialized successfully.");
     
     console.log("Nodes added:", nodes.get());
@@ -68,6 +142,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           // alert("Edge created between node " + fromNode + " and node " + toNode);
 
           // Refresh network to reflect the new edge
+          // Should this be an update?
           network.setData({ nodes: nodes, edges: edges });
 
           // Reset edge creation mode and selected nodes
@@ -96,6 +171,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('edge-label').value = edge.label || "";
       }
     });
+
 
 // Handle edge label update form submission
 document.getElementById('edge-form').addEventListener('submit', function(event) {
@@ -164,8 +240,20 @@ document.getElementById('file-input').addEventListener('change', function() {
             edges.add(edge);
           });
 
+          // Start waiting for the network to be ready
+          waitForNetworkAndSetData(100, 100); // 100 attempts, 100 ms delay
+
+
           console.log("Nodes loaded:", nodes.get());
           console.log("Edges loaded:", edges.get());
+
+          // Ensure network is initialized before counting orphaned nodes
+          if (network) {
+            var orphanedNodesCount = countOrphanedNodes();
+            console.log("Orphaned Nodes Count:", orphanedNodesCount);
+          } else {
+            console.warn("Network is not initialized. Cannot count orphaned nodes.");
+          }
 
           displayStats(); // Update stats
         } else {
@@ -189,18 +277,14 @@ function displayStats() {
 
   // error is here for getConnectedEdges no longer working
   // we want a count of the nodes without edges
-  console.log("Available edges:", edges.get());
-  //var orphanedNodes = nodes.get().filter(function(node) {
-  //  var connectedEdges = network.getConnectedEdges(node.id);
-  //  return connectedEdges.length === 0;
-  //}).length;
+  var orphanedNodes = countOrphanedNodes();
 
   document.getElementById('stats').innerHTML =
     'Nodes: ' + nodeCount + '<br>' +
-    'Edges: ' + edgeCount + '<br>'
-    // + 'Orphaned Nodes: ' + orphanedNodes;
-  // console.log("Stats - Nodes:", nodeCount, "Edges:", edgeCount, "Orphaned Nodes:", orphanedNodes);
-  console.log("Stats - Nodes:", nodeCount, "Edges:", edgeCount);
+    'Edges: ' + edgeCount + '<br>' +
+    'Orphaned Nodes: ' + orphanedNodes;
+  console.log("Stats - Nodes:", nodeCount, "Edges:", edgeCount, "Orphaned Nodes:", orphanedNodes);
+  // console.log("Stats - Nodes:", nodeCount, "Edges:", edgeCount);
 
 }
 
@@ -239,4 +323,23 @@ function download(filename, text) {
   document.body.appendChild(element);
   element.click();
   document.body.removeChild(element);
+}
+
+// Function to count orphaned nodes
+function countOrphanedNodes() {
+  if (!network) {
+    console.error("Network is not initialized.");
+    return 0; // Return 0 if network is not available
+  }
+
+  let orphanedCount = 0;
+
+  nodes.forEach(function(node) {
+    var connectedEdges = network.getConnectedEdges(node.id);
+    if (connectedEdges.length === 0) {
+      orphanedCount++;
+    }
+  });
+
+  return orphanedCount;
 }
