@@ -1,9 +1,18 @@
 # Fix the X Positions
 
+![](./fix-x-positions.png)
+
 [Fix X Positions Demo](./fix-x-positions.html)
 
+
+
 ## Prompt
-using vis.js, is there a way to freeze a node's x position but let the y position float freely and be repositioned by the force-directed graph algorithm?
+
+```
+using vis.js, is there a way to freeze a node's x position
+but let the y position float freely and be repositioned
+by the force-directed graph algorithm?
+```
 
 ## ChatGPT said:
 
@@ -28,6 +37,8 @@ Here's an example code snippet to implement this behavior:
       width: 800px;
       height: 600px;
       border: 1px solid lightgray;
+      margin-left: 10px;
+      background-color: aliceblue;
     }
   </style>
 </head>
@@ -77,7 +88,7 @@ network.on("beforeDrawing", function () {
 });
 ```
 
-### **5. Explanation of Changes**
+### Explanation of Changes
 
 1.  **Fixed Nodes Configuration:**
 
@@ -97,7 +108,7 @@ network.on("beforeDrawing", function () {
 
     -   Enhanced node appearance for better visibility and aesthetics. This is optional but can help in visual differentiation.
 
-### **6\. Additional Tips**
+### Additional Tips
 
 -   **Adjust Initial Positions:** Ensure that the initial `x` positions of the fixed nodes are within the visible range of your container. If nodes are still drifting off, try setting `x` to smaller absolute values (e.g., closer to 0).
 
@@ -107,7 +118,7 @@ network.on("beforeDrawing", function () {
 
 -   **Debugging Node Positions:** Temporarily disable physics (`physics: false`) for all nodes to manually position them and ensure they appear correctly within the view. Once satisfied, re-enable physics selectively.
 
-### **7\. Final Thoughts**
+### Final Thoughts
 
 By configuring the fixed nodes correctly and ensuring they are excluded from the physics simulation, you should achieve the desired behavior where specific nodes remain anchored on the x-axis while others are dynamically positioned. Centering the graph post-stabilization ensures that all nodes remain within the visible area, providing a clear and organized visualization.
 
