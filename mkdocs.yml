@@ -27,6 +27,7 @@ nav:
     - vis/graph-editor/prompt-history.md
     - vis/node-enricher/index.md
     - vis/fix-x-positions/index.md
+    - vis/group-colors/index.md
   - Lessons:
     - Introduction: lessons/index.md
     - Terminology: lessons/01-graph-terminology.md

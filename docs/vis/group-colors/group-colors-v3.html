@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vis-network with Legend</title>
+    <!-- No vis-network CSS included as per your preference -->
+    <style>
+        /* Container to hold the legend and the network side by side */
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* Styling for the legend table */
+        .legend {
+            border-collapse: collapse;
+            width: 200px;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .legend th, .legend td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .legend th {
+            background-color: #f2f2f2;
+        }
+
+        /* Adjust the network container */
+        #network {
+            width: 800px;
+            height: 600px;
+            border: 1px solid lightgray;
+            background-color: #f9f9f9; /* Optional for better visibility */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>vis-network: Grouped Node Colors with Legend</h1>
+    <div class="container">
+        <!-- Legend Table -->
+        <table class="legend" id="legendTable">
+            <thead>
+                <tr>
+                    <th>Group Name</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Network Visualization -->
+        <div id="network"></div>
+    </div>
+
+    <!-- Include vis-network library as per your specified source -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script>
+        // Ensure the script runs after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Verify that vis-network is loaded
+            if (typeof vis === 'undefined' || typeof vis.Network === 'undefined') {
+                console.error('vis-network library is not loaded. Please check the script source.');
+                return;
+            }
+
+            // Define the styling for each group
+            var groups = {
+                group1: {
+                    color: {
+                        background: '#FF5733', // Orange
+                        border: '#C70039',     // Dark Red
+                        highlight: {
+                            background: '#FFC300', // Light Orange
+                            border: '#FF5733'      // Orange
+                        },
+                        hover: {
+                            background: '#FFBD69', // Lighter Orange
+                            border: '#C70039'      // Dark Red
+                        }
+                    },
+                    shape: 'dot',
+                    size: 20
+                },
+                group2: {
+                    color: {
+                        background: '#3375FF', // Blue
+                        border: '#1A53FF',     // Dark Blue
+                        highlight: {
+                            background: '#66B2FF', // Light Blue
+                            border: '#3375FF'      // Blue
+                        },
+                        hover: {
+                            background: '#99CCFF', // Lighter Blue
+                            border: '#1A53FF'      // Dark Blue
+                        }
+                    },
+                    shape: 'dot',
+                    size: 20
+                },
+                group3: {
+                    color: {
+                        background: '#33FF57', // Green
+                        border: '#39C700',     // Dark Green
+                        highlight: {
+                            background: '#69FF99', // Light Green
+                            border: '#33FF57'      // Green
+                        },
+                        hover: {
+                            background: '#9FFFCC', // Lighter Green
+                            border: '#39C700'      // Dark Green
+                        }
+                    },
+                    shape: 'dot',
+                    size: 20
+                }
+            };
+
+            // Generate the Legend Table dynamically
+            function generateLegendTable(groups) {
+                var tableBody = document.querySelector('#legendTable tbody');
+
+                for (var groupName in groups) {
+                    if (groups.hasOwnProperty(groupName)) {
+                        var group = groups[groupName];
+                        var row = document.createElement('tr');
+
+                        // Group Name Cell
+                        var nameCell = document.createElement('td');
+                        nameCell.textContent = groupName;
+                        row.appendChild(nameCell);
+
+                        // Color Cell
+                        var colorCell = document.createElement('td');
+                        colorCell.style.backgroundColor = group.color.background;
+                        colorCell.style.width = '50px';
+                        colorCell.style.height = '20px';
+                        row.appendChild(colorCell);
+
+                        tableBody.appendChild(row);
+                    }
+                }
+            }
+
+            // Call the function to generate the legend
+            generateLegendTable(groups);
+
+            // Define the nodes with group assignments
+            var nodes = new vis.DataSet([
+                {id: 1, label: 'Node 1', group: 'group1'},
+                {id: 2, label: 'Node 2', group: 'group1'},
+                {id: 3, label: 'Node 3', group: 'group2'},
+                {id: 4, label: 'Node 4', group: 'group2'},
+                {id: 5, label: 'Node 5', group: 'group3'},
+                {id: 6, label: 'Node 6', group: 'group3'}
+            ]);
+
+            // Define the edges connecting the nodes
+            var edges = new vis.DataSet([
+                {from: 1, to: 2},
+                {from: 1, to: 3},
+                {from: 2, to: 4},
+                {from: 2, to: 5},
+                {from: 3, to: 6}
+            ]);
+
+            // Combine nodes and edges into a data object
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+
+            // Define options, including group styles
+            var options = {
+                groups: groups,
+                nodes: {
+                    font: {
+                        color: '#ffffff',
+                        size: 14,
+                        face: 'Tahoma'
+                    },
+                    borderWidth: 2,
+                    shadow: {
+                        enabled: true,
+                        color: 'rgba(0,0,0,0.5)',
+                        size: 10,
+                        x: 5,
+                        y: 5
+                    }
+                },
+                edges: {
+                    color: '#cccccc',
+                    width: 2,
+                    arrows: {
+                        to: {enabled: true, scaleFactor: 0.5}
+                    },
+                    smooth: {
+                        type: 'continuous'
+                    }
+                },
+                physics: {
+                    enabled: true,
+                    stabilization: {
+                        iterations: 300,
+                        updateInterval: 25
+                    },
+                    barnesHut: {
+                        gravitationalConstant: -8000,
+                        centralGravity: 0.3,
+                        springLength: 250,
+                        springConstant: 0.04,
+                        damping: 0.09,
+                        avoidOverlap: 0
+                    }
+                },
+                interaction: {
+                    hover: true,
+                    tooltipDelay: 200,
+                    zoomView: true,
+                    dragView: true
+                },
+                layout: {
+                    improvedLayout: true,
+                    hierarchical: false
+                },
+                manipulation: {
+                    enabled: false
+                }
+            };
+
+            // Initialize the network
+            var container = document.getElementById('network');
+
+            try {
+                var network = new vis.Network(container, data, options);
+                console.log('vis-network initialized successfully.');
+            } catch (error) {
+                console.error('Error initializing vis-network:', error);
+            }
+        });
+    </script>
+</body>
+</html>
