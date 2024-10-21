@@ -1,47 +1,95 @@
 {
-    "group1": {
+    "Foundation": {
         "color": {
-            "background": "#FF5733",
-            "border": "#C70039",
+            "background": "DarkSalmon",
+            "border": "FireBrick",
             "highlight": {
-                "background": "#FFC300",
-                "border": "#FF5733"
+                "background": "LightSalmon",
+                "border": "DarkRed"
             },
             "hover": {
-                "background": "#FFBD69",
-                "border": "#C70039"
+                "background": "Salmon",
+                "border": "DarkRed"
             }
         },
         "shape": "dot",
         "size": 20
     },
-    "group2": {
+    "Level 2": {
         "color": {
-            "background": "#3375FF",
-            "border": "#1A53FF",
+            "background": "DarkOrange",
+            "border": "OrangeRed",
             "highlight": {
-                "background": "#66B2FF",
-                "border": "#3375FF"
+                "background": "orange",
+                "border": "Tomato"
             },
             "hover": {
-                "background": "#99CCFF",
-                "border": "#1A53FF"
+                "background": "LightSalmon",
+                "border": "Coral"
             }
         },
         "shape": "dot",
         "size": 20
     },
-    "group3": {
+    "Level 3": {
         "color": {
-            "background": "#33FF57",
-            "border": "#39C700",
+            "background": "Gold",
+            "border": "DarkKhaki",
             "highlight": {
-                "background": "#69FF99",
-                "border": "#33FF57"
+                "background": "Moccasin",
+                "border": "PeachPuff"
             },
             "hover": {
-                "background": "#9FFFCC",
-                "border": "#39C700"
+                "background": "PapayaWhip",
+                "border": "DarkOrange"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "Level 4": {
+        "color": {
+            "background": "Lime",
+            "border": "LimeGreen",
+            "highlight": {
+                "background": "PaleGreen",
+                "border": "MediumSeaGreen"
+            },
+            "hover": {
+                "background": "GreenYellow",
+                "border": "SeaGreen"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "Level 5": {
+        "color": {
+            "background": "PowderBlue",
+            "border": "PowderBlue",
+            "highlight": {
+                "background": "LightSkyBlue",
+                "border": "RoyalBlue"
+            },
+            "hover": {
+                "background": "LightSteelBlue",
+                "border": "SteelBlue"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "Goal": {
+        "color": {
+            "background": "plum",
+            "border": "purple",
+            "highlight": {
+                "background": "violet",
+                "border": "mediumorchid"
+            },
+            "hover": {
+                "background": "LightSteelBlue",
+                "border": "SteelBlue"
             }
         },
         "shape": "dot",

@@ -9,7 +9,7 @@
         .container {
             display: flex;
             align-items: flex-start;
-            justify-content: center;
+            justify-content: left;
             padding: 20px;
             gap: 20px;
         }
@@ -17,7 +17,7 @@
         /* Styling for the legend table */
         .legend {
             border-collapse: collapse;
-            width: 200px;
+            width: 100px;
             font-family: Arial, sans-serif;
             color: #333;
         }
@@ -34,10 +34,10 @@
 
         /* Adjust the network container */
         #network {
-            width: 800px;
-            height: 600px;
+            width: 1300px;
+            height: 500px;
             border: 1px solid lightgray;
-            background-color: #f9f9f9; /* Optional for better visibility */
+            background-color: aliceblue; /* Optional for better visibility */
         }
 
         body {
@@ -140,23 +140,51 @@
             // Function to initialize the network
             function initializeNetwork(groups) {
                 // Define the nodes with group assignments
-                const nodes = new vis.DataSet([
-                    {id: 1, label: 'Node 1', group: 'group1'},
-                    {id: 2, label: 'Node 2', group: 'group1'},
-                    {id: 3, label: 'Node 3', group: 'group2'},
-                    {id: 4, label: 'Node 4', group: 'group2'},
-                    {id: 5, label: 'Node 5', group: 'group3'},
-                    {id: 6, label: 'Node 6', group: 'group3'}
-                ]);
+                // Define the nodes with group assignments
+            var nodes = new vis.DataSet([
+                {id: 1, label: 'FC 1', shape: 'box', group: 'Foundation', x: -1000},
+                {id: 2, label: 'FC 2', shape: 'box', group: 'Foundation', x: -1000},
+                {id: 3, label: '3 L 2.1', group: 'Level 2'},
+                {id: 4, label: '4 L 2.2', group: 'Level 2'},
+                {id: 5, label: '5 L 3.1', group: 'Level 3'},
+                {id: 6, label: '6 L 3.2', group: 'Level 3'},
+                {id: 7, label: '7 L 4.1', group: 'Level 4'},
+                {id: 8, label: '8 L 4.2', group: 'Level 4'},
+                {id: 9, label: '9 L 5.1', group: 'Level 5'},
+                {id: 10, label: '10 L 5.2', group: 'Level 5'},
+                {id: 11, label: '11 G 1', shape: 'star', group: 'Goal', x: 1000},
+                {id: 12, label: '12 G 2', shape: 'star', group: 'Goal', x: 1000}
+            ]);
 
-                // Define the edges connecting the nodes
-                const edges = new vis.DataSet([
-                    {from: 1, to: 2},
-                    {from: 1, to: 3},
-                    {from: 2, to: 4},
-                    {from: 2, to: 5},
-                    {from: 3, to: 6}
-                ]);
+            // Define the edges connecting the nodes
+            // Always higher to lower
+            var edges = new vis.DataSet([
+                // L2 to Foundations
+                {from: 3, to: 1},
+                {from: 3, to: 2},
+                {from: 4, to: 1},
+                {from: 4, to: 2},
+
+                // L3 to L2
+                {from: 5, to: 3},
+                {from: 5, to: 4},
+                {from: 6, to: 3},
+                {from: 6, to: 4},
+
+                // L4 to L3
+                {from: 7, to: 6},
+                {from: 7, to: 5},
+                {from: 8, to: 5},
+                {from: 8, to: 6},
+                {from: 9, to: 7},
+                {from: 10, to: 8},
+                {from: 9, to: 8},
+                {from: 10, to: 7},
+                {from: 11, to: 9},
+                {from: 12, to: 10}
+            ]);
+
+     
 
                 // Combine nodes and edges into a data object
                 const data = {
@@ -168,8 +196,10 @@
                 const options = {
                     groups: groups,
                     nodes: {
+                        shape: 'circle',
+                        size: 40,
                         font: {
-                            color: '#ffffff',
+                            color: 'black',
                             size: 14,
                             face: 'Tahoma'
                         },
@@ -183,10 +213,10 @@
                         }
                     },
                     edges: {
-                        color: '#cccccc',
+                        color: 'blue',
                         width: 2,
                         arrows: {
-                            to: {enabled: true, scaleFactor: 0.5}
+                            to: {enabled: true, scaleFactor: 1.5}
                         },
                         smooth: {
                             type: 'continuous'

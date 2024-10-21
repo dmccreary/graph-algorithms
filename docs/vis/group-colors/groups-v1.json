@@ -1,0 +1,50 @@
+{
+    "group1": {
+        "color": {
+            "background": "#FF5733",
+            "border": "#C70039",
+            "highlight": {
+                "background": "#FFC300",
+                "border": "#FF5733"
+            },
+            "hover": {
+                "background": "#FFBD69",
+                "border": "#C70039"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "group2": {
+        "color": {
+            "background": "#3375FF",
+            "border": "#1A53FF",
+            "highlight": {
+                "background": "#66B2FF",
+                "border": "#3375FF"
+            },
+            "hover": {
+                "background": "#99CCFF",
+                "border": "#1A53FF"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "group3": {
+        "color": {
+            "background": "#33FF57",
+            "border": "#39C700",
+            "highlight": {
+                "background": "#69FF99",
+                "border": "#33FF57"
+            },
+            "hover": {
+                "background": "#9FFFCC",
+                "border": "#39C700"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    }
+}
