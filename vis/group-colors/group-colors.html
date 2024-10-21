@@ -39,7 +39,13 @@
                 {id: 2, label: 'Node 2', group: 'group1'},
                 {id: 3, label: 'Node 3', group: 'group2'},
                 {id: 4, label: 'Node 4', group: 'group2'},
-                {id: 5, label: 'Node 5', group: 'group3'}
+                {id: 5, label: 'Node 5', group: 'group3'},
+                {id: 6, label: 'Node 6', group: 'group3'},
+                {id: 7, label: 'Node 7', group: 'group4'},
+                {id: 8, label: 'Node 8', group: 'group4'},
+                {id: 9, label: 'Node 9', group: 'group5'},
+                {id: 10, label: 'Node 10', group: 'group5'},
+                {id: 11, label: 'Node 11', group: 'group5'}
             ]);
 
             // Define the edges connecting the nodes
@@ -47,7 +53,25 @@
                 {from: 1, to: 2},
                 {from: 1, to: 3},
                 {from: 2, to: 4},
-                {from: 2, to: 5}
+                {from: 2, to: 5},
+                {from: 3, to: 5},
+                {from: 3, to: 6},
+                {from: 4, to: 6},
+                {from: 4, to: 7},
+                {from: 5, to: 7},
+                {from: 5, to: 8},
+                {from: 6, to: 7},
+                {from: 6, to: 8},
+                {from: 7, to: 8},
+                {from: 7, to: 9},
+                {from: 8, to: 7},
+                {from: 8, to: 9},
+                {from: 9, to: 8},
+                {from: 9, to: 10},
+                {from: 10, to: 9},
+                {from: 10, to: 11},
+                {from: 11, to: 9},
+                {from: 11, to: 10}
             ]);
 
             // Define the styling for each group
