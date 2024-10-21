@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vis.js Node Group Styling</title>
+    <!-- Include vis-network library -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        /* Define the size of the network container */
+        #network {
+            width: 800px;
+            height: 600px;
+            background: aliceblue;
+            border: 1px solid lightgray;
+            margin: 20px auto;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>vis.js Network with Grouped Node Colors</h1>
+    <div id="network"></div>
+    
+    <script>
+        // Ensure the script runs after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if vis.Network is available
+            if (typeof vis === 'undefined' || typeof vis.Network === 'undefined') {
+                console.error('vis.Network is not available. Please check the CDN links.');
+                return;
+            }
+
+            // Define the nodes with group assignments
+            var nodes = new vis.DataSet([
+                {id: 1, label: 'Node 1', group: 'group1'},
+                {id: 2, label: 'Node 2', group: 'group1'},
+                {id: 3, label: 'Node 3', group: 'group2'},
+                {id: 4, label: 'Node 4', group: 'group2'},
+                {id: 5, label: 'Node 5', group: 'group3'}
+            ]);
+
+            // Define the edges connecting the nodes
+            var edges = new vis.DataSet([
+                {from: 1, to: 2},
+                {from: 1, to: 3},
+                {from: 2, to: 4},
+                {from: 2, to: 5}
+            ]);
+
+            // Define the styling for each group
+            var groups = {
+                group1: {
+                    color: {
+                        background: 'red',
+                        border: 'darkred'
+                    },
+                    shape: 'dot',
+                    size: 20
+                },
+                group2: {
+                    color: {
+                        background: 'blue',
+                        border: 'darkblue'
+                    },
+                    shape: 'dot',
+                    size: 20
+                },
+                group3: {
+                    color: {
+                        background: 'green',
+                        border: 'darkgreen'
+                    },
+                    shape: 'dot',
+                    size: 20
+                }
+            };
+
+            // Combine nodes and edges into a data object
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+
+            // Define options, including group styles
+            var options = {
+                groups: groups,
+                nodes: {
+                    font: {
+                        color: '#ffffff',
+                        size: 14,
+                        face: 'Tahoma'
+                    }
+                },
+                edges: {
+                    color: '#cccccc',
+                    arrows: {
+                        to: {enabled: true, scaleFactor: 0.5}
+                    }
+                },
+                physics: {
+                    enabled: true,
+                    stabilization: {
+                        iterations: 200
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+
+            // Initialize the network
+            var container = document.getElementById('network');
+
+            try {
+                var network = new vis.Network(container, data, options);
+                console.log('vis.Network initialized successfully.');
+            } catch (error) {
+                console.error('Error initializing vis.Network:', error);
+            }
+        });
+    </script>
+</body>
+</html>
