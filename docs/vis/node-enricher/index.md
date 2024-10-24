@@ -3,11 +3,34 @@
 ## Prompt
 
 ```linenums="0"
-I have a JSON file that represents the nodes and edges in a network graph. I would like you to generate a Python program that reads in this JSON file and returns it with one addition. If the node has a group of 1, I want you to add another property "x": -300. 
-
-All other elements in the JSON file should remain unchained. Here is a sample of the nodes: { "nodes": \[ { "id": 1, "label": "Ohm's Law", "group": 1 }, { "id": 2, "label": "Voltage", "group": 1 }, { "id": 3, "label": "Current", "group": 1 }, { "id": 4, "label": "Resistance", "group": 1 }, { "id": 5, "label": "Power", "group": 1 }, { "id": 6, "label": "Energy", "group": 1 } You should return: "nodes": \[ { "id": 1, "label": "Ohm's Law", "group": 1, "x": 0 } etc.
+I have a JSON file that represents the nodes and edges in a network graph. 
+I would like you to generate a Python program that reads in this JSON file
+and returns it with one addition.
+If the node has a group of 1, I want you to add another property "x": -300. 
+All other elements in the JSON file should remain unchained.
+Here is a sample of the nodes:
 ```
 
+```json
+{ "nodes": [ 
+    { "id": 1, "label": "Ohm's Law", "group": 1 },
+    { "id": 2, "label": "Voltage", "group": 1 },
+    { "id": 3, "label": "Current", "group": 1 },
+    { "id": 4, "label": "Resistance", "group": 1 },
+    { "id": 5, "label": "Power", "group": 1 },
+    { "id": 6, "label": "Energy", "group": 1 } 
+]}
+```
+
+You should return:
+
+```json
+"nodes": [ 
+    { "id": 1, "label": "Ohm's Law", "group": 1, "x": -300 },
+    { "id": 2, "label": "Voltage", "group": 1,  "x": -300},
+     etc.
+]}
+```
 ## ChatGPT Response
 
 Certainly! Below is a Python program that accomplishes your requirements. This script reads a JSON file representing a network graph, adds an `"x": -300` property to each node with `"group": 1`, and writes the modified data back to a new JSON file. All other elements in the JSON remain unchanged.
@@ -16,16 +39,20 @@ Certainly! Below is a Python program that accomplishes your requirements. This s
 
 1.  **Import Necessary Modules**:
 
-    -   `json`: To handle JSON data.
-    -   `sys`: To handle command-line arguments (optional, for flexibility).
+-   `json`: To handle JSON data.
+-   `sys`: To handle command-line arguments (optional, for flexibility).
+
 2.  **Define the Functionality**:
 
-    -   **Reading the JSON File**: The script reads the input JSON file containing the network graph.
-    -   **Modifying Nodes**: It iterates through each node in the `"nodes"` list. If a node has `"group": 1`, it adds a new property `"x": -300` to that node.
-    -   **Writing the Modified JSON**: The script writes the updated JSON data to an output file.
+-   **Reading the JSON File**: The script reads the input JSON file containing the network graph.
+-   **Modifying Nodes**: It iterates through each node in the `"nodes"` list. If a node has `"group": 1`, it adds a new property `"x": -300` to that node.
+-   **Writing the Modified JSON**: The script writes the updated JSON data to an output file.
+
 3.  **Usage**:
 
-    -   You can run the script from the command line, specifying the input and output file paths. If no arguments are provided, it defaults to `input.json` and `output.json`.
+You can run the script from the command line,
+specifying the input and output file paths.
+If no arguments are provided, it defaults to `input.json` and `output.json`.
 
 ### Python Code
 
@@ -85,7 +112,8 @@ if __name__ == "__main__":
 
 1.  **Save the Script**:
 
-    -   Save the above code to a file, for example, `modify_graph.py`.
+-   Save the above code to a file, for example, `modify_graph.py`.
+
 2.  **Prepare Your JSON File**:
 
     -   Ensure your JSON file (e.g., `input.json`) is properly formatted. Here's an example based on your sample:

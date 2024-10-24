@@ -1,5 +1,5 @@
-site_name: Graph Algorithms
-site_description: 'A course on graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial'
+site_name: AI Graph Algorithms
+site_description: 'A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial'
 site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://dmccreary.github.io/graph-algorithms'
@@ -8,6 +8,7 @@ repo_url: 'https://github.com/dmccreary/graph-algorithms'
 nav:
   - Home: index.md
   - About: about.md
+  - Course Description: course-description.md
   - Topics: topic-lists.md
   - JS Library Analysis:
     - Introduction: library-analysis/index.md
