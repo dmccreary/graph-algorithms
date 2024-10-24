@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A course on graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Vis.js Node Enricher Example - Graph Algorithms</title>
+        <title>Vis.js Node Enricher Example - AI Graph Algorithms</title>
       
     
     
@@ -102,7 +102,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Graph Algorithms" class="md-header__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
+    <a href="../.." title="AI Graph Algorithms" class="md-header__button md-logo" aria-label="AI Graph Algorithms" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Graph Algorithms
+            AI Graph Algorithms
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -209,13 +209,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Graph Algorithms" class="md-nav__button md-logo" aria-label="Graph Algorithms" data-md-component="logo">
+    <a href="../.." title="AI Graph Algorithms" class="md-nav__button md-logo" aria-label="AI Graph Algorithms" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    Graph Algorithms
+    AI Graph Algorithms
   </label>
   
     <div class="md-nav__source">
@@ -264,6 +264,26 @@
   
   <span class="md-ellipsis">
     About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
   </span>
   
 
@@ -409,7 +429,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           
@@ -425,14 +445,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Vis Tutorial
           </label>
@@ -1215,19 +1235,53 @@
 
 <h1 id="visjs-node-enricher-example">Vis.js Node Enricher Example</h1>
 <h2 id="prompt">Prompt</h2>
-<div class="highlight"><pre><span></span><code>I have a JSON file that represents the nodes and edges in a network graph. I would like you to generate a Python program that reads in this JSON file and returns it with one addition. If the node has a group of 1, I want you to add another property &quot;x&quot;: -300. 
-
-All other elements in the JSON file should remain unchained. Here is a sample of the nodes: { &quot;nodes&quot;: \[ { &quot;id&quot;: 1, &quot;label&quot;: &quot;Ohm&#39;s Law&quot;, &quot;group&quot;: 1 }, { &quot;id&quot;: 2, &quot;label&quot;: &quot;Voltage&quot;, &quot;group&quot;: 1 }, { &quot;id&quot;: 3, &quot;label&quot;: &quot;Current&quot;, &quot;group&quot;: 1 }, { &quot;id&quot;: 4, &quot;label&quot;: &quot;Resistance&quot;, &quot;group&quot;: 1 }, { &quot;id&quot;: 5, &quot;label&quot;: &quot;Power&quot;, &quot;group&quot;: 1 }, { &quot;id&quot;: 6, &quot;label&quot;: &quot;Energy&quot;, &quot;group&quot;: 1 } You should return: &quot;nodes&quot;: \[ { &quot;id&quot;: 1, &quot;label&quot;: &quot;Ohm&#39;s Law&quot;, &quot;group&quot;: 1, &quot;x&quot;: 0 } etc.
+<div class="highlight"><pre><span></span><code>I have a JSON file that represents the nodes and edges in a network graph. 
+I would like you to generate a Python program that reads in this JSON file
+and returns it with one addition.
+If the node has a group of 1, I want you to add another property &quot;x&quot;: -300. 
+All other elements in the JSON file should remain unchained.
+Here is a sample of the nodes:
 </code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;nodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ohm&#39;s Law&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Voltage&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Current&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resistance&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Power&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Energy&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+<span class="p">]}</span>
+</code></pre></div></td></tr></table></div>
+<p>You should return:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">&quot;nodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ohm&#39;s Law&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-300</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Voltage&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">  </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-300</span><span class="p">},</span>
+<span class="w">     </span><span class="err">e</span><span class="kc">t</span><span class="err">c.</span>
+<span class="p">]}</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="chatgpt-response">ChatGPT Response</h2>
 <p>Certainly! Below is a Python program that accomplishes your requirements. This script reads a JSON file representing a network graph, adds an <code>"x": -300</code> property to each node with <code>"group": 1</code>, and writes the modified data back to a new JSON file. All other elements in the JSON remain unchanged.</p>
 <h3 id="step-by-step-explanation">Step-by-Step Explanation</h3>
 <ol>
 <li>
 <p><strong>Import Necessary Modules</strong>:</p>
-<ul>
-<li><code>json</code>: To handle JSON data.</li>
-<li><code>sys</code>: To handle command-line arguments (optional, for flexibility).</li>
+</li>
+<li>
+<p><code>json</code>: To handle JSON data.</p>
+</li>
+<li>
+<p><code>sys</code>: To handle command-line arguments (optional, for flexibility).</p>
+</li>
 <li>
 <p><strong>Define the Functionality</strong>:</p>
 </li>
@@ -1235,16 +1289,16 @@ All other elements in the JSON file should remain unchained. Here is a sample of
 <p><strong>Reading the JSON File</strong>: The script reads the input JSON file containing the network graph.</p>
 </li>
 <li><strong>Modifying Nodes</strong>: It iterates through each node in the <code>"nodes"</code> list. If a node has <code>"group": 1</code>, it adds a new property <code>"x": -300</code> to that node.</li>
-<li><strong>Writing the Modified JSON</strong>: The script writes the updated JSON data to an output file.</li>
+<li>
+<p><strong>Writing the Modified JSON</strong>: The script writes the updated JSON data to an output file.</p>
+</li>
 <li>
 <p><strong>Usage</strong>:</p>
 </li>
-<li>
-<p>You can run the script from the command line, specifying the input and output file paths. If no arguments are provided, it defaults to <code>input.json</code> and <code>output.json</code>.</p>
-</li>
-</ul>
-</li>
 </ol>
+<p>You can run the script from the command line,
+specifying the input and output file paths.
+If no arguments are provided, it defaults to <code>input.json</code> and <code>output.json</code>.</p>
 <h3 id="python-code">Python Code</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1348,11 +1402,13 @@ All other elements in the JSON file should remain unchained. Here is a sample of
 <ol>
 <li>
 <p><strong>Save the Script</strong>:</p>
-<ul>
-<li>Save the above code to a file, for example, <code>modify_graph.py</code>.</li>
+</li>
+<li>
+<p>Save the above code to a file, for example, <code>modify_graph.py</code>.</p>
+</li>
 <li>
 <p><strong>Prepare Your JSON File</strong>:</p>
-</li>
+<ul>
 <li>
 <p>Ensure your JSON file (e.g., <code>input.json</code>) is properly formatted. Here's an example based on your sample:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
