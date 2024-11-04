@@ -1,4 +1,6 @@
+## Graph Algorithm Concept Dependencies
 
+```linenums="0"
 Our next step is to create a fully connected dependency graph
 for learning these Concepts.
 In this step, for each Concept on this list, create a new
@@ -17,6 +19,7 @@ ID you assigned in the list above.
 Check your results to make sure that all concepts are connected to at least one other concept.
 
 Foundation Concepts are concepts that have no dependant concepts in this set.  They have an empty third column.
+```
 
 ```python
 import csv

@@ -51,7 +51,7 @@ nav:
     - JSON Data Standard: data/json-std/index.md
     - Geospatial Standards: data/geospatial/index.md
     - SKOS: data/skos/index.md
-  - Sims:
+  - Micro Simulations:
     - Introduction: sims/index.md
     - Legends: sims/legends/index.md
     - Degree: sims/degree/index.md
@@ -66,6 +66,13 @@ nav:
     - Matching: sims/matching/index.md
     - Data Element Matching: sims/data-element-match/index.md
     - Clustering: sims/clustering/index.md
+    - Learning Graph: 
+      - Introduction: sims/learning-graph/index.md
+      - Course Definition: sims/learning-graph/00-course-description.md
+      - Enumerating Concepts: sims/learning-graph/01-enumerating-concepts.md
+      - Concept Dependencies: sims/learning-graph/02-concept-dependencies.md
+      - Concept Taxonomies: sims/learning-graph/03-concept-taxonomies.md
+      - Visualizing Concepts: sims/learning-graph/04-visualizing-concepts.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
   - Glossary: glossary.md
