@@ -2,38 +2,38 @@
     "nodes": [
         {
             "id": 1,
-            "label": "Graph Definition",
-            "group": 1
+            "label": "Graph Data Model",
+            "group": "found"
         },
         {
             "id": 2,
             "label": "Nodes",
-            "group": 1
+            "group": "found"
         },
         {
             "id": 3,
             "label": "Edges",
-            "group": 1
+            "group": "found"
         },
         {
             "id": 4,
-            "label": "Directed Graph (Digraph)",
-            "group": 1
+            "label": "Directed Graphs",
+            "group": 2
         },
         {
             "id": 5,
             "label": "Undirected Graph",
-            "group": 1
+            "group": 2
         },
         {
             "id": 6,
             "label": "Weighted Graphs",
-            "group": 1
+            "group": 2
         },
         {
             "id": 7,
             "label": "Unweighted Graphs",
-            "group": 1
+            "group": 2
         },
         {
             "id": 8,
@@ -48,37 +48,37 @@
         {
             "id": 10,
             "label": "Graph Density",
-            "group": 1
+            "group": 2
         },
         {
             "id": 11,
             "label": "Degree of a Node",
-            "group": 1
+            "group": 2
         },
         {
             "id": 12,
             "label": "In-degree",
-            "group": 1
+            "group": 2
         },
         {
             "id": 13,
             "label": "Out-degree",
-            "group": 1
+            "group": 2
         },
         {
             "id": 14,
             "label": "Path",
-            "group": 1
+            "group": 2
         },
         {
             "id": 15,
             "label": "Walk",
-            "group": 1
+            "group": 2
         },
         {
             "id": 16,
             "label": "Cycle",
-            "group": 1
+            "group": 2
         },
         {
             "id": 17,
@@ -93,7 +93,7 @@
         {
             "id": 19,
             "label": "Subgraph",
-            "group": 1
+            "group": 2
         },
         {
             "id": 20,
@@ -108,27 +108,27 @@
         {
             "id": 22,
             "label": "Multigraph",
-            "group": 1
+            "group": 2
         },
         {
             "id": 23,
             "label": "Graph Isomorphism",
-            "group": 1
+            "group": 2
         },
         {
             "id": 24,
             "label": "Self-loop",
-            "group": 1
+            "group": 2
         },
         {
             "id": 25,
             "label": "Adjacent Nodes",
-            "group": 1
+            "group": 2
         },
         {
             "id": 26,
             "label": "Incident Edges",
-            "group": 1
+            "group": 2
         },
         {
             "id": 27,
@@ -768,12 +768,12 @@
         {
             "id": 154,
             "label": "Neural Networks",
-            "group": 10
+            "group": 11
         },
         {
             "id": 155,
             "label": "Machine Learning",
-            "group": 10
+            "group": 11
         },
         {
             "id": 156,
@@ -788,12 +788,12 @@
         {
             "id": 158,
             "label": "Probability Theory",
-            "group": 1
+            "group": "found"
         },
         {
             "id": 159,
             "label": "Data Science",
-            "group": 1
+            "group": "found"
         }
     ],
     "edges": [
