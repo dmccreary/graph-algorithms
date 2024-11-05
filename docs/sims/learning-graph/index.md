@@ -32,8 +32,12 @@ that is used to color the network graph learning map.
 
 [Concept Taxonomies](03-concept-taxonomies.md)
 
+## View Legend
+
+[View Legend](view-graph.html)
+
 ## View Graph
 
-[View Graph](view-graph.html)
+[View Graph](./view-graph.html)
 
 
