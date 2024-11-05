@@ -71,8 +71,8 @@ def csv_to_visjs_json(csv_filename, json_filename):
 
 if __name__ == "__main__":
     # Define input and output file names
-    input_csv = 'graph-data.csv'
-    output_json = 'graph-data.json'
+    input_csv = 'graph-algorithms.csv'
+    output_json = 'graph-algorithms.json'
     
     # Convert CSV to JSON
     csv_to_visjs_json(input_csv, output_json)
