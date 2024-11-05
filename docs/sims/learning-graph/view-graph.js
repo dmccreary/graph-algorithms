@@ -65,7 +65,31 @@ function drawGraph() {
         },
         borderWidth: 2,
         borderWidthSelected: 4
-      }
+      },
+      groups: {
+        foundation: {
+           shape: "box", 
+           color:{background:'red'},
+           font: {"color": "white"},
+        },
+        "representations": {
+           color:{background:'gold'},
+        },
+        "algorithms": {
+           color:{background:'green'},
+        },
+        "clust": {
+           color:{background:'brown'},
+        },
+        "ml": {
+           color:{background:'teal'},
+        },
+        goal: {
+           shape: "star", 
+           color:{background:'gold'}, 
+           font: { size: 16 }
+        }
+    }
   };
   
     // Initialize the network

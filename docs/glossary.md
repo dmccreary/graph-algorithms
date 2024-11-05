@@ -122,6 +122,11 @@ A machine learning task in graph analysis where the goal is to predict the forma
 
 Refers to irregularities or unexpected values in the weights of edges in a graph. In a financial transaction graph, for example, edge weights could represent the amount of money transferred. Example: Identifying unusually large transactions in a financial network that might suggest money laundering.
 
+#### Eigen Vector
+
+A matrix representation of the graph, such as the adjacency matrix or Laplacian matrix that
+undergoes specific mathematical transformation to focus on structure of the graph.
+
 #### Floyd-Warshall Algorithm
 
 An algorithm for finding shortest paths in a weighted graph with positive or negative edge weights (but with no negative cycles). Example: Used in high-frequency trading for finding the quickest path through a network.

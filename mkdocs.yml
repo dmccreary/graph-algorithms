@@ -44,12 +44,14 @@ nav:
     - Model Viewer: lessons/05-model-viewer.md
     - Data Visualization: lessons/06-data-vis.md
     - Cytoscape: lessons/07-cytoscape.md
+    - Spectral Graph Theory: lessons/30-spectral-graph-theory.md
   - Generating Graph Data:
     - Introduction: data/index.md
     - US Cities: data/us-cities/index.md
     - Loading JSON Data: data/json/index.md
     - JSON Data Standard: data/json-std/index.md
     - Geospatial Standards: data/geospatial/index.md
+    - Region Names: data/geospatial/region-names.md
     - SKOS: data/skos/index.md
   - Micro Simulations:
     - Introduction: sims/index.md
@@ -103,6 +105,9 @@ theme:
     - navigation.footer
 plugins:
   - search
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 #  - social
 markdown_extensions:
   - admonition
@@ -111,6 +116,9 @@ markdown_extensions:
   - attr_list
   - pymdownx.highlight:
       linenums: true
+  # enable LaTeX extensions
+  - pymdownx.arithmatex:
+      generic: true
 extra:
   analytics:
     provider: google
