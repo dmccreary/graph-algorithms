@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#learning-graph" class="md-skip">
+        <a href="#learning-graph-microsimulation" class="md-skip">
           Skip to content
         </a>
       
@@ -1296,36 +1296,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#concept-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      Concept Dependencies
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#concept-taxonomies" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      Concept Taxonomies
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#view-graph" class="md-nav__link">
     <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
+      View Graph
     </span>
   </a>
   
@@ -1349,14 +1340,28 @@
   
 
 
-<h1 id="learning-graph">Learning Graph</h1>
+<h1 id="learning-graph-microsimulation">Learning Graph MicroSimulation</h1>
+<p>This MicroSim has several prompts.  Each prompt output is
+used as an input to the next prompt.</p>
 <h2 id="course-description">Course Description</h2>
+<p>We use Bloom's taxonomy to create a course description that
+begins with foundational concepts and progresses to hands-on activities
+to generate new content.</p>
 <p><a href="00-course-description/">Course Description</a></p>
 <h2 id="enumerating-concepts">Enumerating Concepts</h2>
-<h2 id="_1"></h2>
-<h2 id="_2"></h2>
-<h2 id="_3"></h2>
-<h2 id="_4"></h2>
+<p>We use the course description to generate a flat list of
+around 150 core concepts used in this course.</p>
+<p><a href="01-enumerating-concepts/">Enumerating Concepts</a></p>
+<h2 id="concept-dependencies">Concept Dependencies</h2>
+<p>Once we have a list of our core concepts, we ask a LLM
+to help create a dependency graph.</p>
+<p><a href="02-concept-dependencies/">Concept Dependencies</a></p>
+<h2 id="concept-taxonomies">Concept Taxonomies</h2>
+<p>We then try to categorize these concepts into a taxonomy
+that is used to color the network graph learning map.</p>
+<p><a href="03-concept-taxonomies/">Concept Taxonomies</a></p>
+<h2 id="view-graph">View Graph</h2>
+<p><a href="view-graph.html">View Graph</a></p>
 
 
 

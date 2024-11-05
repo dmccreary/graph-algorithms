@@ -1131,6 +1131,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Visualizing Concepts
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1140,6 +1151,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1281,6 +1320,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1298,6 +1354,166 @@
 
 
 <h1 id="visualizing-concepts">Visualizing Concepts</h1>
+<p>We will use vis.js to visualize this learning graph.</p>
+<p>First we need to convert the CSV file into JSON.  ChatGPT
+can generate this conversion for us.</p>
+<h2 id="prompt">Prompt</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># first line must be</span>
+<span class="c1"># ID,ConceptName,Dependencies,TaxonomyID</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">csv_to_visjs_json</span><span class="p">(</span><span class="n">csv_filename</span><span class="p">,</span> <span class="n">json_filename</span><span class="p">):</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Read the CSV file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="c1"># Extract node information</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">concept_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid ID &#39;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39; skipped.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>  <span class="c1"># Skip rows with invalid ID</span>
+
+            <span class="n">concept_name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;ConceptName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">concept_name</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Empty Concept Name for ID </span><span class="si">{</span><span class="n">concept_id</span><span class="si">}</span><span class="s2"> skipped.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>  <span class="c1"># Skip nodes without a name</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">category_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;TaxonomyID&#39;</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid TaxonomyID &#39;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;TaxonomyID&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39; for ID </span><span class="si">{</span><span class="n">concept_id</span><span class="si">}</span><span class="s2"> skipped.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>  <span class="c1"># Skip rows with invalid Category ID</span>
+
+            <span class="c1"># Create node object</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">concept_id</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">concept_name</span><span class="p">,</span>
+                <span class="s1">&#39;group&#39;</span><span class="p">:</span> <span class="n">category_id</span>
+            <span class="p">}</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+            <span class="c1"># Process Dependencies to create edges</span>
+            <span class="n">dependency_list</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Dependencies&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">dependency_list</span><span class="p">:</span>
+                <span class="n">dependencies</span> <span class="o">=</span> <span class="n">dependency_list</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">dep</span> <span class="ow">in</span> <span class="n">dependencies</span><span class="p">:</span>
+                    <span class="n">dep</span> <span class="o">=</span> <span class="n">dep</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">dep</span><span class="p">:</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">dep_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dep</span><span class="p">)</span>
+                            <span class="n">edge</span> <span class="o">=</span> <span class="p">{</span>
+                                <span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="n">concept_id</span><span class="p">,</span>
+                                <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="n">dep_id</span>
+                            <span class="p">}</span>
+                            <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+                        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid DependencyID &#39;</span><span class="si">{</span><span class="n">dep</span><span class="si">}</span><span class="s2">&#39; for ID </span><span class="si">{</span><span class="n">concept_id</span><span class="si">}</span><span class="s2"> skipped.&quot;</span><span class="p">)</span>
+                            <span class="k">continue</span>  <span class="c1"># Skip invalid DependencyIDs</span>
+
+    <span class="c1"># If not using separate groups, omit the &#39;groups&#39; key</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;nodes&#39;</span><span class="p">:</span> <span class="n">nodes</span><span class="p">,</span>
+        <span class="s1">&#39;edges&#39;</span><span class="p">:</span> <span class="n">edges</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Write the JSON output</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">jsonfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully converted &#39;</span><span class="si">{</span><span class="n">csv_filename</span><span class="si">}</span><span class="s2">&#39; to &#39;</span><span class="si">{</span><span class="n">json_filename</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Define input and output file names</span>
+    <span class="n">input_csv</span> <span class="o">=</span> <span class="s1">&#39;graph-algorithms.csv&#39;</span>
+    <span class="n">output_json</span> <span class="o">=</span> <span class="s1">&#39;graph-algorithm.json&#39;</span>
+
+    <span class="c1"># Convert CSV to JSON</span>
+    <span class="n">csv_to_visjs_json</span><span class="p">(</span><span class="n">input_csv</span><span class="p">,</span> <span class="n">output_json</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 
 
 
