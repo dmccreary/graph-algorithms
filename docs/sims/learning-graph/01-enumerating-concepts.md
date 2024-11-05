@@ -1,6 +1,11 @@
 # Enumerating Concepts
 
+Our second step is to generate a list of the Concepts covered in
+this course.
 
+## Sample Prompt
+
+```linenums="0"
 Please create a fully connected dependency graph
 for learning the concepts in a college-level Graph Algorithms course.
 In this step, for each Concept on this list below, create a new
@@ -19,7 +24,9 @@ ID you assigned in the list above.
 Check your results to make sure that all concepts are connected to at least one other concept.
 
 Foundation Concepts are concepts that have no dependant concepts in this set.  They have an empty third column.
+```
 
+## ChatGPT Response
 
 Here is a numbered list of 150 core concepts for my course on graph algorithms, presented in the order they should be taught, from foundational to advanced:
 

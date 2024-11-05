@@ -34,9 +34,20 @@ that is used to color the network graph learning map.
 
 ## View Legend
 
-[View Legend](view-graph.html)
+Once we have a taxonomy, we need to convert that list
+into an HTML table that can be used as a legend that
+appears on the left sidebar.  This version has
+a way to collapse the sidebar.
+
+[View Legend](view-legend.html)
 
 ## View Graph
+
+Finally, we put it all together in a graph viewer.
+This version reads a JSON file that has some
+group names added.  It also attempts to put
+the foundation elements to the left and some
+advanced topics on the right.
 
 [View Graph](./view-graph.html)
 

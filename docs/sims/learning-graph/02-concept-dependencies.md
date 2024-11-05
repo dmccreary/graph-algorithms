@@ -1,5 +1,13 @@
 ## Graph Algorithm Concept Dependencies
 
+After we have a list of about 150 concepts, we need to
+understand what concepts depend on other concepts.
+This helps us with the course order and generating
+custom learning paths for students with specific learning
+objectives.
+
+## Sample Dependencies Prompt
+
 ```linenums="0"
 Our next step is to create a fully connected dependency graph
 for learning these Concepts.
