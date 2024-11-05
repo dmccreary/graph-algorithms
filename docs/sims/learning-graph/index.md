@@ -1,5 +1,7 @@
 # Learning Graph MicroSimulation
 
+![](./learning-graph.png)
+
 This MicroSim has several prompts.  Each prompt output is
 used as an input to the next prompt.
 
