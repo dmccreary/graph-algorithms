@@ -132,18 +132,18 @@
         },
         {
             "id": 27,
-            "label": "Graph Adjacency Matrix",
-            "group": 3
+            "label": "Adjacency Matrix",
+            "group": "representations"
         },
         {
             "id": 28,
-            "label": "Graph Adjacency List",
-            "group": 3
+            "label": "Adjacency List",
+            "group": "representations"
         },
         {
             "id": 29,
-            "label": "Graph Incidence Matrix",
-            "group": 3
+            "label": "Incidence Matrix",
+            "group": "representations"
         },
         {
             "id": 30,
@@ -183,57 +183,57 @@
         {
             "id": 37,
             "label": "Shortest Path Problem",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 38,
             "label": "Dijkstra\u2019s Algorithm",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 39,
             "label": "Bellman-Ford Algorithm",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 40,
             "label": "A* Search Algorithm",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 41,
             "label": "Floyd-Warshall Algorithm",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 42,
             "label": "All-Pairs Shortest Path (APSP)",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 43,
             "label": "Single-Source Shortest Path (SSSP)",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 44,
             "label": "Negative Weight Cycles",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 45,
             "label": "Minimum Spanning Tree (MST)",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 46,
             "label": "Kruskal\u2019s Algorithm",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 47,
             "label": "Prim\u2019s Algorithm",
-            "group": 5
+            "group": "algorithms"
         },
         {
             "id": 48,
@@ -508,57 +508,57 @@
         {
             "id": 102,
             "label": "Graph Partitioning",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 103,
             "label": "Graph Clustering",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 104,
             "label": "k-Cuts Problem",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 105,
             "label": "Modularity (Clustering)",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 106,
             "label": "Spectral Clustering",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 107,
             "label": "Girvan-Newman Algorithm",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 108,
             "label": "Louvain Method (Clustering)",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 109,
             "label": "Random Walk",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 110,
             "label": "Markov Chains (Graphs)",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 111,
             "label": "Pagerank Algorithm",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 112,
             "label": "HITS Algorithm",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 113,
@@ -593,22 +593,22 @@
         {
             "id": 119,
             "label": "Graph Laplacian",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 120,
             "label": "Spectral Graph Theory",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 121,
             "label": "Cheeger\u2019s Inequality",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 122,
             "label": "Expander Graphs",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 123,
@@ -668,17 +668,17 @@
         {
             "id": 134,
             "label": "Community Detection",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 135,
             "label": "Block Models",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 136,
             "label": "Stochastic Block Model",
-            "group": 9
+            "group": "clust"
         },
         {
             "id": 137,
@@ -693,12 +693,12 @@
         {
             "id": 139,
             "label": "Graph Neural Networks (GNN)",
-            "group": 10
+            "group": "ml"
         },
         {
             "id": 140,
             "label": "Node Embeddings",
-            "group": 10
+            "group": "ml"
         },
         {
             "id": 141,
@@ -708,47 +708,47 @@
         {
             "id": 142,
             "label": "Node2Vec Algorithm",
-            "group": 10
+            "group": "ml"
         },
         {
             "id": 143,
             "label": "GraphSAGE",
-            "group": 10
+            "group": "ml"
         },
         {
             "id": 144,
             "label": "GCN (Graph Convolutional Network)",
-            "group": 10
+            "group": "ml"
         },
         {
             "id": 145,
             "label": "GAT (Graph Attention Network)",
-            "group": 10
+            "group": "ml"
         },
         {
             "id": 146,
             "label": "Graph Recurrent Neural Networks",
-            "group": 10
+            "group": "ml"
         },
         {
             "id": 147,
             "label": "Link Prediction",
-            "group": 10
+            "group": 11
         },
         {
             "id": 148,
-            "label": "Graph Anomaly Detection",
-            "group": 10
+            "label": "Anomaly Detection",
+            "group": 11
         },
         {
             "id": 149,
             "label": "Knowledge Graphs",
-            "group": 10
+            "group": "representations"
         },
         {
             "id": 150,
-            "label": "RDF vs LPG Models",
-            "group": 10
+            "label": "RDF",
+            "group": "representations"
         },
         {
             "id": 151,
@@ -768,22 +768,22 @@
         {
             "id": 154,
             "label": "Neural Networks",
-            "group": 11
+            "group": "ml"
         },
         {
             "id": 155,
             "label": "Machine Learning",
-            "group": 11
+            "group": "ml"
         },
         {
             "id": 156,
             "label": "Attention Mechanism",
-            "group": 10
+            "group": "ml"
         },
         {
             "id": 157,
             "label": "Recurrent Neural Networks",
-            "group": 10
+            "group": "ml"
         },
         {
             "id": 158,
@@ -793,6 +793,21 @@
         {
             "id": 159,
             "label": "Data Science",
+            "group": "found"
+        },
+        {
+            "id": 160,
+            "label": "LPG",
+            "group": "representations"
+        },
+        {
+            "id": 161,
+            "label": "Concept Graph",
+            "group": "representations"
+        },
+        {
+            "id": 0,
+            "label": "Knowledge Representation",
             "group": "found"
         }
     ],
@@ -1936,6 +1951,30 @@
         {
             "from": 157,
             "to": 154
+        },
+        {
+            "from": 160,
+            "to": 0
+        },
+        {
+            "from": 27,
+            "to": 0
+        },
+        {
+            "from": 28,
+            "to": 0
+        },
+        {
+            "from": 29,
+            "to": 0
+        },
+        {
+            "from": 150,
+            "to": 0
+        },
+        {
+            "from": 161,
+            "to": 0
         }
     ]
 }

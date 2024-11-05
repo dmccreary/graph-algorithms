@@ -141,6 +141,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/lessons/30-spectral-graph-theory/</loc>
+         <lastmod>2024-11-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/lessons/list-of-algorithms/</loc>
          <lastmod>2024-11-05</lastmod>
          <changefreq>daily</changefreq>
