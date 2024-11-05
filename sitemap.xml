@@ -341,6 +341,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/graph-algorithms/vis/legend-checkboxes/</loc>
+         <lastmod>2024-11-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/graph-algorithms/vis/node-enricher/</loc>
          <lastmod>2024-11-05</lastmod>
          <changefreq>daily</changefreq>
