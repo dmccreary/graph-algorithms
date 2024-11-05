@@ -1,6 +1,12 @@
 # Legend Checkboxes
 
+We had a user that wanted to only display specific groups in a learning graph.
+In order to do this, we need a way to add group-by-group selectors.
+So we asked ChatGPT if we could add checkboxes to the legend.
+
 ![Legend Checkboxes Screen Image](./legend-checkboxes.png)
+
+[Run the Legend Checkboxes MicroSim](./legend-checkboxes.html){ .md-button .md-button--primary }
 
 ## Prompt
 
@@ -25,10 +31,17 @@ To implement checkboxes in the legend sidebar to control the visibility of speci
 - **Updated Node Groups**: Each node's `group` property now matches the IDs of the checkboxes. For example, the node for "Foundation" has `group: 'Foundation'`.
 
 ```javascript
-{id: 1, label: 'Foundation', shape: "box", color: "red", font: {color: "white"}, group: 'Foundation'},
+{
+  id: 1, 
+  label: 'Foundation', 
+   shape: "box", 
+   color: "red", 
+   font: {color: "white"}, 
+   group: 'Foundation'
+}
 ```
 
--   **Checkbox IDs and `toggleGroup` Function**: The `id` attributes of the checkboxes match the `group` names. The `toggleGroup` function now uses the `groupName` to reference both the checkbox and the node group.
+- **Checkbox IDs and `toggleGroup` Function**: The `id` attributes of the checkboxes match the `group` names. The `toggleGroup` function now uses the `groupName` to reference both the checkbox and the node group.
 
 ```html
 <input type="checkbox" id="groupFoundation" checked onchange="toggleGroup('Foundation')">
@@ -47,7 +60,7 @@ function toggleGroup(groupName) {
     }
 ```
 
--   **Consistent Colors**: The colors in the legend now match the colors assigned to the nodes. For example, "Flow and Match" uses `color: "indigo"` and the legend reflects this with `background-color: indigo`.
+- **Consistent Colors**: The colors in the legend now match the colors assigned to the nodes. For example, "Flow and Match" uses `color: "indigo"` and the legend reflects this with `background-color: indigo`.
 
 ```html
 <td style="background-color: indigo; color: white;">Indigo</td>
@@ -540,20 +553,22 @@ Below is the updated code with the necessary modifications:
       document.getElementById('orphanCount').textContent = orphanCount;
     }
 ```
-  -   **Purpose:** Calculates the current number of visible nodes, visible edges, and orphan nodes, and updates the HTML elements accordingly.
-  -   **Steps in the Function:**
-      -   **Get All Nodes and Edges:** Retrieve all nodes and edges from the DataSets.
-      -   **Filter Visible Nodes:** Use `filter` to get nodes that are not hidden.
-      -   **Filter Visible Edges:** Only include edges where both the `from` and `to` nodes are visible.
-      -   **Calculate Counts:** Count the number of visible nodes and edges.
-      -   **Identify Orphan Nodes:**
-          -   Create a `Set` of node IDs that are connected via visible edges.
-          -   An orphan node is one that is visible but not included in the `connectedNodeIds` set.
-      -   **Update HTML Elements:** Set the `textContent` of the span elements to display the calculated counts.
+
+-   **Purpose:** Calculates the current number of visible nodes, visible edges, and orphan nodes, and updates the HTML elements accordingly.
+
+-   **Steps in the Function:**
+  -   **Get All Nodes and Edges:** Retrieve all nodes and edges from the DataSets.
+  -   **Filter Visible Nodes:** Use `filter` to get nodes that are not hidden.
+  -   **Filter Visible Edges:** Only include edges where both the `from` and `to` nodes are visible.
+  -   **Calculate Counts:** Count the number of visible nodes and edges.
+  -   **Identify Orphan Nodes:**
+      -   Create a `Set` of node IDs that are connected via visible edges.
+      -   An orphan node is one that is visible but not included in the `connectedNodeIds` set.
+  -   **Update HTML Elements:** Set the `textContent` of the span elements to display the calculated counts.
 
 #### Step 3.  **Calling `updateStatistics()` Appropriately:**
 
-    -   **After Network Initialization:**
+-   **After Network Initialization:**
 
 ```javascript
 // Call updateStatistics after the network is initialized
@@ -577,46 +592,48 @@ function toggleGroup(groupName) {
 ### How It Works:
 
 -   **Initial Load:**
-    -   The statistics display the total number of nodes and edges in the network.
-    -   Orphan nodes are calculated based on the current visibility of nodes and edges.
+  -  The statistics display the total number of nodes and edges in the network.
+  -   Orphan nodes are calculated based on the current visibility of nodes and edges.
 -   **When Nodes Are Hidden/Shown:**
-    -   Toggling checkboxes hides or shows nodes.
-    -   Edges connected to hidden nodes are also hidden automatically by Vis.js.
-    -   The `updateStatistics()` function recalculates the counts and updates the sidebar.
+  -   Toggling checkboxes hides or shows nodes.
+  -   Edges connected to hidden nodes are also hidden automatically by Vis.js.
+  -   The `updateStatistics()` function recalculates the counts and updates the sidebar.
 -   **Orphan Nodes:**
-    -   An orphan node is a visible node with no visible edges connected to it.
-    -   As nodes or edges are hidden, the number of orphan nodes may increase.
+  -   An orphan node is a visible node with no visible edges connected to it.
+  -   As nodes or edges are hidden, the number of orphan nodes may increase.
 
 #### Testing the Implementation:
 
 1.  **Check All Groups:**
 
-    -   Click "Check All" to ensure all nodes and edges are visible.
-    -   The statistics should display the total number of nodes and edges.
-    -   Orphan count should be `0` if all nodes are connected.
+-   Click "Check All" to ensure all nodes and edges are visible.
+-   The statistics should display the total number of nodes and edges.
+-   Orphan count should be `0` if all nodes are connected.
 
 2.  **Uncheck All Groups:**
 
-    -   Click "Uncheck All" to hide all nodes.
-    -   Statistics should show `0` nodes, `0` edges, and `0` orphans.
+-   Click "Uncheck All" to hide all nodes.
+-   Statistics should show `0` nodes, `0` edges, and `0` orphans.
 
 3.  **Toggle Individual Groups:**
 
-    -   Uncheck individual groups to hide specific nodes.
-    -   Statistics should update to reflect the current counts.
-    -   Observe how the number of orphans changes as nodes become disconnected.
+-   Uncheck individual groups to hide specific nodes.
+-   Statistics should update to reflect the current counts.
+-   Observe how the number of orphans changes as nodes become disconnected.
 
 ### Additional Notes:
 
--   **Edge Visibility:**
-    -   Vis.js hides edges automatically when connected nodes are hidden.
-    -   Edges are only considered visible if both connected nodes are visible.
+-  **Edge Visibility:**
+  -   Vis.js hides edges automatically when connected nodes are hidden.
+  -   Edges are only considered visible if both connected nodes are visible.
+
 -   **Scalability:**
-    -   The `updateStatistics()` function works dynamically with any number of nodes and edges.
-    -   If you add more nodes or edges, the statistics will adjust accordingly.
+  -   The `updateStatistics()` function works dynamically with any number of nodes and edges.
+  -   If you add more nodes or edges, the statistics will adjust accordingly.
+  
 -   **Performance:**
-    -   The use of `Set` for `connectedNodeIds` improves performance when checking for orphan nodes.
-    -   Filtering and mapping functions are efficient for datasets of moderate size.
+  -   The use of `Set` for `connectedNodeIds` improves performance when checking for orphan nodes.
+  -   Filtering and mapping functions are efficient for datasets of moderate size.
 
 ### Summary of Dynamic Networks Statistics
 
