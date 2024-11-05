@@ -1823,7 +1823,11 @@
 
 
 <h1 id="legend-checkboxes">Legend Checkboxes</h1>
+<p>We had a user that wanted to only display specific groups in a learning graph.
+In order to do this, we need a way to add group-by-group selectors.
+So we asked ChatGPT if we could add checkboxes to the legend.</p>
 <p><img alt="Legend Checkboxes Screen Image" src="legend-checkboxes.png" /></p>
+<p><a class="md-button md-button--primary" href="legend-checkboxes.html">Run the Legend Checkboxes MicroSim</a></p>
 <h2 id="prompt">Prompt</h2>
 <div class="highlight"><pre><span></span><code>I have a vis.js program that has a legend for the node types.
 I would like to conditionally include specific nodes that are
@@ -1840,7 +1844,21 @@ group in the network.
 <ul>
 <li><strong>Updated Node Groups</strong>: Each node's <code>group</code> property now matches the IDs of the checkboxes. For example, the node for "Foundation" has <code>group: 'Foundation'</code>.</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Foundation&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">shape</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;box&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">font</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">},</span><span class="w"> </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Foundation&#39;</span><span class="p">},</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Foundation&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">   </span><span class="nx">shape</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;box&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">   </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">   </span><span class="nx">font</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">},</span><span class="w"> </span>
+<span class="w">   </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Foundation&#39;</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li><strong>Checkbox IDs and <code>toggleGroup</code> Function</strong>: The <code>id</code> attributes of the checkboxes match the <code>group</code> names. The <code>toggleGroup</code> function now uses the <code>groupName</code> to reference both the checkbox and the node group.</li>
@@ -2649,20 +2667,29 @@ Use HTML in the sidebar under &quot;Graph Statistics&quot;.
   document.getElementById(&#39;orphanCount&#39;).textContent = orphanCount;
 }
 </code></pre></div></td></tr></table></div>
-<p><code>``
-  -   **Purpose:** Calculates the current number of visible nodes, visible edges, and orphan nodes, and updates the HTML elements accordingly.
-  -   **Steps in the Function:**
-      -   **Get All Nodes and Edges:** Retrieve all nodes and edges from the DataSets.
-      -   **Filter Visible Nodes:** Use</code>filter<code>to get nodes that are not hidden.
-      -   **Filter Visible Edges:** Only include edges where both the</code>from<code>and</code>to<code>nodes are visible.
-      -   **Calculate Counts:** Count the number of visible nodes and edges.
-      -   **Identify Orphan Nodes:**
-          -   Create a</code>Set<code>of node IDs that are connected via visible edges.
-          -   An orphan node is one that is visible but not included in the</code>connectedNodeIds<code>set.
-      -   **Update HTML Elements:** Set the</code>textContent` of the span elements to display the calculated counts.</p>
+<p>```</p>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Calculates the current number of visible nodes, visible edges, and orphan nodes, and updates the HTML elements accordingly.</p>
+</li>
+<li>
+<p><strong>Steps in the Function:</strong></p>
+</li>
+<li><strong>Get All Nodes and Edges:</strong> Retrieve all nodes and edges from the DataSets.</li>
+<li><strong>Filter Visible Nodes:</strong> Use <code>filter</code> to get nodes that are not hidden.</li>
+<li><strong>Filter Visible Edges:</strong> Only include edges where both the <code>from</code> and <code>to</code> nodes are visible.</li>
+<li><strong>Calculate Counts:</strong> Count the number of visible nodes and edges.</li>
+<li><strong>Identify Orphan Nodes:</strong><ul>
+<li>Create a <code>Set</code> of node IDs that are connected via visible edges.</li>
+<li>An orphan node is one that is visible but not included in the <code>connectedNodeIds</code> set.</li>
+</ul>
+</li>
+<li><strong>Update HTML Elements:</strong> Set the <code>textContent</code> of the span elements to display the calculated counts.</li>
+</ul>
 <h4 id="step-3-calling-updatestatistics-appropriately">Step 3.  <strong>Calling <code>updateStatistics()</code> Appropriately:</strong></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>-   **After Network Initialization:**
-</code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>After Network Initialization:</strong></li>
+</ul>
 <p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Call updateStatistics after the network is initialized</span>
 <span class="w">        </span><span class="nx">updateStatistics</span><span class="p">();</span>
@@ -2685,66 +2712,66 @@ Use HTML in the sidebar under &quot;Graph Statistics&quot;.
 </ul>
 <h3 id="how-it-works_1">How It Works:</h3>
 <ul>
-<li><strong>Initial Load:</strong><ul>
+<li><strong>Initial Load:</strong></li>
 <li>The statistics display the total number of nodes and edges in the network.</li>
 <li>Orphan nodes are calculated based on the current visibility of nodes and edges.</li>
-</ul>
-</li>
-<li><strong>When Nodes Are Hidden/Shown:</strong><ul>
+<li><strong>When Nodes Are Hidden/Shown:</strong></li>
 <li>Toggling checkboxes hides or shows nodes.</li>
 <li>Edges connected to hidden nodes are also hidden automatically by Vis.js.</li>
 <li>The <code>updateStatistics()</code> function recalculates the counts and updates the sidebar.</li>
-</ul>
-</li>
-<li><strong>Orphan Nodes:</strong><ul>
+<li><strong>Orphan Nodes:</strong></li>
 <li>An orphan node is a visible node with no visible edges connected to it.</li>
 <li>As nodes or edges are hidden, the number of orphan nodes may increase.</li>
-</ul>
-</li>
 </ul>
 <h4 id="testing-the-implementation_1">Testing the Implementation:</h4>
 <ol>
 <li>
 <p><strong>Check All Groups:</strong></p>
-<ul>
-<li>Click "Check All" to ensure all nodes and edges are visible.</li>
+</li>
+<li>
+<p>Click "Check All" to ensure all nodes and edges are visible.</p>
+</li>
 <li>The statistics should display the total number of nodes and edges.</li>
-<li>Orphan count should be <code>0</code> if all nodes are connected.</li>
-</ul>
+<li>
+<p>Orphan count should be <code>0</code> if all nodes are connected.</p>
 </li>
 <li>
 <p><strong>Uncheck All Groups:</strong></p>
-<ul>
-<li>Click "Uncheck All" to hide all nodes.</li>
-<li>Statistics should show <code>0</code> nodes, <code>0</code> edges, and <code>0</code> orphans.</li>
-</ul>
+</li>
+<li>
+<p>Click "Uncheck All" to hide all nodes.</p>
+</li>
+<li>
+<p>Statistics should show <code>0</code> nodes, <code>0</code> edges, and <code>0</code> orphans.</p>
 </li>
 <li>
 <p><strong>Toggle Individual Groups:</strong></p>
-<ul>
-<li>Uncheck individual groups to hide specific nodes.</li>
+</li>
+<li>
+<p>Uncheck individual groups to hide specific nodes.</p>
+</li>
 <li>Statistics should update to reflect the current counts.</li>
 <li>Observe how the number of orphans changes as nodes become disconnected.</li>
-</ul>
-</li>
 </ol>
 <h3 id="additional-notes_2">Additional Notes:</h3>
 <ul>
-<li><strong>Edge Visibility:</strong><ul>
+<li><strong>Edge Visibility:</strong></li>
 <li>Vis.js hides edges automatically when connected nodes are hidden.</li>
-<li>Edges are only considered visible if both connected nodes are visible.</li>
-</ul>
+<li>
+<p>Edges are only considered visible if both connected nodes are visible.</p>
 </li>
-<li><strong>Scalability:</strong><ul>
+<li>
+<p><strong>Scalability:</strong></p>
+</li>
 <li>The <code>updateStatistics()</code> function works dynamically with any number of nodes and edges.</li>
-<li>If you add more nodes or edges, the statistics will adjust accordingly.</li>
-</ul>
+<li>
+<p>If you add more nodes or edges, the statistics will adjust accordingly.</p>
 </li>
-<li><strong>Performance:</strong><ul>
+<li>
+<p><strong>Performance:</strong></p>
+</li>
 <li>The use of <code>Set</code> for <code>connectedNodeIds</code> improves performance when checking for orphan nodes.</li>
 <li>Filtering and mapping functions are efficient for datasets of moderate size.</li>
-</ul>
-</li>
 </ul>
 <h3 id="summary-of-dynamic-networks-statistics">Summary of Dynamic Networks Statistics</h3>
 <p>By adding dynamic network statistics to the sidebar, users can gain insights into the structure and connectivity of the network at any given time. The statistics update automatically in response to user interactions, enhancing the interactivity and usefulness of the visualization.</p>
