@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vis.js In-Degree Based Node Sizing with Box Shapes</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #network {
+            width: 800px;
+            height: 600px;
+            background-color: aliceblue;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h3>In-Degree Based Node Sizing with Box Shapes in vis.js</h3>
+    <div id="network"></div>
+    <a href=".">Back to Lesson Plan</a>
+
+    <script type="text/javascript">
+        // Create an array with nodes
+        const nodes = new vis.DataSet([
+            { id: 1, label: 'Node 1', shape: 'box', width: 50, height: 30 },
+            { id: 2, label: 'Node 2', shape: 'box', width: 50, height: 30  },
+            { id: 3, label: 'Node 3', shape: 'box', width: 50, height: 30  },
+            { id: 4, label: 'Node 4', shape: 'box', width: 50, height: 30  },
+            { id: 5, label: 'Node 5', shape: 'box', width: 50, height: 30  }
+        ]);
+
+        // Create an array with edges
+        const edges = new vis.DataSet([
+            { from: 1, to: 2 },
+            { from: 1, to: 3 },
+            { from: 2, to: 4 },
+            { from: 3, to: 4 },
+            { from: 4, to: 5 },
+            { from: 5, to: 3 }
+        ]);
+
+        // Calculate in-degrees and update node sizes
+        function updateNodeSizes() {
+            const inDegrees = {};
+
+            // Initialize in-degree count
+            nodes.forEach(node => inDegrees[node.id] = 0);
+
+            // Calculate in-degrees from edges
+            edges.forEach(edge => {
+                inDegrees[edge.to] = (inDegrees[edge.to] || 0) + 1;
+            });
+
+            // Update node sizes based on in-degree
+            nodes.forEach(node => {
+                const inDegree = inDegrees[node.id] || 0;
+                node.width = Math.max(50, 50 + inDegree * 10);  // Base width + multiplier
+                node.height = Math.max(30, 30 + inDegree * 5);  // Base height + multiplier
+                nodes.update(node);
+            });
+        }
+
+        // Initialize the network
+        const container = document.getElementById('network');
+        const data = { nodes: nodes, edges: edges };
+        const options = {
+            nodes: {
+                font: { size: 16, face: 'Tahoma' },
+            },
+            edges: {
+                arrows: 'to'
+            },
+            physics: false
+        };
+        const network = new vis.Network(container, data, options);
+
+        // Update node sizes based on in-degree
+        updateNodeSizes();
+    </script>
+</body>
+</html>
