@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vis.js In-Degree Based Node Sizing with Scalable Shapes</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #network {
+            width: 95%;
+            height: 600px;
+            background-color: aliceblue;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h3>In-Degree Based Node Sizing with Scalable Shapes in vis.js</h3>
+    <div id="network"></div>
+    <a href=".">Back to Lesson Plan</a>
+
+    <script type="text/javascript">
+        // Create an array with nodes (mix of 'dot' and 'square' shapes)
+        const nodes = new vis.DataSet([
+            { id: 1, label: 'Foundation 1', shape: "square", color: "red", width: 80, height: 50, x: -300, fixed: {x:true,y:false}},
+            { id: 2, label: 'Foundation 2',  shape: "square", color: "red", width: 80, height: 50, x: -300, fixed: {x:true,y:false}},
+            { id: 3, label: 'Node 3',  value: 1},
+            { id: 4, label: 'Node 4 (5)',  value: 1},
+            { id: 5, label: 'Node 5 (3)',  value: 1},
+            { id: 6, label: 'Node 6',  value: 1 },
+            { id: 7, label: 'Node 7 (2)',  value: 1 },
+            { id: 8, label: 'Node 8 (4)',  value: 1 },
+            { id: 9, label: 'Node 9',  value: 1 },
+            { id: 10, label: 'Goal 1', shape: "star", color:"gold", value: 1, x: 300, fixed: {x:true,y:false}}
+        ]);
+
+        // Create an array with edges
+        const edges = new vis.DataSet([
+            { from: 2, to: 1 },
+            { from: 3, to: 1 },
+            { from: 4, to: 2 },
+            { from: 4, to: 3 },
+            { from: 5, to: 4 },
+            { from: 6, to: 4 },
+            { from: 8, to: 5 },
+            { from: 4, to: 1 },
+            { from: 6, to: 4 },
+            { from: 6, to: 8 },
+            { from: 7, to: 5 },
+            { from: 8, to: 4 },
+            { from: 8, to: 5 },
+            { from: 8, to: 6 },
+            { from: 8, to: 7 },
+            { from: 9, to: 7 },
+            { from: 9, to: 8 },
+            { from: 10, to: 8 },
+            { from: 10, to: 9 }
+        ]);
+
+
+        // Calculate in-degrees and update node sizes
+        function updateNodeSizes() {
+            const inDegrees = {};
+
+            // Initialize in-degree count
+            nodes.forEach(node => inDegrees[node.id] = 0);
+
+            // Calculate in-degrees from edges
+            edges.forEach(edge => {
+                inDegrees[edge.to] = (inDegrees[edge.to] || 0) + 1;
+            });
+
+            // Find min and max in-degree values for scaling
+            const inDegreeValues = Object.values(inDegrees);
+            const minDegree = Math.min(...inDegreeValues);
+            const maxDegree = Math.max(...inDegreeValues);
+
+            // Update node sizes based on in-degree
+            nodes.forEach(node => {
+                const inDegree = inDegrees[node.id] || 0;
+                // Set the 'value' property for scaling
+                node.value = inDegree;
+                nodes.update(node);
+            });
+        }
+
+        // Initialize the network
+        const container = document.getElementById('network');
+        const data = { nodes: nodes, edges: edges };
+        const options = {
+            nodes: {
+                scaling: {
+                    min: 10,
+                    max: 50,
+                    label: {
+                        min: 14,
+                        max: 30,
+                        drawThreshold: 9,
+                        maxVisible: 20
+                    }
+                },
+                font: { size: 16, face: 'Tahoma' },
+            },
+            edges: {
+                arrows: 'to'
+            },
+            physics: true
+        };
+        const network = new vis.Network(container, data, options);
+
+        // Update node sizes based on in-degree
+        updateNodeSizes();
+    </script>
+</body>
+</html>
