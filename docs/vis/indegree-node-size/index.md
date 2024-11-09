@@ -225,3 +225,6 @@ In `vis.js`, resizing nodes based on the `value` property works by default for "
 
 This code dynamically adjusts the dimensions of "box" nodes based on their in-degrees, providing a similar visual impact as with "dot" nodes.
 
+## References
+
+[ChatGPT Dialog on In-Degree Node Sizing](https://chatgpt.com/share/672ca784-3d18-8001-996c-bca3496a0756)
