@@ -121,6 +121,8 @@ markdown_extensions:
   # enable LaTeX extensions
   - pymdownx.arithmatex:
       generic: true
+extra_css:
+   - css/extra.css
 extra:
   analytics:
     provider: google
