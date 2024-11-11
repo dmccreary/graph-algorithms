@@ -1,4 +1,4 @@
-# About the Graph Algorithms Book
+# About the Graph Algorithms Website
 
 How important are graph algorithms?
 Could a single graph algorithm really be worth $350 million?  Yes, it can!
