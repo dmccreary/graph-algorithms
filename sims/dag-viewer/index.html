@@ -26,7 +26,7 @@
     
     
       
-        <title>DAG Viewer - AI Graph Algorithms</title>
+        <title>LR DAG Viewer - AI Graph Algorithms</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dag-viewer" class="md-skip">
+        <a href="#lr-dag-viewer" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DAG Viewer
+              LR DAG Viewer
             
           </span>
         </div>
@@ -998,15 +998,90 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    LR DAG Viewer
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    DAG Viewer
+    LR DAG Viewer
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuning-the-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tuning the Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 4
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1196,6 +1271,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuning-the-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tuning the Layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 4
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1212,10 +1340,40 @@
   
 
 
-<h1 id="dag-viewer">DAG Viewer</h1>
-<p>Left to right layout of a DAG using vis.js</p>
-<p><a href="dag-viewer.html">Run the DAG Viewer MicroSim</a></p>
+<h1 id="lr-dag-viewer">LR DAG Viewer</h1>
+<p><img alt="" src="dag-viewer.png" /></p>
+<p>In this lesson we use the left to right layout (LR) of a DAG using the vis.js library.
+This algorithm places each node in one of about eight columns and arranges nodes in a DAG based on their dependencies, with independent nodes on the right and dependent nodes on the left. </p>
+<p><a class="md-button md-button--primary" href="dag-viewer.html">Run the LR DAG Viewer MicroSim</a></p>
+<p>The program uses the graph-algorithms learning graph CSV file</p>
 <p><a href="graph-algorithms.csv">View the Graph Algorithms Learning Graph CSV File</a></p>
+<h2 id="tuning-the-layout">Tuning the Layout</h2>
+<h2 id="sample-prompt">Sample Prompt</h2>
+<div class="admonition prompt">
+<p class="admonition-title">Prompt</p>
+<p>I have a directed acyclic graph (DAG) and I want you to create a vis.js program so that the placement of the nodes on the graph always place dependant nodes to the left of a node.  Nodes with no dependencies should be on the right side of the canvas.</p>
+<p>Use the following vis.js library reference from unpkg.com:</p>
+<p>https://unpkg.com/vis-network/standalone/umd/vis-network.min.js</p>
+<p>Use the following parameters in the vis.js options:</p>
+<p>const options = {
+    layout: {
+        hierarchical: {
+            enabled: true,
+            direction: 'LR',  // Left to right
+            sortMethod: 'directed',
+            nodeSpacing: 80,
+            levelSeparation: 500
+        }
+    }}</p>
+</div>
+<h2 id="version-2">Version 2</h2>
+<p><a href="dag-viewer-2.html">DAG Viewer 2</a></p>
+<h2 id="version-3">Version 3</h2>
+<p><a href="dag-viewer-3.html">DAG Viewer 3</a></p>
+<h2 id="version-4">Version 4</h2>
+<p>The solution was to rely on precise static positioning rather than physics-based layout for this directed acyclic graph visualization.
+The key insight was that since we're dealing with a hierarchical dependency structure where nodes need to maintain their horizontal levels, physics simulation wasn't actually necessary - it was just complicating things and causing issues. By using fixed positions calculated from the dependency levels, we get a clearer and more stable visualization that better serves the purpose of showing the relationships between concepts.</p>
+<p><a href="dag-viewer-4.html">DAG Viewer 4</a></p>
 
 
 

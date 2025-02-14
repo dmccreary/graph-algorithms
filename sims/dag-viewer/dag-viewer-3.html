@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dependency Graph Visualization - Hybrid Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            background-color: lemonchiffon;
+        }
+        #mynetwork {
+            width: 100%;
+            height: 770px;
+            border: 1px solid lightgray;
+            background-color: aliceblue;
+        }
+    </style>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <div id="mynetwork"></div>
+    <a href=".">Back to lesson plan.</a>
+    <script>
+        // Wait for window to load
+        window.addEventListener('load', async function() {
+            try {
+                // Read the CSV content directly from the input documents
+                const csvContent = `ID,ConceptName,Dependencies,TaxonomyID
+1,A* Search Algorithm,,1
+2,Anomaly Detection,,1
+3,Attention Mechanisms in Graphs,,1
+4,Behavioral Analytics,,1
+5,Bellman-Ford Algorithm,,1
+6,Big-O Notation,,1
+7,Breadth-First Search (BFS),,1
+8,Centrality Measures,,1
+9,Churn Prediction,,1
+10,Cluster,,1
+11,Clustering Coefficient,,1
+12,Cohort Analysis,,1
+13,Community Detection,,1
+14,Complex Event Processing,,1
+15,Customer 360 View,,1`;
+
+                // Parse the CSV data
+                const parseResult = Papa.parse(csvContent, {
+                    header: true,
+                    skipEmptyLines: true
+                });
+
+                // Calculate initial positions and create nodes
+                const dependencyLevels = new Map();
+                const levelGroups = new Map();
+
+                // Helper function to calculate dependency levels
+                function calculateLevel(row, processed = new Set()) {
+                    const id = parseInt(row.ID);
+                    if (processed.has(id)) return dependencyLevels.get(id);
+                    if (!row.Dependencies) {
+                        dependencyLevels.set(id, 0);
+                        return 0;
+                    }
+
+                    processed.add(id);
+                    const deps = row.Dependencies.split('|').map(d => parseInt(d));
+                    const maxLevel = Math.max(...deps.map(depId => {
+                        const depRow = parseResult.data.find(r => parseInt(r.ID) === depId);
+                        return calculateLevel(depRow, processed);
+                    }));
+                    const level = maxLevel + 1;
+                    dependencyLevels.set(id, level);
+                    return level;
+                }
+
+                // Calculate levels and group nodes by level
+                parseResult.data.forEach(row => {
+                    const level = calculateLevel(row);
+                    if (!levelGroups.has(level)) {
+                        levelGroups.set(level, []);
+                    }
+                    levelGroups.get(level).push(parseInt(row.ID));
+                });
+
+                // Create nodes with calculated positions
+                const nodes = parseResult.data.map(row => {
+                    const id = parseInt(row.ID);
+                    const level = dependencyLevels.get(id);
+                    const nodesAtLevel = levelGroups.get(level).length;
+                    const indexAtLevel = levelGroups.get(level).indexOf(id);
+                    
+                    return {
+                        id: id,
+                        label: row.ConceptName,
+                        x: level * 300, // Fixed x position based on level
+                        y: (indexAtLevel - (nodesAtLevel - 1) / 2) * 100 // Distribute nodes vertically
+                    };
+                });
+
+                // Create edges
+                const edges = [];
+                parseResult.data.forEach(row => {
+                    if (row.Dependencies) {
+                        row.Dependencies.split('|').forEach(dep => {
+                            edges.push({
+                                from: parseInt(dep),
+                                to: parseInt(row.ID),
+                                arrows: 'to',
+                                smooth: {
+                                    type: 'cubicBezier',
+                                    roundness: 0.5
+                                }
+                            });
+                        });
+                    }
+                });
+
+                const container = document.getElementById('mynetwork');
+                const data = {
+                    nodes: new vis.DataSet(nodes),
+                    edges: new vis.DataSet(edges)
+                };
+
+                const options = {
+                    layout: {
+                        improvedLayout: true
+                    },
+                    physics: {
+                        enabled: true,
+                        solver: 'repulsion',
+                        repulsion: {
+                            nodeDistance: 200,
+                            springLength: 200,
+                            springConstant: 0.01,
+                            damping: 0.09
+                        },
+                        stabilization: {
+                            enabled: true,
+                            iterations: 200,
+                            updateInterval: 25
+                        }
+                    },
+                    nodes: {
+                        shape: 'box',
+                        margin: 10,
+                        font: {
+                            size: 14
+                        },
+                        fixed: {
+                            x: true,  // Fix horizontal position
+                            y: false  // Allow vertical movement
+                        },
+                        borderWidth: 2,
+                        shadow: true
+                    },
+                    edges: {
+                        color: {
+                            color: '#848484',
+                            highlight: '#848484',
+                            hover: '#848484'
+                        }
+                    },
+                    interaction: {
+                        dragNodes: true,
+                        dragView: true,
+                        zoomView: true
+                    }
+                };
+
+                const network = new vis.Network(container, data, options);
+
+                // Maintain horizontal positions during drag
+                network.on("dragEnd", function(params) {
+                    if (params.nodes.length > 0) {
+                        const nodeId = params.nodes[0];
+                        const node = nodes.find(n => n.id === nodeId);
+                        if (node) {
+                            const pos = network.getPositions([nodeId])[nodeId];
+                            network.moveNode(nodeId, node.x, pos.y);
+                        }
+                    }
+                });
+
+                // Optional: Fit the network to the container after stabilization
+                network.on("stabilizationIterationsDone", function() {
+                    network.fit();
+                });
+
+            } catch (error) {
+                console.error('Error creating network:', error);
+                console.error('Error stack:', error.stack);
+            }
+        });
+    </script>
+</body>
+</html>
