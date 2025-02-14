@@ -70,6 +70,7 @@ nav:
     - Matching: sims/matching/index.md
     - Data Element Matching: sims/data-element-match/index.md
     - Clustering: sims/clustering/index.md
+    - DAG Viewer: sims/dag-viewer/index.md
     - Learning Graph: 
       - Introduction: sims/learning-graph/index.md
       - Course Definition: sims/learning-graph/00-course-description.md
