@@ -1,0 +1,235 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+import { ChevronLeft, ChevronRight, Download, FolderOpen, Save, Search } from "lucide-react"
+import { Network } from "vis-network"
+import { DataSet } from "vis-data"
+
+import { Button } from "@/components/ui/button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Input } from "@/components/ui/input"
+import { Separator } from "@/components/ui/separator"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+
+export default function NetworkGraphEditor() {
+  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const networkRef = useRef<HTMLDivElement>(null)
+  const [searchQuery, setSearchQuery] = useState("")
+  const [network, setNetwork] = useState<Network | null>(null)
+
+  // Initialize the network graph
+  useEffect(() => {
+    if (networkRef.current) {
+      // Create sample nodes and edges
+      const nodes = new DataSet([
+        { id: 1, label: "Node 1", group: "category1" },
+        { id: 2, label: "Node 2", group: "category1" },
+        { id: 3, label: "Node 3", group: "category2" },
+        { id: 4, label: "Node 4", group: "category2" },
+        { id: 5, label: "Node 5", group: "category3" },
+      ])
+
+      const edges = new DataSet([
+        { from: 1, to: 2 },
+        { from: 1, to: 3 },
+        { from: 2, to: 4 },
+        { from: 2, to: 5 },
+        { from: 3, to: 5 },
+      ])
+
+      // Configuration for the network
+      const options = {
+        nodes: {
+          shape: "dot",
+          size: 16,
+          font: {
+            size: 14,
+          },
+          borderWidth: 2,
+          shadow: true,
+        },
+        edges: {
+          width: 2,
+          shadow: true,
+        },
+        groups: {
+          category1: { color: { background: "#97C2FC", border: "#2B7CE9" } },
+          category2: { color: { background: "#FFA807", border: "#F57C00" } },
+          category3: { color: { background: "#57D883", border: "#0CA661" } },
+        },
+        physics: {
+          stabilization: false,
+          barnesHut: {
+            gravitationalConstant: -80000,
+            springConstant: 0.001,
+            springLength: 200,
+          },
+        },
+      }
+
+      // Create the network
+      const newNetwork = new Network(networkRef.current, { nodes, edges }, options)
+
+      setNetwork(newNetwork)
+
+      // Handle search when network is ready
+      newNetwork.on("afterDrawing", () => {
+        if (searchQuery) {
+          handleSearch(searchQuery, nodes, newNetwork)
+        }
+      })
+
+      return () => {
+        newNetwork.destroy()
+      }
+    }
+  }, [])
+
+  // Handle search functionality
+  useEffect(() => {
+    if (network) {
+      const nodes = network.body.data.nodes
+      handleSearch(searchQuery, nodes, network)
+    }
+  }, [searchQuery, network])
+
+  const handleSearch = (query: string, nodes: any, network: Network) => {
+    if (!query.trim()) {
+      network.unselectAll()
+      return
+    }
+
+    const matchingNodes = nodes.get().filter((node: any) => node.label.toLowerCase().includes(query.toLowerCase()))
+
+    if (matchingNodes.length > 0) {
+      network.selectNodes(matchingNodes.map((node: any) => node.id))
+      network.focus(matchingNodes[0].id, {
+        scale: 1.2,
+        animation: true,
+      })
+    } else {
+      network.unselectAll()
+    }
+  }
+
+  // Sample taxonomy data
+  const taxonomyData = [
+    { name: "Category 1", color: "#97C2FC", items: ["Node 1", "Node 2"] },
+    { name: "Category 2", color: "#FFA807", items: ["Node 3", "Node 4"] },
+    { name: "Category 3", color: "#57D883", items: ["Node 5"] },
+  ]
+
+  return (
+    <TooltipProvider>
+      <div className="flex h-screen flex-col">
+        {/* Toolbar */}
+        <div className="flex h-14 items-center justify-between border-b px-4">
+          <div className="flex items-center space-x-2">
+            {/* Load Menu */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="flex items-center gap-1">
+                  <FolderOpen className="h-4 w-4" />
+                  Load
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>Open File...</DropdownMenuItem>
+                <DropdownMenuItem>Open Recent</DropdownMenuItem>
+                <DropdownMenuItem>Import Data</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Save Menu */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="flex items-center gap-1">
+                  <Save className="h-4 w-4" />
+                  Save
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>Save</DropdownMenuItem>
+                <DropdownMenuItem>Save As...</DropdownMenuItem>
+                <DropdownMenuItem>Export as PNG</DropdownMenuItem>
+                <DropdownMenuItem>Export as JSON</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Save As Button */}
+            <Button variant="outline" size="sm" className="flex items-center gap-1">
+              <Download className="h-4 w-4" />
+              Save As
+            </Button>
+          </div>
+
+          {/* Search Field */}
+          <div className="relative w-64">
+            <Search className="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 transform text-muted-foreground" />
+            <Input
+              placeholder="Search nodes..."
+              className="pl-8"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-1 overflow-hidden">
+          {/* Taxonomy Sidebar */}
+          <div
+            className={`relative flex flex-col border-r bg-background transition-all duration-300 ${
+              sidebarOpen ? "w-64" : "w-0"
+            }`}
+          >
+            {sidebarOpen && (
+              <div className="flex h-full flex-col overflow-y-auto p-4">
+                <h2 className="mb-4 text-lg font-semibold">Taxonomy Key</h2>
+                <div className="space-y-4">
+                  {taxonomyData.map((category, index) => (
+                    <div key={index} className="space-y-2">
+                      <div className="h-4 w-4 rounded-full" style={{ backgroundColor: category.color }}></div>
+                      <span className="font-medium">{category.name}</span>
+                    </div>
+                  ))}
+                  {taxonomyData.map((category, index) => (
+                    <ul key={index} className="ml-6 space-y-1">
+                      {category.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="text-sm text-muted-foreground">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ))}
+                  {taxonomyData.map((category, index) => index < taxonomyData.length - 1 && <Separator key={index} />)}
+                </div>
+              </div>
+            )}
+
+            {/* Toggle Button */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute -right-10 top-4 z-10"
+                  onClick={() => setSidebarOpen(!sidebarOpen)}
+                >
+                  {sidebarOpen ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+                  <span className="sr-only">{sidebarOpen ? "Close sidebar" : "Open sidebar"}</span>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent side="right">{sidebarOpen ? "Hide taxonomy" : "Show taxonomy"}</TooltipContent>
+            </Tooltip>
+          </div>
+
+          {/* Network Graph */}
+          <div className="flex-1 overflow-hidden">
+            <div ref={networkRef} className="h-full w-full" />
+          </div>
+        </div>
+      </div>
+    </TooltipProvider>
+  )
+}
+
