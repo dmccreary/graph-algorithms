@@ -9,12 +9,13 @@ nav:
   - Home: index.md
   - About: about.md
   - Topics: topic-lists.md
-  - JS Library Analysis:
+  - JavaScript Graph Library:
     - Introduction: library-analysis/index.md
     - D3: library-analysis/d3/index.md
     - Vis.js: library-analysis/vis/index.md
     - Cytoscape.js: library-analysis/cytoscape/index.md
     - Sigma.js : library-analysis/sigma/index.md
+    - Force.js: library-analysis/force/index.md
   - Lessons:
     - Introduction: lessons/index.md
     - Terminology: lessons/01-graph-terminology.md
