@@ -16,9 +16,7 @@ nav:
     - Vis.js: library-analysis/vis/index.md
     - Cytoscape.js: library-analysis/cytoscape/index.md
     - Sigma.js : library-analysis/sigma/index.md
-<<<<<<< HEAD
     - Force.js: library-analysis/force/index.md
-=======
   - Vis Tutorial:
     - Introduction: vis/index.md
     - Lab 1 - Base: vis/lab-01.md
@@ -34,7 +32,6 @@ nav:
     - vis/group-colors/index.md
     - In-Degree Node Size: vis/indegree-node-size/index.md
     - Legend Checkboxes: vis/legend-checkboxes/index.md
->>>>>>> 23129d35593cb9f4d87ef64762df8c2466d58e83
   - Lessons:
     - Introduction: lessons/index.md
     - Terminology: lessons/01-graph-terminology.md
