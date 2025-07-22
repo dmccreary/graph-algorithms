@@ -1,0 +1,98 @@
+{
+    "Foundation": {
+        "color": {
+            "background": "DarkSalmon",
+            "border": "FireBrick",
+            "highlight": {
+                "background": "LightSalmon",
+                "border": "DarkRed"
+            },
+            "hover": {
+                "background": "Salmon",
+                "border": "DarkRed"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "Level 2": {
+        "color": {
+            "background": "DarkOrange",
+            "border": "OrangeRed",
+            "highlight": {
+                "background": "orange",
+                "border": "Tomato"
+            },
+            "hover": {
+                "background": "LightSalmon",
+                "border": "Coral"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "Level 3": {
+        "color": {
+            "background": "Gold",
+            "border": "DarkKhaki",
+            "highlight": {
+                "background": "Moccasin",
+                "border": "PeachPuff"
+            },
+            "hover": {
+                "background": "PapayaWhip",
+                "border": "DarkOrange"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "Level 4": {
+        "color": {
+            "background": "Lime",
+            "border": "LimeGreen",
+            "highlight": {
+                "background": "PaleGreen",
+                "border": "MediumSeaGreen"
+            },
+            "hover": {
+                "background": "GreenYellow",
+                "border": "SeaGreen"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "Level 5": {
+        "color": {
+            "background": "PowderBlue",
+            "border": "PowderBlue",
+            "highlight": {
+                "background": "LightSkyBlue",
+                "border": "RoyalBlue"
+            },
+            "hover": {
+                "background": "LightSteelBlue",
+                "border": "SteelBlue"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    },
+    "Goal": {
+        "color": {
+            "background": "plum",
+            "border": "purple",
+            "highlight": {
+                "background": "violet",
+                "border": "mediumorchid"
+            },
+            "hover": {
+                "background": "LightSteelBlue",
+                "border": "SteelBlue"
+            }
+        },
+        "shape": "dot",
+        "size": 20
+    }
+}

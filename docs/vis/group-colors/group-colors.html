@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vis-network with External Groups and Legend</title>
+    <!-- No vis-network CSS included as per your preference -->
+    <style>
+        /* Container to hold the legend and the network side by side */
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: left;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* Styling for the legend table */
+        .legend {
+            border-collapse: collapse;
+            width: 100px;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: small;
+            color: #333;
+        }
+
+        .legend th, .legend td {
+            border: 1px solid #ddd;
+            padding: 3px;
+            text-align: left;
+        }
+
+        .legend th {
+            background-color: #f2f2f2;
+        }
+
+        /* Adjust the network container */
+        #network {
+            width: 1400px;
+            height: 500px;
+            border: 1px solid lightgray;
+            background-color: aliceblue; /* Optional for better visibility */
+        }
+
+        body {
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color: white;
+            color: black;
+        }
+
+        h1 {
+            margin-top: 10px;
+        }
+
+        /* Responsive Design for cell phones */
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .legend, #network {
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>vis-network: Grouped Node Colors with Legend</h1>
+    <div class="container">
+        <!-- Legend Table -->
+        <table class="legend" id="legendTable" role="table" aria-label="Group Legend">
+            <thead>
+                <tr>
+                    <th>Group Name</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Network Visualization -->
+        <div id="network"></div>
+
+    </div>
+    <a href=".">Back to lesson plan</a>
+    <!-- Include vis-network library as per your specified source -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script>
+        // Ensure the script runs after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Verify that vis-network is loaded
+            if (typeof vis === 'undefined' || typeof vis.Network === 'undefined') {
+                console.error('vis-network library is not loaded. Please check the script source.');
+                return;
+            }
+
+            // Function to fetch group data from groups.json
+            async function fetchGroups() {
+                try {
+                    const response = await fetch('groups.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const groups = await response.json();
+                    return groups;
+                } catch (error) {
+                    console.error('Error fetching groups.json:', error);
+                    return null;
+                }
+            }
+
+            // Function to generate the Legend Table
+            function generateLegendTable(groups) {
+                const tableBody = document.querySelector('#legendTable tbody');
+
+                for (const groupName in groups) {
+                    if (groups.hasOwnProperty(groupName)) {
+                        const group = groups[groupName];
+                        const row = document.createElement('tr');
+
+                        // Group Name Cell
+                        const nameCell = document.createElement('td');
+                        nameCell.textContent = groupName;
+                        row.appendChild(nameCell);
+
+                        // Color Cell
+                        const colorCell = document.createElement('td');
+                        colorCell.style.backgroundColor = group.color.background;
+                        colorCell.style.width = '50px';
+                        colorCell.style.height = '20px';
+                        row.appendChild(colorCell);
+
+                        tableBody.appendChild(row);
+                    }
+                }
+            }
+
+            // Function to initialize the network
+            function initializeNetwork(groups) {
+                // Define the nodes with group assignments
+                // Define the nodes with group assignments
+            var nodes = new vis.DataSet([
+                {id: 1, label: 'Foundation Concept 1', shape: 'box', size: 100, group: 'Foundation', x: -1000},
+                {id: 2, label: 'Foundation Concept 2', shape: 'box', size: 100, group: 'Foundation', x: -1000},
+                {id: 3, label: '3 L 2.1', group: 'Level 2'},
+                {id: 4, label: '4 L 2.2', group: 'Level 2'},
+                {id: 5, label: '5 L 3.1', group: 'Level 3'},
+                {id: 6, label: '6 L 3.2', group: 'Level 3'},
+                {id: 7, label: '7 L 4.1', group: 'Level 4'},
+                {id: 8, label: '8 L 4.2', group: 'Level 4'},
+                {id: 9, label: '9 L 5.1', group: 'Level 5'},
+                {id: 10, label: '10 L 5.2', group: 'Level 5'},
+                {id: 11, label: 'Goal 1 (11)', shape: 'star', group: 'Goal', x: 1000},
+                {id: 12, label: 'Goal 2 (12)', shape: 'star', group: 'Goal', x: 1000}
+            ]);
+
+            // Define the edges connecting the nodes
+            // Always higher to lower
+            var edges = new vis.DataSet([
+                // L2 to Foundations
+                {from: 3, to: 1},
+                {from: 3, to: 2},
+                {from: 4, to: 1},
+                {from: 4, to: 2},
+
+                // L3 to L2
+                {from: 5, to: 3},
+                {from: 5, to: 4},
+                {from: 6, to: 3},
+                {from: 6, to: 4},
+
+                // L4 to L3
+                {from: 7, to: 6},
+                {from: 7, to: 5},
+                {from: 8, to: 5},
+                {from: 8, to: 6},
+                {from: 9, to: 7},
+                {from: 10, to: 8},
+                {from: 9, to: 8},
+                {from: 10, to: 7},
+                {from: 11, to: 9},
+                {from: 12, to: 10}
+            ]);
+
+     
+
+                // Combine nodes and edges into a data object
+                const data = {
+                    nodes: nodes,
+                    edges: edges
+                };
+
+                // Define options, including group styles
+                const options = {
+                    groups: groups,
+                    nodes: {
+                        shape: 'circle',
+                        size: 40,
+                        font: {
+                            color: 'black',
+                            size: 14,
+                            face: 'Tahoma'
+                        },
+                        borderWidth: 2,
+                        shadow: {
+                            enabled: true,
+                            color: 'rgba(0,0,0,0.5)',
+                            size: 10,
+                            x: 5,
+                            y: 5
+                        }
+                    },
+                    edges: {
+                        color: 'blue',
+                        width: 2,
+                        arrows: {
+                            to: {enabled: true, scaleFactor: 1.5}
+                        },
+                        smooth: {
+                            type: 'continuous'
+                        }
+                    },
+                    physics: {
+                        enabled: true,
+                        stabilization: {
+                            iterations: 300,
+                            updateInterval: 25
+                        },
+                        barnesHut: {
+                            gravitationalConstant: -8000,
+                            centralGravity: 0.3,
+                            springLength: 150,
+                            springConstant: 0.04,
+                            damping: 0.09,
+                            avoidOverlap: 0
+                        }
+                    },
+                    interaction: {
+                        hover: true,
+                        tooltipDelay: 200,
+                        zoomView: true,
+                        dragView: true
+                    },
+                    layout: {
+                        improvedLayout: true,
+                        hierarchical: false
+                    },
+                    manipulation: {
+                        enabled: false
+                    }
+                };
+
+                // Initialize the network
+                const container = document.getElementById('network');
+
+                try {
+                    const network = new vis.Network(container, data, options);
+                    console.log('vis-network initialized successfully.');
+                } catch (error) {
+                    console.error('Error initializing vis-network:', error);
+                }
+            }
+
+            // Main async function to fetch groups and initialize the network and legend
+            async function main() {
+                const groups = await fetchGroups();
+                if (groups) {
+                    generateLegendTable(groups);
+                    initializeNetwork(groups);
+                } else {
+                    console.error('Failed to load group data. Network and legend will not be initialized.');
+                }
+            }
+
+            // Call the main function
+            main();
+        });
+    </script>
+</body>
+</html>

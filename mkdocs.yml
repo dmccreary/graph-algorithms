@@ -1,5 +1,5 @@
-site_name: Graph Algorithms
-site_description: 'A course on graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial'
+site_name: AI Graph Algorithms
+site_description: 'A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial'
 site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://dmccreary.github.io/graph-algorithms'
@@ -8,6 +8,7 @@ repo_url: 'https://github.com/dmccreary/graph-algorithms'
 nav:
   - Home: index.md
   - About: about.md
+  - Course Description: course-description.md
   - Topics: topic-lists.md
   - JavaScript Graph Library:
     - Introduction: library-analysis/index.md
@@ -15,7 +16,25 @@ nav:
     - Vis.js: library-analysis/vis/index.md
     - Cytoscape.js: library-analysis/cytoscape/index.md
     - Sigma.js : library-analysis/sigma/index.md
+<<<<<<< HEAD
     - Force.js: library-analysis/force/index.md
+=======
+  - Vis Tutorial:
+    - Introduction: vis/index.md
+    - Lab 1 - Base: vis/lab-01.md
+    - Lab 2 - JSON Loader: vis/lab-02.md
+    - Lab 3 - Node Properties: vis/lab-03.md
+    - Lab 4 - Custom Shapes: vis/lab-04.md
+    - Dependency Graph: vis/concept-dependency-graph.md
+    - Graph Editor: vis/graph-editor/index.md
+    - vis/csv-reader/index.md
+    - vis/graph-editor/prompt-history.md
+    - vis/node-enricher/index.md
+    - vis/fix-x-positions/index.md
+    - vis/group-colors/index.md
+    - In-Degree Node Size: vis/indegree-node-size/index.md
+    - Legend Checkboxes: vis/legend-checkboxes/index.md
+>>>>>>> 23129d35593cb9f4d87ef64762df8c2466d58e83
   - Lessons:
     - Introduction: lessons/index.md
     - Terminology: lessons/01-graph-terminology.md
@@ -31,26 +50,38 @@ nav:
     - Model Viewer: lessons/05-model-viewer.md
     - Data Visualization: lessons/06-data-vis.md
     - Cytoscape: lessons/07-cytoscape.md
+    - Spectral Graph Theory: lessons/30-spectral-graph-theory.md
   - Generating Graph Data:
     - Introduction: data/index.md
     - US Cities: data/us-cities/index.md
     - Loading JSON Data: data/json/index.md
     - JSON Data Standard: data/json-std/index.md
     - Geospatial Standards: data/geospatial/index.md
+    - Region Names: data/geospatial/region-names.md
     - SKOS: data/skos/index.md
-  - Sims:
+  - Micro Simulations:
     - Introduction: sims/index.md
+    - Legends: sims/legends/index.md
     - Degree: sims/degree/index.md
     - Degree V2: sims/degree-v2/index.md
     - Weighted: sims/weighted-graph/index.md
     - Force Directed Graph Layout: sims/force/index.md
     - Breath First Search: sims/bfs/index.md
+    - Breath First Search Vis.js: sims/bfs/bfs-vis.md
     - Shortest Path: sims/shortest-path/index.md
     - Spanning Tree: sims/spanning-tree/index.md
     - PageRank: sims/page-rank/index.md
     - Matching: sims/matching/index.md
     - Data Element Matching: sims/data-element-match/index.md
     - Clustering: sims/clustering/index.md
+    - LR DAG Viewer: sims/dag-viewer/index.md
+    - Learning Graph: 
+      - Introduction: sims/learning-graph/index.md
+      - Course Definition: sims/learning-graph/00-course-description.md
+      - Enumerating Concepts: sims/learning-graph/01-enumerating-concepts.md
+      - Concept Dependencies: sims/learning-graph/02-concept-dependencies.md
+      - Concept Taxonomies: sims/learning-graph/03-concept-taxonomies.md
+      - Visualizing Concepts: sims/learning-graph/04-visualizing-concepts.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
   - Glossary: glossary.md
@@ -63,8 +94,8 @@ theme:
   name: material
   extra_css:
     - styles/custom.css
-  # logo: img/my-icon.png
-  # favicon: img/my-icon.png
+  logo: img/logo.png
+  favicon: img/favicon.ico
   palette:
     primary: 'blue'
     accent: 'orange'
@@ -81,6 +112,9 @@ theme:
     - navigation.footer
 plugins:
   - search
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 #  - social
 markdown_extensions:
   - admonition
@@ -89,6 +123,11 @@ markdown_extensions:
   - attr_list
   - pymdownx.highlight:
       linenums: true
+  # enable LaTeX extensions
+  - pymdownx.arithmatex:
+      generic: true
+extra_css:
+   - css/extra.css
 extra:
   analytics:
     provider: google

@@ -1,18 +1,18 @@
-# Graph Algorithms Course
+# AI-Assisted Graph Algorithms
 
 ![](./img/cover.webp){ width="500" }
 
-Welcome to our new graph algorithms course.  In this
-course, we will learn about the various algorithms
+Welcome to our new AI-assisted graph algorithms course.  In this
+course, we will use AI to help us learn about the various algorithms
 that are used to solve business problems using
 graph networks.  We also discuss how machine learning
 and graph embeddings are used to complement deterministic
-algorithms.
+graph algorithms.
 
-This course leverages generative
-AI to create interactive simulations of how these
+This course leverages generative AI to create interactive
+simulations of how these
 algorithms work.  We give you sample prompts
-and code to allow you to use generative AI 
+and code templates to allow you to use generative AI 
 to quickly customize our animations, even if you
 are not familiar with the graph animation libraries.
 

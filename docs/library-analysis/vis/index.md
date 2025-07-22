@@ -2,6 +2,8 @@
 
 ![](./vis.png){ width="400px"}
 
+[Vis.js examples](https://visjs.github.io/vis-network/examples/)
+
 ## Random Layout Prompt
 
 ```linenums="0"

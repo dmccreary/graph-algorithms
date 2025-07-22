@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dependency Graph Visualization - Hybrid Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            background-color: lemonchiffon;
+        }
+        #mynetwork {
+            width: 100%;
+            height: 770px;
+            border: 1px solid lightgray;
+            background-color: aliceblue;
+        }
+    </style>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <div id="mynetwork"></div>
+    <a href=".">Back to lesson plan.</a>
+    <script>
+        window.addEventListener('load', async function() {
+            try {
+                // Load and parse CSV
+                const response = await fetch('graph-algorithms.csv');
+                const csvText = await response.text();
+                const parseResult = Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true
+                });
+
+                // Calculate initial positions and create nodes
+                const dependencyLevels = new Map();
+                const levelGroups = new Map();
+
+                // Helper function to calculate dependency levels
+                function calculateLevel(row, processed = new Set()) {
+                    const id = parseInt(row.ID);
+                    if (processed.has(id)) return dependencyLevels.get(id);
+                    if (!row.Dependencies) {
+                        dependencyLevels.set(id, 0);
+                        return 0;
+                    }
+
+                    processed.add(id);
+                    const deps = row.Dependencies.split('|').map(d => parseInt(d));
+                    const maxLevel = Math.max(...deps.map(depId => {
+                        const depRow = parseResult.data.find(r => parseInt(r.ID) === depId);
+                        return calculateLevel(depRow, processed);
+                    })) + 1;
+                    dependencyLevels.set(id, maxLevel);
+                    return maxLevel;
+                }
+
+                // Calculate levels and group nodes by level
+                parseResult.data.forEach(row => {
+                    const level = calculateLevel(row);
+                    if (!levelGroups.has(level)) {
+                        levelGroups.set(level, []);
+                    }
+                    levelGroups.get(level).push(parseInt(row.ID));
+                });
+
+                // Create nodes with calculated positions
+                const nodes = parseResult.data.map(row => {
+                    const id = parseInt(row.ID);
+                    const level = dependencyLevels.get(id);
+                    const nodesAtLevel = levelGroups.get(level).length;
+                    const indexAtLevel = levelGroups.get(level).indexOf(id);
+                    
+                    return {
+                        id: id,
+                        label: row.ConceptName,
+                        fixed: true,
+                        x: level * 300,
+                        y: (indexAtLevel - (nodesAtLevel - 1) / 2) * 150 // Increased vertical spacing
+                    };
+                });
+
+                // Create edges
+                const edges = [];
+                parseResult.data.forEach(row => {
+                    if (row.Dependencies) {
+                        row.Dependencies.split('|').forEach(dep => {
+                            edges.push({
+                                from: parseInt(dep),
+                                to: parseInt(row.ID),
+                                arrows: 'to',
+                                smooth: {
+                                    type: 'cubicBezier',
+                                    roundness: 0.5
+                                }
+                            });
+                        });
+                    }
+                });
+
+                const container = document.getElementById('mynetwork');
+                const data = {
+                    nodes: new vis.DataSet(nodes),
+                    edges: new vis.DataSet(edges)
+                };
+
+                const options = {
+                    layout: {
+                        improvedLayout: true
+                    },
+                    physics: {
+                        enabled: false
+                    },
+                    nodes: {
+                        shape: 'box',
+                        margin: 6,
+                        font: {
+                            size: 20
+                        },
+                        fixed: {
+                            x: true,  // Fix horizontal position
+                            y: false  // Allow vertical movement
+                        },
+                        borderWidth: 2,
+                        shadow: true
+                    },
+                    edges: {
+                        color: {
+                            color: '#848484',
+                            highlight: '#848484',
+                            hover: '#848484'
+                        },
+                        smooth: {
+                            type: 'cubicBezier',
+                            forceDirection: 'horizontal',
+                            roundness: 0.5
+                        }
+                    },
+                    interaction: {
+                        dragNodes: true,
+                        dragView: true,
+                        zoomView: true,
+                        hover: true
+                    }
+                };
+
+                const network = new vis.Network(container, data, options);
+
+                // Maintain horizontal positions during drag
+                network.on("dragEnd", function(params) {
+                    if (params.nodes.length > 0) {
+                        const nodeId = params.nodes[0];
+                        const node = nodes.find(n => n.id === nodeId);
+                        if (node) {
+                            const pos = network.getPositions([nodeId])[nodeId];
+                            network.moveNode(nodeId, node.x, pos.y);
+                        }
+                    }
+                });
+
+                // Fit the network to the container after stabilization
+                network.on("stabilizationIterationsDone", function() {
+                    network.fit();
+                });
+
+                // Add hover event for node descriptions
+                network.on("hoverNode", function(params) {
+                    const node = parseResult.data.find(row => parseInt(row.ID) === params.node);
+                    if (node) {
+                        network.canvas.body.container.title = node.ConceptName;
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error creating network:', error);
+                console.error('Error stack:', error.stack);
+            }
+        });
+    </script>
+</body>
+</html>

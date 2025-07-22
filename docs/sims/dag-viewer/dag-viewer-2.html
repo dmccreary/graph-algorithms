@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dependency Graph Visualization - Centralized Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            background-color: lemonchiffon;
+        }
+        #mynetwork {
+            width: 100%;
+            height: 770px;
+            border: 1px solid lightgray;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="mynetwork"></div>
+    <a href=".">Back to lesson plan.</a>
+    <script>
+        function loadScript(url) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = url;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+
+        Promise.all([
+            loadScript('https://unpkg.com/vis-network/standalone/umd/vis-network.min.js'),
+            loadScript('https://unpkg.com/papaparse@5.4.1/papaparse.min.js')
+        ]).then(() => {
+            createNetwork();
+        }).catch(error => {
+            console.error('Error loading libraries:', error);
+        });
+
+        async function createNetwork() {
+            try {
+                const response = await fetch('graph-algorithms.csv');
+                const csvText = await response.text();
+                const parseResult = Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true
+                });
+
+                // Calculate node levels and connectivity
+                const nodeLevels = new Map();
+                const nodeConnections = new Map();
+                const dependencies = new Map();
+
+                // Initialize maps
+                parseResult.data.forEach(row => {
+                    const id = parseInt(row.ID);
+                    nodeConnections.set(id, 0);
+                    dependencies.set(id, []);
+                });
+
+                // Process dependencies
+                parseResult.data.forEach(row => {
+                    const id = parseInt(row.ID);
+                    if (row.Dependencies) {
+                        const deps = row.Dependencies.split('|').map(d => parseInt(d));
+                        dependencies.set(id, deps);
+                        
+                        // Count connections
+                        nodeConnections.set(id, nodeConnections.get(id) + deps.length);
+                        deps.forEach(dep => {
+                            nodeConnections.set(dep, nodeConnections.get(dep) + 1);
+                        });
+                    }
+                });
+
+                // Calculate levels using topological sort
+                function calculateLevels() {
+                    const visited = new Set();
+                    const temp = new Set();  // For cycle detection
+
+                    function visit(nodeId, level = 0) {
+                        if (temp.has(nodeId)) return; // Skip if in temporary set
+                        if (visited.has(nodeId)) {
+                            // Update level to maximum path length
+                            nodeLevels.set(nodeId, Math.max(nodeLevels.get(nodeId), level));
+                            return;
+                        }
+
+                        temp.add(nodeId);
+                        
+                        // Process dependencies
+                        const deps = dependencies.get(nodeId) || [];
+                        deps.forEach(depId => {
+                            visit(depId, level + 1);
+                        });
+
+                        temp.delete(nodeId);
+                        visited.add(nodeId);
+                        nodeLevels.set(nodeId, level);
+                    }
+
+                    // Start with nodes that have no incoming edges
+                    parseResult.data.forEach(row => {
+                        const id = parseInt(row.ID);
+                        if (!visited.has(id)) {
+                            visit(id);
+                        }
+                    });
+                }
+
+                calculateLevels();
+
+                // Create nodes with positions based on level and connectivity
+                const nodes = parseResult.data.map(row => {
+                    const id = parseInt(row.ID);
+                    const level = nodeLevels.get(id);
+                    const connectivity = nodeConnections.get(id);
+                    
+                    return {
+                        id: id,
+                        label: row.ConceptName,
+                        level: level,
+                        connectivity: connectivity,
+                        x: level * 300, // Fixed horizontal spacing
+                        value: connectivity // Node size based on connectivity
+                    };
+                });
+
+                // Sort nodes by connectivity for vertical positioning
+                const nodesPerLevel = new Map();
+                nodes.forEach(node => {
+                    if (!nodesPerLevel.has(node.level)) {
+                        nodesPerLevel.set(node.level, []);
+                    }
+                    nodesPerLevel.get(node.level).push(node);
+                });
+
+                // Assign vertical positions within each level
+                nodesPerLevel.forEach(levelNodes => {
+                    levelNodes.sort((a, b) => b.connectivity - a.connectivity);
+                    const levelHeight = levelNodes.length * 100;
+                    const startY = -levelHeight / 2;
+                    
+                    levelNodes.forEach((node, index) => {
+                        node.y = startY + (index * 100);
+                    });
+                });
+
+                // Create edges
+                const edges = [];
+                parseResult.data.forEach(row => {
+                    if (row.Dependencies) {
+                        const deps = row.Dependencies.split('|');
+                        deps.forEach(dep => {
+                            edges.push({
+                                from: parseInt(dep),
+                                to: parseInt(row.ID),
+                                arrows: 'to'
+                            });
+                        });
+                    }
+                });
+
+                // Create the network
+                const container = document.getElementById('mynetwork');
+                const data = {
+                    nodes: new vis.DataSet(nodes),
+                    edges: new vis.DataSet(edges)
+                };
+
+                const options = {
+                    layout: {
+                        improvedLayout: true
+                    },
+                    physics: {
+                        enabled: false
+                    },
+                    nodes: {
+                        shape: 'box',
+                        margin: 10,
+                        font: {
+                            size: 14
+                        },
+                        borderWidth: 2,
+                        shadow: true,
+                        color: {
+                            background: function(node) {
+                                const intensity = Math.min(255, Math.floor(node.connectivity * 25));
+                                return `rgb(${255-intensity}, ${255-intensity}, 255)`;
+                            }
+                        },
+                        fixed: {
+                            x: true,
+                            y: true
+                        }
+                    },
+                    edges: {
+                        smooth: {
+                            type: 'cubicBezier',
+                            forceDirection: 'horizontal'
+                        },
+                        color: {
+                            color: '#848484',
+                            highlight: '#848484',
+                            hover: '#848484'
+                        }
+                    }
+                };
+
+                // Initialize the network
+                const network = new vis.Network(container, data, options);
+
+            } catch (error) {
+                console.error('Error creating network:', error);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+ID,Core Concepts
+0,Graph Definition
+1,Nodes
+2,Edges
+3,Directed Graph (Digraph)
+4,Undirected Graph
+5,Weighted Graphs
+6,Unweighted Graphs
+7,Cyclic Graphs
+8,Acyclic Graphs (DAG)
+9,Graph Density
+10,Degree of a Node
+11,In-degree
+12,Out-degree
+13,Path
+14,Walk
+15,Cycle
+16,Connected Graph
+17,Disconnected Graph
+18,Subgraph
+19,Bipartite Graph
+20,Complete Graph
+21,Multigraph
+22,Graph Isomorphism
+23,Self-loop
+24,Adjacent Nodes
+25,Incident Edges
+26,Graph Adjacency Matrix
+27,Graph Adjacency List
+28,Graph Incidence Matrix
+29,Graph Traversal
+30,Depth-First Search (DFS)
+31,Breadth-First Search (BFS)
+32,Stack (DFS)
+33,Queue (BFS)
+34,Backtracking
+35,Recursion (DFS)
+36,Shortest Path Problem
+37,Dijkstra’s Algorithm
+38,Bellman-Ford Algorithm
+39,A* Search Algorithm
+40,Floyd-Warshall Algorithm
+41,All-Pairs Shortest Path (APSP)
+42,Single-Source Shortest Path (SSSP)
+43,Negative Weight Cycles
+44,Minimum Spanning Tree (MST)
+45,Kruskal’s Algorithm
+46,Prim’s Algorithm
+47,Union-Find Algorithm
+48,Cycle Detection (MST)
+49,Cut-Vertices
+50,Bridges (Edge Cut)
+51,Eulerian Path
+52,Eulerian Circuit
+53,Hamiltonian Path
+54,Hamiltonian Cycle
+55,Traveling Salesman Problem (TSP)
+56,Approximation Algorithms (TSP)
+57,Heuristics (TSP)
+58,Graph Coloring
+59,Chromatic Number
+60,Greedy Coloring Algorithm
+61,Clique
+62,Maximum Clique Problem
+63,Independent Set
+64,Maximal Independent Set
+65,Dominating Set
+66,Vertex Cover
+67,Minimum Vertex Cover
+68,Planar Graphs
+69,Graph Embedding
+70,Kuratowski’s Theorem
+71,Graph Minor Theorem
+72,Graph Duality
+73,Planarity Testing
+74,Face of a Graph (Planar)
+75,Topological Sorting
+76,DAG Applications
+77,Strongly Connected Components (SCC)
+78,Tarjan’s Algorithm (SCC)
+79,Kosaraju’s Algorithm (SCC)
+80,Articulation Points
+81,Bridge Finding Algorithm
+82,Graph Matching
+83,Bipartite Matching
+84,Hopcroft-Karp Algorithm
+85,Stable Matching Problem
+86,Gale-Shapley Algorithm
+87,Network Flow
+88,Max Flow Problem
+89,Ford-Fulkerson Algorithm
+90,Edmonds-Karp Algorithm
+91,Min-Cut Max-Flow Theorem
+92,Push-Relabel Algorithm
+93,Dinic’s Algorithm
+94,Capacity Scaling Algorithm
+95,Circulation Problem
+96,Multi-Commodity Flow
+97,Cut-Set
+98,Cut-Set Theorem
+99,Flow Decomposition
+100,Flow Networks
+101,Graph Partitioning
+102,Graph Clustering
+103,k-Cuts Problem
+104,Modularity (Clustering)
+105,Spectral Clustering
+106,Girvan-Newman Algorithm
+107,Louvain Method (Clustering)
+108,Random Walk
+109,Markov Chains (Graphs)
+110,Pagerank Algorithm
+111,HITS Algorithm
+112,Centrality Measures
+113,Degree Centrality
+114,Betweenness Centrality
+115,Closeness Centrality
+116,Eigenvector Centrality
+117,Katz Centrality
+118,Graph Laplacian
+119,Spectral Graph Theory
+120,Cheeger’s Inequality
+121,Expander Graphs
+122,Graph Diameter
+123,Graph Radius
+124,Eccentricity
+125,Graph Girth
+126,Percolation Theory
+127,Small-World Networks
+128,Scale-Free Networks
+129,Graph Randomization
+130,Erdős–Rényi Model
+131,Barabási–Albert Model
+132,Watts-Strogatz Model
+133,Community Detection
+134,Block Models
+135,Stochastic Block Model
+136,Label Propagation Algorithm
+137,Belief Propagation
+138,Graph Neural Networks (GNN)
+139,Node Embeddings
+140,DeepWalk Algorithm
+141,Node2Vec Algorithm
+142,GraphSAGE
+143,GCN (Graph Convolutional Network)
+144,GAT (Graph Attention Network)
+145,Graph Recurrent Neural Networks
+146,Link Prediction
+147,Graph Anomaly Detection
+148,Knowledge Graphs
+149,RDF vs LPG Models

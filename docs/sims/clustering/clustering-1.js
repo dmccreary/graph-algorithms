@@ -48,9 +48,9 @@ fetch('graph-data.json')
             borderWidth: 4,
             color: {
               border: 'blue',
-              background: '#97C2FC'
+              background: 'LightBlue'
             },
-            font: { color: 'blue' }
+            font: { color: 'black' }
           }
         };
         network.cluster(clusterOptionsByData);
