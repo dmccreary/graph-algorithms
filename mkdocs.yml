@@ -65,6 +65,7 @@ nav:
     - Force Directed Graph Layout: sims/force/index.md
     - Breath First Search: sims/bfs/index.md
     - Breath First Search Vis.js: sims/bfs/bfs-vis.md
+    - BFS vs. DFS: sims/bfs-vs-dfs/index.md
     - Shortest Path: sims/shortest-path/index.md
     - Spanning Tree: sims/spanning-tree/index.md
     - PageRank: sims/page-rank/index.md
