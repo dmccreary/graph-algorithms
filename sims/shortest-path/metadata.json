@@ -1,0 +1,40 @@
+{
+  "title": "Shortest Path",
+  "description": "Interactive visualization of Dijkstra's shortest path algorithm for finding optimal routes in weighted graphs. Demonstrates how the algorithm explores nodes and updates distances to find the shortest path.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Shortest Path",
+    "Dijkstra's Algorithm",
+    "Graph Algorithms",
+    "Weighted Graphs",
+    "Routing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/shortest-path/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "Dijkstra's Algorithm",
+    "Shortest Path",
+    "Weighted Graphs",
+    "Greedy Algorithms",
+    "Graph Traversal"
+  ],
+  "prerequisites": [
+    "Weighted Graphs",
+    "Graph Basics"
+  ],
+  "library": "vis-network.js"
+}

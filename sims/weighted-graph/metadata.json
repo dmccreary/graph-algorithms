@@ -1,0 +1,38 @@
+{
+  "title": "Weighted Graph",
+  "description": "Interactive visualization of weighted graphs showing edge distances between US metropolitan cities. Demonstrates how to create a k-nearest-neighbors graph with distance weights.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Weighted Graphs",
+    "Edge Weights",
+    "K-Nearest Neighbors",
+    "Graph Visualization",
+    "Geographic Networks"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/weighted-graph/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply"
+  ],
+  "concepts": [
+    "Weighted Graphs",
+    "Edge Weights",
+    "Nearest Neighbors",
+    "Euclidean Distance"
+  ],
+  "prerequisites": [
+    "Graph Basics",
+    "Coordinate Geometry"
+  ],
+  "library": "p5.js"
+}

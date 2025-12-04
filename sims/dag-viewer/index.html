@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Interactive left-to-right Directed Acyclic Graph (DAG) viewer using vis-network.js for visualizing concept dependencies">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>LR DAG Viewer - AI Graph Algorithms</title>
+        <title>DAG Viewer - AI Graph Algorithms</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lr-dag-viewer" class="md-skip">
+        <a href="#dag-viewer" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LR DAG Viewer
+              DAG Viewer
             
           </span>
         </div>
@@ -674,6 +674,10 @@
         
       
         
+          
+        
+      
+        
       
     
     
@@ -953,6 +957,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../traveling-salesperson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traveling Salesperson
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../matching/" class="md-nav__link">
         
   
@@ -1062,11 +1087,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tuning-the-layout" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Tuning the Layout
+      Description
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Versions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Versions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-1-basic-hierarchical-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 1 - Basic Hierarchical Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-2-improved-spacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2 - Improved Spacing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-3-refined-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 3 - Refined Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-4-static-positioning-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 4 - Static Positioning (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1080,27 +1171,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#version-2" class="md-nav__link">
+  <a href="#lesson-plan" class="md-nav__link">
     <span class="md-ellipsis">
-      Version 2
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#version-3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
     <span class="md-ellipsis">
-      Version 3
+      Target Audience
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#version-4" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Version 4
+      References
     </span>
   </a>
   
@@ -1305,11 +1429,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tuning-the-layout" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Tuning the Layout
+      Description
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Versions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Versions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-1-basic-hierarchical-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 1 - Basic Hierarchical Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-2-improved-spacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2 - Improved Spacing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-3-refined-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 3 - Refined Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-4-static-positioning-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 4 - Static Positioning (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1323,27 +1513,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#version-2" class="md-nav__link">
+  <a href="#lesson-plan" class="md-nav__link">
     <span class="md-ellipsis">
-      Version 2
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#version-3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
     <span class="md-ellipsis">
-      Version 3
+      Target Audience
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#version-4" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Version 4
+      References
     </span>
   </a>
   
@@ -1367,46 +1590,111 @@
   
 
 
-<h1 id="lr-dag-viewer">LR DAG Viewer</h1>
-<p><img alt="" src="dag-viewer.png" /></p>
-<p>In this lesson we use the left to right layout (LR) of a DAG using the vis.js library.
-This algorithm places each node in one of about eight columns and arranges nodes in a DAG based on their dependencies, with independent nodes on the right and dependent nodes on the left. </p>
-<p><a class="md-button md-button--primary" href="dag-viewer.html">Run the LR DAG Viewer MicroSim</a></p>
-<p>The program uses the graph-algorithms learning graph CSV file</p>
+<h1 id="dag-viewer">DAG Viewer</h1>
+<iframe src="dag-viewer-4.html" width="100%" height="600px" scrolling="no"></iframe>
+
+<p><strong>Copy this iframe to your website:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/graph-algorithms/sims/dag-viewer/dag-viewer-4.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;600px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><a class="md-button md-button--primary" href="dag-viewer-4.html">Run DAG Viewer MicroSim in Fullscreen</a></p>
+<h2 id="description">Description</h2>
+<p>This MicroSim displays a Directed Acyclic Graph (DAG) using a left-to-right (LR) layout with the vis-network.js library. The algorithm places each node in columns based on their dependencies, with independent nodes (no prerequisites) on the right and dependent nodes on the left.</p>
+<p>Key features:</p>
+<ul>
+<li>Left-to-right hierarchical layout showing dependency flow</li>
+<li>Nodes positioned based on their dependency levels</li>
+<li>Visualization of the graph algorithms course learning graph</li>
+<li>Static positioning for stable, clear visualization</li>
+</ul>
+<h3 id="how-to-use">How to Use</h3>
+<ol>
+<li>Hover over nodes to see their labels</li>
+<li>Drag to pan around the graph</li>
+<li>Scroll to zoom in/out</li>
+<li>Follow edges from left to right to see dependency relationships</li>
+</ol>
+<p>The program uses the graph-algorithms learning graph CSV file:</p>
 <p><a href="graph-algorithms.csv">View the Graph Algorithms Learning Graph CSV File</a></p>
-<h2 id="tuning-the-layout">Tuning the Layout</h2>
+<h2 id="implementation-versions">Implementation Versions</h2>
+<h3 id="version-1-basic-hierarchical-layout">Version 1 - Basic Hierarchical Layout</h3>
+<p><a href="dag-viewer.html">DAG Viewer 1</a> - Initial implementation using vis.js hierarchical layout</p>
+<h3 id="version-2-improved-spacing">Version 2 - Improved Spacing</h3>
+<p><a href="dag-viewer-2.html">DAG Viewer 2</a></p>
+<h3 id="version-3-refined-layout">Version 3 - Refined Layout</h3>
+<p><a href="dag-viewer-3.html">DAG Viewer 3</a></p>
+<h3 id="version-4-static-positioning-recommended">Version 4 - Static Positioning (Recommended)</h3>
+<p><a href="dag-viewer-4.html">DAG Viewer 4</a> - Uses precise static positioning rather than physics-based layout. The key insight was that since we're dealing with a hierarchical dependency structure where nodes need to maintain their horizontal levels, physics simulation wasn't necessary.</p>
 <h2 id="sample-prompt">Sample Prompt</h2>
 <div class="admonition prompt">
 <p class="admonition-title">Prompt</p>
-<p>I have a directed acyclic graph (DAG) and I want you to create a vis.js program so that the placement of the nodes on the graph always place dependant nodes to the left of a node.  Nodes with no dependencies should be on the right side of the canvas.</p>
+<p>I have a directed acyclic graph (DAG) and I want you to create a vis.js program so that the placement of the nodes on the graph always place dependent nodes to the left of a node. Nodes with no dependencies should be on the right side of the canvas.</p>
 <p>Use the following vis.js library reference from unpkg.com:</p>
 <p>https://unpkg.com/vis-network/standalone/umd/vis-network.min.js</p>
 <p>Use the following parameters in the vis.js options:</p>
-<p>const options = {
-    layout: {
-        hierarchical: {
-            enabled: true,
-            direction: 'LR',  // Left to right
-            sortMethod: 'directed',
-            nodeSpacing: 80,
-            levelSeparation: 500
-        }
-    }}</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">layout</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">hierarchical</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">direction</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;LR&#39;</span><span class="p">,</span><span class="w">  </span><span class="c1">// Left to right</span>
+<span class="w">            </span><span class="nx">sortMethod</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;directed&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nodeSpacing</span><span class="o">:</span><span class="w"> </span><span class="mf">80</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">levelSeparation</span><span class="o">:</span><span class="w"> </span><span class="mf">500</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 </div>
-<h2 id="version-2">Version 2</h2>
-<p><a href="dag-viewer-2.html">DAG Viewer 2</a></p>
-<h2 id="version-3">Version 3</h2>
-<p><a href="dag-viewer-3.html">DAG Viewer 3</a></p>
-<h2 id="version-4">Version 4</h2>
-<p>The solution was to rely on precise static positioning rather than physics-based layout for this directed acyclic graph visualization.
-The key insight was that since we're dealing with a hierarchical dependency structure where nodes need to maintain their horizontal levels, physics simulation wasn't actually necessary - it was just complicating things and causing issues. By using fixed positions calculated from the dependency levels, we get a clearer and more stable visualization that better serves the purpose of showing the relationships between concepts.</p>
-<p><a href="dag-viewer-4.html">DAG Viewer 4</a></p>
+<h2 id="lesson-plan">Lesson Plan</h2>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>After completing this lesson, students will be able to:</p>
+<ul>
+<li>Explain what a Directed Acyclic Graph (DAG) is and its properties</li>
+<li>Identify dependency relationships in a DAG visualization</li>
+<li>Understand how hierarchical layouts organize nodes by dependency level</li>
+<li>Apply DAG visualization to represent learning prerequisites</li>
+</ul>
+<h3 id="target-audience">Target Audience</h3>
+<ul>
+<li>Computer science students learning about graph theory</li>
+<li>Prerequisites: Understanding of directed graphs and dependencies</li>
+</ul>
+<h3 id="activities">Activities</h3>
+<ol>
+<li><strong>Exploration Activity</strong>: Identify which concepts have the most dependencies (leftmost nodes)</li>
+<li><strong>Guided Investigation</strong>: Trace the path from a foundational concept to an advanced one</li>
+<li><strong>Extension Activity</strong>: Modify the CSV file to add a new concept and see how it affects the layout</li>
+</ol>
+<h3 id="assessment">Assessment</h3>
+<ul>
+<li>What makes a graph "acyclic"?</li>
+<li>Why are independent nodes placed on the right in this visualization?</li>
+<li>How would adding a cycle affect this visualization?</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph - Wikipedia</a> - Theory of DAGs</li>
+<li><a href="https://visjs.github.io/vis-network/docs/network/layout.html">vis-network.js Hierarchical Layout</a> - Layout options documentation</li>
+<li><a href="https://en.wikipedia.org/wiki/Topological_sorting">Topological Sorting</a> - Algorithm used to order DAG nodes</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

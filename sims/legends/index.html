@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Tutorial on creating fixed-position node legends for vis-network.js graph visualizations">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Legends - AI Graph Algorithms</title>
+        <title>Graph Legends - AI Graph Algorithms</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#legends" class="md-skip">
+        <a href="#graph-legends" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Legends
+              Graph Legends
             
           </span>
         </div>
@@ -674,6 +674,10 @@
         
       
         
+          
+        
+      
+        
       
     
     
@@ -768,27 +772,135 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#process" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Process
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legend-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legend Versions
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-fixed-nodes" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting up Fixed Nodes
+      How to Use
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#full-example" class="md-nav__link">
+  <a href="#implementation-process" class="md-nav__link">
     <span class="md-ellipsis">
-      Full Example
+      Implementation Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-define-legend-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Define Legend Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-fixed-legend-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create Fixed Legend Nodes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-define-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Define Groups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1004,6 +1116,27 @@
   
   <span class="md-ellipsis">
     PageRank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traveling-salesperson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traveling Salesperson
   </span>
   
 
@@ -1287,27 +1420,135 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#process" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Process
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legend-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legend Versions
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-fixed-nodes" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting up Fixed Nodes
+      How to Use
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#full-example" class="md-nav__link">
+  <a href="#implementation-process" class="md-nav__link">
     <span class="md-ellipsis">
-      Full Example
+      Implementation Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-define-legend-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Define Legend Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-fixed-legend-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create Fixed Legend Nodes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-define-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Define Groups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1331,25 +1572,47 @@
   
 
 
-<h1 id="legends">Legends</h1>
-<p><a href="legend-1.html">Legend Version 1</a></p>
-<p><a href="legend-1.html">Legend Version 2</a></p>
-<p><a href="https://visjs.github.io/vis-network/examples/network/exampleApplications/nodeLegend.html">vis.js Example</a></p>
-<h2 id="process">Process</h2>
+<h1 id="graph-legends">Graph Legends</h1>
+<iframe src="legend-1.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<p><strong>Copy this iframe to your website:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/graph-algorithms/sims/legends/legend-1.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><a class="md-button md-button--primary" href="legend-1.html">Run Legend Demo in Fullscreen</a></p>
+<h2 id="description">Description</h2>
+<p>This tutorial demonstrates how to create fixed-position legends for vis-network.js graph visualizations. Legends help users understand what different node shapes and colors represent in a network diagram.</p>
+<h3 id="legend-versions">Legend Versions</h3>
+<ul>
+<li><a href="legend-1.html">Legend Version 1</a></li>
+<li><a href="legend-2.html">Legend Version 2</a></li>
+<li><a href="https://visjs.github.io/vis-network/examples/network/exampleApplications/nodeLegend.html">vis.js Official Example</a></li>
+</ul>
+<h3 id="how-to-use">How to Use</h3>
 <ol>
-<li>Define the x and y location of the upper left corner of the legend</li>
-<li>Define the spacing between the legend rows (e.g. step=70)</li>
-<li>Push nodes into the graph for the legend.  Each node must have the following attributes<ol>
-<li>id (integer)</li>
-<li>label (string)</li>
-<li>group (string)</li>
-<li>value (integer)</li>
-<li>fixed: true (boolean)</li>
-<li>physics: false (boolean)</li>
+<li>Observe the legend in the top-left corner of the visualization</li>
+<li>Note how each node type (Internet, Switch, Server, Computer, Smartphone) has a distinct shape and color</li>
+<li>The legend nodes are fixed in position and don't respond to physics simulation</li>
 </ol>
-</li>
-</ol>
-<h2 id="setting-up-fixed-nodes">Setting up Fixed Nodes</h2>
+<h2 id="implementation-process">Implementation Process</h2>
+<h3 id="step-1-define-legend-position">Step 1: Define Legend Position</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">mynetwork</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;mynetwork&quot;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nx">mynetwork</span><span class="p">.</span><span class="nx">clientWidth</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nx">mynetwork</span><span class="p">.</span><span class="nx">clientHeight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">70</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="step-2-create-fixed-legend-nodes">Step 2: Create Fixed Legend Nodes</h3>
+<p>Each legend node must have these attributes:</p>
+<ul>
+<li><code>id</code> (integer) - Unique identifier</li>
+<li><code>label</code> (string) - Display text</li>
+<li><code>group</code> (string) - Category for styling</li>
+<li><code>value</code> (integer) - Size value</li>
+<li><code>fixed: true</code> - Prevents movement</li>
+<li><code>physics: false</code> - Ignores physics simulation</li>
+</ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1359,673 +1622,73 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// legend </span>
-<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">mynetwork</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;mynetwork&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nx">mynetwork</span><span class="p">.</span><span class="nx">clientWidth</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
-<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nx">mynetwork</span><span class="p">.</span><span class="nx">clientHeight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
-<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">70</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
-<span class="w">          </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Internet&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;internet&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">fixed</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">physics</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">        </span><span class="p">});</span>
-<span class="w">        </span><span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
-<span class="w">          </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1001</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">step</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Switch&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;switch&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">fixed</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">physics</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">        </span><span class="p">});</span>
-<span class="w">        </span><span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
-<span class="w">          </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1002</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">step</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Server&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;server&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">fixed</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">physics</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">        </span><span class="p">});</span>
-<span class="w">        </span><span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
-<span class="w">          </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1003</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">step</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Computer&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;desktop&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">fixed</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">physics</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">        </span><span class="p">});</span>
-<span class="w">        </span><span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
-<span class="w">          </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1004</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">step</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Smartphone&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mobile&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">fixed</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">          </span><span class="nx">physics</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">        </span><span class="p">});</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Internet&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;internet&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fixed</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">physics</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="p">});</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="full-example">Full Example</h2>
-<p>```js</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
-<span class="normal">  2</span>
-<span class="normal">  3</span>
-<span class="normal">  4</span>
-<span class="normal">  5</span>
-<span class="normal">  6</span>
-<span class="normal">  7</span>
-<span class="normal">  8</span>
-<span class="normal">  9</span>
-<span class="normal"> 10</span>
-<span class="normal"> 11</span>
-<span class="normal"> 12</span>
-<span class="normal"> 13</span>
-<span class="normal"> 14</span>
-<span class="normal"> 15</span>
-<span class="normal"> 16</span>
-<span class="normal"> 17</span>
-<span class="normal"> 18</span>
-<span class="normal"> 19</span>
-<span class="normal"> 20</span>
-<span class="normal"> 21</span>
-<span class="normal"> 22</span>
-<span class="normal"> 23</span>
-<span class="normal"> 24</span>
-<span class="normal"> 25</span>
-<span class="normal"> 26</span>
-<span class="normal"> 27</span>
-<span class="normal"> 28</span>
-<span class="normal"> 29</span>
-<span class="normal"> 30</span>
-<span class="normal"> 31</span>
-<span class="normal"> 32</span>
-<span class="normal"> 33</span>
-<span class="normal"> 34</span>
-<span class="normal"> 35</span>
-<span class="normal"> 36</span>
-<span class="normal"> 37</span>
-<span class="normal"> 38</span>
-<span class="normal"> 39</span>
-<span class="normal"> 40</span>
-<span class="normal"> 41</span>
-<span class="normal"> 42</span>
-<span class="normal"> 43</span>
-<span class="normal"> 44</span>
-<span class="normal"> 45</span>
-<span class="normal"> 46</span>
-<span class="normal"> 47</span>
-<span class="normal"> 48</span>
-<span class="normal"> 49</span>
-<span class="normal"> 50</span>
-<span class="normal"> 51</span>
-<span class="normal"> 52</span>
-<span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
-<span class="normal"> 56</span>
-<span class="normal"> 57</span>
-<span class="normal"> 58</span>
-<span class="normal"> 59</span>
-<span class="normal"> 60</span>
-<span class="normal"> 61</span>
-<span class="normal"> 62</span>
-<span class="normal"> 63</span>
-<span class="normal"> 64</span>
-<span class="normal"> 65</span>
-<span class="normal"> 66</span>
-<span class="normal"> 67</span>
-<span class="normal"> 68</span>
-<span class="normal"> 69</span>
-<span class="normal"> 70</span>
-<span class="normal"> 71</span>
-<span class="normal"> 72</span>
-<span class="normal"> 73</span>
-<span class="normal"> 74</span>
-<span class="normal"> 75</span>
-<span class="normal"> 76</span>
-<span class="normal"> 77</span>
-<span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span>
-<span class="normal">119</span>
-<span class="normal">120</span>
-<span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span>
-<span class="normal">146</span>
-<span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
-<span class="normal">169</span>
-<span class="normal">170</span>
-<span class="normal">171</span>
-<span class="normal">172</span>
-<span class="normal">173</span>
-<span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span>
-<span class="normal">179</span>
-<span class="normal">180</span>
-<span class="normal">181</span>
-<span class="normal">182</span>
-<span class="normal">183</span>
-<span class="normal">184</span>
-<span class="normal">185</span>
-<span class="normal">186</span>
-<span class="normal">187</span>
-<span class="normal">188</span>
-<span class="normal">189</span>
-<span class="normal">190</span>
-<span class="normal">191</span>
-<span class="normal">192</span>
-<span class="normal">193</span>
-<span class="normal">194</span>
-<span class="normal">195</span>
-<span class="normal">196</span>
-<span class="normal">197</span>
-<span class="normal">198</span>
-<span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span>
-<span class="normal">202</span>
-<span class="normal">203</span>
-<span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span>
-<span class="normal">217</span>
-<span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span>
-<span class="normal">221</span>
-<span class="normal">222</span>
-<span class="normal">223</span>
-<span class="normal">224</span>
-<span class="normal">225</span>
-<span class="normal">226</span>
-<span class="normal">227</span>
-<span class="normal">228</span>
-<span class="normal">229</span>
-<span class="normal">230</span>
-<span class="normal">231</span>
-<span class="normal">232</span>
-<span class="normal">233</span>
-<span class="normal">234</span>
-<span class="normal">235</span>
-<span class="normal">236</span>
-<span class="normal">237</span>
-<span class="normal">238</span>
-<span class="normal">239</span>
-<span class="normal">240</span>
-<span class="normal">241</span>
-<span class="normal">242</span>
-<span class="normal">243</span>
-<span class="normal">244</span>
-<span class="normal">245</span>
-<span class="normal">246</span>
-<span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span>
-<span class="normal">250</span>
-<span class="normal">251</span>
-<span class="normal">252</span>
-<span class="normal">253</span>
-<span class="normal">254</span>
-<span class="normal">255</span>
-<span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span>
-<span class="normal">262</span>
-<span class="normal">263</span>
-<span class="normal">264</span>
-<span class="normal">265</span>
-<span class="normal">266</span>
-<span class="normal">267</span>
-<span class="normal">268</span>
-<span class="normal">269</span>
-<span class="normal">270</span>
-<span class="normal">271</span>
-<span class="normal">272</span>
-<span class="normal">273</span>
-<span class="normal">274</span>
-<span class="normal">275</span>
-<span class="normal">276</span>
-<span class="normal">277</span>
-<span class="normal">278</span>
-<span class="normal">279</span></pre></div></td><td class="code"><div><pre><span></span><code>  var nodes = null;
-  var edges = null;
-  var network = null;
-
-  var LENGTH_MAIN = 350,
-    LENGTH_SERVER = 150,
-    LENGTH_SUB = 50,
-    WIDTH_SCALE = 2,
-    GREEN = &quot;green&quot;,
-    RED = &quot;#C5000B&quot;,
-    ORANGE = &quot;orange&quot;,
-    //GRAY = &#39;#666666&#39;,
-    GRAY = &quot;gray&quot;,
-    BLACK = &quot;#2B1B17&quot;;
-
-  // Called when the Visualization API is loaded.
-  function draw() {
-    // Create a data table with nodes.
-    nodes = [];
-
-    // Create a data table with links.
-    edges = [];
-
-    nodes.push({ id: 1, label: &quot;192.168.0.1&quot;, group: &quot;switch&quot;, value: 10 });
-    nodes.push({ id: 2, label: &quot;192.168.0.2&quot;, group: &quot;switch&quot;, value: 8 });
-    nodes.push({ id: 3, label: &quot;192.168.0.3&quot;, group: &quot;switch&quot;, value: 6 });
-    edges.push({
-      from: 1,
-      to: 2,
-      length: LENGTH_MAIN,
-      width: WIDTH_SCALE * 6,
-      label: &quot;0.71 mbps&quot;,
-    });
-    edges.push({
-      from: 1,
-      to: 3,
-      length: LENGTH_MAIN,
-      width: WIDTH_SCALE * 4,
-      label: &quot;0.55 mbps&quot;,
-    });
-
-    // group around 2
-    for (var i = 100; i &lt;= 104; i++) {
-      var value = 1;
-      var width = WIDTH_SCALE * 2;
-      var color = GRAY;
-      var label = null;
-
-      if (i === 103) {
-        value = 5;
-        width = 3;
-      }
-      if (i === 102) {
-        color = RED;
-        label = &quot;error&quot;;
-      }
-
-      nodes.push({
-        id: i,
-        label: &quot;192.168.0.&quot; + i,
-        group: &quot;desktop&quot;,
-        value: value,
-      });
-      edges.push({
-        from: 2,
-        to: i,
-        length: LENGTH_SUB,
-        color: color,
-        fontColor: color,
-        width: width,
-        label: label,
-      });
-    }
-    nodes.push({
-      id: 201,
-      label: &quot;192.168.0.201&quot;,
-      group: &quot;desktop&quot;,
-      value: 1,
-    });
-    edges.push({
-      from: 2,
-      to: 201,
-      length: LENGTH_SUB,
-      color: GRAY,
-      width: WIDTH_SCALE,
-    });
-
-    // group around 3
-    nodes.push({
-      id: 202,
-      label: &quot;192.168.0.202&quot;,
-      group: &quot;desktop&quot;,
-      value: 4,
-    });
-    edges.push({
-      from: 3,
-      to: 202,
-      length: LENGTH_SUB,
-      color: GRAY,
-      width: WIDTH_SCALE * 2,
-    });
-    for (var i = 230; i &lt;= 231; i++) {
-      nodes.push({
-        id: i,
-        label: &quot;192.168.0.&quot; + i,
-        group: &quot;mobile&quot;,
-        value: 2,
-      });
-      edges.push({
-        from: 3,
-        to: i,
-        length: LENGTH_SUB,
-        color: GRAY,
-        fontColor: GRAY,
-        width: WIDTH_SCALE,
-      });
-    }
-
-    // group around 1
-    nodes.push({
-      id: 10,
-      label: &quot;192.168.0.10&quot;,
-      group: &quot;server&quot;,
-      value: 10,
-    });
-    edges.push({
-      from: 1,
-      to: 10,
-      length: LENGTH_SERVER,
-      color: GRAY,
-      width: WIDTH_SCALE * 6,
-      label: &quot;0.92 mbps&quot;,
-    });
-    nodes.push({
-      id: 11,
-      label: &quot;192.168.0.11&quot;,
-      group: &quot;server&quot;,
-      value: 7,
-    });
-    edges.push({
-      from: 1,
-      to: 11,
-      length: LENGTH_SERVER,
-      color: GRAY,
-      width: WIDTH_SCALE * 3,
-      label: &quot;0.68 mbps&quot;,
-    });
-    nodes.push({
-      id: 12,
-      label: &quot;192.168.0.12&quot;,
-      group: &quot;server&quot;,
-      value: 3,
-    });
-    edges.push({
-      from: 1,
-      to: 12,
-      length: LENGTH_SERVER,
-      color: GRAY,
-      width: WIDTH_SCALE,
-      label: &quot;0.3 mbps&quot;,
-    });
-
-    nodes.push({
-      id: 204,
-      label: &quot;Internet&quot;,
-      group: &quot;internet&quot;,
-      value: 10,
-    });
-    edges.push({
-      from: 1,
-      to: 204,
-      length: 200,
-      width: WIDTH_SCALE * 3,
-      label: &quot;0.63 mbps&quot;,
-    });
-
-    // legend
-    var mynetwork = document.getElementById(&quot;mynetwork&quot;);
-    var x = -mynetwork.clientWidth / 2 + 50;
-    var y = -mynetwork.clientHeight / 2 + 50;
-    var step = 70;
-    nodes.push({
-      id: 1000,
-      x: x,
-      y: y,
-      label: &quot;Internet&quot;,
-      group: &quot;internet&quot;,
-      value: 1,
-      fixed: true,
-      physics: false,
-    });
-    nodes.push({
-      id: 1001,
-      x: x,
-      y: y + step,
-      label: &quot;Switch&quot;,
-      group: &quot;switch&quot;,
-      value: 1,
-      fixed: true,
-      physics: false,
-    });
-    nodes.push({
-      id: 1002,
-      x: x,
-      y: y + 2 * step,
-      label: &quot;Server&quot;,
-      group: &quot;server&quot;,
-      value: 1,
-      fixed: true,
-      physics: false,
-    });
-    nodes.push({
-      id: 1003,
-      x: x,
-      y: y + 3 * step,
-      label: &quot;Computer&quot;,
-      group: &quot;desktop&quot;,
-      value: 1,
-      fixed: true,
-      physics: false,
-    });
-    nodes.push({
-      id: 1004,
-      x: x,
-      y: y + 4 * step,
-      label: &quot;Smartphone&quot;,
-      group: &quot;mobile&quot;,
-      value: 1,
-      fixed: true,
-      physics: false,
-    });
-
-    // create a network
-    var container = document.getElementById(&quot;mynetwork&quot;);
-    var data = {
-      nodes: nodes,
-      edges: edges,
-    };
-    var options = {
-      nodes: {
-        scaling: {
-          min: 16,
-          max: 32,
-        },
-      },
-      edges: {
-        color: GRAY,
-        smooth: false,
-      },
-      physics: {
-        barnesHut: { gravitationalConstant: -30000 },
-        stabilization: { iterations: 2500 },
-      },
-      groups: {
-        switch: {
-          shape: &quot;triangle&quot;,
-          color: &quot;#FF9900&quot;, // orange
-        },
-        desktop: {
-          shape: &quot;dot&quot;,
-          color: &quot;#2B7CE9&quot;, // blue
-        },
-        mobile: {
-          shape: &quot;dot&quot;,
-          color: &quot;#5A1E5C&quot;, // purple
-        },
-        server: {
-          shape: &quot;square&quot;,
-          color: &quot;#C5000B&quot;, // red
-        },
-        internet: {
-          shape: &quot;square&quot;,
-          color: &quot;#109618&quot;, // green
-        },
-      },
-    };
-    network = new vis.Network(container, data, options);
-  }
-```
+<h3 id="step-3-define-groups">Step 3: Define Groups</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">groups</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">switch</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">shape</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;triangle&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#FF9900&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">desktop</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">shape</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#2B7CE9&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">mobile</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">shape</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#5A1E5C&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">server</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">shape</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;square&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#C5000B&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">internet</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">shape</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;square&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#109618&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<h2 id="lesson-plan">Lesson Plan</h2>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>After completing this lesson, students will be able to:</p>
+<ul>
+<li>Create fixed-position legend nodes in vis-network.js</li>
+<li>Configure node groups with distinct shapes and colors</li>
+<li>Position legends relative to the canvas boundaries</li>
+<li>Understand the difference between fixed and physics-enabled nodes</li>
+</ul>
+<h3 id="target-audience">Target Audience</h3>
+<ul>
+<li>Web developers learning data visualization</li>
+<li>Prerequisites: JavaScript, HTML, basic vis-network.js knowledge</li>
+</ul>
+<h3 id="activities">Activities</h3>
+<ol>
+<li><strong>Exploration Activity</strong>: Modify the legend to add a new node type</li>
+<li><strong>Guided Investigation</strong>: Change the legend position to a different corner</li>
+<li><strong>Extension Activity</strong>: Create a collapsible legend panel</li>
+</ol>
+<h3 id="assessment">Assessment</h3>
+<ul>
+<li>What properties make a legend node stay fixed?</li>
+<li>Why set <code>physics: false</code> on legend nodes?</li>
+<li>How do you position a legend relative to canvas edges?</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://visjs.github.io/vis-network/docs/network/groups.html">vis-network.js Groups</a> - Official groups documentation</li>
+<li><a href="https://visjs.github.io/vis-network/docs/network/nodes.html">vis-network.js Node Options</a> - Node configuration options</li>
+<li><a href="https://visjs.github.io/vis-network/examples/network/exampleApplications/nodeLegend.html">Fixed Nodes Example</a> - Official legend example</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

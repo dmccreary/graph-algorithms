@@ -1,0 +1,40 @@
+{
+  "title": "Learning Graph",
+  "description": "Interactive visualization of a learning graph showing concept dependencies and taxonomies. Demonstrates how to build educational dependency graphs using LLM-assisted multi-step prompting.",
+  "creator": "Dan McCreary",
+  "date": "2024-07-22",
+  "subject": [
+    "Learning Graph",
+    "Curriculum Design",
+    "Concept Dependencies",
+    "Educational Technology",
+    "Knowledge Graphs"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/learning-graph/",
+  "educationalLevel": "Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Educators, Curriculum Designers",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Create"
+  ],
+  "concepts": [
+    "Learning Graphs",
+    "Concept Dependencies",
+    "Bloom's Taxonomy",
+    "Curriculum Design",
+    "Knowledge Visualization"
+  ],
+  "prerequisites": [
+    "Graph Basics",
+    "Course Design Fundamentals"
+  ],
+  "library": "vis-network.js"
+}

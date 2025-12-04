@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Interactive simulation of force-directed graph placement algorithm using p5.js with step-by-step controls">
       
       
         <meta name="author" content="Dan McCreary">
@@ -674,6 +674,10 @@
         
       
         
+          
+        
+      
+        
       
     
     
@@ -852,11 +856,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sample-prompt" class="md-nav__link">
     <span class="md-ellipsis">
       Sample Prompt
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -995,6 +1074,27 @@
   
   <span class="md-ellipsis">
     PageRank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traveling-salesperson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traveling Salesperson
   </span>
   
 
@@ -1278,11 +1378,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sample-prompt" class="md-nav__link">
     <span class="md-ellipsis">
       Sample Prompt
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1314,30 +1489,83 @@
 
 
 <h1 id="force-directed-graph-layout">Force Directed Graph Layout</h1>
-<p><img alt="" src="force.png" /></p>
+<iframe src="force.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<p><strong>Copy this iframe to your website:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/graph-algorithms/sims/force/force.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><a class="md-button md-button--primary" href="force.html">Run Force Directed Graph in Fullscreen</a></p>
+<h2 id="description">Description</h2>
+<p>This MicroSim demonstrates a force-directed graph placement algorithm. Force-directed algorithms position graph vertices by simulating physical forces: connected nodes attract each other while all nodes repel each other. Over time, the layout converges to a visually pleasing arrangement.</p>
+<p>Key features:</p>
+<ul>
+<li>20 vertices placed at random initial locations</li>
+<li>Each vertex connected to 3 other vertices</li>
+<li>Step controls: 1, 10, 100, and 1,000 steps</li>
+<li>Display of step count and total vertex movement</li>
+</ul>
+<h3 id="how-to-use">How to Use</h3>
+<ol>
+<li>Click <strong>Step</strong> to advance the algorithm one iteration</li>
+<li>Click <strong>10 Steps</strong>, <strong>100 Steps</strong>, or <strong>1000 Steps</strong> for faster convergence</li>
+<li>Observe how the total movement decreases as the layout stabilizes</li>
+<li>Watch connected nodes pull together while unconnected nodes spread apart</li>
+</ol>
 <p><a href="https://dmccreary.github.io/microsims/sims/force-directed-graph/">Force Directed Graph on the MicroSims Site</a></p>
 <h2 id="sample-prompt">Sample Prompt</h2>
 <div class="highlight"><pre><span></span><code>Create a simulation of a force-directed graph placement algorithm.
 Generate a single file p5.js sketch on a 500x400 canvas.
 Set global variables for the width and height of the canvas.
 The algorithm will move the position of vertices of a connected
-   based on a force-directed graph placement mode.
-For the initial state,  place 20 vertices on random locations on a 500x400 canvas. 
+   graph based on a force-directed graph placement model.
+For the initial state, place 20 vertices on random locations on a 500x400 canvas.
 Make the vertices be rendered by a circle with a radius of 10.
 Connect each vertex to 3 other vertices using bidirectional links.
-Add a controls to incrementally step through the algorithm.
+Add controls to incrementally step through the algorithm.
 Add buttons for a single Step, 10 Steps, 100 Steps and 1,000 Steps at the bottom of canvas.
-Display the number of steps, and the total movement of the verticies in
-each step.
+Display the number of steps, and the total movement of the vertices in each step.
 </code></pre></div>
+<h2 id="lesson-plan">Lesson Plan</h2>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>After completing this lesson, students will be able to:</p>
+<ul>
+<li>Explain how force-directed algorithms use physical simulation for layout</li>
+<li>Describe the balance between attractive and repulsive forces</li>
+<li>Observe convergence behavior in iterative algorithms</li>
+<li>Understand applications of force-directed layouts in network visualization</li>
+</ul>
+<h3 id="target-audience">Target Audience</h3>
+<ul>
+<li>High school and introductory college computer science students</li>
+<li>Prerequisites: Basic understanding of graphs and physics concepts</li>
+</ul>
+<h3 id="activities">Activities</h3>
+<ol>
+<li><strong>Exploration Activity</strong>: Run the algorithm and observe how movement decreases over iterations</li>
+<li><strong>Guided Investigation</strong>: Compare layouts after 100 vs 1000 steps</li>
+<li><strong>Extension Activity</strong>: Discuss why connected nodes cluster together</li>
+</ol>
+<h3 id="assessment">Assessment</h3>
+<ul>
+<li>What two types of forces are at work in this algorithm?</li>
+<li>Why does the total movement decrease over time?</li>
+<li>In what real-world applications would force-directed layouts be useful?</li>
+</ul>
 <h2 id="references">References</h2>
-<p><a href="http://haptic-data.com/toxiclibsjs/examples/force-directed-graph-p5">Karsten Schmidt</a></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">Force-directed Graph Drawing - Wikipedia</a> - Overview of the algorithm</li>
+<li><a href="http://haptic-data.com/toxiclibsjs/examples/force-directed-graph-p5">Karsten Schmidt's Force Directed Graph</a> - Related implementation</li>
+<li><a href="https://p5js.org/reference/">p5.js Reference</a> - Documentation for the visualization library used</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

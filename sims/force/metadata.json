@@ -1,0 +1,40 @@
+{
+  "title": "Force Directed Graph Layout",
+  "description": "Interactive simulation of force-directed graph placement algorithm. Demonstrates how physical simulation with attractive and repulsive forces creates visually pleasing graph layouts through iterative refinement.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Force-Directed Layout",
+    "Graph Visualization",
+    "Physics Simulation",
+    "Graph Drawing",
+    "Network Layout"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/force/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "Force-Directed Layout",
+    "Graph Drawing",
+    "Physical Simulation",
+    "Iterative Algorithms",
+    "Convergence"
+  ],
+  "prerequisites": [
+    "Graph Basics",
+    "Basic Physics"
+  ],
+  "library": "p5.js"
+}

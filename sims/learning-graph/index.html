@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Interactive visualization of a learning graph showing concept dependencies and taxonomies using vis-network.js">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Introduction - AI Graph Algorithms</title>
+        <title>Learning Graph - AI Graph Algorithms</title>
       
     
     
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Learning Graph
             
           </span>
         </div>
@@ -674,6 +674,10 @@
         
       
         
+          
+        
+      
+        
       
     
     
@@ -953,6 +957,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../traveling-salesperson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traveling Salesperson
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../matching/" class="md-nav__link">
         
   
@@ -1064,7 +1089,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_17" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_18" checked>
         
           
           
@@ -1080,14 +1105,14 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_9_17" id="__nav_9_17_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_9_18" id="__nav_9_18_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_17_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_9_17">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9_18">
             <span class="md-nav__icon md-icon"></span>
             Learning Graph
           </label>
@@ -1342,54 +1367,153 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#course-description" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Course Description
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#enumerating-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enumerating Concepts
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#concept-dependencies" class="md-nav__link">
+  <a href="#building-the-learning-graph" class="md-nav__link">
     <span class="md-ellipsis">
-      Concept Dependencies
+      Building the Learning Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building the Learning Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-course-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Course Description
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#concept-taxonomies" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-2-enumerating-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Concept Taxonomies
+      Step 2: Enumerating Concepts
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#view-legend" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-3-concept-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      View Legend
+      Step 3: Concept Dependencies
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-concept-taxonomies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Concept Taxonomies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-view-legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: View Legend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-view-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: View Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#view-graph" class="md-nav__link">
+  <a href="#lesson-plan" class="md-nav__link">
     <span class="md-ellipsis">
-      View Graph
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1414,45 +1538,88 @@
 
 
 <h1 id="learning-graph-microsimulation">Learning Graph MicroSimulation</h1>
-<p><img alt="" src="learning-graph.png" /></p>
-<p>This MicroSim has several prompts.  Each prompt output is
-used as an input to the next prompt.</p>
-<h2 id="course-description">Course Description</h2>
-<p>We use Bloom's taxonomy to create a course description that
-begins with foundational concepts and progresses to hands-on activities
-to generate new content.</p>
+<iframe src="view-graph.html" width="100%" height="600px" scrolling="no"></iframe>
+
+<p><strong>Copy this iframe to your website:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/graph-algorithms/sims/learning-graph/view-graph.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;600px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><a class="md-button md-button--primary" href="view-graph.html">Run Learning Graph in Fullscreen</a></p>
+<h2 id="description">Description</h2>
+<p>This MicroSim demonstrates how to build a learning graph from a course description using a multi-step prompting process with large language models. Each prompt output is used as input to the next prompt, progressively building a complete learning dependency graph.</p>
+<p>Key features:</p>
+<ul>
+<li>Visualization of ~150 core concepts and their dependencies</li>
+<li>Color-coded nodes by taxonomy category</li>
+<li>Foundation concepts on the left, advanced topics on the right</li>
+<li>Interactive legend for category reference</li>
+</ul>
+<h3 id="how-to-use">How to Use</h3>
+<ol>
+<li>Explore the graph by panning and zooming</li>
+<li>Click on nodes to see their connections</li>
+<li>Use the legend to understand category color coding</li>
+<li>Follow edges to understand concept dependencies</li>
+</ol>
+<h2 id="building-the-learning-graph">Building the Learning Graph</h2>
+<h3 id="step-1-course-description">Step 1: Course Description</h3>
+<p>We use Bloom's taxonomy to create a course description that begins with foundational concepts and progresses to hands-on activities.</p>
 <p><a href="00-course-description/">Course Description</a></p>
-<h2 id="enumerating-concepts">Enumerating Concepts</h2>
-<p>We use the course description to generate a flat list of
-around 150 core concepts used in this course.</p>
+<h3 id="step-2-enumerating-concepts">Step 2: Enumerating Concepts</h3>
+<p>We use the course description to generate a flat list of around 150 core concepts used in this course.</p>
 <p><a href="01-enumerating-concepts/">Enumerating Concepts</a></p>
-<h2 id="concept-dependencies">Concept Dependencies</h2>
-<p>Once we have a list of our core concepts, we ask a LLM
-to help create a dependency graph.</p>
+<h3 id="step-3-concept-dependencies">Step 3: Concept Dependencies</h3>
+<p>Once we have a list of our core concepts, we ask an LLM to help create a dependency graph.</p>
 <p><a href="02-concept-dependencies/">Concept Dependencies</a></p>
-<h2 id="concept-taxonomies">Concept Taxonomies</h2>
-<p>We then try to categorize these concepts into a taxonomy
-that is used to color the network graph learning map.</p>
+<h3 id="step-4-concept-taxonomies">Step 4: Concept Taxonomies</h3>
+<p>We then categorize these concepts into a taxonomy used to color the network graph learning map.</p>
 <p><a href="03-concept-taxonomies/">Concept Taxonomies</a></p>
-<h2 id="view-legend">View Legend</h2>
-<p>Once we have a taxonomy, we need to convert that list
-into an HTML table that can be used as a legend that
-appears on the left sidebar.  This version has
-a way to collapse the sidebar.</p>
+<h3 id="step-5-view-legend">Step 5: View Legend</h3>
+<p>Once we have a taxonomy, we convert that list into an HTML table that can be used as a legend. This version has a way to collapse the sidebar.</p>
 <p><a href="view-legend.html">View Legend</a></p>
-<h2 id="view-graph">View Graph</h2>
-<p>Finally, we put it all together in a graph viewer.
-This version reads a JSON file that has some
-group names added.  It also attempts to put
-the foundation elements to the left and some
-advanced topics on the right.</p>
+<h3 id="step-6-view-graph">Step 6: View Graph</h3>
+<p>Finally, we put it all together in a graph viewer. This version reads a JSON file with group names added and attempts to position foundation elements to the left and advanced topics on the right.</p>
 <p><a href="view-graph.html">View Graph</a></p>
+<h2 id="lesson-plan">Lesson Plan</h2>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>After completing this lesson, students will be able to:</p>
+<ul>
+<li>Explain how LLMs can assist in curriculum design</li>
+<li>Describe the process of building a learning dependency graph</li>
+<li>Identify foundational vs advanced concepts in a subject area</li>
+<li>Understand the value of visualizing learning paths</li>
+</ul>
+<h3 id="target-audience">Target Audience</h3>
+<ul>
+<li>Curriculum designers and educators</li>
+<li>Prerequisites: Basic understanding of course design</li>
+</ul>
+<h3 id="activities">Activities</h3>
+<ol>
+<li><strong>Exploration Activity</strong>: Navigate the learning graph and identify prerequisite chains</li>
+<li><strong>Guided Investigation</strong>: Find the longest dependency path from a foundation to an advanced concept</li>
+<li><strong>Extension Activity</strong>: Use the prompts to create a learning graph for a different subject</li>
+</ol>
+<h3 id="assessment">Assessment</h3>
+<ul>
+<li>What is the purpose of categorizing concepts by taxonomy?</li>
+<li>How does visualizing dependencies help with curriculum design?</li>
+<li>Why are foundation concepts placed on the left of the graph?</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Bloom%27s_taxonomy">Bloom's Taxonomy</a> - Framework for educational objectives</li>
+<li><a href="https://visjs.github.io/vis-network/docs/network/">vis-network.js Documentation</a> - Library used for graph visualization</li>
+<li><a href="https://www.dmccreary.com/learning-graphs/">Learning Graph Methodology</a> - Background on learning graphs</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

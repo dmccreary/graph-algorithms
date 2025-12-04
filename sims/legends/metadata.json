@@ -1,0 +1,38 @@
+{
+  "title": "Graph Legends",
+  "description": "Tutorial on creating fixed-position node legends for vis-network.js graph visualizations. Demonstrates how to add non-interactive legend nodes with distinct shapes and colors.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Graph Legends",
+    "vis-network.js",
+    "Network Visualization",
+    "Data Visualization",
+    "User Interface"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/legends/",
+  "educationalLevel": "Undergraduate",
+  "learningResourceType": "tutorial",
+  "audience": "Developers, Students",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply"
+  ],
+  "concepts": [
+    "Graph Legends",
+    "Fixed Nodes",
+    "Node Groups",
+    "Visual Encoding"
+  ],
+  "prerequisites": [
+    "JavaScript",
+    "vis-network.js Basics"
+  ],
+  "library": "vis-network.js"
+}

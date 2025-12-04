@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Template for creating new p5.js MicroSims with basic canvas setup and drawing examples">
       
       
         <meta name="author" content="Dan McCreary">
@@ -668,6 +668,10 @@
         
       
         
+          
+        
+      
+        
       
     
     
@@ -828,11 +832,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-this-microsim" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      About this MicroSim
+      Description
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -938,6 +957,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creating-a-new-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a New MicroSim
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a New MicroSim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -957,16 +1018,21 @@
 
 
 <h1 id="microsim-template">MicroSim Template</h1>
-<figure markdown>
-   ![Image Name](./image.png){ width="400" }
-   <figcaption>Figure caption.</figcaption>
-</figure>
+<iframe src="template.html" width="100%" height="450px" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="template.html">Link to Demo</a>
-<a href="">Edit MicroSim</a></p>
-<h2 id="about-this-microsim">About this MicroSim</h2>
-<p>This MicroSim teaches us how to
-specify the drawing of a static filled circle.</p>
+<p><strong>Copy this iframe to your website:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/graph-algorithms/sims/template/template.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;450px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><a class="md-button md-button--primary" href="template.html">Run Template MicroSim in Fullscreen</a></p>
+<h2 id="description">Description</h2>
+<p>This MicroSim template teaches the basic structure of a p5.js sketch, demonstrating how to specify the drawing of a static filled circle. Use this as a starting point for creating new MicroSims.</p>
+<h3 id="how-to-use">How to Use</h3>
+<ol>
+<li>Copy this template to create a new MicroSim</li>
+<li>Modify the sample prompt to describe your visualization</li>
+<li>Update the JavaScript code to match your requirements</li>
+<li>Add documentation specific to your topic</li>
+</ol>
 <h2 id="sample-prompt">Sample Prompt</h2>
 <div class="highlight"><pre><span></span><code>Create a single file p5.js sketch.
 Draw a green circle on a 600x400 canvas with a radius of 200.
@@ -983,15 +1049,17 @@ Draw a green circle on a 600x400 canvas with a radius of 200.
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">aspectRatio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.91</span><span class="p">;</span><span class="w"> </span><span class="c1">// Open Graph standard</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">aspectRatio</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span>
+
 <span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="s1">&#39;canvas-container&#39;</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">245</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">rect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1001,24 +1069,47 @@ Draw a green circle on a 600x400 canvas with a radius of 200.
 <p>9th grade geometry. Circle and radius.</p>
 <h3 id="activities">Activities</h3>
 <h4 id="fill-color">Fill Color</h4>
-<p>Change the color in the prompt.  You
-can specify any one of the <a href="https://www.w3schools.com/tags/ref_colornames.asp">140 named colors</a>.</p>
+<p>Change the color in the prompt. You can specify any one of the <a href="https://www.w3schools.com/tags/ref_colornames.asp">140 named colors</a>.</p>
 <h4 id="border-weight">Border Weight</h4>
-<p>Change the prompt to include a black border of
-width 10.</p>
+<p>Change the prompt to include a black border of width 10.</p>
 <h4 id="border-color">Border Color</h4>
 <p>Change the prompt to make the border purple.</p>
 <h4 id="change-the-radius">Change the Radius</h4>
-<p>Change the prompt to make the circle smaller
-or larger by changing the radius from 10 to 200.</p>
+<p>Change the prompt to make the circle smaller or larger by changing the radius from 10 to 200.</p>
 <h4 id="change-the-location">Change the Location</h4>
 <p>Change the prompt to move the circle to the left or right.</p>
+<h2 id="creating-a-new-microsim">Creating a New MicroSim</h2>
+<h3 id="steps">Steps</h3>
+<ol>
+<li>Create a new directory under <code>docs/sims/</code></li>
+<li>Copy these template files</li>
+<li>Rename files to match your MicroSim name</li>
+<li>Update the HTML, JavaScript, and markdown content</li>
+<li>Add a <code>metadata.json</code> file with Dublin Core metadata</li>
+<li>Add to the navigation in <code>mkdocs.yml</code></li>
+</ol>
+<h3 id="best-practices">Best Practices</h3>
+<ul>
+<li>Use descriptive variable names</li>
+<li>Follow the canvas size conventions</li>
+<li>Include a control region for interactive elements</li>
+<li>Document all parameters and controls</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://p5js.org/reference/">p5.js Reference</a> - Official p5.js documentation</li>
+<li><a href="https://p5js.org/examples/">p5.js Examples</a> - Example sketches</li>
+<li><a href="https://www.w3schools.com/tags/ref_colornames.asp">W3Schools Color Names</a> - Named CSS colors</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

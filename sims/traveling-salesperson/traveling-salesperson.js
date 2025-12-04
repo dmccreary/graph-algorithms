@@ -1,242 +1,502 @@
-// https://editor.p5js.org/JeromePaddick/sketches/eTQKfIVzC
-// Jerome Paddick
+// Traveling Salesperson Problem - vis-network visualization
+// Shows 10 major US cities and demonstrates random vs optimized routes
 
-// Uses a simple lexicographic algorithm to create a list of all possible paths between nodes in order to brute force the solution to the shortest (and longest) path 
-// The system is masively limited by the framerate of draw(), so i added a showOutputs variable which allows the calculations to be done silently
-// improvements -> 
-//  -> get rid of reverse paths (DONE)
-//  -> filter out pairs of most distant nodes 
-// convert lexicographioc ordering function to generator to reduce memory overhead
+// ===========================================
+// CITY DATA - Approximate US map positions
+// ===========================================
+// Positions are relative to canvas center (0,0)
+// X: negative = west, positive = east
+// Y: negative = north, positive = south
 
-var noNodes = 6;
-var showOutputs = true;
-var framerate = 144
-var onlyShortest = false;
-var onlyLongest = false;
+// City positions approximate US geography (centered at origin)
+const cities = [
+    { id: 0, label: 'Seattle', x: -320, y: -180 },
+    { id: 1, label: 'San Francisco', x: -340, y: -20 },
+    { id: 2, label: 'Los Angeles', x: -300, y: 80 },
+    { id: 3, label: 'Phoenix', x: -200, y: 100 },
+    { id: 4, label: 'Denver', x: -100, y: -20 },
+    { id: 5, label: 'Dallas', x: -20, y: 120 },
+    { id: 6, label: 'Chicago', x: 80, y: -80 },
+    { id: 7, label: 'Atlanta', x: 160, y: 60 },
+    { id: 8, label: 'New York', x: 280, y: -100 },
+    { id: 9, label: 'Miami', x: 220, y: 180 }
+];
 
-var lexicographicNodeList = []
-var nodes = []
-var current = 0;
-var clrI = 0;
-var bestPath;
-var bestPathLength;
-var worstPath;
-var worstPathLength;
-var finished = false;
-var winHeight;
+// Approximate distances in miles (simplified for visualization)
+// Using Euclidean distance scaled to approximate real distances
+const DISTANCE_SCALE = 8; // Scale factor to approximate miles
 
-function setup() {
- 
-  if (noNodes > 10){
-    noLoop();
-    print("Number of nodes must be 10 or less")
-    return false
-  }
-  
-  frameRate(framerate)
-  
-  if (windowWidth > windowHeight){
-    winHeight = windowHeight
-  } else { winHeight = windowWidth }
-  createCanvas(windowWidth, winHeight);
-  
-  lexicographicOrdering(noNodes)
-  print("fact", factorial(noNodes))
-  print("lexLen", lexicographicNodeList.length)
-  
-  for (let i = 0; i < noNodes; i++) {
-    let v = createVector(
-      random(50, width - 50),
-      random(50, height - 50))
-    nodes.push(v)
-  }
-  
-  if (showOutputs == false) {
-    lexicographicNodeList.forEach(path => {
-      let pathLength = getPathLength(path);
-    if (bestPathLength == undefined || pathLength < bestPathLength) {
-        bestPath = path;
-        bestPathLength = pathLength;
-      }
-      if (worstPath == undefined || pathLength > worstPathLength){
-        worstPath = path;
-        worstPathPathLength = pathLength;
-      }
-    })
-  }
-  
+// ===========================================
+// STATE VARIABLES
+// ===========================================
+let network = null;
+let nodes = null;
+let edges = null;
+let currentRoute = [];
+let currentDistance = 0;
+let isAnimating = false;
+let travelerElement = null;
+
+// ===========================================
+// ENVIRONMENT DETECTION
+// ===========================================
+function isInIframe() {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
 }
 
-function draw() {
-  if (noNodes > 10){
-    noLoop();
-    return false
-  }
-  
-  background(0);
-  fill(255)
-  stroke(255)
-  strokeWeight(1)
-  
-  nodes.forEach(node => {
-    ellipse(node.x, node.y, 10)
-  })
-
-  currentPath = lexicographicNodeList[current];
-  let max = lexicographicNodeList.length
-
-  if (showOutputs == true && current < max) {
-    text((current / max * 100).toFixed(2) + "%", 20, 20)
-    let n = currentPath.length;
-    let pathLength = getPathLength(currentPath);
-    if (bestPathLength == undefined || pathLength < bestPathLength) {
-      print("New Best: ", pathLength.toFixed(2), currentPath)
-      bestPathLength = pathLength;
-      bestPath = currentPath
-    }
-    if (worstPathLength == undefined || pathLength > worstPathLength) {
-      print("New Worst: ", pathLength.toFixed(2), currentPath)
-      worstPathLength = pathLength;
-      worstPath = currentPath
-    }
-    drawPath(currentPath)
-    current += 1
-  } else {
-    finished = true;
-  }
-  
-  strokeWeight(3)
-  
-  if (finished == false) {
-    stroke(255, 0, 255)
-  } else {
-    stroke(0, 255, 0)
-  }
-  
-  if (onlyShortest == false) {
-    drawPath(bestPath)
-  } else {
-    strokeWeight(2)
-    stroke(255, 0, 0)
-    drawPath(worstPath)
-  }
-    
-  if (finished == true && onlyLongest == false) {
-    strokeWeight(1)
-    stroke(255, 0, 0)
-    drawPath(worstPath)
-  }
+// ===========================================
+// DISTANCE CALCULATIONS
+// ===========================================
+function getDistance(city1, city2) {
+    const dx = city2.x - city1.x;
+    const dy = city2.y - city1.y;
+    return Math.sqrt(dx * dx + dy * dy) * DISTANCE_SCALE;
 }
 
-function drawPath(path) {
-  let n = path.length;
-  for (let i = 0; i < n - 1; i++) {
-    let node1 = nodes[path[i]];
-    let node2 = nodes[path[i + 1]];
-    line(node1.x, node1.y, node2.x, node2.y)
-  }
+function getTotalDistance(route) {
+    let total = 0;
+    for (let i = 0; i < route.length - 1; i++) {
+        total += getDistance(cities[route[i]], cities[route[i + 1]]);
+    }
+    // Add return to start
+    if (route.length > 0) {
+        total += getDistance(cities[route[route.length - 1]], cities[route[0]]);
+    }
+    return total;
 }
 
-function getPathLength(path) {
-  let n = path.length;
-  let pathLength = 0;
-  for (let i = 0; i < n - 1; i++) {
-    let node1 = nodes[path[i]];
-    let node2 = nodes[path[i + 1]];
-    pathLength += node1.copy().sub(node2).mag()
-  }
-  return pathLength
+// ===========================================
+// ROUTE ALGORITHMS
+// ===========================================
+
+// Generate random route
+function generateRandomRoute() {
+    const route = [...Array(cities.length).keys()];
+    // Fisher-Yates shuffle
+    for (let i = route.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [route[i], route[j]] = [route[j], route[i]];
+    }
+    return route;
 }
 
-function lexicographicOrdering(noNodes) {
-  
-  // create an array of increasing integers of length noNodes
-  let arr = [...Array(noNodes).keys()]
-  // theoretical length of output
-  let max = factorial(noNodes)
-  let itercount = 0;
-  let last = arr.slice().pop();
-  let arrTemp;
-  let arrComp;
-  let slice;
-  let revSlice;
-  let iHigh;
-  let jHigh
-  
-  lexicographicNodeList.push(arr)
-  
-  while (itercount < max) {
-    
-    // paths are reversible, so once the last item of the array is in first position,
-    // we have already covered all permutations previously
-    if (arr[0]==last){
-      break
-    }
-    
-    // Implements lexicographic ordering algo
-    // x/y => position
-    // P(x) => value at position 
-    // 1. find largest x such that P(x) < P(x+1), if none then you're finished
-    iHigh = -1
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] < arr[i + 1]) {
-        iHigh = i;
-      }
-    }
-    if (iHigh == -1) {
-      return
+// Nearest neighbor heuristic
+function nearestNeighborRoute(startCity = 0) {
+    const route = [startCity];
+    const unvisited = new Set([...Array(cities.length).keys()].filter(i => i !== startCity));
+
+    let current = startCity;
+    while (unvisited.size > 0) {
+        let nearest = null;
+        let nearestDist = Infinity;
+
+        for (const city of unvisited) {
+            const dist = getDistance(cities[current], cities[city]);
+            if (dist < nearestDist) {
+                nearestDist = dist;
+                nearest = city;
+            }
+        }
+
+        route.push(nearest);
+        unvisited.delete(nearest);
+        current = nearest;
     }
 
-    // 2. find largest y such that  P(x)<P(y)
-    let jHigh;
-    for (let j = iHigh + 1; j < arr.length; j++) {
-      if (arr[j] > arr[iHigh]) {
-        jHigh = j;
-      }
+    return route;
+}
+
+// 2-opt improvement
+function twoOptImprove(route) {
+    let improved = true;
+    let bestRoute = [...route];
+    let bestDistance = getTotalDistance(bestRoute);
+
+    while (improved) {
+        improved = false;
+
+        for (let i = 0; i < bestRoute.length - 1; i++) {
+            for (let j = i + 2; j < bestRoute.length; j++) {
+                // Skip if adjacent (no swap possible)
+                if (j === i + 1) continue;
+
+                // Create new route by reversing segment between i+1 and j
+                const newRoute = [...bestRoute];
+                let left = i + 1;
+                let right = j;
+                while (left < right) {
+                    [newRoute[left], newRoute[right]] = [newRoute[right], newRoute[left]];
+                    left++;
+                    right--;
+                }
+
+                const newDistance = getTotalDistance(newRoute);
+                if (newDistance < bestDistance) {
+                    bestRoute = newRoute;
+                    bestDistance = newDistance;
+                    improved = true;
+                }
+            }
+        }
     }
-    // 3. swap P(x) & P(y)
-    // create shallow copy of array -> only copies first level of objects
 
-    arrTemp = [...arr]
-    swap(arrTemp, iHigh, jHigh)
+    return bestRoute;
+}
 
-    slice = arrTemp.slice(iHigh + 1)
-    revSlice = rev(slice)
+// Full optimization: nearest neighbor + 2-opt
+function optimizeRoute() {
+    // Try nearest neighbor from different starting cities
+    let bestRoute = null;
+    let bestDistance = Infinity;
 
-    arrTemp.splice(iHigh + 1, arrTemp.length - iHigh + 1, ...revSlice)
+    for (let start = 0; start < cities.length; start++) {
+        let route = nearestNeighborRoute(start);
+        route = twoOptImprove(route);
+        const distance = getTotalDistance(route);
 
-    arr = arrTemp
-    
-    // if first value is larger that last value, then we have already covered the 
-    //reverse path, so we can exclude it from the array
-    if (arr[0] > arr.slice().pop()) {
-      continue
+        if (distance < bestDistance) {
+            bestDistance = distance;
+            bestRoute = route;
+        }
     }
-      
-    lexicographicNodeList.push(arr)
-      
-    itercount += 1
-      
-  }
+
+    return bestRoute;
 }
 
-function rev(arr) {
-  let revArr = []
-  while (arr.length > 0) {
-    revArr.push(arr.pop())
-  }
-  return revArr
+// ===========================================
+// VISUALIZATION
+// ===========================================
+
+function initializeNetwork() {
+    // Create nodes
+    const nodeData = cities.map(city => ({
+        id: city.id,
+        label: city.label,
+        x: city.x,
+        y: city.y,
+        color: {
+            background: '#ffffff',
+            border: '#2c5530'
+        },
+        font: {
+            color: '#333333',
+            size: 12,
+            face: 'Arial'
+        },
+        borderWidth: 2,
+        shape: 'dot',
+        size: 15
+    }));
+
+    nodes = new vis.DataSet(nodeData);
+    edges = new vis.DataSet([]);
+
+    const options = {
+        layout: { improvedLayout: false },
+        physics: { enabled: false },
+        interaction: {
+            selectConnectedEdges: false,
+            zoomView: !isInIframe(),
+            dragView: !isInIframe(),
+            dragNodes: false,
+            navigationButtons: true
+        },
+        nodes: {
+            shadow: {
+                enabled: true,
+                color: 'rgba(0,0,0,0.2)',
+                size: 5,
+                x: 2,
+                y: 2
+            }
+        },
+        edges: {
+            width: 3,
+            color: { color: '#2196f3' },
+            smooth: false
+        }
+    };
+
+    const container = document.getElementById('network');
+    const data = { nodes: nodes, edges: edges };
+    network = new vis.Network(container, data, options);
+
+    // Fit to nodes, then scale down and shift to account for right panel (240px wide)
+    network.once('afterDrawing', () => {
+        network.fit({
+            animation: false
+        });
+        // Scale down to 75% and shift left to make room for right panel
+        const scale = network.getScale();
+        const viewPosition = network.getViewPosition();
+        network.moveTo({
+            position: {
+                x: viewPosition.x + 100,
+                y: viewPosition.y
+            },
+            scale: scale * 0.75,
+            animation: false
+        });
+    });
 }
 
-function swap(arr, swap1, swap2) {
-  let temp1 = arr[swap1];
-  arr[swap1] = arr[swap2];
-  arr[swap2] = temp1;
+function drawRoute(route) {
+    // Clear existing edges
+    edges.clear();
+
+    if (route.length === 0) return;
+
+    // Create edges for route
+    const edgeData = [];
+    for (let i = 0; i < route.length - 1; i++) {
+        edgeData.push({
+            id: `e${i}`,
+            from: route[i],
+            to: route[i + 1]
+        });
+    }
+    // Add return edge
+    edgeData.push({
+        id: `e${route.length - 1}`,
+        from: route[route.length - 1],
+        to: route[0],
+        dashes: true
+    });
+
+    edges.add(edgeData);
 }
 
+function updateRouteDisplay(route, distance, showImprovement = false, oldDistance = 0) {
+    const detailsEl = document.getElementById('route-details');
+    const totalEl = document.getElementById('total-distance');
 
-function factorial(num) {
-  var savedFactorialList = [1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800]
-  return savedFactorialList[num - 1]
+    if (route.length === 0) {
+        detailsEl.innerHTML = 'Click "Visit All Cities" to start a random tour.';
+        totalEl.innerHTML = '';
+        return;
+    }
 
+    let html = '';
+    for (let i = 0; i < route.length; i++) {
+        const city = cities[route[i]];
+        const nextCity = cities[route[(i + 1) % route.length]];
+        const dist = Math.round(getDistance(city, nextCity));
+        const isReturn = i === route.length - 1;
+
+        html += `<div class="route-step">
+            <span class="city-name">${i + 1}. ${city.label}</span>
+            <span class="distance">${dist} mi</span>
+        </div>`;
+    }
+
+    detailsEl.innerHTML = html;
+
+    let totalHtml = `Total: ${Math.round(distance).toLocaleString()} miles`;
+    if (showImprovement && oldDistance > distance) {
+        const saved = Math.round(oldDistance - distance);
+        const percent = Math.round((saved / oldDistance) * 100);
+        totalHtml += `<div class="improvement">Saved ${saved.toLocaleString()} mi (${percent}% shorter!)</div>`;
+    }
+    totalEl.innerHTML = totalHtml;
 }
+
+// ===========================================
+// ANIMATION
+// ===========================================
+
+function createTraveler() {
+    if (travelerElement) {
+        travelerElement.remove();
+    }
+    travelerElement = document.createElement('div');
+    travelerElement.className = 'traveler';
+    document.querySelector('.container').appendChild(travelerElement);
+    return travelerElement;
+}
+
+function animateVisit(route, callback) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const traveler = createTraveler();
+    const container = document.getElementById('network');
+    const rect = container.getBoundingClientRect();
+
+    let step = 0;
+    const totalSteps = route.length + 1; // +1 for return to start
+
+    // Build edges progressively
+    edges.clear();
+
+    function getScreenPosition(cityId) {
+        const pos = network.getPositions([cityId])[cityId];
+        const canvasPos = network.canvasToDOM(pos);
+        return {
+            x: canvasPos.x + rect.left - 10,
+            y: canvasPos.y + rect.top - 10
+        };
+    }
+
+    function animateStep() {
+        if (step >= totalSteps) {
+            isAnimating = false;
+            traveler.remove();
+            travelerElement = null;
+            if (callback) callback();
+            return;
+        }
+
+        const currentCity = route[step % route.length];
+        const nextCity = route[(step + 1) % route.length];
+
+        // Position traveler at current city
+        const pos = getScreenPosition(currentCity);
+        traveler.style.left = pos.x + 'px';
+        traveler.style.top = pos.y + 'px';
+
+        // Add edge to previous city (except first step)
+        if (step > 0) {
+            const prevCity = route[(step - 1 + route.length) % route.length];
+            edges.add({
+                id: `e${step - 1}`,
+                from: prevCity,
+                to: currentCity,
+                dashes: step === totalSteps - 1
+            });
+        }
+
+        // Highlight current city
+        nodes.update({
+            id: currentCity,
+            color: { background: '#ffd700', border: '#ff8c00' }
+        });
+
+        // Reset previous city color (except start city until return)
+        if (step > 0 && step < route.length) {
+            const prevCity = route[step - 1];
+            nodes.update({
+                id: prevCity,
+                color: { background: '#4caf50', border: '#2e7d32' }
+            });
+        }
+
+        step++;
+        setTimeout(animateStep, 400);
+    }
+
+    animateStep();
+}
+
+// ===========================================
+// EVENT HANDLERS
+// ===========================================
+
+function handleVisitAll() {
+    // Reset colors
+    cities.forEach(city => {
+        nodes.update({
+            id: city.id,
+            color: { background: '#ffffff', border: '#2c5530' }
+        });
+    });
+
+    currentRoute = generateRandomRoute();
+    currentDistance = getTotalDistance(currentRoute);
+
+    document.getElementById('optimize-btn').disabled = true;
+
+    animateVisit(currentRoute, () => {
+        // After animation, show final route
+        drawRoute(currentRoute);
+        updateRouteDisplay(currentRoute, currentDistance);
+        document.getElementById('optimize-btn').disabled = false;
+
+        // Reset all node colors to visited (green)
+        cities.forEach(city => {
+            nodes.update({
+                id: city.id,
+                color: { background: '#4caf50', border: '#2e7d32' }
+            });
+        });
+    });
+}
+
+function handleOptimize() {
+    if (currentRoute.length === 0) return;
+
+    const oldDistance = currentDistance;
+
+    // Optimize the route
+    currentRoute = optimizeRoute();
+    currentDistance = getTotalDistance(currentRoute);
+
+    // Update visualization
+    drawRoute(currentRoute);
+    updateRouteDisplay(currentRoute, currentDistance, true, oldDistance);
+
+    // Change edge color to show optimization
+    const edgeUpdates = edges.get().map(edge => ({
+        id: edge.id,
+        color: { color: '#4caf50' }
+    }));
+    edges.update(edgeUpdates);
+}
+
+function handleReset() {
+    if (isAnimating) return;
+
+    currentRoute = [];
+    currentDistance = 0;
+
+    // Clear edges
+    edges.clear();
+
+    // Reset node colors
+    cities.forEach(city => {
+        nodes.update({
+            id: city.id,
+            color: { background: '#ffffff', border: '#2c5530' }
+        });
+    });
+
+    // Reset display
+    updateRouteDisplay([], 0);
+    document.getElementById('optimize-btn').disabled = true;
+
+    // Remove traveler if exists
+    if (travelerElement) {
+        travelerElement.remove();
+        travelerElement = null;
+    }
+}
+
+// ===========================================
+// INITIALIZATION
+// ===========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeNetwork();
+
+    document.getElementById('visit-btn').addEventListener('click', handleVisitAll);
+    document.getElementById('optimize-btn').addEventListener('click', handleOptimize);
+    document.getElementById('reset-btn').addEventListener('click', handleReset);
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (network) {
+            network.fit({ animation: false });
+            // Scale down and shift left for right panel
+            const scale = network.getScale();
+            const viewPosition = network.getViewPosition();
+            network.moveTo({
+                position: { x: viewPosition.x + 100, y: viewPosition.y },
+                scale: scale * 0.75,
+                animation: false
+            });
+        }
+    });
+});

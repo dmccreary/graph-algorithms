@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Interactive visualization for matching data elements between source and target schemas using p5.js">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Data Element Matching - AI Graph Algorithms</title>
+        <title>Data Element Matcher - AI Graph Algorithms</title>
       
     
     
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Element Matching
+              Data Element Matcher
             
           </span>
         </div>
@@ -674,6 +674,10 @@
         
       
         
+          
+        
+      
+        
       
     
     
@@ -953,6 +957,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../traveling-salesperson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traveling Salesperson
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../matching/" class="md-nav__link">
         
   
@@ -1020,9 +1045,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-this-microsim" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      About this MicroSim
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1269,9 +1369,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-this-microsim" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      About this MicroSim
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1296,15 +1471,65 @@
 
 
 <h1 id="data-element-matcher">Data Element Matcher</h1>
-<p><img alt="Image Name" src="data-element-match.png" width="400" /></p>
-<p><a class="md-button md-button--primary" href="data-element-match.html">Run the Data Element Match Demo</a></p>
-<h2 id="about-this-microsim">About this MicroSim</h2>
+<iframe src="data-element-match.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<p><strong>Copy this iframe to your website:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/graph-algorithms/sims/data-element-match/data-element-match.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><a class="md-button md-button--primary" href="data-element-match.html">Run Data Element Matcher in Fullscreen</a></p>
+<h2 id="description">Description</h2>
+<p>This MicroSim demonstrates data element matching, a common problem in data integration where elements from a source schema need to be mapped to elements in a target schema. This visualization helps users understand the matching process visually.</p>
+<p>Key features:</p>
+<ul>
+<li>Visual representation of source and target data elements</li>
+<li>Interactive matching interface</li>
+<li>Demonstrates schema mapping concepts</li>
+</ul>
+<h3 id="how-to-use">How to Use</h3>
+<ol>
+<li>View the source elements on one side and target elements on the other</li>
+<li>Observe how elements can be matched between schemas</li>
+<li>Understand the relationships between different data representations</li>
+</ol>
+<h2 id="lesson-plan">Lesson Plan</h2>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>After completing this lesson, students will be able to:</p>
+<ul>
+<li>Explain the data element matching problem in data integration</li>
+<li>Identify challenges in schema mapping</li>
+<li>Understand the importance of data standardization</li>
+</ul>
+<h3 id="target-audience">Target Audience</h3>
+<ul>
+<li>Data engineers and database administrators</li>
+<li>Prerequisites: Basic understanding of database schemas</li>
+</ul>
+<h3 id="activities">Activities</h3>
+<ol>
+<li><strong>Exploration Activity</strong>: Identify obvious matches between source and target elements</li>
+<li><strong>Guided Investigation</strong>: Consider cases where matches are ambiguous</li>
+<li><strong>Extension Activity</strong>: Discuss automated matching algorithms</li>
+</ol>
+<h3 id="assessment">Assessment</h3>
+<ul>
+<li>What challenges arise when matching data elements from different systems?</li>
+<li>Why is schema matching important for data warehousing?</li>
+<li>How might machine learning help with automated matching?</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Schema_matching">Schema Matching - Wikipedia</a> - Overview of schema matching problem</li>
+<li><a href="https://p5js.org/reference/">p5.js Reference</a> - Documentation for the visualization library used</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

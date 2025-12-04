@@ -1,0 +1,45 @@
+{
+  "title": "Traveling Salesperson Problem",
+  "description": "Interactive visualization of the Traveling Salesperson Problem (TSP) demonstrating random routes, nearest neighbor heuristic, and 2-opt optimization using vis-network.",
+  "creator": "Dan McCreary",
+  "date": "2024-12-04",
+  "subject": [
+    "Traveling Salesperson Problem",
+    "TSP",
+    "Optimization",
+    "NP-Hard",
+    "Graph Algorithms",
+    "Heuristics",
+    "Route Planning"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/traveling-salesperson/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "Traveling Salesperson Problem",
+    "NP-Hard",
+    "Route Optimization",
+    "Nearest Neighbor Heuristic",
+    "2-opt Algorithm",
+    "Fisher-Yates Shuffle",
+    "Euclidean Distance"
+  ],
+  "prerequisites": [
+    "Graph Basics",
+    "Algorithm Complexity",
+    "Distance Calculations"
+  ],
+  "library": "vis-network.js"
+}

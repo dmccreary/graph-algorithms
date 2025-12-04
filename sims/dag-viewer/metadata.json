@@ -1,0 +1,41 @@
+{
+  "title": "DAG Viewer",
+  "description": "Interactive left-to-right Directed Acyclic Graph (DAG) viewer that visualizes concept dependencies. Uses hierarchical layout to show nodes positioned by their dependency level, with independent nodes on the right and dependent nodes on the left.",
+  "creator": "Dan McCreary",
+  "date": "2024-07-22",
+  "subject": [
+    "Directed Acyclic Graph",
+    "DAG",
+    "Graph Visualization",
+    "Dependency Graph",
+    "Hierarchical Layout",
+    "Learning Graph"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/dag-viewer/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "4.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "Directed Acyclic Graph",
+    "Topological Order",
+    "Dependencies",
+    "Hierarchical Layout",
+    "Graph Visualization"
+  ],
+  "prerequisites": [
+    "Directed Graphs",
+    "Graph Basics"
+  ],
+  "library": "vis-network.js"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Degree V2",
+  "description": "Interactive visualization demonstrating how graph degree changes based on the number of connections between vertices. Features sliders to control node count and degree, with nodes arranged in a circular layout.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Graph Degree",
+    "Network Visualization",
+    "Regular Graphs",
+    "Graph Theory",
+    "Network Density"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/degree-v2/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "2.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "Graph Degree",
+    "Regular Graphs",
+    "Network Density",
+    "Circular Layout"
+  ],
+  "prerequisites": [
+    "Graph Basics",
+    "Graph Degree"
+  ],
+  "library": "p5.js"
+}

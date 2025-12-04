@@ -1,0 +1,40 @@
+{
+  "title": "Graph Matching",
+  "description": "Interactive demonstrations of graph matching problems including schema matching, resource matching, and entity resolution. Shows how graphs can visualize and optimize matching relationships.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Graph Matching",
+    "Schema Matching",
+    "Entity Resolution",
+    "Resource Allocation",
+    "Bipartite Graphs"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/matching/",
+  "educationalLevel": "Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Data Engineers, Students",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "Graph Matching",
+    "Schema Matching",
+    "Entity Resolution",
+    "Bipartite Matching",
+    "Data Integration"
+  ],
+  "prerequisites": [
+    "Graph Basics",
+    "Data Integration Concepts"
+  ],
+  "library": "p5.js"
+}

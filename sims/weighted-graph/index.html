@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Interactive visualization of weighted graphs showing edge distances between US metropolitan cities using p5.js">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Weighted - AI Graph Algorithms</title>
+        <title>Weighted Graph - AI Graph Algorithms</title>
       
     
     
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Weighted
+              Weighted Graph
             
           </span>
         </div>
@@ -674,6 +674,10 @@
         
       
         
+          
+        
+      
+        
       
     
     
@@ -831,11 +835,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-list-of-nodes-and-place-them-on-the-canvas" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Create a list of nodes and place them on the canvas
+      Description
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -843,6 +862,108 @@
   <a href="#sample-prompt" class="md-nav__link">
     <span class="md-ellipsis">
       Sample Prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Highlights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Highlights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#city-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      City Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neighbor-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neighbor Calculation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-weight-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Weight Display
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -995,6 +1116,27 @@
   
   <span class="md-ellipsis">
     PageRank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traveling-salesperson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traveling Salesperson
   </span>
   
 
@@ -1278,11 +1420,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-list-of-nodes-and-place-them-on-the-canvas" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Create a list of nodes and place them on the canvas
+      Description
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1290,6 +1447,108 @@
   <a href="#sample-prompt" class="md-nav__link">
     <span class="md-ellipsis">
       Sample Prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Highlights
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Highlights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#city-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      City Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neighbor-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neighbor Calculation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-weight-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Weight Display
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1314,10 +1573,29 @@
 
 
 <h1 id="weighted-graph">Weighted Graph</h1>
-<p><img alt="Weighted Graph" src="weighted-graph.png" width="400" /></p>
-<p><a class="md-button md-button--primary" href="weighted-graph.html">Link to Demo</a>
-<a href="https://editor.p5js.org/dmccreary/sketches/ssrtXzl5_">Edit</a></p>
-<h2 id="create-a-list-of-nodes-and-place-them-on-the-canvas">Create a list of nodes and place them on the canvas</h2>
+<iframe src="weighted-graph.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<p><strong>Copy this iframe to your website:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/graph-algorithms/sims/weighted-graph/weighted-graph.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><a class="md-button md-button--primary" href="weighted-graph.html">Run Weighted Graph MicroSim in Fullscreen</a>
+<a class="md-button" href="https://editor.p5js.org/dmccreary/sketches/ssrtXzl5_">Edit in p5.js Editor</a></p>
+<h2 id="description">Description</h2>
+<p>This MicroSim demonstrates weighted graphs using a visualization of major US metropolitan cities. Each city is connected to its three nearest neighbors, with edge weights representing distances between cities.</p>
+<p>Key features:</p>
+<ul>
+<li>10 major US cities positioned on a canvas</li>
+<li>Each city connected to its 3 nearest neighbors</li>
+<li>Edge weights displayed at the midpoint of each edge</li>
+<li>Blue circles represent city nodes</li>
+</ul>
+<h3 id="how-to-use">How to Use</h3>
+<ol>
+<li>Observe the city positions on the canvas</li>
+<li>Note the edges connecting each city to its nearest neighbors</li>
+<li>Read the distance values on each edge</li>
+<li>Consider how this represents a weighted graph</li>
+</ol>
 <h2 id="sample-prompt">Sample Prompt</h2>
 <div class="highlight"><pre><span></span><code>Create a list of the 10 large major metropolitan cities
 in the US and place them on a 400x400 canvas.
@@ -1327,156 +1605,69 @@ city to the nearest three cities.
 Draw a graph that places the distance between
 the nodes at the halfway point between the nodes.
 </code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">//</span> <span class="n">weighted</span> <span class="n">graph</span> <span class="n">example</span>
-<span class="o">//</span> <span class="n">I</span> <span class="n">used</span> <span class="n">ChatGPT</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">sample</span> <span class="n">cities</span> <span class="ow">and</span> <span class="n">moved</span> <span class="n">them</span> <span class="n">around</span>
-<span class="n">let</span> <span class="n">cities</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;New York&quot;</span><span class="p">:</span>      <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">520</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-  <span class="s2">&quot;Los Angeles&quot;</span><span class="p">:</span>   <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>  <span class="n">y</span><span class="p">:</span><span class="mi">180</span><span class="p">},</span>
-  <span class="s2">&quot;Chicago&quot;</span><span class="p">:</span>       <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">290</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">120</span><span class="p">},</span>
-  <span class="s2">&quot;Phoenix&quot;</span><span class="p">:</span>       <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">310</span><span class="p">},</span>
-  <span class="s2">&quot;Miami&quot;</span><span class="p">:</span>         <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">510</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">340</span><span class="p">},</span>
-  <span class="s2">&quot;San Diego&quot;</span><span class="p">:</span>     <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>  <span class="n">y</span><span class="p">:</span><span class="mi">330</span><span class="p">},</span>
-  <span class="s2">&quot;Dallas&quot;</span><span class="p">:</span>        <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">270</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">290</span><span class="p">},</span>
-  <span class="s2">&quot;Seattle&quot;</span><span class="p">:</span>       <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>  <span class="n">y</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
-  <span class="s2">&quot;Minneapolis&quot;</span><span class="p">:</span>   <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-  <span class="s2">&quot;San Francisco&quot;</span><span class="p">:</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">150</span><span class="p">}</span>
+<h2 id="implementation-highlights">Implementation Highlights</h2>
+<h3 id="city-data-structure">City Data Structure</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">cities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;New York&quot;</span><span class="o">:</span><span class="w">      </span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">520</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">40</span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;Los Angeles&quot;</span><span class="o">:</span><span class="w">   </span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w">  </span><span class="nx">y</span><span class="o">:</span><span class="mf">180</span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;Chicago&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">290</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="mf">120</span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;Phoenix&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="mf">310</span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;Miami&quot;</span><span class="o">:</span><span class="w">         </span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">510</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="mf">340</span><span class="p">},</span>
+<span class="w">  </span><span class="c1">// ...</span>
 <span class="p">};</span>
-
-<span class="n">function</span> <span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">const</span> <span class="n">canvas</span> <span class="o">=</span> <span class="n">createCanvas</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">440</span><span class="p">);</span>
-  <span class="n">var</span> <span class="n">mainElement</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">);</span>
-  <span class="n">canvas</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">mainElement</span><span class="p">);</span>
-  <span class="n">textSize</span><span class="p">(</span><span class="mi">14</span><span class="p">);</span>
-  <span class="n">calculateNeighbors</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="n">function</span> <span class="n">draw</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
-
-  <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="n">draw</span> <span class="n">lines</span> <span class="n">to</span> <span class="n">nearest</span> <span class="n">three</span> <span class="n">cities</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">neighbor</span> <span class="n">of</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">neighbors</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">let</span> <span class="n">neighborX</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">;</span>
-      <span class="n">let</span> <span class="n">neighborY</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">;</span>
-      <span class="n">stroke</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">need</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">line</span> <span class="ow">in</span>
-      <span class="n">line</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">neighborX</span><span class="p">,</span> <span class="n">neighborY</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">put</span> <span class="n">the</span> <span class="n">distance</span> <span class="n">text</span> <span class="n">at</span> <span class="n">midpoint</span>
-      <span class="n">let</span> <span class="n">midX</span> <span class="o">=</span> <span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">neighborX</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-      <span class="n">let</span> <span class="n">midY</span> <span class="o">=</span> <span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">neighborY</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-      <span class="o">//</span> <span class="n">calculate</span> <span class="n">the</span> <span class="n">distance</span>
-      <span class="n">let</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">dist</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">neighborX</span><span class="p">,</span> <span class="n">neighborY</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">place</span> <span class="n">a</span> <span class="n">white</span> <span class="n">box</span> <span class="n">behind</span> <span class="n">weight</span>
-      <span class="n">noStroke</span><span class="p">();</span>
-      <span class="n">fill</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">);</span>
-      <span class="n">rect</span><span class="p">(</span><span class="n">midX</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span> <span class="n">midY</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">draw</span> <span class="n">the</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">black</span> <span class="ow">and</span> <span class="n">align</span> <span class="n">it</span>
-      <span class="n">fill</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">);</span>
-      <span class="n">textAlign</span><span class="p">(</span><span class="n">CENTER</span><span class="p">,</span><span class="n">CENTER</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">nf</span> <span class="ow">is</span> <span class="n">number</span> <span class="nb">format</span> <span class="k">with</span> <span class="mi">0</span> <span class="n">decimal</span> <span class="n">places</span>
-      <span class="n">text</span><span class="p">(</span><span class="n">nf</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">midX</span><span class="p">,</span> <span class="n">midY</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">255</span><span class="p">);</span>
-    <span class="n">circle</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="n">noLoop</span><span class="p">();</span> <span class="o">//</span> <span class="n">Static</span> <span class="n">drawing</span>
-<span class="p">}</span>
-
-<span class="n">function</span> <span class="n">calculateNeighbors</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">let</span> <span class="n">distances</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">otherCity</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">otherCity</span> <span class="o">!==</span> <span class="n">city</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">let</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dist</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">otherCity</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">cities</span><span class="p">[</span><span class="n">otherCity</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">);</span>
-        <span class="n">distances</span><span class="o">.</span><span class="n">push</span><span class="p">({</span> <span class="n">city</span><span class="p">:</span> <span class="n">otherCity</span><span class="p">,</span> <span class="n">distance</span><span class="p">:</span> <span class="n">d</span> <span class="p">});</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">distances</span><span class="o">.</span><span class="n">sort</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">distance</span> <span class="o">-</span> <span class="n">b</span><span class="o">.</span><span class="n">distance</span><span class="p">);</span>
-    <span class="n">cities</span><span class="p">[</span><span class="n">city</span><span class="p">]</span><span class="o">.</span><span class="n">neighbors</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">d</span> <span class="o">=&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">city</span><span class="p">);</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<h3 id="neighbor-calculation">Neighbor Calculation</h3>
+<p>The algorithm calculates distances between all city pairs and selects the 3 nearest neighbors for each city.</p>
+<h3 id="edge-weight-display">Edge Weight Display</h3>
+<p>Distances are displayed at the midpoint of each edge with a white background for readability.</p>
+<h2 id="lesson-plan">Lesson Plan</h2>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>After completing this lesson, students will be able to:</p>
+<ul>
+<li>Define a weighted graph and explain edge weights</li>
+<li>Calculate distances between nodes using Euclidean distance</li>
+<li>Implement a k-nearest-neighbors graph</li>
+<li>Apply weighted graphs to geographic problems</li>
+</ul>
+<h3 id="target-audience">Target Audience</h3>
+<ul>
+<li>High school and college students</li>
+<li>Prerequisites: Basic understanding of graphs and coordinate geometry</li>
+</ul>
+<h3 id="activities">Activities</h3>
+<ol>
+<li><strong>Exploration Activity</strong>: Calculate the distance between two cities manually and verify against the visualization</li>
+<li><strong>Guided Investigation</strong>: Identify which cities have the most connections</li>
+<li><strong>Extension Activity</strong>: Add a new city and predict which neighbors it would connect to</li>
+</ol>
+<h3 id="assessment">Assessment</h3>
+<ul>
+<li>What does an edge weight represent in this visualization?</li>
+<li>How is the nearest neighbor algorithm used to build this graph?</li>
+<li>Why might some cities have more than 3 edges connecting to them?</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#Weighted_graph">Weighted Graph - Wikipedia</a> - Definition and properties</li>
+<li><a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">K-Nearest Neighbors</a> - Algorithm for finding nearest points</li>
+<li><a href="https://p5js.org/reference/">p5.js Reference</a> - Documentation for the visualization library used</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 

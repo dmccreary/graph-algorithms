@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A course on AI-assisted graph algorithms. All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Interactive visualization of Google's PageRank algorithm showing iterative calculation of node importance in directed graphs">
       
       
         <meta name="author" content="Dan McCreary">
@@ -18,7 +18,7 @@
         <link rel="prev" href="../spanning-tree/">
       
       
-        <link rel="next" href="../matching/">
+        <link rel="next" href="../traveling-salesperson/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#page-rank" class="md-skip">
+        <a href="#pagerank" class="md-skip">
           Skip to content
         </a>
       
@@ -674,6 +674,10 @@
         
       
         
+          
+        
+      
+        
       
     
     
@@ -978,9 +982,144 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#directed-edges-example" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Directed Edges Example
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-pagerank-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How PageRank Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How PageRank Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagerank-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      PageRank Calculation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#damping-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Damping Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directed-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directed Edges
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -990,6 +1129,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traveling-salesperson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traveling Salesperson
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1269,9 +1429,144 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#directed-edges-example" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Directed Edges Example
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-pagerank-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How PageRank Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How PageRank Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagerank-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      PageRank Calculation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#damping-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Damping Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directed-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directed Edges
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -1295,52 +1590,95 @@
   
 
 
-<h1 id="page-rank">Page Rank</h1>
-<figure markdown>
-   ![Image Name](./page-rank.png){ width="400" }
-   <figcaption>Figure caption.</figcaption>
-</figure>
+<h1 id="pagerank">PageRank</h1>
+<iframe src="page-rank.html" width="100%" height="500px" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="page-rank.html">Run the Page Rank MicroSim</a>
-<a href="https://editor.p5js.org/dmccreary/sketches/YAwpC4f9I">Edit the PageRank MicroSim</a></p>
-<p>When the "Update PageRank" button is pressed multiple times in the p5.js sketch, the PageRank values for each node in the graph are recalculated and updated iteratively. Here's a breakdown of what happens during each update:</p>
-<ol>
-<li>
-<p><strong>Initial PageRank Distribution</strong>: Initially, every node is assigned the same PageRank value, typically <code>1.0</code>. This represents an equal distribution of 'importance' or 'rank' among all nodes.</p>
-</li>
-<li>
-<p><strong>PageRank Calculation</strong>: On each update, the PageRank for each node is recalculated based on the PageRank algorithm. The new PageRank of a node is determined by the sum of the PageRank values of its incoming links, divided by the number of outgoing links from each of those nodes. This is modified by the damping factor, which is a constant (typically set around 0.85) used to model the probability of randomly jumping to another node in the network.</p>
-</li>
-<li>
-<p><strong>Damping Factor</strong>: The damping factor (0.85 in your case) plays a critical role. It accounts for the likelihood that a person randomly clicking on links will eventually stop clicking. The damping factor is applied to the sum of PageRank values passed from neighboring nodes. The remaining part <code>(1 - damping factor) / number of nodes</code> is added to each node's score to ensure that the total PageRank in the system remains constant.</p>
-</li>
-<li>
-<p><strong>Iterative Updates</strong>: Each time "Update PageRank" is pressed, the PageRank values are recalculated using the values from the previous iteration. With each iteration, the PageRank values gradually converge to a stable state where they don't change much with further iterations. This stable state reflects the relative 'importance' of each node within the network.</p>
-</li>
-<li>
-<p><strong>Visual Representation</strong>: In the sketch, the diameter of each node is proportional to its PageRank value, so pressing the button repeatedly will adjust the sizes of the nodes to reflect their updated ranks.</p>
-</li>
-<li>
-<p><strong>Convergence</strong>: After a sufficient number of iterations, the PageRank values will converge, meaning that additional iterations won't significantly change the values. The number of iterations needed for convergence depends on the structure of the graph and the damping factor.</p>
-</li>
-</ol>
-<p>In summary, each press of the "Update PageRank" button refines the estimation of each node's importance within the graph, moving the system closer to a balanced state where the PageRank values accurately represent the significance of each node based on its connections.</p>
-<h2 id="directed-edges-example">Directed Edges Example</h2>
-<p>In this updated sketch:</p>
+<p><strong>Copy this iframe to your website:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/graph-algorithms/sims/page-rank/page-rank.html&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><a class="md-button md-button--primary" href="page-rank.html">Run PageRank MicroSim in Fullscreen</a>
+<a class="md-button" href="https://editor.p5js.org/dmccreary/sketches/YAwpC4f9I">Edit in p5.js Editor</a></p>
+<h2 id="description">Description</h2>
+<p>This MicroSim demonstrates Google's PageRank algorithm, which calculates the relative importance of nodes in a directed graph. Node sizes are proportional to their PageRank values, visually showing which nodes are most "important" based on their incoming links.</p>
+<p>Key features:</p>
 <ul>
-<li>Each <code>Node</code> now has two arrays: <code>outgoing</code> and <code>incoming</code>, representing outgoing and incoming links respectively.</li>
-<li>The <code>addLink</code> method in the <code>Node</code> class creates a directed edge from one node to another.</li>
-<li>The <code>drawEdges</code> method in the <code>Node</code> class calls the <code>drawArrow</code> function to visually represent the directed edges.</li>
-<li>The <code>drawArrow</code> function is responsible for drawing an arrow from one node to another, indicating the direction of the link.</li>
-<li>The <code>connectRandomly</code> method in the <code>Graph</code> class creates directed edges between nodes, simulating hyperlinks between web pages.</li>
+<li>Interactive "Update PageRank" button for iterative calculation</li>
+<li>Node diameter proportional to PageRank value</li>
+<li>Directed edges showing link structure</li>
+<li>Convergence visualization as values stabilize</li>
 </ul>
-<p>By pressing the "Update PageRank" button, the PageRank values are recalculated based on these directed edges, visually depicting the influence of each web page in the network.</p>
+<h3 id="how-to-use">How to Use</h3>
+<ol>
+<li>Click "Update PageRank" to run one iteration of the algorithm</li>
+<li>Watch node sizes change as PageRank values update</li>
+<li>Continue clicking to see values converge to stable state</li>
+<li>Observe which nodes become largest (most important)</li>
+</ol>
+<h2 id="how-pagerank-works">How PageRank Works</h2>
+<h3 id="initial-distribution">Initial Distribution</h3>
+<p>Initially, every node is assigned the same PageRank value (typically 1.0), representing equal "importance" among all nodes.</p>
+<h3 id="pagerank-calculation">PageRank Calculation</h3>
+<p>On each update, the PageRank for each node is recalculated:</p>
+<ul>
+<li>New PageRank = sum of (PageRank of incoming nodes / their outgoing links)</li>
+<li>Modified by damping factor (typically 0.85)</li>
+</ul>
+<h3 id="damping-factor">Damping Factor</h3>
+<p>The damping factor (0.85) models the probability of randomly jumping to another node. The formula:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>PR(node) = (1-d)/N + d * Σ(PR(neighbor)/outlinks(neighbor))
+</code></pre></div></td></tr></table></div>
+<p>Where <code>d</code> is the damping factor and <code>N</code> is total nodes.</p>
+<h3 id="convergence">Convergence</h3>
+<p>After sufficient iterations, PageRank values converge to a stable state where further iterations don't significantly change values. This stable state reflects the relative "importance" of each node.</p>
+<h2 id="directed-edges">Directed Edges</h2>
+<p>In this visualization:</p>
+<ul>
+<li>Each node has <code>outgoing</code> and <code>incoming</code> arrays for directed edges</li>
+<li>The <code>addLink</code> method creates directed edges between nodes</li>
+<li>Arrows indicate link direction (like hyperlinks between web pages)</li>
+<li>PageRank flows along these directed edges</li>
+</ul>
+<h2 id="lesson-plan">Lesson Plan</h2>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>After completing this lesson, students will be able to:</p>
+<ul>
+<li>Explain how PageRank measures node importance</li>
+<li>Describe the role of the damping factor</li>
+<li>Understand iterative convergence in algorithms</li>
+<li>Apply PageRank concepts to web search ranking</li>
+</ul>
+<h3 id="target-audience">Target Audience</h3>
+<ul>
+<li>High school and college computer science students</li>
+<li>Prerequisites: Understanding of directed graphs</li>
+</ul>
+<h3 id="activities">Activities</h3>
+<ol>
+<li><strong>Exploration Activity</strong>: Run the algorithm until convergence and identify the highest-ranked node</li>
+<li><strong>Guided Investigation</strong>: Predict which node will have the highest PageRank before running</li>
+<li><strong>Extension Activity</strong>: Discuss how this algorithm revolutionized web search</li>
+</ol>
+<h3 id="assessment">Assessment</h3>
+<ul>
+<li>Why do nodes with many incoming links tend to have higher PageRank?</li>
+<li>What is the purpose of the damping factor?</li>
+<li>How many iterations does it typically take for PageRank to converge?</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/PageRank">PageRank - Wikipedia</a> - Comprehensive algorithm description</li>
+<li><a href="http://infolab.stanford.edu/~backrub/google.html">The Anatomy of a Search Engine</a> - Original Google paper by Brin and Page</li>
+<li><a href="https://p5js.org/reference/">p5.js Reference</a> - Documentation for the visualization library used</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1389,13 +1727,13 @@
         
         
           
-          <a href="../matching/" class="md-footer__link md-footer__link--next" aria-label="Next: Matching">
+          <a href="../traveling-salesperson/" class="md-footer__link md-footer__link--next" aria-label="Next: Traveling Salesperson">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Matching
+                Traveling Salesperson
               </div>
             </div>
             <div class="md-footer__button md-icon">
