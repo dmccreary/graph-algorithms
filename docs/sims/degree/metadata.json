@@ -1,0 +1,42 @@
+{
+  "title": "Graph Degree",
+  "description": "Interactive visualization showing incoming, outgoing, and total degree of nodes in a directed graph. Demonstrates the fundamental concept of node degree and its importance in network analysis.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Graph Degree",
+    "In-Degree",
+    "Out-Degree",
+    "Network Analysis",
+    "Graph Theory",
+    "Directed Graphs"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/degree/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Remember",
+    "Understand",
+    "Apply"
+  ],
+  "concepts": [
+    "Graph Degree",
+    "In-Degree",
+    "Out-Degree",
+    "Hub Nodes",
+    "Sink Nodes",
+    "Centrality"
+  ],
+  "prerequisites": [
+    "Directed Graphs",
+    "Graph Basics"
+  ],
+  "library": "p5.js"
+}

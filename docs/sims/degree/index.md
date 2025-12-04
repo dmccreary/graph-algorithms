@@ -1,44 +1,91 @@
-# Degree MicroSim
+---
+title: Graph Degree
+description: Interactive visualization showing incoming, outgoing, and total degree of nodes in a directed graph using p5.js
+image: /sims/degree/degree.png
+og:image: /sims/degree/degree.png
+quality_score: 75
+---
 
-![Image Name](./degree.png){ width="400" }
+# Graph Degree
 
-[Link to Demo](./degree.html){ .md-button .md-button--primary }
-[Edit MicroSim](https://editor.p5js.org/dmccreary/sketches/ZBjxPNa6f)
+<iframe src="degree.html" width="100%" height="450px" scrolling="no"></iframe>
 
-The figure above is a simple graph that
-has nodes represented by dark blue circles.
+**Copy this iframe to your website:**
 
-Next to each vertex is the "degree" of each node. There are three numbers:
+```html
+<iframe src="https://dmccreary.github.io/graph-algorithms/sims/degree/degree.html" width="100%" height="450px" scrolling="no"></iframe>
+```
 
-1. **Incoming** The number of directed edges that
-are entering the node.
+[Run Degree MicroSim in Fullscreen](degree.html){ .md-button .md-button--primary }
+[Edit in p5.js Editor](https://editor.p5js.org/dmccreary/sketches/ZBjxPNa6f){ .md-button }
 
-2. **Outgoing** The number of directed edges that
-are leaving the node or pointing at other nodes.
+## Description
 
-3: **Total** The sum of the incoming and outgoing edges.
+This MicroSim demonstrates the concept of node degree in directed graphs. Next to each vertex, three numbers are displayed showing the degree metrics:
 
-Many graph databases don't perform well when a
-graph has a large number of incoming or outgoing
-edges.  For example, if you have a node for 
-Gender (Female, Male or Unknown) then every
-Person in the graph (billions?) would have
-an incoming HAS_GENDER edge.  Although this
-can work quickly to narrow down a population
-to only female or male people, it can also
-slow down your system if it was not designed
-to scale.
+1. **Incoming** - The number of directed edges entering the node
+2. **Outgoing** - The number of directed edges leaving the node
+3. **Total** - The sum of incoming and outgoing edges
 
-In graph theory and network analysis, a vertex (or node) with a high number of incoming edges is often referred to as a "hub". This term is especially common in the context of scale-free networks, where some nodes act as highly connected hubs.
+Key features:
 
-Another term that might be used, depending on the context, is "sink". This is particularly used in directed graphs where edges have a direction. In such cases, a sink is a vertex with a high number of incoming edges and few or no outgoing edges.
+- Visual representation of a directed graph
+- Display of in-degree, out-degree, and total degree for each node
+- Dark blue circles represent vertices with degree labels
 
-The importance of these nodes can vary depending on the specific application or the type of network being analyzed. For instance, in social network analysis, such nodes might represent influential individuals or organizations, whereas in web graph analysis, they might represent popular web pages with many incoming links.
+### How to Use
 
-## Celebrity Nodes: High In-Degree In Social Networks
+1. Observe the directed edges (arrows) connecting nodes
+2. Count the incoming edges to verify the in-degree value
+3. Count the outgoing edges to verify the out-degree value
+4. Note that total degree = in-degree + out-degree
 
-In Twitter and other social media contexts, a person with a large number of followers is often referred to as an "influencer". This term is used because such individuals have the potential to influence their many followers through their posts, opinions, and endorsements.
+## Graph Database Performance Considerations
 
-Another common term is "Twitter celebrity" or "social media celebrity", used for individuals who have gained a significant following due to their fame on these platforms. This can include celebrities from other fields who have carried their fame over to social media, as well as people who have become famous primarily through their online presence.
+Many graph databases don't perform well when a graph has nodes with very high degree. For example, if you have a node for Gender (Female, Male, Unknown), then every Person in the graph (potentially billions) would have an incoming HAS_GENDER edge. This creates a "supernode" that can slow down queries.
 
-In the context of network analysis, these individuals might be referred to as "nodes with high degree centrality", indicating that they have a high number of connections (followers in this case) within the network.
+### Hub Nodes
+
+In graph theory and network analysis, a vertex with a high number of incoming edges is often referred to as a **hub**. This term is especially common in scale-free networks where some nodes act as highly connected hubs.
+
+### Sink Nodes
+
+A **sink** is a vertex with a high number of incoming edges and few or no outgoing edges. This is particularly relevant in directed graphs.
+
+### Celebrity Nodes in Social Networks
+
+In Twitter and other social media contexts, a person with a large number of followers is often called an **influencer**. In network analysis terms, these individuals have "high in-degree centrality" within the network.
+
+## Lesson Plan
+
+### Learning Objectives
+
+After completing this lesson, students will be able to:
+
+- Define in-degree, out-degree, and total degree for graph nodes
+- Calculate the degree of nodes in a directed graph
+- Explain the significance of high-degree nodes in real-world networks
+- Identify potential performance issues with supernode patterns
+
+### Target Audience
+
+- High school and introductory college computer science students
+- Prerequisites: Understanding of directed graphs
+
+### Activities
+
+1. **Exploration Activity**: Calculate the degree of each node manually and verify against the visualization
+2. **Guided Investigation**: Identify the hub and sink nodes in the graph
+3. **Extension Activity**: Discuss how social media platforms handle high-degree nodes (influencers)
+
+### Assessment
+
+- What is the difference between in-degree and out-degree?
+- Why might high-degree nodes cause performance problems in graph databases?
+- Give an example of a real-world hub node
+
+## References
+
+- [Degree (graph theory) - Wikipedia](https://en.wikipedia.org/wiki/Degree_(graph_theory)) - Mathematical definition of degree
+- [p5.js Reference](https://p5js.org/reference/) - Documentation for the visualization library used
+- [Graph Database Performance](https://neo4j.com/developer/guide-performance-tuning/) - Considerations for high-degree nodes

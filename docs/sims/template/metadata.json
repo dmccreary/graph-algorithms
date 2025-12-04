@@ -1,0 +1,37 @@
+{
+  "title": "MicroSim Template",
+  "description": "Template for creating new p5.js MicroSims with basic canvas setup and drawing examples. Demonstrates standard structure and best practices for educational simulations.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Template",
+    "p5.js",
+    "MicroSim",
+    "Canvas Drawing",
+    "Tutorial"
+  ],
+  "type": "Template",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/template/",
+  "educationalLevel": "High School",
+  "learningResourceType": "template",
+  "audience": "Developers, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Apply",
+    "Create"
+  ],
+  "concepts": [
+    "Canvas Drawing",
+    "p5.js Setup",
+    "Shapes",
+    "Colors"
+  ],
+  "prerequisites": [
+    "Basic JavaScript"
+  ],
+  "library": "p5.js"
+}

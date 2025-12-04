@@ -1,364 +1,114 @@
-# Legends
+---
+title: Graph Legends
+description: Tutorial on creating fixed-position node legends for vis-network.js graph visualizations
+quality_score: 60
+---
 
-[Legend Version 1](./legend-1.html)
+# Graph Legends
 
-[Legend Version 2](./legend-1.html)
+<iframe src="legend-1.html" width="100%" height="500px" scrolling="no"></iframe>
 
-[vis.js Example](https://visjs.github.io/vis-network/examples/network/exampleApplications/nodeLegend.html)
+**Copy this iframe to your website:**
 
-## Process
-
-1. Define the x and y location of the upper left corner of the legend
-2. Define the spacing between the legend rows (e.g. step=70)
-3. Push nodes into the graph for the legend.  Each node must have the following attributes
-    1. id (integer)
-    2. label (string)
-    3. group (string)
-    4. value (integer)
-    5. fixed: true (boolean)
-    6. physics: false (boolean)
-
-## Setting up Fixed Nodes
-
-```js
-// legend 
-        var mynetwork = document.getElementById("mynetwork");
-        var x = -mynetwork.clientWidth / 2 + 50;
-        var y = -mynetwork.clientHeight / 2 + 50;
-        var step = 70;
-        nodes.push({
-          id: 1000,
-          x: x,
-          y: y,
-          label: "Internet",
-          group: "internet",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
-        nodes.push({
-          id: 1001,
-          x: x,
-          y: y + step,
-          label: "Switch",
-          group: "switch",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
-        nodes.push({
-          id: 1002,
-          x: x,
-          y: y + 2 * step,
-          label: "Server",
-          group: "server",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
-        nodes.push({
-          id: 1003,
-          x: x,
-          y: y + 3 * step,
-          label: "Computer",
-          group: "desktop",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
-        nodes.push({
-          id: 1004,
-          x: x,
-          y: y + 4 * step,
-          label: "Smartphone",
-          group: "mobile",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
+```html
+<iframe src="https://dmccreary.github.io/graph-algorithms/sims/legends/legend-1.html" width="100%" height="500px" scrolling="no"></iframe>
 ```
 
-## Full Example
+[Run Legend Demo in Fullscreen](legend-1.html){ .md-button .md-button--primary }
+
+## Description
+
+This tutorial demonstrates how to create fixed-position legends for vis-network.js graph visualizations. Legends help users understand what different node shapes and colors represent in a network diagram.
+
+### Legend Versions
+
+- [Legend Version 1](./legend-1.html)
+- [Legend Version 2](./legend-2.html)
+- [vis.js Official Example](https://visjs.github.io/vis-network/examples/network/exampleApplications/nodeLegend.html)
+
+### How to Use
+
+1. Observe the legend in the top-left corner of the visualization
+2. Note how each node type (Internet, Switch, Server, Computer, Smartphone) has a distinct shape and color
+3. The legend nodes are fixed in position and don't respond to physics simulation
+
+## Implementation Process
+
+### Step 1: Define Legend Position
 
 ```js
+var mynetwork = document.getElementById("mynetwork");
+var x = -mynetwork.clientWidth / 2 + 50;
+var y = -mynetwork.clientHeight / 2 + 50;
+var step = 70;
+```
 
-      var nodes = null;
-      var edges = null;
-      var network = null;
+### Step 2: Create Fixed Legend Nodes
 
-      var LENGTH_MAIN = 350,
-        LENGTH_SERVER = 150,
-        LENGTH_SUB = 50,
-        WIDTH_SCALE = 2,
-        GREEN = "green",
-        RED = "#C5000B",
-        ORANGE = "orange",
-        //GRAY = '#666666',
-        GRAY = "gray",
-        BLACK = "#2B1B17";
+Each legend node must have these attributes:
 
-      // Called when the Visualization API is loaded.
-      function draw() {
-        // Create a data table with nodes.
-        nodes = [];
+- `id` (integer) - Unique identifier
+- `label` (string) - Display text
+- `group` (string) - Category for styling
+- `value` (integer) - Size value
+- `fixed: true` - Prevents movement
+- `physics: false` - Ignores physics simulation
 
-        // Create a data table with links.
-        edges = [];
+```js
+nodes.push({
+  id: 1000,
+  x: x,
+  y: y,
+  label: "Internet",
+  group: "internet",
+  value: 1,
+  fixed: true,
+  physics: false,
+});
+```
 
-        nodes.push({ id: 1, label: "192.168.0.1", group: "switch", value: 10 });
-        nodes.push({ id: 2, label: "192.168.0.2", group: "switch", value: 8 });
-        nodes.push({ id: 3, label: "192.168.0.3", group: "switch", value: 6 });
-        edges.push({
-          from: 1,
-          to: 2,
-          length: LENGTH_MAIN,
-          width: WIDTH_SCALE * 6,
-          label: "0.71 mbps",
-        });
-        edges.push({
-          from: 1,
-          to: 3,
-          length: LENGTH_MAIN,
-          width: WIDTH_SCALE * 4,
-          label: "0.55 mbps",
-        });
+### Step 3: Define Groups
 
-        // group around 2
-        for (var i = 100; i <= 104; i++) {
-          var value = 1;
-          var width = WIDTH_SCALE * 2;
-          var color = GRAY;
-          var label = null;
+```js
+groups: {
+  switch: { shape: "triangle", color: "#FF9900" },
+  desktop: { shape: "dot", color: "#2B7CE9" },
+  mobile: { shape: "dot", color: "#5A1E5C" },
+  server: { shape: "square", color: "#C5000B" },
+  internet: { shape: "square", color: "#109618" },
+}
+```
 
-          if (i === 103) {
-            value = 5;
-            width = 3;
-          }
-          if (i === 102) {
-            color = RED;
-            label = "error";
-          }
+## Lesson Plan
 
-          nodes.push({
-            id: i,
-            label: "192.168.0." + i,
-            group: "desktop",
-            value: value,
-          });
-          edges.push({
-            from: 2,
-            to: i,
-            length: LENGTH_SUB,
-            color: color,
-            fontColor: color,
-            width: width,
-            label: label,
-          });
-        }
-        nodes.push({
-          id: 201,
-          label: "192.168.0.201",
-          group: "desktop",
-          value: 1,
-        });
-        edges.push({
-          from: 2,
-          to: 201,
-          length: LENGTH_SUB,
-          color: GRAY,
-          width: WIDTH_SCALE,
-        });
+### Learning Objectives
 
-        // group around 3
-        nodes.push({
-          id: 202,
-          label: "192.168.0.202",
-          group: "desktop",
-          value: 4,
-        });
-        edges.push({
-          from: 3,
-          to: 202,
-          length: LENGTH_SUB,
-          color: GRAY,
-          width: WIDTH_SCALE * 2,
-        });
-        for (var i = 230; i <= 231; i++) {
-          nodes.push({
-            id: i,
-            label: "192.168.0." + i,
-            group: "mobile",
-            value: 2,
-          });
-          edges.push({
-            from: 3,
-            to: i,
-            length: LENGTH_SUB,
-            color: GRAY,
-            fontColor: GRAY,
-            width: WIDTH_SCALE,
-          });
-        }
+After completing this lesson, students will be able to:
 
-        // group around 1
-        nodes.push({
-          id: 10,
-          label: "192.168.0.10",
-          group: "server",
-          value: 10,
-        });
-        edges.push({
-          from: 1,
-          to: 10,
-          length: LENGTH_SERVER,
-          color: GRAY,
-          width: WIDTH_SCALE * 6,
-          label: "0.92 mbps",
-        });
-        nodes.push({
-          id: 11,
-          label: "192.168.0.11",
-          group: "server",
-          value: 7,
-        });
-        edges.push({
-          from: 1,
-          to: 11,
-          length: LENGTH_SERVER,
-          color: GRAY,
-          width: WIDTH_SCALE * 3,
-          label: "0.68 mbps",
-        });
-        nodes.push({
-          id: 12,
-          label: "192.168.0.12",
-          group: "server",
-          value: 3,
-        });
-        edges.push({
-          from: 1,
-          to: 12,
-          length: LENGTH_SERVER,
-          color: GRAY,
-          width: WIDTH_SCALE,
-          label: "0.3 mbps",
-        });
+- Create fixed-position legend nodes in vis-network.js
+- Configure node groups with distinct shapes and colors
+- Position legends relative to the canvas boundaries
+- Understand the difference between fixed and physics-enabled nodes
 
-        nodes.push({
-          id: 204,
-          label: "Internet",
-          group: "internet",
-          value: 10,
-        });
-        edges.push({
-          from: 1,
-          to: 204,
-          length: 200,
-          width: WIDTH_SCALE * 3,
-          label: "0.63 mbps",
-        });
+### Target Audience
 
-        // legend
-        var mynetwork = document.getElementById("mynetwork");
-        var x = -mynetwork.clientWidth / 2 + 50;
-        var y = -mynetwork.clientHeight / 2 + 50;
-        var step = 70;
-        nodes.push({
-          id: 1000,
-          x: x,
-          y: y,
-          label: "Internet",
-          group: "internet",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
-        nodes.push({
-          id: 1001,
-          x: x,
-          y: y + step,
-          label: "Switch",
-          group: "switch",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
-        nodes.push({
-          id: 1002,
-          x: x,
-          y: y + 2 * step,
-          label: "Server",
-          group: "server",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
-        nodes.push({
-          id: 1003,
-          x: x,
-          y: y + 3 * step,
-          label: "Computer",
-          group: "desktop",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
-        nodes.push({
-          id: 1004,
-          x: x,
-          y: y + 4 * step,
-          label: "Smartphone",
-          group: "mobile",
-          value: 1,
-          fixed: true,
-          physics: false,
-        });
+- Web developers learning data visualization
+- Prerequisites: JavaScript, HTML, basic vis-network.js knowledge
 
-        // create a network
-        var container = document.getElementById("mynetwork");
-        var data = {
-          nodes: nodes,
-          edges: edges,
-        };
-        var options = {
-          nodes: {
-            scaling: {
-              min: 16,
-              max: 32,
-            },
-          },
-          edges: {
-            color: GRAY,
-            smooth: false,
-          },
-          physics: {
-            barnesHut: { gravitationalConstant: -30000 },
-            stabilization: { iterations: 2500 },
-          },
-          groups: {
-            switch: {
-              shape: "triangle",
-              color: "#FF9900", // orange
-            },
-            desktop: {
-              shape: "dot",
-              color: "#2B7CE9", // blue
-            },
-            mobile: {
-              shape: "dot",
-              color: "#5A1E5C", // purple
-            },
-            server: {
-              shape: "square",
-              color: "#C5000B", // red
-            },
-            internet: {
-              shape: "square",
-              color: "#109618", // green
-            },
-          },
-        };
-        network = new vis.Network(container, data, options);
-      }
-    ```
+### Activities
 
+1. **Exploration Activity**: Modify the legend to add a new node type
+2. **Guided Investigation**: Change the legend position to a different corner
+3. **Extension Activity**: Create a collapsible legend panel
+
+### Assessment
+
+- What properties make a legend node stay fixed?
+- Why set `physics: false` on legend nodes?
+- How do you position a legend relative to canvas edges?
+
+## References
+
+- [vis-network.js Groups](https://visjs.github.io/vis-network/docs/network/groups.html) - Official groups documentation
+- [vis-network.js Node Options](https://visjs.github.io/vis-network/docs/network/nodes.html) - Node configuration options
+- [Fixed Nodes Example](https://visjs.github.io/vis-network/examples/network/exampleApplications/nodeLegend.html) - Official legend example

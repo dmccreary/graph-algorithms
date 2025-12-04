@@ -1,51 +1,98 @@
+---
+title: Shortest Path
+description: Interactive visualization of Dijkstra's shortest path algorithm for finding optimal routes in weighted graphs
+quality_score: 70
+---
+
 # Shortest Path
 
-Given a graph, how do we find the shortest path between two points on the graph?
+<iframe src="vis-js.html" width="100%" height="500px" scrolling="no"></iframe>
 
-The classic way to do this is to use Dijkstra's shortest path algorithm.
+**Copy this iframe to your website:**
 
-In this lesson, we describe what Dijkstra's shortest path algorithm is and how it is used to solve real-world practical graph analytics problems.
+```html
+<iframe src="https://dmccreary.github.io/graph-algorithms/sims/shortest-path/vis-js.html" width="100%" height="500px" scrolling="no"></iframe>
+```
+
+[Run Shortest Path MicroSim in Fullscreen](vis-js.html){ .md-button .md-button--primary }
+
+## Description
+
+Given a graph, how do we find the shortest path between two points? The classic solution is Dijkstra's shortest path algorithm, one of the most famous algorithms in computer science.
+
+This MicroSim demonstrates Dijkstra's algorithm for finding the shortest paths between nodes in a weighted graph.
+
+### How to Use
+
+1. Observe the graph with weighted edges
+2. Select source and destination nodes
+3. Watch the algorithm find the optimal path
+4. Note the total distance of the shortest path
 
 ## Background
 
-Dijkstra's shortest path algorithm is a famous algorithm in computer science, used for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956.
+Dijkstra's shortest path algorithm was conceived by computer scientist Edsger W. Dijkstra in 1956. It's used for finding the shortest paths from a single source node to all other nodes in a graph with non-negative edge weights.
 
-## How Dijkstra's Algorithm Works:
+## How Dijkstra's Algorithm Works
 
-1.  **Initialization**: It starts with a source node and initializes the shortest path to all other nodes as infinity (or a very high value), and to the source node as 0.
+1. **Initialization**: Start with a source node. Set distance to source as 0, all others as infinity.
 
-2.  **Exploration of Neighbors**: The algorithm then repeatedly selects the node with the smallest known distance from the source node that hasn't been processed yet.
+2. **Exploration of Neighbors**: Repeatedly select the unprocessed node with smallest known distance.
 
-3.  **Distance Update**: For the selected node, it checks all its neighbors. If the sum of the current shortest distance to that node and the weight of the edge to a neighbor is less than the known distance to the neighbor, it updates the shortest distance to the neighbor.
+3. **Distance Update**: For the selected node, check all neighbors. If current distance + edge weight < known distance, update.
 
-4.  **Mark as Processed**: The node is then marked as processed, meaning it will not be checked again.
+4. **Mark as Processed**: Node won't be checked again.
 
-5.  **Repeat**: Steps 2-4 are repeated until all nodes have been processed or the shortest path to all reachable nodes have been found.
+5. **Repeat**: Until all nodes processed or all reachable nodes found.
 
-## Characteristics:
+## Algorithm Characteristics
 
--   **Greedy Algorithm**: It makes the optimal choice at each step, aiming to find the global optimum.
--   **Single-Source Shortest Paths**: It finds the shortest paths from a single source node to all other nodes.
--   **Non-Negative Weights**: It works correctly only when all edge weights are non-negative.
+- **Greedy Algorithm**: Makes optimal choice at each step
+- **Single-Source Shortest Paths**: Finds paths from one source to all other nodes
+- **Non-Negative Weights**: Only works correctly when all edge weights are non-negative
 
-## Real-World Applications:
+## Real-World Applications
 
-1.  **GPS and Routing Systems**: One of the most common applications is in GPS systems for finding the shortest path between two locations on a map.
-
-2.  **Network Routing Protocols**: In computer networks, routing protocols like OSPF (Open Shortest Path First) use Dijkstra's algorithm to calculate the shortest path for data packets.
-
-3.  **Social Networking Applications**: Finding shortest paths in social networks, like the degrees of separation between people.
-
-4.  **Urban Planning and Traffic Management**: Used for analyzing traffic patterns and planning road networks in urban areas.
-
-5.  **Telecommunications**: Used in telephone network systems to route calls through the network in the most efficient way.
-
-6.  **Biological Networks**: In bioinformatics, it's used to understand and analyze the pathways in biological networks.
-
-7.  **Robotics and Artificial Intelligence**: For pathfinding in robotics and certain AI applications, like navigating through a grid or network.
-
-Dijkstra's algorithm is highly versatile and forms the basis of many complex systems and applications in the real world, where the efficient traversal of a graph is necessary.
-
-[Vis-js Demo](./vis-js.html)
+1. **GPS and Routing Systems**: Finding shortest path between locations on a map
+2. **Network Routing Protocols**: OSPF uses Dijkstra's algorithm for data packet routing
+3. **Social Networking**: Degrees of separation between people
+4. **Urban Planning**: Analyzing traffic patterns and road networks
+5. **Telecommunications**: Routing calls efficiently through networks
+6. **Biological Networks**: Analyzing pathways in bioinformatics
+7. **Robotics and AI**: Pathfinding in navigation systems
 
 [ChatGPT Dialog](https://chat.openai.com/c/5749b49c-71d3-43d1-aa8b-a7ed6528d7b8)
+
+## Lesson Plan
+
+### Learning Objectives
+
+After completing this lesson, students will be able to:
+
+- Explain how Dijkstra's algorithm finds shortest paths
+- Trace through the algorithm step by step
+- Identify when Dijkstra's algorithm is applicable (non-negative weights)
+- Apply shortest path concepts to real-world routing problems
+
+### Target Audience
+
+- High school and college computer science students
+- Prerequisites: Understanding of weighted graphs
+
+### Activities
+
+1. **Exploration Activity**: Run the algorithm and trace the path it finds
+2. **Guided Investigation**: Manually calculate the shortest path and verify against the algorithm
+3. **Extension Activity**: Discuss scenarios where Dijkstra's algorithm wouldn't work (negative weights)
+
+### Assessment
+
+- What data structure does Dijkstra's algorithm use to track visited nodes?
+- Why doesn't Dijkstra's algorithm work with negative edge weights?
+- Give a real-world example where finding shortest paths is important
+
+## References
+
+- [Dijkstra's Algorithm - Wikipedia](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) - Comprehensive algorithm description
+- [vis-network.js Documentation](https://visjs.github.io/vis-network/docs/network/) - Library used for visualization
+- [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) - Biography of the algorithm's inventor

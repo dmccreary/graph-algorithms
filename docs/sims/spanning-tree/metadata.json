@@ -1,0 +1,38 @@
+{
+  "title": "Spanning Trees",
+  "description": "Interactive visualization of minimum spanning tree algorithms for connecting vertices with minimum total edge weight. Demonstrates Prim's or Kruskal's algorithm for finding optimal network connections.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Spanning Trees",
+    "Minimum Spanning Tree",
+    "Prim's Algorithm",
+    "Kruskal's Algorithm",
+    "Graph Algorithms"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/spanning-tree/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply"
+  ],
+  "concepts": [
+    "Spanning Tree",
+    "Minimum Spanning Tree",
+    "Network Design",
+    "Greedy Algorithms"
+  ],
+  "prerequisites": [
+    "Weighted Graphs",
+    "Tree Data Structures"
+  ],
+  "library": "p5.js"
+}

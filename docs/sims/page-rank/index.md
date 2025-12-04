@@ -1,37 +1,108 @@
-# Page Rank
+---
+title: PageRank
+description: Interactive visualization of Google's PageRank algorithm showing iterative calculation of node importance in directed graphs
+image: /sims/page-rank/page-rank.png
+og:image: /sims/page-rank/page-rank.png
+quality_score: 80
+---
 
-<figure markdown>
-   ![Image Name](./page-rank.png){ width="400" }
-   <figcaption>Figure caption.</figcaption>
-</figure>
+# PageRank
 
-[Run the Page Rank MicroSim](./page-rank.html){ .md-button .md-button--primary }
-[Edit the PageRank MicroSim](https://editor.p5js.org/dmccreary/sketches/YAwpC4f9I)
+<iframe src="page-rank.html" width="100%" height="500px" scrolling="no"></iframe>
 
-When the "Update PageRank" button is pressed multiple times in the p5.js sketch, the PageRank values for each node in the graph are recalculated and updated iteratively. Here's a breakdown of what happens during each update:
+**Copy this iframe to your website:**
 
-1.  **Initial PageRank Distribution**: Initially, every node is assigned the same PageRank value, typically `1.0`. This represents an equal distribution of 'importance' or 'rank' among all nodes.
+```html
+<iframe src="https://dmccreary.github.io/graph-algorithms/sims/page-rank/page-rank.html" width="100%" height="500px" scrolling="no"></iframe>
+```
 
-2.  **PageRank Calculation**: On each update, the PageRank for each node is recalculated based on the PageRank algorithm. The new PageRank of a node is determined by the sum of the PageRank values of its incoming links, divided by the number of outgoing links from each of those nodes. This is modified by the damping factor, which is a constant (typically set around 0.85) used to model the probability of randomly jumping to another node in the network.
+[Run PageRank MicroSim in Fullscreen](page-rank.html){ .md-button .md-button--primary }
+[Edit in p5.js Editor](https://editor.p5js.org/dmccreary/sketches/YAwpC4f9I){ .md-button }
 
-3.  **Damping Factor**: The damping factor (0.85 in your case) plays a critical role. It accounts for the likelihood that a person randomly clicking on links will eventually stop clicking. The damping factor is applied to the sum of PageRank values passed from neighboring nodes. The remaining part `(1 - damping factor) / number of nodes` is added to each node's score to ensure that the total PageRank in the system remains constant.
+## Description
 
-4.  **Iterative Updates**: Each time "Update PageRank" is pressed, the PageRank values are recalculated using the values from the previous iteration. With each iteration, the PageRank values gradually converge to a stable state where they don't change much with further iterations. This stable state reflects the relative 'importance' of each node within the network.
+This MicroSim demonstrates Google's PageRank algorithm, which calculates the relative importance of nodes in a directed graph. Node sizes are proportional to their PageRank values, visually showing which nodes are most "important" based on their incoming links.
 
-5.  **Visual Representation**: In the sketch, the diameter of each node is proportional to its PageRank value, so pressing the button repeatedly will adjust the sizes of the nodes to reflect their updated ranks.
+Key features:
 
-6.  **Convergence**: After a sufficient number of iterations, the PageRank values will converge, meaning that additional iterations won't significantly change the values. The number of iterations needed for convergence depends on the structure of the graph and the damping factor.
+- Interactive "Update PageRank" button for iterative calculation
+- Node diameter proportional to PageRank value
+- Directed edges showing link structure
+- Convergence visualization as values stabilize
 
-In summary, each press of the "Update PageRank" button refines the estimation of each node's importance within the graph, moving the system closer to a balanced state where the PageRank values accurately represent the significance of each node based on its connections.
+### How to Use
 
-## Directed Edges Example
+1. Click "Update PageRank" to run one iteration of the algorithm
+2. Watch node sizes change as PageRank values update
+3. Continue clicking to see values converge to stable state
+4. Observe which nodes become largest (most important)
 
-In this updated sketch:
+## How PageRank Works
 
--   Each `Node` now has two arrays: `outgoing` and `incoming`, representing outgoing and incoming links respectively.
--   The `addLink` method in the `Node` class creates a directed edge from one node to another.
--   The `drawEdges` method in the `Node` class calls the `drawArrow` function to visually represent the directed edges.
--   The `drawArrow` function is responsible for drawing an arrow from one node to another, indicating the direction of the link.
--   The `connectRandomly` method in the `Graph` class creates directed edges between nodes, simulating hyperlinks between web pages.
+### Initial Distribution
 
-By pressing the "Update PageRank" button, the PageRank values are recalculated based on these directed edges, visually depicting the influence of each web page in the network.
+Initially, every node is assigned the same PageRank value (typically 1.0), representing equal "importance" among all nodes.
+
+### PageRank Calculation
+
+On each update, the PageRank for each node is recalculated:
+
+- New PageRank = sum of (PageRank of incoming nodes / their outgoing links)
+- Modified by damping factor (typically 0.85)
+
+### Damping Factor
+
+The damping factor (0.85) models the probability of randomly jumping to another node. The formula:
+
+```
+PR(node) = (1-d)/N + d * Σ(PR(neighbor)/outlinks(neighbor))
+```
+
+Where `d` is the damping factor and `N` is total nodes.
+
+### Convergence
+
+After sufficient iterations, PageRank values converge to a stable state where further iterations don't significantly change values. This stable state reflects the relative "importance" of each node.
+
+## Directed Edges
+
+In this visualization:
+
+- Each node has `outgoing` and `incoming` arrays for directed edges
+- The `addLink` method creates directed edges between nodes
+- Arrows indicate link direction (like hyperlinks between web pages)
+- PageRank flows along these directed edges
+
+## Lesson Plan
+
+### Learning Objectives
+
+After completing this lesson, students will be able to:
+
+- Explain how PageRank measures node importance
+- Describe the role of the damping factor
+- Understand iterative convergence in algorithms
+- Apply PageRank concepts to web search ranking
+
+### Target Audience
+
+- High school and college computer science students
+- Prerequisites: Understanding of directed graphs
+
+### Activities
+
+1. **Exploration Activity**: Run the algorithm until convergence and identify the highest-ranked node
+2. **Guided Investigation**: Predict which node will have the highest PageRank before running
+3. **Extension Activity**: Discuss how this algorithm revolutionized web search
+
+### Assessment
+
+- Why do nodes with many incoming links tend to have higher PageRank?
+- What is the purpose of the damping factor?
+- How many iterations does it typically take for PageRank to converge?
+
+## References
+
+- [PageRank - Wikipedia](https://en.wikipedia.org/wiki/PageRank) - Comprehensive algorithm description
+- [The Anatomy of a Search Engine](http://infolab.stanford.edu/~backrub/google.html) - Original Google paper by Brin and Page
+- [p5.js Reference](https://p5js.org/reference/) - Documentation for the visualization library used

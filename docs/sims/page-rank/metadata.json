@@ -1,0 +1,41 @@
+{
+  "title": "PageRank",
+  "description": "Interactive visualization of Google's PageRank algorithm showing iterative calculation of node importance in directed graphs. Node sizes update to reflect their calculated PageRank values.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "PageRank",
+    "Graph Algorithms",
+    "Web Search",
+    "Link Analysis",
+    "Centrality Measures"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/page-rank/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "PageRank",
+    "Damping Factor",
+    "Iterative Algorithms",
+    "Convergence",
+    "Link Analysis",
+    "Node Importance"
+  ],
+  "prerequisites": [
+    "Directed Graphs",
+    "Graph Basics"
+  ],
+  "library": "p5.js"
+}

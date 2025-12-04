@@ -1,0 +1,43 @@
+{
+  "title": "Graph Clustering",
+  "description": "Interactive tutorial demonstrating how to cluster nodes in graph visualizations using vis-network.js. Shows how to group related nodes into collapsible composite nodes to simplify complex network diagrams.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Graph Clustering",
+    "Network Visualization",
+    "vis-network.js",
+    "Data Visualization",
+    "Graph Simplification",
+    "Domain Grouping"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/clustering/",
+  "educationalLevel": "Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators, Developers",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Create"
+  ],
+  "concepts": [
+    "Graph Clustering",
+    "Composite Nodes",
+    "Domain Grouping",
+    "Network Simplification",
+    "Interactive Visualization",
+    "Expand and Collapse"
+  ],
+  "prerequisites": [
+    "JavaScript Basics",
+    "Graph Fundamentals",
+    "HTML/CSS"
+  ],
+  "library": "vis-network.js"
+}

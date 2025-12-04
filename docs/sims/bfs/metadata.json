@@ -1,0 +1,41 @@
+{
+  "title": "Breadth First Search",
+  "description": "Interactive visualization of the Breadth-First Search (BFS) graph traversal algorithm. Demonstrates how BFS explores a graph level by level, visiting all neighbors of a node before moving to nodes at the next level.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Breadth-First Search",
+    "Graph Traversal",
+    "Graph Algorithms",
+    "BFS",
+    "Data Structures"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/bfs/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze"
+  ],
+  "concepts": [
+    "Breadth-First Search",
+    "Graph Traversal",
+    "Queue Data Structure",
+    "Level-Order Traversal",
+    "Vertex",
+    "Edge"
+  ],
+  "prerequisites": [
+    "Graph Basics",
+    "Nodes and Edges"
+  ],
+  "library": "p5.js"
+}

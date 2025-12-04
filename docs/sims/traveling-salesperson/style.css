@@ -1,0 +1,240 @@
+/* Traveling Salesperson MicroSim Stylesheet
+ * ==========================================
+ * Layout: Title top, route info right, map left
+ * Designed for iframe embedding with minimal padding
+ */
+
+/* ===========================================
+   RESET & BASE STYLES
+   =========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f4e8;
+    overflow: hidden;
+}
+
+/* ===========================================
+   MAIN CONTAINER & NETWORK CANVAS
+   =========================================== */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#network {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #d4e8d4 0%, #b8d4b8 50%, #9cc49c 100%);
+}
+
+/* ===========================================
+   TITLE (Top Center)
+   =========================================== */
+.title {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c5530;
+    background-color: rgba(232, 244, 232, 0.9);
+    padding: 4px 16px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+/* ===========================================
+   RIGHT PANEL (Route Info & Controls)
+   =========================================== */
+.right-panel {
+    position: absolute;
+    top: 20px;
+    right: 8px;
+    width: 155px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+}
+
+/* ===========================================
+   ROUTE INFO PANEL
+   =========================================== */
+.route-info {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.route-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #2c5530;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+}
+
+.route-details {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.route-step {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+    border-bottom: 1px dotted #eee;
+}
+
+.route-step:last-child {
+    border-bottom: none;
+}
+
+.city-name {
+    font-weight: 500;
+}
+
+.distance {
+    color: #666;
+    font-size: 11px;
+}
+
+.total-distance {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 2px solid #2c5530;
+    font-weight: bold;
+    font-size: 14px;
+    color: #2c5530;
+}
+
+/* ===========================================
+   CONTROL BUTTONS
+   =========================================== */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.btn {
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #2196f3;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1976d2;
+}
+
+.btn-success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+    background-color: #388e3c;
+}
+
+.btn-success:disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background-color: #757575;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #616161;
+}
+
+/* ===========================================
+   TRAVELER ANIMATION
+   =========================================== */
+.traveler {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #2196f3;
+    border: 3px solid #1565c0;
+    border-radius: 50%;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.5);
+}
+
+/* ===========================================
+   IMPROVEMENT INDICATOR
+   =========================================== */
+.improvement {
+    color: #4caf50;
+    font-weight: bold;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+/* ===========================================
+   RESPONSIVE STYLES
+   =========================================== */
+@media (max-width: 500px) {
+    .title {
+        font-size: 16px;
+        padding: 3px 10px;
+    }
+
+    .right-panel {
+        width: 180px;
+        right: 5px;
+    }
+
+    .route-info {
+        padding: 8px;
+        max-height: 280px;
+    }
+
+    .route-title {
+        font-size: 12px;
+    }
+
+    .route-details {
+        font-size: 11px;
+    }
+
+    .controls {
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}

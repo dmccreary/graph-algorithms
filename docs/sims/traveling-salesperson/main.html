@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveling Salesperson</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Title at top center -->
+        <div class="title">Traveling Salesperson</div>
+
+        <!-- Right panel with route info and controls -->
+        <div class="right-panel">
+            <div class="route-info" id="route-info">
+                <div class="route-title">Route Information</div>
+                <div class="route-details" id="route-details">
+                    Click "Visit All Cities" to start a random tour.
+                </div>
+                <div class="total-distance" id="total-distance"></div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="visit-btn">Visit All Cities</button>
+                <button class="btn btn-success" id="optimize-btn" disabled>Optimize Route</button>
+                <button class="btn btn-secondary" id="reset-btn">Reset</button>
+            </div>
+        </div>
+
+        <!-- Network canvas -->
+        <div id="network"></div>
+    </div>
+
+    <script src="traveling-salesperson.js"></script>
+</body>
+</html>

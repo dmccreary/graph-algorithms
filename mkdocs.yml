@@ -69,6 +69,7 @@ nav:
     - Shortest Path: sims/shortest-path/index.md
     - Spanning Tree: sims/spanning-tree/index.md
     - PageRank: sims/page-rank/index.md
+    - Traveling Salesperson: sims/traveling-salesperson/index.md
     - Matching: sims/matching/index.md
     - Data Element Matching: sims/data-element-match/index.md
     - Clustering: sims/clustering/index.md

@@ -1,0 +1,45 @@
+{
+  "title": "BFS vs DFS Comparison",
+  "description": "Interactive comparison of Breadth-First Search and Depth-First Search graph traversal algorithms. Demonstrates the fundamental differences between queue-based BFS (level-by-level) and stack-based DFS (deep dive) approaches.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-18",
+  "subject": [
+    "Breadth-First Search",
+    "Depth-First Search",
+    "Graph Traversal",
+    "Graph Algorithms",
+    "BFS",
+    "DFS",
+    "Algorithm Comparison"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/bfs-vs-dfs/",
+  "educationalLevel": "High School",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate"
+  ],
+  "concepts": [
+    "Breadth-First Search",
+    "Depth-First Search",
+    "Stack",
+    "Queue",
+    "Graph Traversal",
+    "Algorithm Comparison"
+  ],
+  "prerequisites": [
+    "Graph Basics",
+    "Stack Data Structure",
+    "Queue Data Structure"
+  ],
+  "library": "vis-network.js"
+}

@@ -1,13 +1,41 @@
+---
+title: Weighted Graph
+description: Interactive visualization of weighted graphs showing edge distances between US metropolitan cities using p5.js
+image: /sims/weighted-graph/weighted-graph.png
+og:image: /sims/weighted-graph/weighted-graph.png
+quality_score: 72
+---
+
 # Weighted Graph
 
+<iframe src="weighted-graph.html" width="100%" height="500px" scrolling="no"></iframe>
 
-![Weighted Graph](./weighted-graph.png){ width="400" }
+**Copy this iframe to your website:**
 
+```html
+<iframe src="https://dmccreary.github.io/graph-algorithms/sims/weighted-graph/weighted-graph.html" width="100%" height="500px" scrolling="no"></iframe>
+```
 
-[Link to Demo](./weighted-graph.html){ .md-button .md-button--primary }
-[Edit](https://editor.p5js.org/dmccreary/sketches/ssrtXzl5_)
+[Run Weighted Graph MicroSim in Fullscreen](weighted-graph.html){ .md-button .md-button--primary }
+[Edit in p5.js Editor](https://editor.p5js.org/dmccreary/sketches/ssrtXzl5_){ .md-button }
 
-## Create a list of nodes and place them on the canvas
+## Description
+
+This MicroSim demonstrates weighted graphs using a visualization of major US metropolitan cities. Each city is connected to its three nearest neighbors, with edge weights representing distances between cities.
+
+Key features:
+
+- 10 major US cities positioned on a canvas
+- Each city connected to its 3 nearest neighbors
+- Edge weights displayed at the midpoint of each edge
+- Blue circles represent city nodes
+
+### How to Use
+
+1. Observe the city positions on the canvas
+2. Note the edges connecting each city to its nearest neighbors
+3. Read the distance values on each edge
+4. Consider how this represents a weighted graph
 
 ## Sample Prompt
 
@@ -21,80 +49,59 @@ Draw a graph that places the distance between
 the nodes at the halfway point between the nodes.
 ```
 
-```py
-// weighted graph example
-// I used ChatGPT to generate sample cities and moved them around
+## Implementation Highlights
+
+### City Data Structure
+
+```javascript
 let cities = {
   "New York":      {x: 520, y: 40},
   "Los Angeles":   {x: 50,  y:180},
   "Chicago":       {x: 290, y:120},
   "Phoenix":       {x: 150, y:310},
   "Miami":         {x: 510, y:340},
-  "San Diego":     {x: 70,  y:330},
-  "Dallas":        {x: 270, y:290},
-  "Seattle":       {x: 50,  y: 30},
-  "Minneapolis":   {x: 250, y: 40},
-  "San Francisco": {x: 160, y:150}
+  // ...
 };
-
-function setup() {
-  const canvas = createCanvas(550, 440);
-  var mainElement = document.querySelector('main');
-  canvas.parent(mainElement);
-  textSize(14);
-  calculateNeighbors();
-}
-
-function draw() {
-  background(255);
-  
-  for (let city in cities) {
-    // draw lines to nearest three cities
-    for (let neighbor of cities[city].neighbors) {
-      let neighborX = cities[neighbor].x;
-      let neighborY = cities[neighbor].y;
-      stroke(0);
-      // need to put the line in
-      line(cities[city].x, cities[city].y, neighborX, neighborY);
-      // put the distance text at midpoint
-      let midX = (cities[city].x + neighborX) / 2;
-      let midY = (cities[city].y + neighborY) / 2;
-      // calculate the distance
-      let distance = dist(cities[city].x, cities[city].y, neighborX, neighborY);
-      // place a white box behind weight
-      noStroke();
-      fill('white');
-      rect(midX-14, midY-8, 28, 16);
-      // draw the text in black and align it
-      fill('black');
-      textAlign(CENTER,CENTER);
-      // nf is number format with 0 decimal places
-      text(nf(distance, 0, 0), midX, midY);
-    }
-  }
-  for (let city in cities) {
-    fill(0,100,255);
-    circle(cities[city].x, cities[city].y, 20);
-  }
-  
-  noLoop(); // Static drawing
-}
-
-function calculateNeighbors() {
-  for (let city in cities) {
-    let distances = [];
-    for (let otherCity in cities) {
-      if (otherCity !== city) {
-        let d = dist(cities[city].x, cities[city].y, cities[otherCity].x, cities[otherCity].y);
-        distances.push({ city: otherCity, distance: d });
-      }
-    }
-    distances.sort((a, b) => a.distance - b.distance);
-    cities[city].neighbors = distances.slice(0, 3).map(d => d.city);
-  }
-
-}
-
 ```
 
+### Neighbor Calculation
 
+The algorithm calculates distances between all city pairs and selects the 3 nearest neighbors for each city.
+
+### Edge Weight Display
+
+Distances are displayed at the midpoint of each edge with a white background for readability.
+
+## Lesson Plan
+
+### Learning Objectives
+
+After completing this lesson, students will be able to:
+
+- Define a weighted graph and explain edge weights
+- Calculate distances between nodes using Euclidean distance
+- Implement a k-nearest-neighbors graph
+- Apply weighted graphs to geographic problems
+
+### Target Audience
+
+- High school and college students
+- Prerequisites: Basic understanding of graphs and coordinate geometry
+
+### Activities
+
+1. **Exploration Activity**: Calculate the distance between two cities manually and verify against the visualization
+2. **Guided Investigation**: Identify which cities have the most connections
+3. **Extension Activity**: Add a new city and predict which neighbors it would connect to
+
+### Assessment
+
+- What does an edge weight represent in this visualization?
+- How is the nearest neighbor algorithm used to build this graph?
+- Why might some cities have more than 3 edges connecting to them?
+
+## References
+
+- [Weighted Graph - Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#Weighted_graph) - Definition and properties
+- [K-Nearest Neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) - Algorithm for finding nearest points
+- [p5.js Reference](https://p5js.org/reference/) - Documentation for the visualization library used

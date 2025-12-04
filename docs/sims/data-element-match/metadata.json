@@ -1,0 +1,38 @@
+{
+  "title": "Data Element Matcher",
+  "description": "Interactive visualization for matching data elements between source and target schemas. Demonstrates the schema matching problem common in data integration and ETL processes.",
+  "creator": "Dan McCreary",
+  "date": "2024-09-16",
+  "subject": [
+    "Schema Matching",
+    "Data Integration",
+    "Data Element Mapping",
+    "ETL",
+    "Data Warehousing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "publisher": "Dan McCreary",
+  "identifier": "https://dmccreary.github.io/graph-algorithms/sims/data-element-match/",
+  "educationalLevel": "Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Data Engineers, Students",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply"
+  ],
+  "concepts": [
+    "Schema Matching",
+    "Data Mapping",
+    "Data Integration",
+    "Entity Resolution"
+  ],
+  "prerequisites": [
+    "Database Basics",
+    "Data Modeling"
+  ],
+  "library": "p5.js"
+}
