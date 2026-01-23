@@ -35,5 +35,21 @@
     "Graph Basics",
     "Graph Degree"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "interactive-demo",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of degree v2",
+    "Explore degree v2 through interactive visualization",
+    "Apply knowledge of degree v2 to solve problems",
+    "Experiment with parameters to observe their effects on degree v2"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

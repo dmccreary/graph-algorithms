@@ -36,5 +36,25 @@
     "Graph Basics",
     "Data Integration Concepts"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of graph matching",
+    "Explore graph matching through interactive visualization",
+    "Apply knowledge of graph matching to solve problems",
+    "Experiment with parameters to observe their effects on graph matching"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

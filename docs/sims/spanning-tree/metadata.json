@@ -34,5 +34,23 @@
     "Weighted Graphs",
     "Tree Data Structures"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "interactive-demo",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of spanning trees",
+    "Explore spanning trees through interactive visualization",
+    "Apply knowledge of spanning trees to solve problems",
+    "Test understanding of spanning trees through interactive exercises"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }
