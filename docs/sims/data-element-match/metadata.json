@@ -53,5 +53,28 @@
     "Apply",
     "Evaluate",
     "Create"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "evaluate"
+    ],
+    "bloomVerbs": [
+      "explain",
+      "summarize",
+      "demonstrate",
+      "illustrate",
+      "implement"
+    ],
+    "pacing": "continuous",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "observe"
+  }
 }
